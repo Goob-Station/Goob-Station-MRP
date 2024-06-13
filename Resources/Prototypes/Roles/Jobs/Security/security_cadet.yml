@@ -36,6 +36,14 @@
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
     pocket2: BookSecurity
+<<<<<<< HEAD
   innerClothingSkirt: ClothingUniformJumpskirtColorRed
   satchel: ClothingBackpackSatchelSecurity
   duffelbag: ClothingBackpackDuffelSecurity
+=======
+  storage:
+    back:
+    - BoxSurvivalSecurity
+    - Flash
+    - MagazinePistol
+>>>>>>> 3989974647 (Update time requirements for roles, and fix blueshield + ntr not spawning with survival box)
