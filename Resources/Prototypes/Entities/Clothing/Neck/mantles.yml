@@ -96,3 +96,14 @@
     sprite: Clothing/Neck/mantles/unathimantle.rsi
   - type: Clothing
     sprite: Clothing/Neck/mantles/unathimantle.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantle
+  name: mantle
+  description: A soft mantle, made with the same 'synthetic' animal furs of the iconic winter coat.
+  components:
+  - type: Sprite
+    sprite: Clothing/Neck/mantles/mantle.rsi
+  - type: Clothing
+    sprite: Clothing/Neck/mantles/mantle.rsi
