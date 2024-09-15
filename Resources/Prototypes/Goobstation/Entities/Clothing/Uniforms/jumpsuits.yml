@@ -18,7 +18,11 @@
   - type: Sprite
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
   - type: Clothing
+<<<<<<< HEAD
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
+=======
+    sprite: Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
+>>>>>>> f412ad2c61 (BSO Clothing Update. (#643))
 
 - type: entity
   parent: ClothingUniformBase
