@@ -51,6 +51,7 @@
     ears: ClothingHeadsetAltCommand
     belt: ClothingBeltSecurityFilled
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
+    pocket2: WeaponEnergyRevolver
   storage:
     back:
     - BoxSurvivalSlots
