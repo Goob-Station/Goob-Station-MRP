@@ -50,8 +50,7 @@
     id: ERTSecurityPDA
     ears: ClothingHeadsetAltCommand
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58
-    pocket2: DeathAcidifierImplanter
+    pocket1: UniqueBlueshieldOfficerLockerTeleporter
   storage:
     back:
     - BoxSurvival

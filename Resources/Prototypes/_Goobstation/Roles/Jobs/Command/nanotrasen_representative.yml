@@ -36,7 +36,7 @@
   equipment:
     id: CentcomPDA
     ears: ClothingHeadsetCentCom
-    pocket1: CaneSheathFilledNanotrasen
+    pocket1: UniqueNanorepLockerTeleporter
   storage:
     back:
-    - BoxSurvival
+    - Flash
