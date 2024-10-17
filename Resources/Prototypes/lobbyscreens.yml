@@ -1,43 +1,15 @@
 - type: lobbyBackground
-  id: Robotics
-  background: /Textures/LobbyScreens/robotics.webp
+  id: NightWatch
+  background: /Textures/LobbyScreens/nightwatch.webp
 
 - type: lobbyBackground
-  id: Supermatter
-  background: /Textures/LobbyScreens/supermatter.webp
+  id: LibraryGuidingThePeople
+  background: /Textures/LobbyScreens/library-guiding-the-people.webp
 
 - type: lobbyBackground
-  id: Warden
-  background: /Textures/LobbyScreens/warden.webp
+  id: SchoolOfAthens
+  background: /Textures/LobbyScreens/school-of-athens.webp
 
 - type: lobbyBackground
-  id: Pharmacy
-  background: /Textures/LobbyScreens/pharmacy.webp
-
-- type: lobbyBackground
-  id: SSXIV
-  background: /Textures/LobbyScreens/ssxiv.webp
-
-- type: lobbyBackground
-  id: Susstation
-  background: /Textures/LobbyScreens/susstation.webp
-
-- type: lobbyBackground
-  id: SkellyVsTheRev
-  background: /Textures/LobbyScreens/skellyvstherev.webp
-
-- type: lobbyBackground
-  id: Doomed
-  background: /Textures/LobbyScreens/doomed.webp
-
-- type: lobbyBackground
-  id: Blueprint
-  background: /Textures/LobbyScreens/blueprint.webp
-
-- type: lobbyBackground
-  id: TerminalStation
-  background: /Textures/LobbyScreens/terminalstation.webp
-
-- type: lobbyBackground
-  id: JustAWeekAway
-  background: /Textures/LobbyScreens/justaweekaway.webp
+  id: LastSupper
+  background: /Textures/LobbyScreens/last-supper.webp
