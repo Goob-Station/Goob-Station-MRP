@@ -1,4 +1,4 @@
-<p align="center"> <img alt="Goob Station 14" width="880" height="300" src="https://github.com/Goob-Station/Goob-Station-MRP/blob/master/Resources/Textures/Logo/logo.png" /></p>
+<p align="center"> <img alt="Goob Station 14" width="880" height="300" src="https://github.com/Goob-Station/Goob-Station-MRP/blob/main/Resources/Textures/Logo/logo.png" /></p>
 
 This is a fork from the primary repo for Einstein Engines.
 
