@@ -55,4 +55,4 @@
       types:
         Radiation: 10
         Piercing: 5
-      ignoreResistances: true
+    ignoreResistances: true
