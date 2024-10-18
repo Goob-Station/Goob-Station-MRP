@@ -1,14 +1,13 @@
-# Used by the Vulcan, L6SAW, Mark 1, Ceremonial Mark 1, and the AKMS. Basically just all .30 rifles.
 - type: entity
   id: BulletHeavyRifle
-  name: bullet (.30 rifle)
+  name: bullet (.20 rifle)
   parent: BaseBullet
   noSpawn: true
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 24
+        Piercing: 19
 
 - type: entity
   id: BulletMinigun
