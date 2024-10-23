@@ -6,11 +6,10 @@
   requirements:
     - !type:CharacterPlaytimeRequirement # DeltaV - JobSecurityOfficer time requirement. Make them experienced in proper officer work.
       tracker: JobSecurityOfficer
-      min: 43200 # DeltaV - 12 hrs
+      min: 28800 # goob mrp - 8 hrs
     - !type:CharacterPlaytimeRequirement # DeltaV - JobDetective time requirement. Give them an understanding of basic forensics.
       tracker: JobDetective
       min: 14400 # DeltaV - 4 hours
-    - !type:CharacterWhitelistRequirement
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
