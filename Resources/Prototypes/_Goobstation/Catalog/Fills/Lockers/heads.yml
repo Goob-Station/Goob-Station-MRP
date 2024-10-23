@@ -33,4 +33,8 @@
       - id: ClothingBlueshieldArmourVest
       - id: ClothingEyesGlassesMedSec
       - id: PinpointerNuclear
+      - id: WeaponEnergyRevolver
       - id: ClothingHandsGlovesCombat
+      - id: ClothingOuterHardsuitBlueshield
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
