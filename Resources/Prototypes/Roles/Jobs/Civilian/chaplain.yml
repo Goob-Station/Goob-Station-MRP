@@ -9,10 +9,6 @@
       min: 7200 # 2 hours
     - !type:CharacterLogicOrRequirement
       requirements:
-        - !type:CharacterSpeciesRequirement
-          inverted: true
-          species:
-            - IPC
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
