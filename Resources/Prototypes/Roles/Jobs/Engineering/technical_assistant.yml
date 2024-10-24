@@ -6,7 +6,7 @@
   antagAdvantage: 3 # DeltaV - Reduced TC: External Access + Engineering
   requirements:
   - !type:CharacterOverallTimeRequirement # DeltaV - to prevent griefers from taking the role.
-      min: 14400 # 4 hours
+      min: 3600 # 1 hours
     # - !type:DepartmentTimeRequirement # DeltaV - Removes time limit
     #   department: Engineering
     #   time: 54000 #15 hrs
@@ -27,6 +27,7 @@
     back: ClothingBackpackEngineeringFilled
     shoes: ClothingShoesBootsWork
     id: TechnicalAssistantPDA
+    eyes: ClothingEyesGlassesMeson
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
     pocket2: BookEngineersHandbook
