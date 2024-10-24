@@ -14,7 +14,7 @@
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
-  canBeAntag: true # DeltaV - Can be antagonist
+  canBeAntag: false # goob mrp - shouldn't be antag, its a training role
   access:
   - Maintenance
   - Engineering
