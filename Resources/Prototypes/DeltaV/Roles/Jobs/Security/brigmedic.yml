@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical
-      min: 21600 # 6 hrs
+      min: 18000 # 4 hrs
     - !type:DepartmentTimeRequirement
       department: Security
       min: 18000 # 4 hrs
