@@ -26,3 +26,12 @@ Entries:
   id: 6
   time: '2024-10-30T23:31:29.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/12
+- author: Ducks
+  changes:
+    - type: Tweak
+      message: Rebalanced Rifle damages.
+    - type: Tweak
+      message: Uranium rounds now pierce armor, but do less damage.
+  id: 7
+  time: '2024-10-30T23:31:48.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/11
