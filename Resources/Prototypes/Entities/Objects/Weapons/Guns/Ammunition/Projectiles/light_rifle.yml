@@ -1,17 +1,18 @@
+# Used by the Vulcan, L6SAW, Mark 1, Ceremonial Mark 1, and the AKMS. Basically just all .30 rifles.
 - type: entity
   id: BulletLightRifle
-  name: bullet (.20 rifle)
+  name: bullet (.30 rifle)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
     damage:
       types:
-        Piercing: 19
+        Piercing: 24
 
 - type: entity
   id: BulletLightRiflePractice
-  name: bullet (.20 rifle practice)
+  name: bullet (.30 rifle practice)
   parent: BaseBulletPractice
   categories: [ HideSpawnMenu ]
   components:
@@ -22,7 +23,7 @@
 
 - type: entity
   id: BulletLightRifleRubber
-  name: bullet (.20 rifle rubber)
+  name: bullet (.30 rifle rubber)
   parent: BaseBulletRubber
   categories: [ HideSpawnMenu ]
   components:
@@ -40,8 +41,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 3
-        Heat: 16
+        Blunt: 5
+        Heat: 19
 
 - type: entity
   id: BulletLightRifleUranium
@@ -52,5 +53,6 @@
   - type: Projectile
     damage:
       types:
-        Radiation: 9
-        Piercing: 10
+        Radiation: 10
+        Piercing: 5
+    ignoreResistances: true
