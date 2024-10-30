@@ -10,7 +10,7 @@
     #   time: 14400 #4 hrs
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Medical dept time requirement
       department: Medical
-      min: 28800 # DeltaV - 8 hours
+      min: 14400 # goob mrp - 4 hours
     # - !type:OverallPlaytimeRequirement # DeltaV - No playtime requirement
     #   time: 54000 # 15 hrs
   startingGear: ParamedicGear

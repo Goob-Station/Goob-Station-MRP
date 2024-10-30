@@ -7,13 +7,13 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 36000 # 10 hrs
+      min: 18000 # 5 hours
     - !type:CharacterPlaytimeRequirement
       tracker: JobLawyer
-      min: 36000 # 10 hours
+      min: 10800 # 3 hours
     - !type:CharacterPlaytimeRequirement
       tracker: JobProsecutor
-      min: 36000 # 10 hours
+      min: 18000 # 5 hours
 
 
   startingGear: ClerkGear

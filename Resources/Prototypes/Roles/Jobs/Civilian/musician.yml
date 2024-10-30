@@ -5,7 +5,7 @@
   playTimeTracker: JobMusician
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 7200 # DeltaV - 2 hours
+      min: 1800 # goob mrp - 0.5 hours
   startingGear: MusicianGear
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire

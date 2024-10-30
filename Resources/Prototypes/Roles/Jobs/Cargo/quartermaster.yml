@@ -16,9 +16,9 @@
       min: 7200 # 2 hours
     - !type:CharacterDepartmentTimeRequirement
       department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 43200 #DeltaV 12 hours
+      min: 21600 #goob mrp 6 hours
     - !type:CharacterOverallTimeRequirement
-      min: 144000 #40 hrs
+      min: 72000 #goob mrp 20 hrs
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"

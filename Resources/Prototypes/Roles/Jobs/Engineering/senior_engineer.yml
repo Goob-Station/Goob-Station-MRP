@@ -13,7 +13,7 @@
       min: 21600 #6 hrs
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
-      min: 216000 # 60 hrs
+      min: 108000 # 30 hrs
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce

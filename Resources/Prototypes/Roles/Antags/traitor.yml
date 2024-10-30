@@ -6,4 +6,4 @@
   objective: roles-antag-syndicate-agent-objective
   requirements:
   - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-    min: 86400 # DeltaV - 24 hours
+    min: 10800 # goob mrp - 3 hours

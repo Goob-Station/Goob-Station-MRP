@@ -11,7 +11,7 @@
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
-  canBeAntag: true # DeltaV - Can be antagonist
+  canBeAntag: false # goob mrp - training role
   access:
   - Research
   - Maintenance
