@@ -7,18 +7,18 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobChef
-      min: 14400 # DeltaV - 4 hours
+      min: 3600 # goob mrp - 1 hour
     - !type:CharacterPlaytimeRequirement
       tracker: JobBartender
-      min: 14400 # DeltaV - 4 hours
+      min: 3600 # goob mrp - 1 hour
     - !type:CharacterPlaytimeRequirement
       tracker: JobJanitor
-      min: 14400 # DeltaV - 4 hours
+      min: 3600 # goob mrp - 1 hour
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Civilian dept time requirement
       department: Civilian
-      min: 72000 # 20 hours
+      min: 36000 # 10 hours
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-      min: 90000 # 25 hours
+      min: 36000 # 10 hours
   weight: 10 # DeltaV - Changed HoP weight from 20 to 10 due to them not being more important than other Heads
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"

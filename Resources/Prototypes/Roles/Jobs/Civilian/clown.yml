@@ -5,7 +5,7 @@
   playTimeTracker: JobClown
   requirements:
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-      min: 7200 #2 hrs
+      min: 3600 #1 hrs
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop

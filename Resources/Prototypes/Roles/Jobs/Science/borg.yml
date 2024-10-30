@@ -23,7 +23,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 216000 #60 hrs
+      min: 108000 #30 hrs - still making this 30 hours instead of something reasonable, silicon laws are really fucky - not for the new goober..
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd
