@@ -4,6 +4,7 @@ using Content.Shared.Instruments;
 using Content.Shared.Traits.Assorted.Components;
 using Content.Shared.Traits.Assorted.Prototypes;
 using Content.Shared.Zombies;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Traits.Assorted.Systems;
@@ -15,7 +16,6 @@ public abstract class SharedSingerSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedInstrumentSystem _instrument = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
 
     public override void Initialize()
     {
@@ -26,6 +26,7 @@ public abstract class SharedSingerSystem : EntitySystem
         SubscribeLocalEvent<SingerComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<SingerComponent, BoundUIClosedEvent>(OnBoundUIClosed);
         SubscribeLocalEvent<SingerComponent, BoundUIOpenedEvent>(OnBoundUIOpened);
+        SubscribeLocalEvent<SingerComponent, PlayerDetachedEvent>(OnPlayerDetached);
     }
 
     private void OnStartup(Entity<SingerComponent> ent, ref ComponentStartup args)
@@ -33,17 +34,12 @@ public abstract class SharedSingerSystem : EntitySystem
         if (!ProtoMan.TryIndex(ent.Comp.Proto, out var singer))
             return;
 
-        _actionsSystem.AddAction(ent, ref ent.Comp.MidiAction, singer.MidiActionId);
+        _actionsSystem.AddAction(ent, ref ent.Comp.MidiAction, ent.Comp.MidiActionId);
 
         var instrumentComp = EnsureInstrumentComp(ent);
         var defaultData = singer.InstrumentList[singer.DefaultInstrument];
         _instrument.SetInstrumentProgram(instrumentComp, defaultData.Item1, defaultData.Item2);
         SetUpSwappableInstrument(ent, singer);
-
-        EntityManager.TryGetComponent<UserInterfaceComponent>(ent.Owner, out var comp);
-        var entui = new Entity<UserInterfaceComponent?>(ent.Owner, comp);
-        if (singer.MidiUi is { } uiKey && !_ui.IsUiOpen(entui, uiKey))
-            _ui.OpenUi(entui, uiKey, entui);
     }
 
     private void OnShutdown(Entity<SingerComponent> ent, ref ComponentShutdown args)
@@ -72,6 +68,11 @@ public abstract class SharedSingerSystem : EntitySystem
 
         TryComp(uid, out AppearanceComponent? appearance);
         _appearance.SetData(uid, HarpyVisualLayers.Singing, SingingVisualLayer.True, appearance);
+    }
+
+    private void OnPlayerDetached(EntityUid uid, SingerComponent component, PlayerDetachedEvent args)
+    {
+        CloseMidiUi(uid);
     }
 
     /// <summary>
