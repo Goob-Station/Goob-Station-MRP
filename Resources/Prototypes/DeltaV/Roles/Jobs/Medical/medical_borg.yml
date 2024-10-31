@@ -6,7 +6,7 @@
   playTimeTracker: JobMedicalBorg
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 216000 #60 hrs
+      min: 180000 #30 hrs - same as normal borg
     - !type:DepartmentTimeRequirement
       department: Medical
       min: 21600 #6 hrs

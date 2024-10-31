@@ -1,3 +1,4 @@
+# pretty sure this is unused lmao
 - type: entity
   id: BulletHeavyRifle
   name: bullet (.20 rifle)
@@ -8,7 +9,7 @@
     damage:
       types:
         Piercing: 19
-
+# least minigun still exists
 - type: entity
   id: BulletMinigun
   name: minigun bullet (.10 rifle)

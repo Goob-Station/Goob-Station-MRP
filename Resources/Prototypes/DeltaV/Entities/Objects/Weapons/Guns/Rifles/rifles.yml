@@ -11,11 +11,19 @@
         map: ["enum.GunVisualLayers.Base"]
       - state: mag-0
         map: ["enum.GunVisualLayers.Mag"]
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -50
   - type: Gun
-    fireRate: 2
+    minAngle: 21
+    maxAngle: 54
+    angleIncrease: 6
+    angleDecay: 24
+    fireRate: 6
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+    - Burst
   - type: ChamberMagazineAmmoProvider
   - type: ItemSlots
     slots:

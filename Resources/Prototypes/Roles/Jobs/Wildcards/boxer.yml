@@ -5,7 +5,7 @@
   playTimeTracker: JobBoxer
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 7200 #DeltaV 2 hours
+      min: 3600 #goob mrp 1 hours
   startingGear: BoxerGear
   icon: "JobIconBoxer"
   supervisors: job-supervisors-hop
