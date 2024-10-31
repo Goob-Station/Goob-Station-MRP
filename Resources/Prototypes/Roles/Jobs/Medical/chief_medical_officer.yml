@@ -18,6 +18,17 @@
       min: 36000 # goob mrp - 10 hours
     - !type:CharacterOverallTimeRequirement
       min: 36000 # goob mrp - 10 hours
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
+
+
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

@@ -225,6 +225,13 @@ namespace Content.Shared.CCVar
             GameMap = CVarDef.Create("game.map", string.Empty, CVar.SERVERONLY);
 
         /// <summary>
+        /// If roles should be restricted based on whether or not they are whitelisted.
+        /// </summary>
+        public static readonly CVarDef<bool>
+            GameRoleWhitelist = CVarDef.Create("game.role_whitelist", true, CVar.SERVER | CVar.REPLICATED);
+
+
+        /// <summary>
         ///     Controls whether to use world persistence or not.
         /// </summary>
         public static readonly CVarDef<bool>
@@ -1994,6 +2001,12 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> ICShowSSDIndicator =
             CVarDef.Create("ic.show_ssd_indicator", true, CVar.CLIENTONLY);
 
+        /// <summary>
+        /// Allow Ethereal Ent to PassThrough Walls/Objects while in Ethereal.
+        /// </summary>
+        public static readonly CVarDef<bool> EtherealPassThrough =
+            CVarDef.Create("ic.EtherealPassThrough", false, CVar.SERVER);
+
         /*
          * Salvage
          */
@@ -2049,13 +2062,13 @@ namespace Content.Shared.CCVar
          */
 
         /// <summary>
-        /// Time that players have to wait before rules can be accepted.
+        ///     Time that players have to wait before rules can be accepted.
         /// </summary>
         public static readonly CVarDef<float> RulesWaitTime =
-            CVarDef.Create("rules.time", 60f, CVar.SERVER | CVar.REPLICATED);
+            CVarDef.Create("rules.time", 10f, CVar.SERVER | CVar.REPLICATED);
 
         /// <summary>
-        /// Don't show rules to localhost/loopback interface.
+        ///     Don't show rules to localhost/loopback interface.
         /// </summary>
         public static readonly CVarDef<bool> RulesExemptLocal =
             CVarDef.Create("rules.exempt_local", true, CVar.SERVERONLY);
