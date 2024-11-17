@@ -157,6 +157,10 @@
           prob: 0.25
         - id: StrangePill
           prob: 0.20
+        - id: DeathPaint
+          prob: 0.05
+        - id: DeathPaintTwo
+          prob: 0.05
         - id: DrinkMopwataBottleRandom
           prob: 0.20
         - id: ModularReceiver
@@ -307,3 +311,15 @@
         - id: WeaponSniperMosin
           prob: 0.0010
           orGroup: syndiemaintloot
+
+- type: entity
+  id: ClosetWallRadiationFilled
+  suffix: Filled
+  parent: ClosetWallRadiation
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingOuterSuitRad
+        amount: 2
+      - id: GeigerCounter
+        amount: 2
