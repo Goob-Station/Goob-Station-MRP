@@ -42,8 +42,6 @@
 - type: startingGear
   id: BlueshieldOfficerGear
   equipment:
-    back: ClothingBackpack
-    jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
     shoes: ClothingShoesBootsJackFilled
     eyes: ClothingEyesGlassesMedical
     gloves: ClothingHandsGlovesCombat

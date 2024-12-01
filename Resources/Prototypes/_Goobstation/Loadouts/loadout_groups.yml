@@ -66,6 +66,22 @@
 #   - BlueshieldOfficerOuterBlueshieldArmoredJacket
 
 # - type: loadoutGroup
+#   id: BlueshieldOfficerBackpack
+#   name: loadout-group-bso-backpack
+#   loadouts:
+#   - BlueshieldOfficerBackpack
+#   - BlueshieldOfficerSatchel
+#   - BlueshieldOfficerDuffel
+
+# - type: loadoutGroup
+#   id: BlueshieldOfficerJumpsuit
+#   name: loadout-group-bso-jumpsuit
+#   loadouts:
+#   - BlueshieldOfficerInnerBlueshieldSkirt
+#   - BlueshieldOfficerInnerBlueshieldSuit
+#   - BlueshieldOfficerInnerBlueshieldShirt
+
+# - type: loadoutGroup
 #   id: BlueshieldOfficerNeck
 #   name: loadout-group-bso-neck
 #   minLimit: 0
