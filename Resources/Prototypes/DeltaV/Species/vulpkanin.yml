@@ -38,6 +38,7 @@
 
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
+  onlyWhitelisted: true
   points:
     Hair:
       points: 1

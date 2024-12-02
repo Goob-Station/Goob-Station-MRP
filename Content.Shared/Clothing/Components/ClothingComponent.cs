@@ -17,8 +17,13 @@ namespace Content.Shared.Clothing.Components;
 public sealed partial class ClothingComponent : Component
 {
     [DataField]
-    [Access(typeof(ClothingSystem), typeof(InventorySystem), Other = AccessPermissions.ReadExecute)] // TODO remove execute permissions.
     public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = new();
+
+    /// <summary>
+    /// The name of the layer in the user that this piece of clothing will map to
+    /// </summary>
+    [DataField]
+    public string? MappedLayer;
 
     [DataField]
     public bool QuickEquip = true;
@@ -26,13 +31,6 @@ public sealed partial class ClothingComponent : Component
     [DataField(required: true)]
     [Access(typeof(ClothingSystem), typeof(InventorySystem), Other = AccessPermissions.ReadExecute)]
     public SlotFlags Slots = SlotFlags.NONE;
-
-    /// <summary>
-    ///   The actual sprite layer to render this entity's equipped sprite to, overriding the layer determined by the slot.
-    /// </summary>
-    [DataField]
-    [Access(typeof(ClothingSystem))]
-    public string? RenderLayer;
 
     [DataField]
     public SoundSpecifier? EquipSound;

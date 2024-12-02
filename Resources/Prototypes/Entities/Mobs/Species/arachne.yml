@@ -112,6 +112,12 @@
     speechSounds: Alto
   - type: Inventory
     templateId: anytaur
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: Tag
     tags:
     - CanPilot
@@ -238,5 +244,11 @@
       visible: false
   - type: Inventory
     templateId: anytaur
+    femaleDisplacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Human/displacement.rsi
+            state: jumpsuit-female
   - type: HumanoidAppearance
     species: Arachne
