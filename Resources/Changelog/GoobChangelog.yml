@@ -48,3 +48,10 @@ Entries:
   id: 8
   time: '2024-11-17T19:21:15.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/14
+- author: Piras314
+  changes:
+    - type: Remove
+      message: Fun
+  id: 9
+  time: '2024-12-29T16:47:36.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/16
