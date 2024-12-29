@@ -76,9 +76,8 @@ public sealed class BodySystem : SharedBodySystem
             var layer = partEnt.Comp.ToHumanoidLayers();
             if (layer != null)
             {
-                var layers = HumanoidVisualLayersExtension.Sublayers(layer.Value);
                 _humanoidSystem.SetLayersVisibility(
-                    bodyEnt, layers, visible: true, permanent: true, humanoid);
+                    bodyEnt, new[] { layer.Value }, visible: true, permanent: true, humanoid);
             }
         }
     }
@@ -163,9 +162,20 @@ public sealed class BodySystem : SharedBodySystem
         var ev = new BeingGibbedEvent(gibs);
         RaiseLocalEvent(partId, ref ev);
 
-        QueueDel(partId);
+        if (gibs.Any())
+            QueueDel(partId);
 
         return gibs;
+    }
+
+    public override bool BurnPart(EntityUid partId, BodyPartComponent? part = null)
+    {
+        if (!Resolve(partId, ref part, logMissing: false)
+            || TerminatingOrDeleted(partId)
+            || EntityManager.IsQueuedForDeletion(partId))
+            return false;
+
+        return base.BurnPart(partId, part);
     }
 
     protected override void ApplyPartMarkings(EntityUid target, BodyPartAppearanceComponent component)
