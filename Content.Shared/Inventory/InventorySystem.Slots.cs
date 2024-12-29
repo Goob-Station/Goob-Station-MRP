@@ -80,7 +80,7 @@ public partial class InventorySystem : EntitySystem
 
         if (TryGetSlotEntity(uid, ev.Slot, out var entityUid) && TryComp<StorageComponent>(entityUid, out var storageComponent))
         {
-            _storageSystem.OpenStorageUI(entityUid.Value, uid, storageComponent);
+            _storageSystem.OpenStorageUI(entityUid.Value, uid, storageComponent, false);
         }
     }
 
@@ -195,10 +195,7 @@ public partial class InventorySystem : EntitySystem
                     _transform.AttachToGridOrMap(entityUid, transform);
                     _randomHelper.RandomOffset(entityUid, 0.5f);
                 }
-                //_containerSystem.ShutdownContainer(container);
             }
-            //else
-                //_containerSystem.EnsureContainer<ContainerSlot>(uid, slotName);
             slot.Disabled = isDisabled;
             break;
         }

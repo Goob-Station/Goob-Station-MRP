@@ -2,6 +2,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
+using Content.Shared.BodyEffects;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Humanoid;
@@ -42,6 +43,14 @@ public partial class SharedBodySystem
             // ItemInsertionSlot's container on both ends. It does show up properly on ItemSlotsComponent though.
             _slots.AddItemSlot(ent, ent.Comp.ContainerName, ent.Comp.ItemInsertionSlot);
             Dirty(ent, ent.Comp);
+        }
+
+        if (ent.Comp.OnAdd is not null || ent.Comp.OnRemove is not null)
+            EnsureComp<BodyPartEffectComponent>(ent);
+
+        foreach (var connection in ent.Comp.Children.Keys)
+        {
+            Containers.EnsureContainer<ContainerSlot>(ent, GetPartSlotContainerId(connection));
         }
     }
 
@@ -143,6 +152,9 @@ public partial class SharedBodySystem
         Dirty(partEnt, partEnt.Comp);
         partEnt.Comp.Body = bodyEnt;
 
+        if (partEnt.Comp.Enabled && partEnt.Comp.Body is { Valid: true } body)
+            RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(body, true));
+
         var ev = new BodyPartAddedEvent(slotId, partEnt);
         RaiseLocalEvent(bodyEnt, ref ev);
         AddLeg(partEnt, bodyEnt);
@@ -158,6 +170,10 @@ public partial class SharedBodySystem
 
         partEnt.Comp.ParentSlot = null;
         partEnt.Comp.OriginalBody = partEnt.Comp.Body;
+
+        if (partEnt.Comp.Body is { Valid: true } body)
+            RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(body, false));
+
         var ev = new BodyPartRemovedEvent(slotId, partEnt);
         RaiseLocalEvent(bodyEnt, ref ev);
         RemoveLeg(partEnt, bodyEnt);
@@ -268,14 +284,22 @@ public partial class SharedBodySystem
             return;
 
         partEnt.Comp.Enabled = args.Enabled;
-        Dirty(partEnt, partEnt.Comp);
 
         if (args.Enabled)
+        {
             EnablePart(partEnt);
+            if (partEnt.Comp.Body is { Valid: true } bodyEnt)
+                RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(bodyEnt, true));
+        }
         else
+        {
             DisablePart(partEnt);
-    }
+            if (partEnt.Comp.Body is { Valid: true } bodyEnt)
+                RaiseLocalEvent(partEnt, new BodyPartComponentsModifyEvent(bodyEnt, false));
+        }
 
+        Dirty(partEnt, partEnt.Comp);
+    }
     private void EnablePart(Entity<BodyPartComponent> partEnt)
     {
         if (!TryComp(partEnt.Comp.Body, out BodyComponent? body))
@@ -310,12 +334,13 @@ public partial class SharedBodySystem
     public void ChangeSlotState(Entity<BodyPartComponent> partEnt, bool disable)
     {
         if (partEnt.Comp.Body is not null
+            && TryComp<InventoryComponent>(partEnt.Comp.Body, out var inventory)
             && GetBodyPartCount(partEnt.Comp.Body.Value, partEnt.Comp.PartType) == 1
             && TryGetPartSlotContainerName(partEnt.Comp.PartType, out var containerNames))
         {
             foreach (var containerName in containerNames)
             {
-                _inventorySystem.SetSlotStatus(partEnt.Comp.Body.Value, containerName, disable);
+                _inventorySystem.SetSlotStatus(partEnt.Comp.Body.Value, containerName, disable, inventory);
                 var ev = new RefreshInventorySlotsEvent(containerName);
                 RaiseLocalEvent(partEnt.Comp.Body.Value, ev);
             }
@@ -564,6 +589,18 @@ public partial class SharedBodySystem
             && Resolve(partId, ref part)
             && CanAttachToRoot(bodyId, partId, body, part)
             && Containers.Insert(partId, body.RootContainer);
+    }
+
+    /// <summary>
+    ///     Returns true if this parentId supports attaching a new part to the specified slot.
+    /// </summary>
+    public bool CanAttachToSlot(
+        EntityUid parentId,
+        string slotId,
+        BodyPartComponent? parentPart = null)
+    {
+        return Resolve(parentId, ref parentPart, logMissing: false)
+               && parentPart.Children.ContainsKey(slotId);
     }
 
     #endregion
@@ -1012,8 +1049,8 @@ public partial class SharedBodySystem
     {
         containerNames = partType switch
         {
-            BodyPartType.Arm => new() { "gloves" },
-            BodyPartType.Leg => new() { "shoes" },
+            BodyPartType.Hand => new() { "gloves" },
+            BodyPartType.Foot => new() { "shoes" },
             BodyPartType.Head => new() { "eyes", "ears", "head", "mask" },
             _ => new()
         };
@@ -1032,6 +1069,14 @@ public partial class SharedBodySystem
                 count++;
         }
         return count;
+    }
+
+    public string GetSlotFromBodyPart(BodyPartComponent part)
+    {
+        if (part.Symmetry != BodyPartSymmetry.None)
+            return $"{part.Symmetry.ToString().ToLower()} {part.PartType.ToString().ToLower()}";
+        else
+            return part.PartType.ToString().ToLower();
     }
 
     #endregion
