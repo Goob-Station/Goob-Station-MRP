@@ -39,15 +39,7 @@ public sealed partial class GuidebookWindow : FancyWindow, ILinkClickHandler
     private void OnSelectionChanged(TreeItem? item)
     {
         if (item != null && item.Metadata is GuideEntry entry)
-        {
             ShowGuide(entry);
-
-            /// <summary>
-            ///     This checks if "ruleEntry" flag is set on guidebook entries in yml.
-            ///     If the flag is set, it won't show as a guidebook entry but will still show in Server Rules.
-            /// </summary>
-            var isRulesEntry = entry.RuleEntry;
-        }
         else
             ClearSelectedGuide();
     }
