@@ -51,7 +51,7 @@ guide-entry-sop-bso = Blueshield Officer
 guide-entry-sop-captain = Captain
 guide-entry-sop-hop = Head of Personnel
 guide-entry-sop-hos = Head of Security
-guide-entry-sop-rd = Research Director
+guide-entry-sop-mg = Mystagogue
 guide-entry-sop-cmo = Chief Medical Ofc.
 guide-entry-sop-ce = Chief Engineer
 guide-entry-sop-qm = Quartermaster
@@ -67,10 +67,12 @@ guide-entry-sop-researcher = Researcher
 guide-entry-sop-sacrifices = Sacrifices
 # - Medical
 guide-entry-sop-chemist = Chemist
-guide-entry-sop-doctorintern = Docter/Intern
+guide-entry-sop-doctorintern = Doctor/Intern
 # - Security
+guide-entry-sop-corpsman = Corpsman
 guide-entry-sop-detective = Detective
 guide-entry-sop-officercadet = Officer/Cadet
+guide-entry-sop-prisonguard = Prison Guard
 guide-entry-sop-warden = Warden
 # - Service
 guide-entry-sop-bartender = Bartender

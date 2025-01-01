@@ -23,7 +23,7 @@
   - EpsilonAlert SOP
   - GammaAlert SOP
   - VioletAlert SOP
-  - WhiteA lert SOP
+  - WhiteAlert SOP
 
 # Emergencies Main Directory
 - type: guideEntry
@@ -122,7 +122,7 @@
   name: guide-entry-sop-medical
   text: "/ServerInfo/Guidebook/SOP/Jobs/Medical/MedicalSOP.xml"
   children:
-  - DocterIntern SOP
+  - DoctorIntern SOP
   - Chemist SOP
 
 - type: guideEntry
@@ -131,6 +131,8 @@
   text: "/ServerInfo/Guidebook/SOP/Jobs/Security/SecuritySOP.xml"
   children:
   - Warden SOP
+  - PrisonGuard SOP
+  - Corpsman SOP
   - OfficerCadet SOP
   - Detective SOP
 
@@ -373,7 +375,7 @@
 
 # Medical SOP Entries
 - type: guideEntry
-  id: DocterIntern SOP
+  id: DoctorIntern SOP
   name: guide-entry-sop-doctorintern
   text: "/ServerInfo/Guidebook/SOP/Jobs/Medical/DoctorInternSOP.xml"
 
@@ -397,6 +399,16 @@
   id: Warden SOP
   name: guide-entry-sop-warden
   text: "/ServerInfo/Guidebook/SOP/Jobs/Security/WardenSOP.xml"
+
+- type: guideEntry
+  id: PrisonGuard SOP
+  name: guide-entry-sop-prisonguard
+  text: "/ServerInfo/Guidebook/SOP/Jobs/Security/PrisonGuardSOP.xml"
+
+- type: guideEntry
+  id: Corpsman SOP
+  name: guide-entry-sop-corpsman
+  text: "/ServerInfo/Guidebook/SOP/Jobs/Security/CorpsmanSOP.xml"
 
 # Service SOP Entries
 - type: guideEntry
