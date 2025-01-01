@@ -55,3 +55,10 @@ Entries:
   id: 9
   time: '2024-12-29T16:47:36.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/16
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Rules and Standard Operating Procedures have been added.
+  id: 10
+  time: '2025-01-01T18:23:05.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/17
