@@ -7,7 +7,7 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Command
       time: 90000 # 25 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       time: 54000 # 15 hours
     - !type:CharacterDepartmentTimeRequirement
