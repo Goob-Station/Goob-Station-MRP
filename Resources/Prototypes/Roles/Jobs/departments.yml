@@ -48,8 +48,8 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  - BlueshieldOfficer # Goobstation
-  - NanotrasenRepresentative # Goobstation
+  - BlueshieldOfficer # Goobstation - BlueshieldOfficer, see Resources/Prototypes/_Goobstation/Roles/Jobs/Command/blueshieldofficer.yml
+  - NanotrasenRepresentative # Goobstation - NanotrasenRep, see Resources/Prototypes/_Goobstation/Roles/Jobs/Command/nanotrasen_representative.yml
   primary: false
   weight: 100
 
