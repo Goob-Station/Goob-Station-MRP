@@ -1,11 +1,11 @@
-- type: roleLoadout
-  id: JobNanotrasenRepresentative
-  groups:
-  - NanotrasenRepresentativeHead
-  - NanotrasenRepresentativeJumpsuit
-  - NanotrasenRepresentativeBackpack
-  - NanotrasenRepresentativeShoes
-  - NanotrasenRepresentativeBelt
-  - Glasses
-  - Trinkets
-  
+# - type: roleLoadout
+#   id: JobNanotrasenRepresentative
+#   groups:
+#   - NanotrasenRepresentativeHead
+#   - NanotrasenRepresentativeJumpsuit
+#   - NanotrasenRepresentativeBackpack
+#   - NanotrasenRepresentativeShoes
+#   - NanotrasenRepresentativeBelt
+#   - Glasses
+#   - Trinkets
+

@@ -31,12 +31,6 @@
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering
     pocket2: BookEngineersHandbook
-<<<<<<< HEAD
   innerClothingSkirt: ClothingUniformJumpskirtColorYellow
   satchel: ClothingBackpackSatchelEngineeringFilled
   duffelbag: ClothingBackpackDuffelEngineeringFilled
-=======
-  storage:
-    back:
-    - BoxSurvivalEngineering
->>>>>>> 3989974647 (Update time requirements for roles, and fix blueshield + ntr not spawning with survival box)
