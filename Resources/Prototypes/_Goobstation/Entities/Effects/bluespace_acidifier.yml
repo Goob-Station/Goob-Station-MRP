@@ -7,7 +7,7 @@
   - type: Transform
     anchored: True
   - type: Sprite
-    sprite: /Textures/Goobstation/Effects/bluespace_lifeline.rsi
+    sprite: /Textures/_Goobstation/Effects/bluespace_lifeline.rsi
     noRot: true
     layers:
     - state: bluespace_lifeline
@@ -16,7 +16,7 @@
     prototype: AnomalyCoreBluespace
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/Goobstation/Weapons/ChronoLegionnaire/stasisgun_reload.ogg
+      path: /Audio/_Goobstation/Weapons/ChronoLegionnaire/stasisgun_reload.ogg
   - type: PointLight
     color: SkyBlue
     radius: 3

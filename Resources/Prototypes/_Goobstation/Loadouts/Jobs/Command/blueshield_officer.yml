@@ -1,61 +1,61 @@
-- type: loadoutEffectGroup
-  id: SeniorBlueshieldOfficer
-  effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:RoleTimeRequirement
-      role: JobBlueshieldOfficer
-      time: 187200
+# - type: loadoutEffectGroup
+#   id: SeniorBlueshieldOfficer
+#   effects:
+#   - !type:JobRequirementLoadoutEffect
+#     requirement:
+#       !type:RoleTimeRequirement
+#       role: JobBlueshieldOfficer
+#       time: 187200
 
-# Hats
-- type: loadout
-  id: BlueshieldOfficerHeadSwatHelmet
-  equipment:
-    head: ClothingHeadHelmetSwat
+# # Hats
+# - type: loadout
+#   id: BlueshieldOfficerHeadSwatHelmet
+#   equipment:
+#     head: ClothingHeadHelmetSwat
 
-- type: loadout
-  id: BlueshieldOfficerHeadBeretNavy
-  equipment:
-    head: ClothingHeadHatBeretNavy
+# - type: loadout
+#   id: BlueshieldOfficerHeadBeretNavy
+#   equipment:
+#     head: ClothingHeadHatBeretNavy
 
-- type: loadout
-  id: BlueshieldOfficerHeadBeretBlack
-  equipment:
-    head: ClothingHeadHatBeretOfficer
+# - type: loadout
+#   id: BlueshieldOfficerHeadBeretBlack
+#   equipment:
+#     head: ClothingHeadHatBeretOfficer
 
-# Jumpsuits
-- type: loadout
-  id: BlueshieldOfficerInnerBlueshieldSkirt
-  equipment:
-    jumpsuit: ClothingUniformJumpskirtBlueshieldOfficer
+# # Jumpsuits
+# - type: loadout
+#   id: BlueshieldOfficerInnerBlueshieldSkirt
+#   equipment:
+#     jumpsuit: ClothingUniformJumpskirtBlueshieldOfficer
 
-- type: loadout
-  id: BlueshieldOfficerInnerBlueshieldSuit
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
+# - type: loadout
+#   id: BlueshieldOfficerInnerBlueshieldSuit
+#   equipment:
+#     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
 
-- type: loadout
-  id: BlueshieldOfficerInnerBlueshieldShirt
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitBlueshieldShirt
+# - type: loadout
+#   id: BlueshieldOfficerInnerBlueshieldShirt
+#   equipment:
+#     jumpsuit: ClothingUniformJumpsuitBlueshieldShirt
 
 
-# Outer
-- type: loadout
-  id: BlueshieldOfficerOuterBlueshieldArmorVest
-  equipment:
-    outerClothing: ClothingBlueshieldArmourVest
+# # Outer
+# - type: loadout
+#   id: BlueshieldOfficerOuterBlueshieldArmorVest
+#   equipment:
+#     outerClothing: ClothingBlueshieldArmourVest
 
-- type: loadout
-  id: BlueshieldOfficerOuterBlueshieldArmoredJacket
-  equipment:
-    outerClothing: ClothingBlueshieldArmoredJacket
+# - type: loadout
+#   id: BlueshieldOfficerOuterBlueshieldArmoredJacket
+#   equipment:
+#     outerClothing: ClothingBlueshieldArmoredJacket
 
-# Neck
-- type: loadout
-  id: BlueshieldOfficerOuterBlueshieldMantle
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: SeniorBlueshieldOfficer
-  equipment:
-    neck: ClothingNeckMantleBlueshield
+# # Neck
+# - type: loadout
+#   id: BlueshieldOfficerOuterBlueshieldMantle
+#   effects:
+#   - !type:GroupLoadoutEffect
+#     proto: SeniorBlueshieldOfficer
+#   equipment:
+#     neck: ClothingNeckMantleBlueshield

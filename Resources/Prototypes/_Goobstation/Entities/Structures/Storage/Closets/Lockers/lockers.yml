@@ -5,7 +5,7 @@
   components:
   - type: Appearance
   - type: Sprite
-    sprite: Goobstation/Structures/Storage/closet.rsi
+    sprite: _Goobstation/Structures/Storage/closet.rsi
   - type: AccessReader
     access: [["CentralCommand"]]
   - type: EntityStorageVisuals
@@ -20,7 +20,7 @@
   components:
   - type: Appearance
   - type: Sprite
-    sprite: Goobstation/Structures/Storage/closet.rsi
+    sprite: _Goobstation/Structures/Storage/closet.rsi
   - type: AccessReader
     access: [["CentralCommand"]]
   - type: EntityStorageVisuals

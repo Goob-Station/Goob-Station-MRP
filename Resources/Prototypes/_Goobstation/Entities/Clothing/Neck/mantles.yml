@@ -5,6 +5,6 @@
   description: A comfortable and protective mantle for qualify bodyguards.
   components:
   - type: Sprite
-    sprite: Goobstation/Clothing/Neck/Mantle/bsomantle.rsi
+    sprite: _Goobstation/Clothing/Neck/Mantle/bsomantle.rsi
   - type: Clothing
-    sprite: Goobstation/Clothing/Neck/Mantle/bsomantle.rsi
+    sprite: _Goobstation/Clothing/Neck/Mantle/bsomantle.rsi
