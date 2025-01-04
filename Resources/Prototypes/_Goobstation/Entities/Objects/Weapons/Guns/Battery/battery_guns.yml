@@ -5,7 +5,7 @@
   description: A highly advanced energy revolver capable of firing both lethal and disabling bullets.
   components:
   - type: Sprite
-    sprite: Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
+    sprite: _Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -21,7 +21,7 @@
     - Belt
     - suitStorage
     - Back
-    sprite: Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
+    sprite: _Goobstation/Objects/Weapons/Guns/Battery/erevolver.rsi
   - type: Gun
     fireRate: 1.5
     soundGunshot:
