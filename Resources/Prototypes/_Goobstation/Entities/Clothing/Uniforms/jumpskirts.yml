@@ -18,7 +18,7 @@
   - type: Sprite
     sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/nanotrasen_representative.rsi
   - type: Clothing
-    sprite: Goobstation/Clothing/Uniforms/Jumpskirt/nanotrasen_representative.rsi
+    sprite: _Goobstation/Clothing/Uniforms/Jumpskirt/nanotrasen_representative.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
