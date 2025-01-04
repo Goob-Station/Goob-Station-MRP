@@ -3,20 +3,14 @@ using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Part;
-using Robust.Shared.Containers;
-
-// Shitmed Change
-
+using Content.Shared.BodyEffects;
 using Content.Shared.Damage;
-using Content.Shared._Shitmed.BodyEffects;
-using Content.Shared._Shitmed.Body.Organ;
+using Robust.Shared.Containers;
 
 namespace Content.Shared.Body.Systems;
 
 public partial class SharedBodySystem
 {
-    // Shitmed Change Start
-
     private void InitializeOrgans()
     {
         SubscribeLocalEvent<OrganComponent, MapInitEvent>(OnMapInit);
@@ -29,8 +23,6 @@ public partial class SharedBodySystem
             EnsureComp<OrganEffectComponent>(ent);
     }
 
-    // Shitmed Change End
-
     private void AddOrgan(
         Entity<OrganComponent> organEnt,
         EntityUid bodyUid,
@@ -42,13 +34,12 @@ public partial class SharedBodySystem
 
         if (organEnt.Comp.Body is not null)
         {
-        // Shitmed Change Start
+            organEnt.Comp.OriginalBody = organEnt.Comp.Body;
             var addedInBodyEv = new OrganAddedToBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref addedInBodyEv);
             var organEnabledEv = new OrganEnableChangedEvent(true);
             RaiseLocalEvent(organEnt, ref organEnabledEv);
         }
-        // Shitmed Change End
 
         Dirty(organEnt, organEnt.Comp);
     }
@@ -60,17 +51,14 @@ public partial class SharedBodySystem
 
         if (organEnt.Comp.Body is { Valid: true } bodyUid)
         {
-            // Shitmed Change Start
             organEnt.Comp.OriginalBody = organEnt.Comp.Body;
             var organDisabledEv = new OrganEnableChangedEvent(false);
             RaiseLocalEvent(organEnt, ref organDisabledEv);
-            // Shitmed Change End
             var removedInBodyEv = new OrganRemovedFromBodyEvent(bodyUid, parentPartUid);
             RaiseLocalEvent(organEnt, ref removedInBodyEv);
         }
 
-        if (parentPartUid is { Valid: true }
-            && TryComp(parentPartUid, out DamageableComponent? damageable)
+        if (TryComp(parentPartUid, out DamageableComponent? damageable)
             && damageable.TotalDamage > 200)
             TrySetOrganUsed(organEnt, true, organEnt.Comp);
 
@@ -110,14 +98,7 @@ public partial class SharedBodySystem
 
         Containers.EnsureContainer<ContainerSlot>(parent.Value, GetOrganContainerId(slotId));
         slot = new OrganSlot(slotId);
-
-        // Shitmed Change Start
-        if (!part.Organs.ContainsKey(slotId)
-            && !part.Organs.TryAdd(slotId, slot.Value))
-            return false;
-
-        return true;
-        // Shitmed Change End
+        return part.Organs.TryAdd(slotId, slot.Value);
     }
 
     /// <summary>
@@ -167,7 +148,7 @@ public partial class SharedBodySystem
     /// </summary>
     public bool RemoveOrgan(EntityUid organId, OrganComponent? organ = null)
     {
-        if (!Containers.TryGetContainingContainer((organId, null, null), out var container))
+        if (!Containers.TryGetContainingContainer(organId, out var container))
             return false;
 
         var parent = container.Owner;
@@ -256,8 +237,6 @@ public partial class SharedBodySystem
         return false;
     }
 
-    // Shitmed Change Start
-
     public bool TrySetOrganUsed(EntityUid organId, bool used, OrganComponent? organ = null)
     {
         if (!Resolve(organId, ref organ)
@@ -312,6 +291,4 @@ public partial class SharedBodySystem
             RaiseLocalEvent(organEnt, ref ev);
         }
     }
-
-    // Shitmed Change End
 }

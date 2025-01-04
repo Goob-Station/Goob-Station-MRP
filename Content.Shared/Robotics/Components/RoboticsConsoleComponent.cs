@@ -36,7 +36,7 @@ public sealed partial class RoboticsConsoleComponent : Component
     /// Radio message sent when destroying a borg.
     /// </summary>
     [DataField]
-    public LocId DestroyMessage = "robotics-console-cyborg-destroying";
+    public LocId DestroyMessage = "robotics-console-cyborg-destroyed";
 
     /// <summary>
     /// Cooldown on destroying borgs to prevent complete abuse.

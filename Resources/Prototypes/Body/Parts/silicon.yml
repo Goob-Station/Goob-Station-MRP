@@ -25,14 +25,12 @@
   - type: GuideHelp
     guides:
       - Cyborgs
-  # Shitmed Change Start
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/organ1.ogg
+      path: /Audio/Medical/Surgery/organ1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/organ2.ogg
+      path: /Audio/Medical/Surgery/organ2.ogg
   - type: Gibbable
-  # Shitmed Change End
 
 - type: entity
   id: BaseBorgArmLeft
@@ -41,10 +39,10 @@
   abstract: true
   components:
   - type: BodyPart
-    partType: Arm # Shitmed Change
+    partType: Arm
     symmetry: Left
-    toolName: "a left arm" # Shitmed Change
-    children: # Shitmed Change
+    toolName: "a left arm"
+    children:
       left hand:
         id: "left hand"
         type: Hand
@@ -60,10 +58,10 @@
   abstract: true
   components:
   - type: BodyPart
-    partType: Arm # Shitmed Change
+    partType: Arm
     symmetry: Right
-    toolName: "a right arm" # Shitmed Change
-    children: # Shitmed Change
+    toolName: "a right arm"
+    children:
       right hand:
         id: "right hand"
         type: Hand
@@ -81,8 +79,8 @@
   - type: BodyPart
     partType: Leg
     symmetry: Left
-    toolName: "a left leg" # Shitmed Change
-    children: # Shitmed Change
+    toolName: "a left leg"
+    children:
       left foot:
         id: "left foot"
         type: Foot
@@ -101,8 +99,8 @@
   - type: BodyPart
     partType: Leg
     symmetry: Right
-    toolName: "a right leg" # Shitmed Change
-    children: # Shitmed Change
+    toolName: "a right leg"
+    children:
       right foot:
         id: "right foot"
         type: Foot
@@ -120,7 +118,6 @@
   components:
   - type: BodyPart
     partType: Head
-    toolName: "a head" # Shitmed Change
   - type: Tag
     tags:
     - Trash
@@ -134,7 +131,6 @@
   components:
   - type: BodyPart
     partType: Torso
-    toolName: "a torso" # Shitmed Change
   - type: Tag
     tags:
     - Trash

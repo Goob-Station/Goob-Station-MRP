@@ -146,7 +146,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (!weapon.DisableClick &&
             (!weapon.SwapKeys ? useDown : altDown))
         {
-            var attackerPos = TransformSystem.GetMapCoordinates(entity);
+            var attackerPos = Transform(entity).MapPosition;
 
             if (mousePos.MapId != attackerPos.MapId ||
                 (attackerPos.Position - mousePos.Position).Length() > weapon.Range)

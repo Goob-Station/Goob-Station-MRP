@@ -31,8 +31,7 @@ public sealed partial class EntityWhitelistCondition : IConstructionCondition
 
     public bool Condition(EntityUid user, EntityCoordinates location, Direction direction)
     {
-        var whitelistSystem = IoCManager.Resolve<IEntityManager>().System<EntityWhitelistSystem>();
-        return whitelistSystem.IsWhitelistPass(Whitelist, user);
+        return Whitelist.IsValid(user);
     }
 
     public ConstructionGuideEntry GenerateGuideEntry()

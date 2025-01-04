@@ -271,10 +271,6 @@ public sealed class OracleSystem : EntitySystem
         }
 
         proto = _random.Pick(techs);
-
-        if (proto == null)
-            return false;
-
         return true;
     }
 
@@ -295,7 +291,7 @@ public sealed class OracleSystem : EntitySystem
         return true;
     }
 
-    private bool IsDemandValid(Entity<OracleComponent> oracle, EntProtoId? id)
+    private bool IsDemandValid(Entity<OracleComponent> oracle, ProtoId<EntityPrototype>? id)
     {
         if (id == null || oracle.Comp.BlacklistedDemands.Contains(id.Value))
             return false;

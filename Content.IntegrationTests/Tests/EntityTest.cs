@@ -268,11 +268,6 @@ namespace Content.IntegrationTests.Tests
                 if (protoId == "MobHumanSpaceNinja")
                     continue;
 
-                // TODO fix tests properly upstream
-                // Fails due to audio components made when making anouncements
-                if (protoId == "StandardNanotrasenStation")
-                    continue;
-
                 var count = server.EntMan.EntityCount;
                 var clientCount = client.EntMan.EntityCount;
                 EntityUid uid = default;

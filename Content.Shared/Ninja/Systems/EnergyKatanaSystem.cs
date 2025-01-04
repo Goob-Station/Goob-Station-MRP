@@ -15,20 +15,33 @@ public sealed class EnergyKatanaSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<EnergyKatanaComponent, GotEquippedEvent>(OnEquipped);
-        SubscribeLocalEvent<EnergyKatanaComponent, CheckDashEvent>(OnCheckDash);
+        SubscribeLocalEvent<EnergyKatanaComponent, AddDashActionEvent>(OnAddDashAction);
+        SubscribeLocalEvent<EnergyKatanaComponent, DashAttemptEvent>(OnDashAttempt);
     }
 
     /// <summary>
     /// When equipped by a ninja, try to bind it.
     /// </summary>
-    private void OnEquipped(Entity<EnergyKatanaComponent> ent, ref GotEquippedEvent args)
+    private void OnEquipped(EntityUid uid, EnergyKatanaComponent comp, GotEquippedEvent args)
     {
-        _ninja.BindKatana(args.Equipee, ent);
+        // check if user isnt a ninja or already has a katana bound
+        var user = args.Equipee;
+        if (!TryComp<SpaceNinjaComponent>(user, out var ninja) || ninja.Katana != null)
+            return;
+
+        // bind it since its unbound
+        _ninja.BindKatana(user, uid, ninja);
     }
 
-    private void OnCheckDash(Entity<EnergyKatanaComponent> ent, ref CheckDashEvent args)
+    private void OnAddDashAction(EntityUid uid, EnergyKatanaComponent comp, AddDashActionEvent args)
     {
-        if (!_ninja.IsNinja(args.User))
-            args.Cancelled = true;
+        if (!HasComp<SpaceNinjaComponent>(args.User))
+            args.Cancel();
+    }
+
+    private void OnDashAttempt(EntityUid uid, EnergyKatanaComponent comp, DashAttemptEvent args)
+    {
+        if (!TryComp<SpaceNinjaComponent>(args.User, out var ninja) || ninja.Katana != uid)
+            args.Cancel();
     }
 }

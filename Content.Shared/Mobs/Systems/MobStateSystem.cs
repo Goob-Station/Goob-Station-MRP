@@ -65,20 +65,11 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!Resolve(target, ref component, false))
             return false;
-
         return component.CurrentState == MobState.Dead;
     }
 
-    public bool IsSoftCritical(EntityUid target, MobStateComponent? component = null)
-    {
-        if (!Resolve(target, ref component, false))
-            return false;
-
-        return component.CurrentState == MobState.SoftCritical;
-    }
-
     /// <summary>
-    ///  Check if a Mob is Critical or Dead or SoftCrit
+    ///  Check if a Mob is Critical or Dead
     /// </summary>
     /// <param name="target">Target Entity</param>
     /// <param name="component">The MobState component owned by the target</param>
@@ -87,7 +78,7 @@ public partial class MobStateSystem : EntitySystem
     {
         if (!Resolve(target, ref component, false))
             return false;
-        return component.CurrentState is MobState.Critical or MobState.Dead or MobState.SoftCritical;
+        return component.CurrentState is MobState.Critical or MobState.Dead;
     }
 
     /// <summary>

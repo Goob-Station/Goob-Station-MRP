@@ -30,6 +30,7 @@ public sealed class ShadowkinSystem : EntitySystem
         SubscribeLocalEvent<ShadowkinComponent, ComponentStartup>(OnInit);
         SubscribeLocalEvent<ShadowkinComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ShadowkinComponent, OnMindbreakEvent>(OnMindbreak);
+        SubscribeLocalEvent<ShadowkinComponent, OnAttemptPowerUseEvent>(OnAttemptPowerUse);
         SubscribeLocalEvent<ShadowkinComponent, OnManaUpdateEvent>(OnManaUpdate);
         SubscribeLocalEvent<ShadowkinComponent, RejuvenateEvent>(OnRejuvenate);
         SubscribeLocalEvent<ShadowkinComponent, EyeColorInitEvent>(OnEyeColorChange);
@@ -37,12 +38,18 @@ public sealed class ShadowkinSystem : EntitySystem
 
     private void OnInit(EntityUid uid, ShadowkinComponent component, ComponentStartup args)
     {
+        if (component.BlackeyeSpawn)
+            ApplyBlackEye(uid);
+
         _actionsSystem.AddAction(uid, ref component.ShadowkinSleepAction, ShadowkinSleepActionId, uid);
+
+        UpdateShadowkinAlert(uid, component);
     }
 
     private void OnEyeColorChange(EntityUid uid, ShadowkinComponent component, EyeColorInitEvent args)
     {
         if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid)
+            || !component.BlackeyeSpawn
             || humanoid.EyeColor == component.OldEyeColor)
             return;
 
@@ -74,6 +81,26 @@ public sealed class ShadowkinSystem : EntitySystem
             ));
     }
 
+    /// <summary>
+    /// Update the Shadowkin Alert, if Blackeye will remove the Alert, if not will update to its current power status.
+    /// </summary>
+    public void UpdateShadowkinAlert(EntityUid uid, ShadowkinComponent component)
+    {
+        if (TryComp<PsionicComponent>(uid, out var magic))
+        {
+            var severity = (short) ContentHelpers.RoundToLevels(magic.Mana, magic.MaxMana, 8);
+            _alerts.ShowAlert(uid, component.ShadowkinPowerAlert, severity);
+        }
+        else
+            _alerts.ClearAlert(uid, component.ShadowkinPowerAlert);
+    }
+
+    private void OnAttemptPowerUse(EntityUid uid, ShadowkinComponent component, OnAttemptPowerUseEvent args)
+    {
+        if (HasComp<ShadowkinCuffComponent>(uid))
+            args.Cancel();
+    }
+
     private void OnManaUpdate(EntityUid uid, ShadowkinComponent component, ref OnManaUpdateEvent args)
     {
         if (!TryComp<PsionicComponent>(uid, out var magic))
@@ -85,7 +112,24 @@ public sealed class ShadowkinSystem : EntitySystem
         else
             magic.ManaGainMultiplier = 1;
 
+        if (magic.Mana <= component.BlackEyeMana)
+            ApplyBlackEye(uid);
+
         Dirty(uid, magic); // Update Shadowkin Overlay.
+        UpdateShadowkinAlert(uid, component);
+    }
+
+    /// <summary>
+    /// Blackeye the Shadowkin, its just a function to mindbreak the shadowkin but making sure "Removable" is checked true during it.
+    /// </summary>
+    /// <param name="uid"></param>
+    public void ApplyBlackEye(EntityUid uid)
+    {
+        if (!TryComp<PsionicComponent>(uid, out var magic))
+            return;
+
+        magic.Removable = true;
+        _psionicAbilitiesSystem.MindBreak(uid);
     }
 
     private void OnMindbreak(EntityUid uid, ShadowkinComponent component, ref OnMindbreakEvent args)
@@ -100,13 +144,17 @@ public sealed class ShadowkinSystem : EntitySystem
             Dirty(uid, humanoid);
         }
 
+        if (component.BlackeyeSpawn)
+            return;
+
         if (TryComp<StaminaComponent>(uid, out var stamina))
             _stamina.TakeStaminaDamage(uid, stamina.CritThreshold, stamina, uid);
     }
 
     private void OnRejuvenate(EntityUid uid, ShadowkinComponent component, RejuvenateEvent args)
     {
-        if (!HasComp<MindbrokenComponent>(uid))
+        if (component.BlackeyeSpawn
+            || !HasComp<MindbrokenComponent>(uid))
             return;
 
         RemComp<MindbrokenComponent>(uid);
@@ -118,13 +166,16 @@ public sealed class ShadowkinSystem : EntitySystem
         }
 
         EnsureComp<PsionicComponent>(uid, out var magic);
-        magic.Mana = 200;
-        magic.MaxMana = 200;
+        magic.Mana = 250;
+        magic.MaxMana = 250;
         magic.ManaGain = 0.25f;
+        magic.BypassManaCheck = true;
+        magic.Removable = false;
         magic.MindbreakingFeedback = "shadowkin-blackeye";
-        magic.NoMana = "shadowkin-tired";
 
         if (_prototypeManager.TryIndex<PsionicPowerPrototype>("ShadowkinPowers", out var shadowkinPowers))
             _psionicAbilitiesSystem.InitializePsionicPower(uid, shadowkinPowers);
+
+        UpdateShadowkinAlert(uid, component);
     }
 }

@@ -35,7 +35,6 @@ public sealed class ShowHealthBarsCommand : LocalizedCommands
             var showHealthBarsComponent = new ShowHealthBarsComponent
             {
                 DamageContainers = args.ToList(),
-                HealthStatusIcon = "",
                 NetSyncEnabled = false
             };
 

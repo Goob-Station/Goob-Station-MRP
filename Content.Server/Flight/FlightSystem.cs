@@ -67,7 +67,8 @@ public sealed class FlightSystem : SharedFlightSystem
             new FlightDoAfterEvent(), uid, target: uid)
             {
                 BlockDuplicate = true,
-                BreakOnMove = true,
+                BreakOnTargetMove = true,
+                BreakOnUserMove = true,
                 BreakOnDamage = true,
                 NeedHand = true
             };

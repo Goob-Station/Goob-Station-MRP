@@ -1,7 +1,7 @@
 - type: marking
   id: MakeupLips
-  bodyPart: Face
-  markingCategory: Face
+  bodyPart: Head
+  markingCategory: Head
   speciesRestriction: [Dwarf, Human, SlimePerson, Felinid, Oni, Harpy, Arachne] # Delta V - Felinid, Oni, Harpy
   coloring:
     default:
@@ -14,8 +14,8 @@
 
 - type: marking
   id: MakeupBlush
-  bodyPart: Face
-  markingCategory: Face
+  bodyPart: Head
+  markingCategory: Head
   speciesRestriction: [Dwarf, Human, Reptilian, SlimePerson, Felinid, Oni, Vulpkanin, Harpy, Arachne] # Delta V - Felinid, Oni, Vulpkanin, Harpy
   coloring:
     default:
@@ -58,8 +58,10 @@
 
 - type: marking
   id: MakeupMothLips
-  bodyPart: Face
-  markingCategory: Face
+  bodyPart: Head
+  markingCategory: Overlay   # The marking category is in Overlay instead of Head
+                             # because the Head category for moths only allows 1
+                             # marking and lips should be usable alongside blush
   speciesRestriction: [Moth]
   coloring:
     default:
@@ -72,7 +74,7 @@
 
 - type: marking
   id: MakeupMothBlush
-  bodyPart: Face
+  bodyPart: Head
   markingCategory: Overlay
   speciesRestriction: [Moth]
   coloring:

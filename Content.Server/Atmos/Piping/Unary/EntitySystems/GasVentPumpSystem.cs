@@ -18,7 +18,6 @@ using Content.Shared.Atmos.Visuals;
 using Content.Shared.Audio;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.Examine;
-using Content.Shared.Power;
 using Content.Shared.Tools.Systems;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;

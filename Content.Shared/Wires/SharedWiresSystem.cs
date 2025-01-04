@@ -18,15 +18,9 @@ public abstract class SharedWiresSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<WiresPanelComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<WiresPanelComponent, WirePanelDoAfterEvent>(OnPanelDoAfter);
         SubscribeLocalEvent<WiresPanelComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<WiresPanelComponent, ExaminedEvent>(OnExamine);
-    }
-
-    private void OnStartup(Entity<WiresPanelComponent> ent, ref ComponentStartup args)
-    {
-        UpdateAppearance(ent, ent);
     }
 
     private void OnPanelDoAfter(EntityUid uid, WiresPanelComponent panel, WirePanelDoAfterEvent args)

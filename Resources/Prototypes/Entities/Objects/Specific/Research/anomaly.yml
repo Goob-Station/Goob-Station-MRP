@@ -40,22 +40,23 @@
       - state: screen
         shader: unshaded
         visible: false
-        map: ["enum.ToggleVisuals.Layer"]
+        map: ["enum.PowerDeviceVisualLayers.Powered"]
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ProximityBeeperVisuals.Enabled:
+        enum.PowerDeviceVisualLayers.Powered:
           True: { visible: true }
           False: { visible: false }
-  - type: ItemToggle
   - type: ProximityBeeper
   - type: ProximityDetector
+    enabled: false
     range: 20
     criteria:
       components:
       - Anomaly
   - type: Beeper
+    enabled: false
     minBeepInterval: 0.15
     maxBeepInterval: 1.00
     beepSound:

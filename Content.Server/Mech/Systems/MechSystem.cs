@@ -17,12 +17,10 @@ using Content.Shared.Tools.Components;
 using Content.Shared.Verbs;
 using Content.Shared.Wires;
 using Content.Server.Body.Systems;
-using Content.Shared.Tools.Systems;
 using Robust.Server.Containers;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Player;
-using Content.Shared.Whitelist;
 
 namespace Content.Server.Mech.Systems;
 
@@ -37,8 +35,6 @@ public sealed partial class MechSystem : SharedMechSystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly SharedToolSystem _toolSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -91,12 +87,12 @@ public sealed partial class MechSystem : SharedMechSystem
             return;
         }
 
-        if (_toolSystem.HasQuality(args.Used, "Prying") && component.BatterySlot.ContainedEntity != null)
+        if (TryComp<ToolComponent>(args.Used, out var tool) && tool.Qualities.Contains("Prying") && component.BatterySlot.ContainedEntity != null)
         {
-            var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.BatteryRemovalDelay,
-                new RemoveBatteryEvent(), uid, target: uid, used: args.Target)
+            var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.BatteryRemovalDelay, new RemoveBatteryEvent(), uid, target: uid, used: args.Target)
             {
-                BreakOnMove = true
+                BreakOnTargetMove = true,
+                BreakOnUserMove = true,
             };
 
             _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -183,7 +179,7 @@ public sealed partial class MechSystem : SharedMechSystem
                 {
                     var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.EntryDelay, new MechEntryEvent(), uid, target: uid)
                     {
-                        BreakOnMove = true,
+                        BreakOnUserMove = true,
                     };
 
                     _doAfter.TryStartDoAfter(doAfterEventArgs);
@@ -211,8 +207,11 @@ public sealed partial class MechSystem : SharedMechSystem
                         return;
                     }
 
-                    var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.ExitDelay,
-                        new MechExitEvent(), uid, target: uid);
+                    var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.ExitDelay, new MechExitEvent(), uid, target: uid)
+                    {
+                        BreakOnUserMove = true,
+                        BreakOnTargetMove = true,
+                    };
 
                     _doAfter.TryStartDoAfter(doAfterEventArgs);
                 }
@@ -226,7 +225,7 @@ public sealed partial class MechSystem : SharedMechSystem
         if (args.Cancelled || args.Handled)
             return;
 
-        if (_whitelistSystem.IsWhitelistFail(component.PilotWhitelist, args.User))
+        if (component.PilotWhitelist != null && !component.PilotWhitelist.IsValid(args.User))
         {
             _popup.PopupEntity(Loc.GetString("mech-no-enter", ("item", uid)), args.User);
             return;

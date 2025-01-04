@@ -12,8 +12,7 @@
       - tofu
       - leafy
   - type: Food
-    trash:
-    - FoodPlateSmall
+    trash: FoodPlateSmall
   - type: Sprite
     sprite: Nyanotrasen/Objects/Consumable/Food/Snacks/moth.rsi
     state: squeakingstirfry
@@ -215,8 +214,7 @@
     sprite: Nyanotrasen/Objects/Consumable/Food/Snacks/boritopie.rsi
     state: borito-pie
   - type: Food
-    trash:
-    - FoodPacketBoritosTrash
+    trash: FoodPacketBoritosTrash
   - type: SolutionContainerManager
     solutions:
       food:

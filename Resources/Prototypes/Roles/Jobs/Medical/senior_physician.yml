@@ -25,7 +25,7 @@
     components:
     - type: CPRTraining
     - type: SurgerySpeedModifier
-      speedModifier: 2.0
+      SpeedModifier: 2.0
 
 - type: startingGear
   id: SeniorPhysicianGear

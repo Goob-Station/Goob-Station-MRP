@@ -14,7 +14,7 @@
       - left arm
       - right leg
       - left leg
-      - head # Shitmed
+      - head
       organs:
         core: SentientSlimeCore
         lungs: OrganSlimeLungs

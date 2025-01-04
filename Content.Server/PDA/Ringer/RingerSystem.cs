@@ -6,7 +6,6 @@ using Content.Shared.PDA;
 using Content.Shared.PDA.Ringer;
 using Content.Shared.Popups;
 using Content.Shared.Store;
-using Content.Shared.Store.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Network;
@@ -26,7 +25,6 @@ namespace Content.Server.PDA.Ringer
         [Dependency] private readonly UserInterfaceSystem _ui = default!;
         [Dependency] private readonly AudioSystem _audio = default!;
         [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-        [Dependency] private readonly TransformSystem _transform = default!;
 
         private readonly Dictionary<NetUserId, TimeSpan> _lastSetRingtoneAt = new();
 
@@ -212,7 +210,7 @@ namespace Content.Server.PDA.Ringer
 
                 _audio.PlayEntity(
                     GetSound(ringer.Ringtone[ringer.NoteCount]),
-                    Filter.Empty().AddInRange(_transform.GetMapCoordinates(uid, ringerXform), ringer.Range),
+                    Filter.Empty().AddInRange(ringerXform.MapPosition, ringer.Range),
                     uid,
                     true,
                     AudioParams.Default.WithMaxDistance(ringer.Range).WithVolume(ringer.Volume)

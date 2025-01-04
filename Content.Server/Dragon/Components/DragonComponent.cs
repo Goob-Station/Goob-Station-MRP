@@ -1,4 +1,3 @@
-using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
@@ -58,12 +57,5 @@ namespace Content.Server.Dragon
             {
                 Params = AudioParams.Default.WithVolume(3f),
             };
-
-        /// <summary>
-        /// NPC faction to re-add after being zombified.
-        /// Prevents zombie dragon from being attacked by its own carp.
-        /// </summary>
-        [DataField]
-        public ProtoId<NpcFactionPrototype> Faction = "Dragon";
     }
 }

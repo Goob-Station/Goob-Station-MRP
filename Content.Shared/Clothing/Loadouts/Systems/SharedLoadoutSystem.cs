@@ -2,15 +2,19 @@ using System.Linq;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
+using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.Paint;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Station;
+using Content.Shared.Traits.Assorted.Components;
 using Robust.Shared.Configuration;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
+
 
 namespace Content.Shared.Clothing.Loadouts.Systems;
 
@@ -23,6 +27,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly INetManager _net = default!;
+
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
 
     public override void Initialize()
@@ -41,6 +47,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
         var proto = _prototype.Index(_random.Pick(component.StartingGear));
         _station.EquipStartingGear(uid, proto);
     }
+
 
     public (List<EntityUid>, List<(EntityUid, LoadoutPreference, int)>) ApplyCharacterLoadout(
         EntityUid uid,
@@ -84,11 +91,13 @@ public sealed class SharedLoadoutSystem : EntitySystem
             if (!_prototype.TryIndex<LoadoutPrototype>(loadout.LoadoutName, out var loadoutProto))
                 continue;
 
+
             if (!_characterRequirements.CheckRequirementsValid(
                 loadoutProto.Requirements, job, profile, playTimes, whitelisted, loadoutProto,
                 EntityManager, _prototype, _configuration,
                 out _))
                 continue;
+
 
             // Spawn the loadout items
             var spawned = EntityManager.SpawnEntities(
@@ -104,7 +113,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
 
                 // Equip it
                 if (EntityManager.TryGetComponent<ClothingComponent>(item, out var clothingComp)
-                    && _characterRequirements.CanEntityWearItem(uid, item, true)
+                    && _characterRequirements.CanEntityWearItem(uid, item)
                     && _inventory.TryGetSlots(uid, out var slotDefinitions))
                 {
                     var deleted = false;
@@ -140,6 +149,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
                     _appearance.SetData(item, PaintVisuals.Painted, !data);
                 }
 
+
                 // Equip the loadout
                 if (!_inventory.TryEquip(uid, item, slot, true, !string.IsNullOrEmpty(slot), true))
                     failedLoadouts.Add(item);
@@ -153,6 +163,7 @@ public sealed class SharedLoadoutSystem : EntitySystem
         return (failedLoadouts, allLoadouts);
     }
 }
+
 
 [Serializable, NetSerializable, ImplicitDataDefinitionForInheritors]
 public abstract partial class Loadout
@@ -190,5 +201,5 @@ public sealed partial class LoadoutPreference : Loadout
         string? customDescription = null,
         string? customColorTint = null,
         bool? customHeirloom = null
-    ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
+        ) : base(loadoutName, customName, customDescription, customColorTint, customHeirloom) { }
 }

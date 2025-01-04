@@ -77,7 +77,8 @@ public sealed class BloodRitesSystem : EntitySystem
             var time = rites.Comp.BloodExtractionTime;
             var doAfterArgs = new DoAfterArgs(EntityManager, args.User, time, ev, rites, args.Target)
             {
-                BreakOnMove = true,
+                BreakOnUserMove = true,
+                BreakOnTargetMove = true,
                 BreakOnDamage = true
             };
             if (_doAfter.TryStartDoAfter(doAfterArgs, out var doAfterId))

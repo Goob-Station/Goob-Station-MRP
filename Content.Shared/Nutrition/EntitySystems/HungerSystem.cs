@@ -30,18 +30,18 @@ public sealed class HungerSystem : EntitySystem
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string HungerIconOverfedId = "HungerIconOverfed";
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string HungerIconPeckishId = "HungerIconPeckish";
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string HungerIconStarvingId = "HungerIconStarving";
 
-    private SatiationIconPrototype? _hungerIconOverfed;
-    private SatiationIconPrototype? _hungerIconPeckish;
-    private SatiationIconPrototype? _hungerIconStarving;
+    private StatusIconPrototype? _hungerIconOverfed;
+    private StatusIconPrototype? _hungerIconPeckish;
+    private StatusIconPrototype? _hungerIconStarving;
 
     public override void Initialize()
     {
@@ -227,7 +227,7 @@ public sealed class HungerSystem : EntitySystem
         }
     }
 
-    public bool TryGetStatusIconPrototype(HungerComponent component, [NotNullWhen(true)] out SatiationIconPrototype? prototype)
+    public bool TryGetStatusIconPrototype(HungerComponent component, [NotNullWhen(true)] out StatusIconPrototype? prototype)
     {
         switch (component.CurrentThreshold)
         {

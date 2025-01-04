@@ -95,7 +95,7 @@ public sealed class SpecialRespawnSystem : SharedSpecialRespawnSystem
         {
             var xform = Transform(entityGridUid.Value);
             var pos = xform.Coordinates;
-            var mapPos = _transform.GetMapCoordinates(entityGridUid.Value, xform: xform);
+            var mapPos = xform.MapPosition;
             var circle = new Circle(mapPos.Position, 2);
 
             var found = false;

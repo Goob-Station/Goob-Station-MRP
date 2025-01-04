@@ -73,9 +73,7 @@ public sealed class PortableGeneratorSystem : SharedPortableGeneratorSystem
 
         _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, component.StartTime, new GeneratorStartedEvent(), uid, uid)
         {
-            BreakOnDamage = true,
-            BreakOnMove = true,
-            RequireCanInteract = true,
+            BreakOnDamage = true, BreakOnTargetMove = true, BreakOnUserMove = true, RequireCanInteract = true,
             NeedHand = true
         });
     }

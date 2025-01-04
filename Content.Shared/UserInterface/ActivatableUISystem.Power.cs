@@ -1,5 +1,3 @@
-using Content.Shared.Item.ItemToggle;
-using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.PowerCell;
 using Robust.Shared.Containers;
 
@@ -7,7 +5,6 @@ namespace Content.Shared.UserInterface;
 
 public sealed partial class ActivatableUISystem
 {
-    [Dependency] private readonly ItemToggleSystem _toggle = default!;
     [Dependency] private readonly SharedPowerCellSystem _cell = default!;
 
     private void InitializePower()
@@ -15,22 +12,27 @@ public sealed partial class ActivatableUISystem
         SubscribeLocalEvent<ActivatableUIRequiresPowerCellComponent, ActivatableUIOpenAttemptEvent>(OnBatteryOpenAttempt);
         SubscribeLocalEvent<ActivatableUIRequiresPowerCellComponent, BoundUIOpenedEvent>(OnBatteryOpened);
         SubscribeLocalEvent<ActivatableUIRequiresPowerCellComponent, BoundUIClosedEvent>(OnBatteryClosed);
-        SubscribeLocalEvent<ActivatableUIRequiresPowerCellComponent, ItemToggledEvent>(OnToggled);
+
+        SubscribeLocalEvent<PowerCellDrawComponent, EntRemovedFromContainerMessage>(OnPowerCellRemoved);
     }
 
-    private void OnToggled(Entity<ActivatableUIRequiresPowerCellComponent> ent, ref ItemToggledEvent args)
+    private void OnPowerCellRemoved(EntityUid uid, PowerCellDrawComponent component, EntRemovedFromContainerMessage args)
     {
-        // only close ui when losing power
-        if (!TryComp<ActivatableUIComponent>(ent, out var activatable) || args.Activated)
-            return;
+        _cell.SetPowerCellDrawEnabled(uid, false);
 
-        if (activatable.Key == null)
+        if (!HasComp<ActivatableUIRequiresPowerCellComponent>(uid) ||
+            !TryComp(uid, out ActivatableUIComponent? activatable))
         {
-            Log.Error($"Encountered null key in activatable ui on entity {ToPrettyString(ent)}");
             return;
         }
 
-        _uiSystem.CloseUi(ent.Owner, activatable.Key);
+        if (activatable.Key == null)
+        {
+            Log.Error($"Encountered null key in activatable ui on entity {ToPrettyString(uid)}");
+            return;
+        }
+
+        _uiSystem.CloseUi(uid, activatable.Key);
     }
 
     private void OnBatteryOpened(EntityUid uid, ActivatableUIRequiresPowerCellComponent component, BoundUIOpenedEvent args)
@@ -40,7 +42,7 @@ public sealed partial class ActivatableUISystem
         if (!args.UiKey.Equals(activatable.Key))
             return;
 
-        _toggle.TryActivate(uid);
+        _cell.SetPowerCellDrawEnabled(uid, true);
     }
 
     private void OnBatteryClosed(EntityUid uid, ActivatableUIRequiresPowerCellComponent component, BoundUIClosedEvent args)
@@ -52,7 +54,7 @@ public sealed partial class ActivatableUISystem
 
         // Stop drawing power if this was the last person with the UI open.
         if (!_uiSystem.IsUiOpen(uid, activatable.Key))
-            _toggle.TryDeactivate(uid);
+            _cell.SetPowerCellDrawEnabled(uid, false);
     }
 
     /// <summary>

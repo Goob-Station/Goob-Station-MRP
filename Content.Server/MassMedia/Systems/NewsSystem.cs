@@ -1,13 +1,10 @@
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using Content.Server.Access.Systems;
 using Content.Server.Administration.Logs;
 using Content.Server.CartridgeLoader;
 using Content.Server.CartridgeLoader.Cartridges;
 using Content.Server.GameTicking;
 using System.Diagnostics.CodeAnalysis;
 using Content.Server.Access.Systems;
-using Content.Server.Chat.Managers;
 using Content.Server.Popups;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
@@ -23,8 +20,6 @@ using Content.Server.Station.Systems;
 using Content.Shared.Popups;
 using Content.Shared.StationRecords;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.IdentityManagement;
-using Robust.Shared.Timing;
 
 namespace Content.Server.MassMedia.Systems;
 
@@ -40,7 +35,6 @@ public sealed class NewsSystem : SharedNewsSystem
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly AccessReaderSystem _accessReader = default!;
     [Dependency] private readonly IdCardSystem _idCardSystem = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
 
     public override void Initialize()
     {
@@ -141,9 +135,9 @@ public sealed class NewsSystem : SharedNewsSystem
         if (!TryGetArticles(ent, out var articles))
             return;
 
-        var tryGetIdentityShortInfoEvent = new TryGetIdentityShortInfoEvent(ent, msg.Actor);
-        RaiseLocalEvent(tryGetIdentityShortInfoEvent);
-        string? authorName = tryGetIdentityShortInfoEvent.Title;
+        string? authorName = null;
+        if (_idCardSystem.TryFindIdCard(msg.Actor, out var idCard))
+            authorName = idCard.Comp.FullName;
 
         var title = msg.Title.Trim();
         var content = msg.Content.Trim();

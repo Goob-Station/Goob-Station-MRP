@@ -6,10 +6,10 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared.WhiteDream.BloodCult.BloodCultist;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class BloodCultLeaderComponent : Component
+public sealed partial class BloodCultLeaderComponent : Component, IAntagStatusIconComponent
 {
     [DataField]
-    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "BloodCultLeader";
+    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "BloodCultLeader";
 
     [DataField]
     public bool IconVisibleToGhost { get; set; } = true;

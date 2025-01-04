@@ -192,7 +192,8 @@
         - ReagentId: WeldingFuel
           Quantity: 500
   - type: DamageOnToolInteract
-    tools: Welding
+    tools:
+    - Welding
     weldingDamage:
       types:
         Heat: 10

@@ -59,9 +59,11 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
         _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, component.SelectSlotTime, doAfter, uid, target: target, used: uid)
         {
             DistanceThreshold = SharedInteractionSystem.InteractionRange,
+            BreakOnTargetMove = true,
             BreakOnDamage = true,
-            BreakOnMove = true,
             BreakOnHandChange = false,
+            BreakOnUserMove = true,
+            BreakOnWeightlessMove = false,
             NeedHand = true
         },
             out var doAfterId);
@@ -114,9 +116,11 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
 
         _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, component.ChangeSlotTime, doAfter, uid, target: target, used: uid)
         {
+            BreakOnTargetMove = true,
             BreakOnDamage = true,
-            BreakOnMove = true,
             BreakOnHandChange = false,
+            BreakOnUserMove = true,
+            BreakOnWeightlessMove = false,
             NeedHand = true
         },
             out var doAfterId);
@@ -168,8 +172,11 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
         _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, component.RemoveSlotTime, doAfter, uid, target: target, used: uid)
         {
             DistanceThreshold = SharedInteractionSystem.InteractionRange,
+            BreakOnTargetMove = true,
             BreakOnDamage = true,
             BreakOnHandChange = false,
+            BreakOnUserMove = true,
+            BreakOnWeightlessMove = false,
             NeedHand = true
         },
             out var doAfterId);
@@ -220,9 +227,11 @@ public sealed class MagicMirrorSystem : SharedMagicMirrorSystem
 
         _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, message.Actor, component.AddSlotTime, doAfter, uid, target: component.Target.Value, used: uid)
         {
+            BreakOnTargetMove = true,
             BreakOnDamage = true,
-            BreakOnMove = true,
             BreakOnHandChange = false,
+            BreakOnUserMove = true,
+            BreakOnWeightlessMove = false,
             NeedHand = true
         },
             out var doAfterId);

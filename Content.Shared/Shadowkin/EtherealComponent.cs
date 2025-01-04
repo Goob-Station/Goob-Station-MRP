@@ -1,7 +1,4 @@
-using Content.Shared.NPC.Prototypes;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
-
 
 namespace Content.Shared.Shadowkin;
 
@@ -26,17 +23,7 @@ public sealed partial class EtherealComponent : Component
     [DataField]
     public float DarkenRate = 0.084f;
 
-    /// Can this be stunned by ethereal stun objects?
-    [DataField]
-    public bool CanBeStunned = true;
-
-    /// Drain Mana if this entity is psionic?
-    [DataField]
-    public bool DrainMana = true;
-
     public List<EntityUid> DarkenedLights = new();
-
-    public float OldManaGain;
 
     public float DarkenAccumulator;
 
@@ -44,6 +31,6 @@ public sealed partial class EtherealComponent : Component
 
     public int OldMobLayer;
 
-    public List<ProtoId<NpcFactionPrototype>> SuppressedFactions = new();
+    public List<string> SuppressedFactions = new();
     public bool HasDoorBumpTag;
 }

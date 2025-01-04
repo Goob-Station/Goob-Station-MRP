@@ -24,7 +24,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
-using Content.Shared.Power;
 using Content.Shared.Throwing;
 using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
@@ -104,11 +103,11 @@ namespace Content.Server.Medical.BiomassReclaimer
             SubscribeLocalEvent<BiomassReclaimerComponent, RefreshPartsEvent>(OnRefreshParts);
             SubscribeLocalEvent<BiomassReclaimerComponent, UpgradeExamineEvent>(OnUpgradeExamine);
             SubscribeLocalEvent<BiomassReclaimerComponent, PowerChangedEvent>(OnPowerChanged);
-            SubscribeLocalEvent<BiomassReclaimerComponent, SuicideByEnvironmentEvent>(OnSuicideByEnvironment);
+            SubscribeLocalEvent<BiomassReclaimerComponent, SuicideEvent>(OnSuicide);
             SubscribeLocalEvent<BiomassReclaimerComponent, ReclaimerDoAfterEvent>(OnDoAfter);
         }
 
-        private void OnSuicideByEnvironment(Entity<BiomassReclaimerComponent> ent, ref SuicideByEnvironmentEvent args)
+        private void OnSuicide(Entity<BiomassReclaimerComponent> ent, ref SuicideEvent args)
         {
             if (args.Handled
                 || HasComp<ActiveBiomassReclaimerComponent>(ent)
@@ -117,7 +116,7 @@ namespace Content.Server.Medical.BiomassReclaimer
 
             _popup.PopupEntity(Loc.GetString("biomass-reclaimer-suicide-others", ("victim", args.Victim)), ent, PopupType.LargeCaution);
             StartProcessing(args.Victim, ent);
-            args.Handled = true;
+            args.SetHandled(SuicideKind.Blunt);
         }
 
         private void OnInit(EntityUid uid, ActiveBiomassReclaimerComponent component, ComponentInit args)
@@ -158,8 +157,9 @@ namespace Content.Server.Medical.BiomassReclaimer
                 : 1);
             _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, args.User, delay, new ReclaimerDoAfterEvent(), reclaimer, target: args.Target, used: args.Used)
             {
-                NeedHand = true,
-                BreakOnMove = true
+                BreakOnTargetMove = true,
+                BreakOnUserMove = true,
+                NeedHand = true
             });
         }
 

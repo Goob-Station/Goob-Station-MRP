@@ -24,10 +24,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Audio.Systems;
-using Content.Shared.Damage.Systems;
-using Content.Shared.Damage.Components;
-using Content.Shared.Power;
-using Content.Shared.Power.Components;
 
 namespace Content.Server.Light.EntitySystems
 {
@@ -154,7 +150,7 @@ namespace Content.Server.Light.EntitySystems
             // removing a working bulb, so require a delay
             _doAfterSystem.TryStartDoAfter(new DoAfterArgs(EntityManager, userUid, light.EjectBulbDelay, new PoweredLightDoAfterEvent(), uid, target: uid)
             {
-                BreakOnMove = true,
+                BreakOnUserMove = true,
                 BreakOnDamage = true,
             });
 

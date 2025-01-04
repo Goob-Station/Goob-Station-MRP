@@ -223,7 +223,6 @@
     tags:
     - Pizza
     - Fruit
-    - Slice
 # Tastes like crust, pesto, cheese
 
 - type: entity
@@ -287,5 +286,4 @@
     tags:
     - Pizza
     - ClothMade
-    - Slice
 # Tastes like crust, cotton, cheese

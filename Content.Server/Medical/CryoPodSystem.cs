@@ -29,7 +29,6 @@ using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Medical.Cryogenics;
 using Content.Shared.MedicalScanner;
-using Content.Shared.Power;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
@@ -144,7 +143,8 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, entity.Comp.EntryDelay, new CryoPodDragFinished(), entity, target: args.Dragged, used: entity)
         {
             BreakOnDamage = true,
-            BreakOnMove = true,
+            BreakOnTargetMove = true,
+            BreakOnUserMove = true,
             NeedHand = false,
         };
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -208,7 +208,7 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
             null,
             null,
             null,
-            null // Shitmed Change
+            null
         ));
     }
 

@@ -9,6 +9,7 @@
         map: [ "enum.AmmoVisualLayers.Base" ]
   - type: CartridgeAmmo
     proto: PelletShotgunSoulbreaker
+    count: 1
   - type: ChemicalAmmo
   - type: SolutionContainerManager
     solutions:

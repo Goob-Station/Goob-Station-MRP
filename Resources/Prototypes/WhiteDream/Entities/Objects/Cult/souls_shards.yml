@@ -42,7 +42,6 @@
     understands:
     - TauCetiBasic
     - Eldritch
-  - type: LanguageSpeaker
 
 - type: entity
   parent: SoulShard

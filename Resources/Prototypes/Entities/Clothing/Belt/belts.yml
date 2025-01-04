@@ -269,7 +269,7 @@
         - Radio
         - DiscreteHealthAnalyzer
       components:
-        - SurgeryTool # Shitmed Change
+        - SurgeryTool
         - Hypospray
         - Injector
         - Pill

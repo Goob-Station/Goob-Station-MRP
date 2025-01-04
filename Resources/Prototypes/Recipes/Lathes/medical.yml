@@ -71,6 +71,14 @@
     Plastic: 25
 
 - type: latheRecipe
+  id: BoneGel
+  result: BoneGel
+  completetime: 2
+  materials:
+    Plastic: 200
+    Plasma: 200
+
+- type: latheRecipe
   id: Gauze
   result: Gauze1
   completetime: 1
@@ -144,7 +152,7 @@
 - type: latheRecipe
   id: Medkit
   result: Medkit
-  name: lathe-recipe-Medkit-name
+  name: first aid kit (empty)
   completetime: 2
   materials:
     Plastic: 300
@@ -152,7 +160,7 @@
 - type: latheRecipe
   id: MedkitBurn
   result: MedkitBurn
-  name: lathe-recipe-MedkitBurn-name
+  name: burn treatment kit (empty)
   completetime: 2
   materials:
     Plastic: 300
@@ -160,7 +168,7 @@
 - type: latheRecipe
   id: MedkitToxin
   result: MedkitToxin
-  name: lathe-recipe-MedkitToxin-name
+  name: toxin treatment kit (empty)
   completetime: 2
   materials:
     Plastic: 300
@@ -168,7 +176,7 @@
 - type: latheRecipe
   id: MedkitO2
   result: MedkitO2
-  name: lathe-recipe-MedkitO2-name
+  name: oxygen deprivation treatment kit (empty)
   completetime: 2
   materials:
     Plastic: 300
@@ -176,7 +184,7 @@
 - type: latheRecipe
   id: MedkitBrute
   result: MedkitBrute
-  name: lathe-recipe-MedkitBrute-name
+  name: brute trauma treatment kit (empty)
   completetime: 2
   materials:
     Plastic: 300
@@ -184,7 +192,7 @@
 - type: latheRecipe
   id: MedkitAdvanced
   result: MedkitAdvanced
-  name: lathe-recipe-MedkitAdvanced-name
+  name: advanced first aid kit (empty)
   completetime: 2
   materials:
     Plastic: 300
@@ -192,7 +200,7 @@
 - type: latheRecipe
   id: MedkitRadiation
   result: MedkitRadiation
-  name: lathe-recipe-MedkitRadiation-name
+  name: radiation treatment kit (empty)
   completetime: 2
   materials:
     Plastic: 300
@@ -200,7 +208,7 @@
 - type: latheRecipe
   id: MedkitCombat
   result: MedkitCombat
-  name: lathe-recipe-MedkitCombat-name
+  name: combat medical kit (empty)
   completetime: 2
   materials:
     Plastic: 300
@@ -245,9 +253,51 @@
     Plastic: 300
 
 - type: latheRecipe
-  id: WhiteCane
-  result: WhiteCane
+  id: MedicalCyberneticEyes
+  result: MedicalCyberneticEyes
+  category: Robotics
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Plastic: 500
+    Gold: 300
+    Silver: 300
+
+- type: latheRecipe
+  id: EnergyScalpel
+  result: EnergyScalpel
   completetime: 2
   materials:
-    Steel: 100
-    Plastic: 100
+    Steel: 600
+    Glass: 150
+    Gold: 150
+
+- type: latheRecipe
+  id: AdvancedRetractor
+  result: AdvancedRetractor
+  completetime: 2
+  materials:
+    Steel: 600
+    Glass: 150
+    Silver: 150
+
+- type: latheRecipe
+  id: EnergyCautery
+  result: EnergyCautery
+  completetime: 2
+  materials:
+    Steel: 600
+    Glass: 150
+    Plasma: 150
+
+- type: latheRecipe
+  id: OmnimedTool
+  result: OmnimedTool
+  completetime: 2
+  materials:
+    Steel: 600
+    Glass: 150
+    Gold: 150
+    Silver: 150
+    Plasma: 150

@@ -1,6 +1,5 @@
-using System.Linq;
+﻿using System.Linq;
 using Content.Shared.Storage.Components;
-using Content.Shared.Whitelist;
 using JetBrains.Annotations;
 using Robust.Shared.Containers;
 
@@ -16,7 +15,6 @@ namespace Content.Shared.Storage.EntitySystems
     {
         [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
         [Dependency] private readonly SharedContainerSystem _container = default!;
-        [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
         /// <inheritdoc />
         public override void Initialize()
@@ -95,7 +93,7 @@ namespace Content.Shared.Storage.EntitySystems
             var list = new List<string>();
             foreach (var mapLayerData in itemMapper.MapLayers.Values)
             {
-                var count = containedLayers.Count(ent => _whitelistSystem.IsWhitelistPass(mapLayerData.ServerWhitelist, ent));
+                var count = containedLayers.Count(ent => mapLayerData.ServerWhitelist.IsValid(ent));
                 if (count >= mapLayerData.MinCount && count <= mapLayerData.MaxCount)
                 {
                     list.Add(mapLayerData.Layer);

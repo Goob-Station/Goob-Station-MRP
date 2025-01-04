@@ -10,7 +10,6 @@ using Content.Shared.GameTicking;
 using Content.Shared.Maps;
 using Content.Shared.Physics;
 using Content.Shared.Procedural;
-using Content.Shared.Tag;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
@@ -32,7 +31,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
     [Dependency] private readonly AnchorableSystem _anchorable = default!;
     [Dependency] private readonly DecalSystem _decals = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly MapLoaderSystem _loader = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
@@ -201,7 +199,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             _decals,
             this,
             _lookup,
-            _tag,
             _tile,
             _transform,
             gen,
@@ -234,7 +231,6 @@ public sealed partial class DungeonSystem : SharedDungeonSystem
             _decals,
             this,
             _lookup,
-            _tag,
             _tile,
             _transform,
             gen,

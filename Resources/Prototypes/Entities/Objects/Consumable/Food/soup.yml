@@ -8,8 +8,7 @@
   - type: Item
     storedRotation: -90
   - type: Food
-    trash: 
-    - FoodBowlBig
+    trash: FoodBowlBig
     utensil: Spoon
   - type: SolutionContainerManager
     solutions:
@@ -971,8 +970,7 @@
     flavors:
       - miso
   - type: Food
-    trash: 
-    - FoodBowlFancy
+    trash: FoodBowlFancy
   - type: Sprite
     layers:
     - state: bowl2
@@ -1227,33 +1225,3 @@
     - Fruit
     - Soup
 # Tastes like bungo, hot curry.
-
-- type: entity
-  name: escargot
-  parent: FoodBowlBase
-  id: FoodSoupEscargot
-  description: A creamy and rich bowl of snails, bon appetit!
-  components:
-  - type: FlavorProfile
-    flavors:
-      - creamy
-      - slimy
-  - type: Sprite
-    layers:
-    - state: bowl
-    - state: escargot
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        maxVol: 20
-        reagents:
-          - ReagentId: Nutriment
-            Quantity: 6
-          - ReagentId: Vitamin
-            Quantity: 6
-          - ReagentId: Allicin
-            Quantity: 3
-  - type: Tag
-    tags:
-    - Meat
-    - Soup

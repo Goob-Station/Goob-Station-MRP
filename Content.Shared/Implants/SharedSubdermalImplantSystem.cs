@@ -30,7 +30,7 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
         SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
         SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantEvent);
         SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
-        SubscribeLocalEvent<ImplantedComponent, TransformSpeakerNameEvent>(RelayToImplantEvent);
+        SubscribeLocalEvent<ImplantedComponent, TransformSpeakerSpeechEvent>(RelayToImplantEvent);
     }
 
     private void OnInsert(EntityUid uid, SubdermalImplantComponent component, EntGotInsertedIntoContainerMessage args)
@@ -96,36 +96,20 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
     /// </summary>
     public void AddImplants(EntityUid uid, IEnumerable<String> implants)
     {
+        var coords = Transform(uid).Coordinates;
         foreach (var id in implants)
         {
-            AddImplant(uid, id);
+            var ent = Spawn(id, coords);
+            if (TryComp<SubdermalImplantComponent>(ent, out var implant))
+            {
+                ForceImplant(uid, ent, implant);
+            }
+            else
+            {
+                Log.Warning($"Found invalid starting implant '{id}' on {uid} {ToPrettyString(uid):implanted}");
+                Del(ent);
+            }
         }
-    }
-
-    /// <summary>
-    /// Adds a single implant to a person, and returns the implant.
-    /// Logs any implant ids that don't have <see cref="SubdermalImplantComponent"/>.
-    /// </summary>
-    /// <returns>
-    /// The implant, if it was successfully created. Otherwise, null.
-    /// </returns>>
-    public EntityUid? AddImplant(EntityUid uid, String implantId)
-    {
-        var coords = Transform(uid).Coordinates;
-        var ent = Spawn(implantId, coords);
-
-        if (TryComp<SubdermalImplantComponent>(ent, out var implant))
-        {
-            ForceImplant(uid, ent, implant);
-        }
-        else
-        {
-            Log.Warning($"Found invalid starting implant '{implantId}' on {uid} {ToPrettyString(uid):implanted}");
-            Del(ent);
-            return null;
-        }
-
-        return ent;
     }
 
     /// <summary>

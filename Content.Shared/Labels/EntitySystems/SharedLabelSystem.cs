@@ -1,6 +1,5 @@
 using Content.Shared.Examine;
 using Content.Shared.Labels.Components;
-using Content.Shared.NameModifier.EntitySystems;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Labels.EntitySystems;
@@ -12,7 +11,6 @@ public abstract partial class SharedLabelSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<LabelComponent, ExaminedEvent>(OnExamine);
-        SubscribeLocalEvent<LabelComponent, RefreshNameModifiersEvent>(OnRefreshNameModifiers);
     }
 
     public virtual void Label(EntityUid uid, string? text, MetaDataComponent? metadata = null, LabelComponent? label = null){}
@@ -28,11 +26,5 @@ public abstract partial class SharedLabelSystem : EntitySystem
         var message = new FormattedMessage();
         message.AddText(Loc.GetString("hand-labeler-has-label", ("label", label.CurrentLabel)));
         args.PushMessage(message);
-    }
-
-    private void OnRefreshNameModifiers(Entity<LabelComponent> entity, ref RefreshNameModifiersEvent args)
-    {
-        if (!string.IsNullOrEmpty(entity.Comp.CurrentLabel))
-            args.AddModifier("comp-label-format", extraArgs: ("label", entity.Comp.CurrentLabel));
     }
 }

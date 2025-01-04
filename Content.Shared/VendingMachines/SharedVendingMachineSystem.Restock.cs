@@ -70,7 +70,8 @@ public abstract partial class SharedVendingMachineSystem
         var doAfterArgs = new DoAfterArgs(EntityManager, args.User, (float) component.RestockDelay.TotalSeconds, new RestockDoAfterEvent(), target,
             target: target, used: uid)
         {
-            BreakOnMove = true,
+            BreakOnTargetMove = true,
+            BreakOnUserMove = true,
             BreakOnDamage = true,
             NeedHand = true
         };

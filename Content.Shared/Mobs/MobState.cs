@@ -16,8 +16,7 @@ public enum MobState : byte
     Invalid = 0,
     Alive = 1,
     Critical = 2,
-    SoftCritical = 3,
-    Dead = 4,
+    Dead = 3
 }
 
 /// <summary>

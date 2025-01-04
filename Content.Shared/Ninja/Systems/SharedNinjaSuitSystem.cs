@@ -1,14 +1,11 @@
 using Content.Shared.Actions;
-using Content.Shared.Clothing;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Item.ItemToggle;
-using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Ninja.Components;
 using Content.Shared.Popups;
-using Content.Shared.Timing;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Timing;
 
 namespace Content.Shared.Ninja.Systems;
 
@@ -17,158 +14,137 @@ namespace Content.Shared.Ninja.Systems;
 /// </summary>
 public abstract class SharedNinjaSuitSystem : EntitySystem
 {
-    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
+    [Dependency] protected readonly IGameTiming GameTiming = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly ItemToggleSystem _toggle = default!;
-    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] private readonly SharedNinjaGlovesSystem _gloves = default!;
     [Dependency] private readonly SharedSpaceNinjaSystem _ninja = default!;
-    [Dependency] private readonly UseDelaySystem _useDelay = default!;
+    [Dependency] private readonly ActionContainerSystem _actionContainer = default!;
+    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] protected readonly StealthClothingSystem StealthClothing = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<NinjaSuitComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<NinjaSuitComponent, ClothingGotEquippedEvent>(OnEquipped);
+
+        SubscribeLocalEvent<NinjaSuitComponent, GotEquippedEvent>(OnEquipped);
         SubscribeLocalEvent<NinjaSuitComponent, GetItemActionsEvent>(OnGetItemActions);
-        SubscribeLocalEvent<NinjaSuitComponent, ToggleClothingCheckEvent>(OnCloakCheck);
-        SubscribeLocalEvent<NinjaSuitComponent, CheckItemCreatorEvent>(OnStarCheck);
-        SubscribeLocalEvent<NinjaSuitComponent, CreateItemAttemptEvent>(OnCreateStarAttempt);
-        SubscribeLocalEvent<NinjaSuitComponent, ItemToggleActivateAttemptEvent>(OnActivateAttempt);
+        SubscribeLocalEvent<NinjaSuitComponent, AddStealthActionEvent>(OnAddStealthAction);
         SubscribeLocalEvent<NinjaSuitComponent, GotUnequippedEvent>(OnUnequipped);
     }
 
-    private void OnEquipped(Entity<NinjaSuitComponent> ent, ref ClothingGotEquippedEvent args)
+    private void OnMapInit(EntityUid uid, NinjaSuitComponent component, MapInitEvent args)
     {
-        var user = args.Wearer;
-        if (_ninja.NinjaQuery.TryComp(user, out var ninja))
-            NinjaEquipped(ent, (user, ninja));
+        _actionContainer.EnsureAction(uid, ref component.RecallKatanaActionEntity, component.RecallKatanaAction);
+        _actionContainer.EnsureAction(uid, ref component.CreateThrowingStarActionEntity, component.CreateThrowingStarAction);
+        _actionContainer.EnsureAction(uid, ref component.EmpActionEntity, component.EmpAction);
+        Dirty(uid, component);
     }
 
-    protected virtual void NinjaEquipped(Entity<NinjaSuitComponent> ent, Entity<SpaceNinjaComponent> user)
+    /// <summary>
+    /// Call the shared and serverside code for when a ninja equips the suit.
+    /// </summary>
+    private void OnEquipped(EntityUid uid, NinjaSuitComponent comp, GotEquippedEvent args)
     {
-        // mark the user as wearing this suit, used when being attacked among other things
-        _ninja.AssignSuit(user, ent);
-    }
+        var user = args.Equipee;
+        if (!TryComp<SpaceNinjaComponent>(user, out var ninja))
+            return;
 
-    private void OnMapInit(Entity<NinjaSuitComponent> ent, ref MapInitEvent args)
-    {
-        var (uid, comp) = ent;
-        _actionContainer.EnsureAction(uid, ref comp.RecallKatanaActionEntity, comp.RecallKatanaAction);
-        _actionContainer.EnsureAction(uid, ref comp.EmpActionEntity, comp.EmpAction);
-        Dirty(uid, comp);
+        NinjaEquippedSuit(uid, comp, user, ninja);
     }
 
     /// <summary>
     /// Add all the actions when a suit is equipped by a ninja.
     /// </summary>
-    private void OnGetItemActions(Entity<NinjaSuitComponent> ent, ref GetItemActionsEvent args)
+    private void OnGetItemActions(EntityUid uid, NinjaSuitComponent comp, GetItemActionsEvent args)
     {
-        if (!_ninja.IsNinja(args.User))
+        if (!HasComp<SpaceNinjaComponent>(args.User))
             return;
 
-        var comp = ent.Comp;
         args.AddAction(ref comp.RecallKatanaActionEntity, comp.RecallKatanaAction);
+        args.AddAction(ref comp.CreateThrowingStarActionEntity, comp.CreateThrowingStarAction);
         args.AddAction(ref comp.EmpActionEntity, comp.EmpAction);
     }
 
     /// <summary>
-    /// Only add toggle cloak action when equipped by a ninja.
+    /// Only add stealth clothing's toggle action when equipped by a ninja.
     /// </summary>
-    private void OnCloakCheck(Entity<NinjaSuitComponent> ent, ref ToggleClothingCheckEvent args)
+    private void OnAddStealthAction(EntityUid uid, NinjaSuitComponent comp, AddStealthActionEvent args)
     {
-        if (!_ninja.IsNinja(args.User))
-            args.Cancelled = true;
-    }
-
-    private void OnStarCheck(Entity<NinjaSuitComponent> ent, ref CheckItemCreatorEvent args)
-    {
-        if (!_ninja.IsNinja(args.User))
-            args.Cancelled = true;
-    }
-
-    private void OnCreateStarAttempt(Entity<NinjaSuitComponent> ent, ref CreateItemAttemptEvent args)
-    {
-        if (CheckDisabled(ent, args.User))
-            args.Cancelled = true;
+        if (!HasComp<SpaceNinjaComponent>(args.User))
+            args.Cancel();
     }
 
     /// <summary>
     /// Call the shared and serverside code for when anyone unequips a suit.
     /// </summary>
-    private void OnUnequipped(Entity<NinjaSuitComponent> ent, ref GotUnequippedEvent args)
+    private void OnUnequipped(EntityUid uid, NinjaSuitComponent comp, GotUnequippedEvent args)
     {
-        var user = args.Equipee;
-        if (_ninja.NinjaQuery.TryComp(user, out var ninja))
-            UserUnequippedSuit(ent, (user, ninja));
+        UserUnequippedSuit(uid, comp, args.Equipee);
+    }
+
+    /// <summary>
+    /// Called when a suit is equipped by a space ninja.
+    /// In the future it might be changed to an explicit activation toggle/verb like gloves are.
+    /// </summary>
+    protected virtual void NinjaEquippedSuit(EntityUid uid, NinjaSuitComponent comp, EntityUid user, SpaceNinjaComponent ninja)
+    {
+        // mark the user as wearing this suit, used when being attacked among other things
+        _ninja.AssignSuit(user, uid, ninja);
+
+        // initialize phase cloak, but keep it off
+        StealthClothing.SetEnabled(uid, user, false);
     }
 
     /// <summary>
     /// Force uncloaks the user and disables suit abilities.
     /// </summary>
-    public void RevealNinja(Entity<NinjaSuitComponent?> ent, EntityUid user, bool disable = true)
+    public void RevealNinja(EntityUid uid, EntityUid user, bool disable = true, NinjaSuitComponent? comp = null, StealthClothingComponent? stealthClothing = null)
     {
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(uid, ref comp, ref stealthClothing))
             return;
 
-        var uid = ent.Owner;
-        var comp = ent.Comp;
-        if (_toggle.TryDeactivate(uid, user) || !disable)
+        if (!StealthClothing.SetEnabled(uid, user, false, stealthClothing))
+            return;
+
+        if (!disable)
             return;
 
         // previously cloaked, disable abilities for a short time
         _audio.PlayPredicted(comp.RevealSound, uid, user);
         Popup.PopupClient(Loc.GetString("ninja-revealed"), user, user, PopupType.MediumCaution);
-        _useDelay.TryResetDelay(uid, id: comp.DisableDelayId);
+        comp.DisableCooldown = GameTiming.CurTime + comp.DisableTime;
     }
 
-    private void OnActivateAttempt(Entity<NinjaSuitComponent> ent, ref ItemToggleActivateAttemptEvent args)
-    {
-        if (!_ninja.IsNinja(args.User))
-        {
-            args.Cancelled = true;
-            return;
-        }
-
-        if (IsDisabled((ent, ent.Comp, null)))
-        {
-            args.Cancelled = true;
-            args.Popup = Loc.GetString("ninja-suit-cooldown");
-        }
-    }
-
+    // TODO: modify PowerCellDrain
     /// <summary>
-    /// Returns true if the suit is currently disabled
+    /// Returns the power used by a suit
     /// </summary>
-    public bool IsDisabled(Entity<NinjaSuitComponent?, UseDelayComponent?> ent)
+    public float SuitWattage(EntityUid uid, NinjaSuitComponent? suit = null)
     {
-        if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2))
-            return false;
+        if (!Resolve(uid, ref suit))
+            return 0f;
 
-        return _useDelay.IsDelayed((ent, ent.Comp2), ent.Comp1.DisableDelayId);
-    }
-
-    protected bool CheckDisabled(Entity<NinjaSuitComponent> ent, EntityUid user)
-    {
-        if (IsDisabled((ent, ent.Comp, null)))
-        {
-            Popup.PopupEntity(Loc.GetString("ninja-suit-cooldown"), user, user, PopupType.Medium);
-            return true;
-        }
-
-        return false;
+        float wattage = suit.PassiveWattage;
+        if (TryComp<StealthClothingComponent>(uid, out var stealthClothing) && stealthClothing.Enabled)
+            wattage += suit.CloakWattage;
+        return wattage;
     }
 
     /// <summary>
     /// Called when a suit is unequipped, not necessarily by a space ninja.
     /// In the future it might be changed to also have explicit deactivation via toggle.
     /// </summary>
-    protected virtual void UserUnequippedSuit(Entity<NinjaSuitComponent> ent, Entity<SpaceNinjaComponent> user)
+    protected virtual void UserUnequippedSuit(EntityUid uid, NinjaSuitComponent comp, EntityUid user)
     {
+        if (!TryComp<SpaceNinjaComponent>(user, out var ninja))
+            return;
+
         // mark the user as not wearing a suit
-        _ninja.AssignSuit(user, null);
+        _ninja.AssignSuit(user, null, ninja);
         // disable glove abilities
-        if (user.Comp.Gloves is {} uid)
-            _toggle.TryDeactivate(uid, user: user);
+        if (ninja.Gloves != null && TryComp<NinjaGlovesComponent>(ninja.Gloves.Value, out var gloves))
+            _gloves.DisableGloves(ninja.Gloves.Value, gloves);
     }
 }

@@ -96,7 +96,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      50: Dead
+      300: Dead
   - type: Destructible
     thresholds:
     - trigger:
@@ -114,7 +114,7 @@
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Damageable
-    damageContainer: CorporealSpirit
+    damageContainer: Spirit
     damageModifierSet: CorporealSpirit
   - type: DamageOnDispel
     damage:
@@ -122,9 +122,9 @@
         Heat: 100
   - type: SlowOnDamage
     speedModifierThresholds:
-      10: 0.8
-      20: 0.6
-      30: 0.3
+      150: 0.8
+      200: 0.6
+      250: 0.3
   - type: StatusEffects
     allowed:
     - Stun
@@ -133,15 +133,13 @@
     - Pacified
   # combat
   - type: Gun
-    fireRate: 0.4
+    fireRate: 0.7
     soundGunshot:
       collection: MagicMissile
     showExamineText: false
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
-    minAngle: 0.17453
-    maxAngle: 0.52359
   - type: HitscanBatteryAmmoProvider
     proto: WispLash
     fireCost: 1

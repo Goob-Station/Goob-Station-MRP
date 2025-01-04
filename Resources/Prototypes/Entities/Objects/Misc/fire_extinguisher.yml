@@ -55,7 +55,7 @@
   - type: Tool
     qualities:
     - Rolling
-    speedModifier: 0.5 # its very big, akward to use
+    speed: 0.5 # its very big, akward to use
   - type: Appearance
   - type: GenericVisualizer
     visuals:

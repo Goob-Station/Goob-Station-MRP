@@ -155,7 +155,8 @@ public abstract partial class SharedFultonSystem : EntitySystem
             {
                 CancelDuplicate = true,
                 MovementThreshold = 0.5f,
-                BreakOnMove = true,
+                BreakOnUserMove = true,
+                BreakOnTargetMove = true,
                 Broadcast = true,
                 NeedHand = true,
             });

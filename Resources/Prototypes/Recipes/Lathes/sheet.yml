@@ -2,11 +2,9 @@
   id: SheetSteel
   result: SheetSteel1
   applyMaterialDiscount: false
-  miningPoints: 1
-  completetime: 0
+  completetime: 2
   materials:
     RawIron: 100
-    Coal: 30
 
 - type: latheRecipe
   id: SheetSteel30
@@ -20,8 +18,7 @@
   id: SheetGlass1
   result: SheetGlass1
   applyMaterialDiscount: false
-  miningPoints: 1
-  completetime: 0
+  completetime: 2
   materials:
     RawQuartz: 100
 
@@ -36,12 +33,10 @@
   id: SheetRGlass
   result: SheetRGlass1
   applyMaterialDiscount: false
-  miningPoints: 1
-  completetime: 0
+  completetime: 2
   materials:
     Glass: 100
     Steel: 50
-    Coal: 15
 
 - type: latheRecipe
   id: SheetRGlass30
@@ -53,32 +48,12 @@
     Coal: 500
 
 - type: latheRecipe
-  id: SheetPGlass1
-  result: SheetPGlass1
-  completetime: 0
-  miningPoints: 16
-  materials:
-    RawQuartz: 100
-    RawPlasma: 100
-
-- type: latheRecipe
   id: SheetPGlass30
   result: SheetPGlass
   completetime: 2
   materials:
     RawQuartz: 3000
     RawPlasma: 3000
-
-- type: latheRecipe
-  id: SheetRPGlass1
-  result: SheetRPGlass1
-  completetime: 0
-  miningPoints: 16
-  materials:
-    RawQuartz: 100
-    RawPlasma: 100
-    RawIron: 50
-    Coal: 15
 
 - type: latheRecipe
   id: SheetRPGlass30
@@ -91,29 +66,11 @@
     Coal: 500
 
 - type: latheRecipe
-  id: SheetPlasma1
-  result: SheetPlasma1
-  completetime: 0
-  miningPoints: 15
-  materials:
-    RawPlasma: 100
-
-- type: latheRecipe
   id: SheetPlasma30
   result: SheetPlasma
   completetime: 2
   materials:
     RawPlasma: 3000
-
-- type: latheRecipe
-  id: SheetPlasteel1
-  result: SheetPlasteel1
-  completetime: 0
-  miningPoints: 17
-  materials:
-    RawPlasma: 100
-    RawIron: 200 #Twice as durable as steel, Twice the material cost
-    Coal: 30
 
 - type: latheRecipe
   id: SheetPlasteel30
@@ -132,32 +89,12 @@
     RawUranium: 3000
 
 - type: latheRecipe
-  id: SheetUGlass1
-  result: SheetUGlass1
-  completetime: 0
-  miningPoints: 31
-  materials:
-    RawUranium: 100
-    RawQuartz: 100
-
-- type: latheRecipe
   id: SheetUGlass30
   result: SheetUGlass
   completetime: 2
   materials:
     RawUranium: 3000
     RawQuartz: 3000
-
-- type: latheRecipe
-  id: SheetRUGlass1
-  result: SheetRUGlass1
-  completetime: 0
-  miningPoints: 31
-  materials:
-    RawUranium: 100
-    RawQuartz: 100
-    RawIron: 50
-    Coal: 15
 
 - type: latheRecipe
   id: SheetRUGlass30
@@ -191,52 +128,40 @@
     RawBananium: 3000
 
 - type: latheRecipe
-  id: MaterialDiamond
-  result: MaterialDiamond1
-  completetime: 0
-  miningPoints: 50
-  materials:
-    RawDiamond: 100
-
-- type: latheRecipe
   id: SheetUranium1
   result: SheetUranium1
-  completetime: 0
-  miningPoints: 30
+  completetime: 2
   materials:
-    RawUranium: 100
+    RawUranium: 500
 
 - type: latheRecipe
   id: IngotGold1
   result: IngotGold1
-  completetime: 0
-  miningPoints: 18
+  completetime: 2
   materials:
-    RawGold: 100
+    RawGold: 500
 
 - type: latheRecipe
   id: IngotSilver1
   result: IngotSilver1
-  completetime: 0
-  miningPoints: 16
+  completetime: 2
   materials:
-    RawSilver: 100
+    RawSilver: 500
 
 - type: latheRecipe
   id: SheetPlastic
   result: SheetPlastic1
   applyMaterialDiscount: false
-  completetime: 0
+  completetime: 2
   materials:
     Plastic: 100
 
 - type: latheRecipe
   id: MaterialBananium1
   result: MaterialBananium1
-  completetime: 0
-  miningPoints: 60
+  completetime: 2
   materials:
-    RawBananium: 100
+    RawBananium: 500
 
 - type: latheRecipe
   id: MaterialSheetMeat

@@ -10,7 +10,6 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Mind;
 using Content.Shared.Store;
-using Content.Shared.Store.Components;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -83,16 +82,20 @@ public sealed partial class StoreSystem
     /// <param name="user">The person who if opening the store ui. Listings are filtered based on this.</param>
     /// <param name="store">The store entity itself</param>
     /// <param name="component">The store component being refreshed.</param>
+    /// <param name="ui"></param>
     public void UpdateUserInterface(EntityUid? user, EntityUid store, StoreComponent? component = null)
     {
         if (!Resolve(store, ref component))
             return;
 
+        // TODO: Why is the state not being set unless this?
+        if (!_ui.HasUi(store, StoreUiKey.Key))
+            return;
+
         //this is the person who will be passed into logic for all listing filtering.
         if (user != null) //if we have no "buyer" for this update, then don't update the listings
         {
-            component.LastAvailableListings = GetAvailableListings(component.AccountOwner ?? user.Value, store, component)
-                .ToHashSet();
+            component.LastAvailableListings = GetAvailableListings(component.AccountOwner ?? user.Value, store, component).ToHashSet();
         }
 
         //dictionary for all currencies, including 0 values for currencies on the whitelist
@@ -110,7 +113,6 @@ public sealed partial class StoreSystem
 
         // only tell operatives to lock their uplink if it can be locked
         var showFooter = HasComp<RingerUplinkComponent>(store);
-
         var state = new StoreUpdateState(component.LastAvailableListings, allCurrency, showFooter, component.RefundAllowed);
         _ui.SetUiState(store, StoreUiKey.Key, state);
     }
@@ -130,7 +132,7 @@ public sealed partial class StoreSystem
     /// </summary>
     private void OnBuyRequest(EntityUid uid, StoreComponent component, StoreBuyListingMessage msg)
     {
-        var listing = component.FullListingsCatalog.FirstOrDefault(x => x.ID.Equals(msg.Listing.Id));
+        var listing = component.Listings.FirstOrDefault(x => x.Equals(msg.Listing));
 
         if (listing == null) //make sure this listing actually exists
         {
@@ -155,10 +157,9 @@ public sealed partial class StoreSystem
         }
 
         //check that we have enough money
-        var cost = listing.Cost;
-        foreach (var (currency, amount) in cost)
+        foreach (var currency in listing.Cost)
         {
-            if (!component.Balance.TryGetValue(currency, out var balance) || balance < amount)
+            if (!component.Balance.TryGetValue(currency.Key, out var balance) || balance < currency.Value)
             {
                 return;
             }
@@ -168,13 +169,13 @@ public sealed partial class StoreSystem
             component.RefundAllowed = false;
 
         //subtract the cash
-        foreach (var (currency, amount) in cost)
+        foreach (var (currency, value) in listing.Cost)
         {
-            component.Balance[currency] -= amount;
+            component.Balance[currency] -= value;
 
             component.BalanceSpent.TryAdd(currency, FixedPoint2.Zero);
 
-            component.BalanceSpent[currency] += amount;
+            component.BalanceSpent[currency] += value;
         }
 
         //spawn entity
@@ -216,7 +217,7 @@ public sealed partial class StoreSystem
 
                 if (listing.ProductUpgradeId != null)
                 {
-                    foreach (var upgradeListing in component.FullListingsCatalog)
+                    foreach (var upgradeListing in component.Listings)
                     {
                         if (upgradeListing.ID == listing.ProductUpgradeId)
                         {
@@ -258,22 +259,18 @@ public sealed partial class StoreSystem
         }
 
         //log dat shit.
-        _admin.Add(LogType.StorePurchase,
-            LogImpact.Low,
+        _admin.Add(LogType.StorePurchase, LogImpact.Low,
             $"{ToPrettyString(buyer):player} purchased listing \"{ListingLocalisationHelpers.GetLocalisedNameOrEntityName(listing, _prototypeManager)}\" from {ToPrettyString(uid)}");
 
         listing.PurchaseAmount++; //track how many times something has been purchased
         _audio.PlayEntity(component.BuySuccessSound, msg.Actor, uid); //cha-ching!
 
-        // Nyano code needs to know when a buy finished. Probably a better way?
-        var buyFinished = new StoreBuyFinishedEvent
+        if (listing.SaleLimit != 0 && listing.DiscountValue > 0 && listing.PurchaseAmount >= listing.SaleLimit)
         {
-            Buyer = buyer,
-            PurchasedItem = listing,
-            StoreUid = uid
-        };
+            listing.DiscountValue = 0;
+            listing.Cost = listing.OldCost;
+        }
 
-        RaiseLocalEvent(ref buyFinished);
         UpdateUserInterface(buyer, uid, component);
     }
 
@@ -358,7 +355,6 @@ public sealed partial class StoreSystem
         {
             component.Balance[currency] += value;
         }
-
         // Reset store back to its original state
         RefreshAllListings(component);
         component.BalanceSpent = new();

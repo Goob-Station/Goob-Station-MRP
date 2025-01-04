@@ -8,7 +8,6 @@ using Content.Server.Station.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
-using Content.Shared.Power;
 using Robust.Server.GameObjects;
 using Color = Robust.Shared.Maths.Color;
 
@@ -235,6 +234,6 @@ public sealed class EmergencyLightSystem : SharedEmergencyLightSystem
         _pointLight.SetColor(entity.Owner, color);
         _appearance.SetData(entity.Owner, EmergencyLightVisuals.Color, color);
         _appearance.SetData(entity.Owner, EmergencyLightVisuals.On, true);
-        _ambient.SetAmbience(entity.Owner, true);
+        _ambient.SetAmbience(entity.Owner, true); 
     }
 }

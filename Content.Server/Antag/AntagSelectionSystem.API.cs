@@ -147,7 +147,7 @@ public sealed partial class AntagSelectionSystem
     }
 
     /// <remarks>
-    /// Helper to get just the mind entities and not names.
+    /// Helper specifically for <see cref="ObjectivesTextGetInfoEvent"/>
     /// </remarks>
     public List<EntityUid> GetAntagMindEntityUids(Entity<AntagSelectionComponent?> ent)
     {

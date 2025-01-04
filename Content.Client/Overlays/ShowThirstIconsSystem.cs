@@ -18,7 +18,7 @@ public sealed class ShowThirstIconsSystem : EquipmentHudSystem<ShowThirstIconsCo
 
     private void OnGetStatusIconsEvent(EntityUid uid, ThirstComponent component, ref GetStatusIconsEvent ev)
     {
-        if (!IsActive)
+        if (!IsActive || ev.InContainer)
             return;
 
         if (_thirst.TryGetStatusIconPrototype(component, out var iconPrototype))

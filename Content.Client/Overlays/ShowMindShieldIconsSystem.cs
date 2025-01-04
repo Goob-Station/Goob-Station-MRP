@@ -19,10 +19,10 @@ public sealed class ShowMindShieldIconsSystem : EquipmentHudSystem<ShowMindShiel
 
     private void OnGetStatusIconsEvent(EntityUid uid, MindShieldComponent component, ref GetStatusIconsEvent ev)
     {
-        if (!IsActive)
+        if (!IsActive || ev.InContainer)
             return;
 
-        if (_prototype.TryIndex(component.MindShieldStatusIcon, out var iconPrototype))
+        if (_prototype.TryIndex<StatusIconPrototype>(component.MindShieldStatusIcon.Id, out var iconPrototype))
             ev.StatusIcons.Add(iconPrototype);
     }
 }

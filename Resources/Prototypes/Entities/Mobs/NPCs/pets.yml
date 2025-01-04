@@ -648,8 +648,9 @@
     makeSentient: true
     allowSpeech: true
     allowMovement: true
-    name: ghost-role-information-shiva-name
-    description: ghost-role-information-shiva-description
+    name: ghost-role-information-Shiva-name
+    description: ghost-role-information-Shiva-description
+    rules: ghost-role-information-Shiva-rules
   - type: GhostTakeoverAvailable # DeltaV
   - type: InteractionPopup
     successChance: 0.5 # spider is mean

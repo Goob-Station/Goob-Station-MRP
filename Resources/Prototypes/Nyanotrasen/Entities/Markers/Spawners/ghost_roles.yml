@@ -26,7 +26,6 @@
   components:
   # - type: GhostRoleMobSpawner
   #   prototype: MobHumanFugitive # Todo
-  - type: GhostRoleAntagSpawner
   - type: GhostRole
     name: Fugitive
     description: You're an escaped prisoner. Make it out alive.

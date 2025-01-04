@@ -36,6 +36,13 @@
     state: icon
 
 - type: stealTargetGroup
+  id: BookSecretDocuments
+  name: "emergency security orders"
+  sprite:
+    sprite: Objects/Misc/bureaucracy.rsi
+    state: folder-sec-doc
+
+- type: stealTargetGroup
   id: ClothingShoesBootsMagAdv
   name: advanced magboots
   sprite:
@@ -401,5 +408,3 @@
   sprite:
     sprite: Mobs/Animals/crab.rsi
     state: crab
-
-

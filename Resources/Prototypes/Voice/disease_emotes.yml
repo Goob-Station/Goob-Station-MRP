@@ -15,7 +15,7 @@
     - Vocal
   blacklist:
     components:
-    - BorgChassis
+    - BorgChassischatMessages
   chatTriggers:
     - coughs
 
@@ -54,7 +54,7 @@
     - Vocal
   blacklist:
     components:
-    - BorgChassis
+    - BorgChassischatMessages
   chatTriggers:
     - yawns
 

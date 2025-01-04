@@ -6,7 +6,7 @@
   cost:
     Telecrystal: 10
   categories:
-  - UplinkWeaponry
+  - UplinkWeapons
   conditions:
   - !type:BuyerSpeciesCondition
     whitelist:
@@ -34,7 +34,7 @@
   cost:
     Telecrystal: 6
   categories:
-  - UplinkWearables
+  - UplinkArmor
   conditions:
   - !type:BuyerSpeciesCondition
     whitelist:

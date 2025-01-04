@@ -17,15 +17,11 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using TimedDespawnComponent = Robust.Shared.Spawners.TimedDespawnComponent;
-using Content.Server.Atmos.Components;
-using Content.Server.Atmos.EntitySystems;
 
 namespace Content.Server.Explosion.EntitySystems;
 
 public sealed partial class ExplosionSystem
 {
-    [Dependency] private readonly FlammableSystem _flammableSystem = default!;
-
     /// <summary>
     ///     Used to limit explosion processing time. See <see cref="MaxProcessingTime"/>.
     /// </summary>
@@ -99,7 +95,7 @@ public sealed partial class ExplosionSystem
             {
                 // EXPLOSION TODO allow explosion spawning to be interrupted by time limit. In the meantime, ensure that
                 // there is at-least 1ms of time left before creating a new explosion
-                if (MathF.Max(MaxProcessingTime - 1, 0.1f) < Stopwatch.Elapsed.TotalMilliseconds)
+                if (MathF.Max(MaxProcessingTime - 1, 0.1f)  < Stopwatch.Elapsed.TotalMilliseconds)
                     break;
 
                 if (!_explosionQueue.TryDequeue(out var queued))
@@ -133,11 +129,11 @@ public sealed partial class ExplosionSystem
             try
             {
 #endif
-            var processed = _activeExplosion.Process(tilesRemaining);
-            tilesRemaining -= processed;
+                var processed = _activeExplosion.Process(tilesRemaining);
+                tilesRemaining -= processed;
 
-            // has the explosion finished processing?
-            if (_activeExplosion.FinishedProcessing)
+                // has the explosion finished processing?
+                if (_activeExplosion.FinishedProcessing)
             {
                 var comp = EnsureComp<TimedDespawnComponent>(_activeExplosion.VisualEnt);
                 comp.Lifetime = _cfg.GetCVar(CCVars.ExplosionPersistence);
@@ -206,8 +202,7 @@ public sealed partial class ExplosionSystem
         DamageSpecifier damage,
         MapCoordinates epicenter,
         HashSet<EntityUid> processed,
-        string id,
-        float? fireStacks)
+        string id)
     {
         var size = grid.Comp.TileSize;
         var gridBox = new Box2(tile * size, (tile + 1) * size);
@@ -226,7 +221,7 @@ public sealed partial class ExplosionSystem
         // process those entities
         foreach (var (uid, xform) in list)
         {
-            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks);
+            ProcessEntity(uid, epicenter, damage, throwForce, id, xform);
         }
 
         // process anchored entities
@@ -236,7 +231,7 @@ public sealed partial class ExplosionSystem
         foreach (var entity in _anchored)
         {
             processed.Add(entity);
-            ProcessEntity(entity, epicenter, damage, throwForce, id, null, fireStacks);
+            ProcessEntity(entity, epicenter, damage, throwForce, id, null);
         }
 
         // Walls and reinforced walls will break into girders. These girders will also be considered turf-blocking for
@@ -272,7 +267,7 @@ public sealed partial class ExplosionSystem
         {
             // Here we only throw, no dealing damage. Containers n such might drop their entities after being destroyed, but
             // they should handle their own damage pass-through, with their own damage reduction calculation.
-            ProcessEntity(uid, epicenter, null, throwForce, id, xform, null);
+            ProcessEntity(uid, epicenter, null, throwForce, id, xform);
         }
 
         return !tileBlocked;
@@ -307,8 +302,7 @@ public sealed partial class ExplosionSystem
         DamageSpecifier damage,
         MapCoordinates epicenter,
         HashSet<EntityUid> processed,
-        string id,
-        float? fireStacks)
+        string id)
     {
         var gridBox = Box2.FromDimensions(tile * DefaultTileSize, new Vector2(DefaultTileSize, DefaultTileSize));
         var worldBox = spaceMatrix.TransformBox(gridBox);
@@ -324,7 +318,7 @@ public sealed partial class ExplosionSystem
         foreach (var (uid, xform) in state.Item1)
         {
             processed.Add(uid);
-            ProcessEntity(uid, epicenter, damage, throwForce, id, xform, fireStacks);
+            ProcessEntity(uid, epicenter, damage, throwForce, id, xform);
         }
 
         if (throwForce <= 0)
@@ -338,7 +332,7 @@ public sealed partial class ExplosionSystem
 
         foreach (var (uid, xform) in list)
         {
-            ProcessEntity(uid, epicenter, null, throwForce, id, xform, fireStacks);
+            ProcessEntity(uid, epicenter, null, throwForce, id, xform);
         }
     }
 
@@ -398,7 +392,7 @@ public sealed partial class ExplosionSystem
 
         // don't raise BeforeExplodeEvent if the entity is completely immune to explosions
         var thisDamage = GetDamage(uid, prototype, originalDamage);
-        if (thisDamage.Empty)
+        if (!thisDamage.Any())
             return;
 
         _toDamage.Add((uid, thisDamage));
@@ -435,8 +429,7 @@ public sealed partial class ExplosionSystem
         DamageSpecifier? originalDamage,
         float throwForce,
         string id,
-        TransformComponent? xform,
-        float? fireStacksOnIgnite)
+        TransformComponent? xform)
     {
         if (originalDamage != null)
         {
@@ -445,17 +438,6 @@ public sealed partial class ExplosionSystem
             {
                 // TODO EXPLOSIONS turn explosions into entities, and pass the the entity in as the damage origin.
                 _damageableSystem.TryChangeDamage(entity, damage, ignoreResistances: true);
-
-            }
-        }
-
-        // ignite
-        if (fireStacksOnIgnite != null)
-        {
-            if (_flammableQuery.TryGetComponent(uid, out var flammable))
-            {
-                flammable.FireStacks += fireStacksOnIgnite.Value;
-                _flammableSystem.Ignite(uid, uid, flammable);
             }
         }
 
@@ -724,14 +706,14 @@ sealed class Explosion
         {
             _currentIntensity = _tileSetIntensity[CurrentIteration];
 
-#if DEBUG
+            #if DEBUG
             if (_expectedDamage != null)
             {
                 // Check that explosion processing hasn't somehow accidentally mutated the damage set.
                 DebugTools.Assert(_expectedDamage.Equals(_currentDamage));
                 _expectedDamage = ExplosionType.DamagePerIntensity * _currentIntensity;
             }
-#endif
+            #endif
 
             _currentDamage = ExplosionType.DamagePerIntensity * _currentIntensity;
 
@@ -830,8 +812,7 @@ sealed class Explosion
                     _currentDamage,
                     Epicenter,
                     ProcessedEntities,
-                    ExplosionType.ID,
-                    ExplosionType.FireStacks);
+                    ExplosionType.ID);
 
                 // If the floor is not blocked by some dense object, damage the floor tiles.
                 if (canDamageFloor)
@@ -848,8 +829,7 @@ sealed class Explosion
                     _currentDamage,
                     Epicenter,
                     ProcessedEntities,
-                    ExplosionType.ID,
-                    ExplosionType.FireStacks);
+                    ExplosionType.ID);
             }
 
             if (!MoveNext())

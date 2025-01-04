@@ -1,6 +1,6 @@
 - type: entity
   name: handheld mass scanner
-  parent: BaseHandheldComputer
+  parent: [ BaseItem, PowerCellSlotSmallItem]
   id: HandHeldMassScanner
   description: A hand-held mass scanner.
   components:
@@ -27,6 +27,7 @@
   - type: PowerCellDraw
     drawRate: 3
     useRate: 100
+  - type: ActivatableUIRequiresPowerCell
   - type: ActivatableUI
     key: enum.RadarConsoleUiKey.Key
     inHandsOnly: true

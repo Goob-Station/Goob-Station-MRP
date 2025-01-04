@@ -6,6 +6,7 @@ using Content.Server.EUI;
 using Content.Server.Item;
 using Content.Shared.Administration;
 using Content.Shared.Item;
+using Content.Shared.Materials;
 using Content.Shared.Research.Prototypes;
 using Content.Shared.UserInterface;
 using Content.Shared.Weapons.Melee;
@@ -219,13 +220,13 @@ public sealed class StatValuesCommand : IConsoleCommand
         {
             var cost = 0.0;
 
-            foreach (var (material, count) in proto.Materials)
+            foreach (var (material, count) in proto.RequiredMaterials)
             {
-                var materialPrice = _proto.Index(material).Price;
+                var materialPrice = _proto.Index<MaterialPrototype>(material).Price;
                 cost += materialPrice * count;
             }
 
-            var sell = priceSystem.GetLatheRecipePrice(proto);
+            var sell = priceSystem.GetEstimatedPrice(_proto.Index<EntityPrototype>(proto.Result));
 
             values.Add(new[]
             {

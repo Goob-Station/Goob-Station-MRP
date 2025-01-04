@@ -3,15 +3,18 @@ using Content.Shared.Paint;
 using Content.Shared.Sprite;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
+using Content.Server.Chemistry.Containers.EntitySystems;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Humanoid;
 using Robust.Shared.Utility;
 using Content.Shared.Verbs;
 using Content.Shared.SubFloor;
+using Content.Server.Nutrition.Components;
 using Content.Shared.Inventory;
-using Content.Shared.Chemistry.EntitySystems;
+using Content.Server.Nutrition.EntitySystems;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Whitelist;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Paint;
 
@@ -22,12 +25,11 @@ public sealed class PaintSystem : SharedPaintSystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly OpenableSystem _openable = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
 
     public override void Initialize()
@@ -55,6 +57,7 @@ public sealed class PaintSystem : SharedPaintSystem
             return;
 
         var paintText = Loc.GetString("paint-verb");
+
         var verb = new UtilityVerb()
         {
             Act = () =>
@@ -65,13 +68,12 @@ public sealed class PaintSystem : SharedPaintSystem
             Text = paintText,
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/paint.svg.192dpi.png"))
         };
-
         args.Verbs.Add(verb);
     }
 
     private void PrepPaint(EntityUid uid, PaintComponent component, EntityUid target, EntityUid user) =>
         _doAfterSystem.TryStartDoAfter(
-            new(
+            new DoAfterArgs(
                 EntityManager,
                 user,
                 component.Delay,
@@ -80,7 +82,8 @@ public sealed class PaintSystem : SharedPaintSystem
                 target: target,
                 used: uid)
             {
-                BreakOnMove = true,
+                BreakOnUserMove = true,
+                BreakOnTargetMove = true,
                 NeedHand = true,
                 BreakOnHandChange = true,
             });
@@ -108,8 +111,8 @@ public sealed class PaintSystem : SharedPaintSystem
             return;
         }
 
-        if (_whitelist.IsWhitelistFail(entity.Comp.Whitelist, target)
-            || _whitelist.IsBlacklistPass(entity.Comp.Blacklist, target)
+        if (!entity.Comp.Whitelist?.IsValid(target, EntityManager) == true
+            || !entity.Comp.Blacklist?.IsValid(target, EntityManager) == false
             || HasComp<HumanoidAppearanceComponent>(target) || HasComp<SubFloorHideComponent>(target))
         {
             _popup.PopupEntity(Loc.GetString("paint-failure", ("target", target)), user, user, PopupType.Medium);
@@ -128,13 +131,12 @@ public sealed class PaintSystem : SharedPaintSystem
             // Paint any clothing the target is wearing
             if (HasComp<InventoryComponent>(target)
                 && _inventory.TryGetSlots(target, out var slotDefinitions))
-            {
                 foreach (var slot in slotDefinitions)
                 {
                     if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt)
                         || HasComp<PaintedComponent>(slotEnt.Value)
-                        || _whitelist.IsWhitelistFail(entity.Comp.Whitelist, slotEnt.Value)
-                        || _whitelist.IsBlacklistPass(entity.Comp.Blacklist, slotEnt.Value)
+                        || !entity.Comp.Whitelist?.IsValid(slotEnt.Value, EntityManager) != true
+                        || !entity.Comp.Blacklist?.IsValid(slotEnt.Value, EntityManager) != false
                         || HasComp<RandomSpriteComponent>(slotEnt.Value)
                         || HasComp<HumanoidAppearanceComponent>(slotEnt.Value))
                         continue;
@@ -145,7 +147,6 @@ public sealed class PaintSystem : SharedPaintSystem
                     _appearanceSystem.SetData(slotEnt.Value, PaintVisuals.Painted, true);
                     Dirty(slotEnt.Value, slotToPaint);
                 }
-            }
 
             _popup.PopupEntity(Loc.GetString("paint-success", ("target", target)), user, user, PopupType.Medium);
             _appearanceSystem.SetData(target, PaintVisuals.Painted, true);
@@ -159,8 +160,8 @@ public sealed class PaintSystem : SharedPaintSystem
 
     public void Paint(EntityWhitelist? whitelist, EntityWhitelist? blacklist, EntityUid target, Color color)
     {
-        if (_whitelist.IsWhitelistFail(whitelist, target)
-            || _whitelist.IsBlacklistPass(blacklist, target))
+        if (!whitelist?.IsValid(target, EntityManager) != true
+            || !blacklist?.IsValid(target, EntityManager) != false)
             return;
 
         EnsureComp<PaintedComponent>(target, out var paint);
@@ -171,12 +172,11 @@ public sealed class PaintSystem : SharedPaintSystem
 
         if (HasComp<InventoryComponent>(target)
             && _inventory.TryGetSlots(target, out var slotDefinitions))
-        {
             foreach (var slot in slotDefinitions)
             {
                 if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt)
-                    || _whitelist.IsWhitelistFail(whitelist, slotEnt.Value)
-                    || _whitelist.IsBlacklistPass(blacklist, slotEnt.Value))
+                    || !whitelist?.IsValid(slotEnt.Value, EntityManager) != true
+                    || !blacklist?.IsValid(slotEnt.Value, EntityManager) != false)
                     continue;
 
                 EnsureComp<PaintedComponent>(slotEnt.Value, out var slotToPaint);
@@ -185,7 +185,6 @@ public sealed class PaintSystem : SharedPaintSystem
                 _appearanceSystem.SetData(slotEnt.Value, PaintVisuals.Painted, true);
                 Dirty(slotEnt.Value, slotToPaint);
             }
-        }
 
         _appearanceSystem.SetData(target, PaintVisuals.Painted, true);
         Dirty(target, paint);

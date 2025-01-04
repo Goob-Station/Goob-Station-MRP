@@ -74,7 +74,7 @@ namespace Content.Shared.Damage
         public List<string> RadiationDamageTypeIDs = new() { "Radiation" };
 
         [DataField]
-        public Dictionary<MobState, ProtoId<HealthIconPrototype>> HealthIcons = new()
+        public Dictionary<MobState, ProtoId<StatusIconPrototype>> HealthIcons = new()
         {
             { MobState.Alive, "HealthIconFine" },
             { MobState.Critical, "HealthIconCritical" },
@@ -82,10 +82,7 @@ namespace Content.Shared.Damage
         };
 
         [DataField]
-        public ProtoId<HealthIconPrototype> RottingIcon = "HealthIconRotting";
-
-        [DataField]
-        public FixedPoint2? HealthBarThreshold;
+        public ProtoId<StatusIconPrototype> RottingIcon = "HealthIconRotting";
     }
 
     [Serializable, NetSerializable]

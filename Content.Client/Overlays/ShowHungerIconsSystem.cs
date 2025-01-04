@@ -18,7 +18,7 @@ public sealed class ShowHungerIconsSystem : EquipmentHudSystem<ShowHungerIconsCo
 
     private void OnGetStatusIconsEvent(EntityUid uid, HungerComponent component, ref GetStatusIconsEvent ev)
     {
-        if (!IsActive)
+        if (!IsActive || ev.InContainer)
             return;
 
         if (_hunger.TryGetStatusIconPrototype(component, out var iconPrototype))

@@ -4,7 +4,6 @@ using Content.Server.Stack;
 using Content.Shared.Destructible.Thresholds;
 using Content.Shared.Prototypes;
 using Content.Shared.Stacks;
-using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -31,8 +30,7 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
 
         public void Execute(EntityUid owner, DestructibleSystem system, EntityUid? cause = null)
         {
-            var tSys = system.EntityManager.System<TransformSystem>();
-            var position = tSys.GetMapCoordinates(owner);
+            var position = system.EntityManager.GetComponent<TransformComponent>(owner).MapPosition;
 
             var getRandomVector = () => new Vector2(system.Random.NextFloat(-Offset, Offset), system.Random.NextFloat(-Offset, Offset));
 
@@ -50,8 +48,7 @@ namespace Content.Server.Destructible.Thresholds.Behaviors
                         ? minMax.Min
                         : system.Random.Next(minMax.Min, minMax.Max + 1);
 
-                    if (count == 0)
-                        continue;
+                    if (count == 0) continue;
 
                     if (EntityPrototypeHelpers.HasComponent<StackComponent>(entityId, system.PrototypeManager, system.ComponentFactory))
                     {

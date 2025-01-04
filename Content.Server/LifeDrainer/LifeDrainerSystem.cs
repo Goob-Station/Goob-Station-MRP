@@ -1,5 +1,6 @@
 using Content.Server.Abilities.Psionics;
 using Content.Server.Carrying;
+using Content.Server.NPC.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
@@ -13,8 +14,6 @@ using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Utility;
-using Content.Shared.NPC.Systems;
-
 
 namespace Content.Server.LifeDrainer;
 
@@ -123,7 +122,8 @@ public sealed class LifeDrainerSystem : EntitySystem
         var ev = new LifeDrainDoAfterEvent();
         var args = new DoAfterArgs(EntityManager, uid, comp.Delay, ev, target: target, eventTarget: uid)
         {
-            BreakOnMove = true,
+            BreakOnTargetMove = true,
+            BreakOnUserMove = true,
             MovementThreshold = 2f,
             NeedHand = false
         };

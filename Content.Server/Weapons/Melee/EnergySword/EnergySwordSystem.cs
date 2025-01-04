@@ -2,7 +2,8 @@ using Content.Shared.Interaction;
 using Content.Shared.Light;
 using Content.Shared.Light.Components;
 using Content.Shared.Toggleable;
-using Content.Shared.Tools.Systems;
+using Content.Shared.Tools.Components;
+using Content.Shared.Item;
 using Robust.Shared.Random;
 
 namespace Content.Server.Weapons.Melee.EnergySword;
@@ -12,7 +13,6 @@ public sealed class EnergySwordSystem : EntitySystem
     [Dependency] private readonly SharedRgbLightControllerSystem _rgbSystem = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedToolSystem _toolSystem = default!;
 
     public override void Initialize()
     {
@@ -38,7 +38,7 @@ public sealed class EnergySwordSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (!_toolSystem.HasQuality(args.Used, "Pulsing"))
+        if (!TryComp(args.Used, out ToolComponent? tool) || !tool.Qualities.ContainsAny("Pulsing"))
             return;
 
         args.Handled = true;

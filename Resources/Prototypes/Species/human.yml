@@ -18,7 +18,6 @@
   id: MobHumanSprites
   sprites:
     Head: MobHumanHead
-    Face: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
@@ -39,9 +38,6 @@
 - type: markingPoints
   id: MobHumanMarkingLimits
   points:
-    Face:
-      points: 1
-      required: false
     Hair:
       points: 1
       required: false

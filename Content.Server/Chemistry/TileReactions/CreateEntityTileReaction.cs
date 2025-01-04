@@ -1,4 +1,4 @@
-using Content.Shared.Chemistry.Reaction;
+﻿using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Content.Shared.Maps;
@@ -47,8 +47,7 @@ public sealed partial class CreateEntityTileReaction : ITileReaction
                 int acc = 0;
                 foreach (var ent in tile.GetEntitiesInTile())
                 {
-                    var whitelistSystem = entMan.System<EntityWhitelistSystem>();
-                    if (whitelistSystem.IsWhitelistPass(Whitelist, ent))
+                    if (Whitelist.IsValid(ent))
                         acc += 1;
 
                     if (acc >= MaxOnTile)

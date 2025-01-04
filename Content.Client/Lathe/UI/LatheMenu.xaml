@@ -100,9 +100,12 @@
                             Margin="5 0 0 0"
                             Text="{Loc 'lathe-menu-fabricating-message'}">
                         </Label>
-                        <BoxContainer Name="FabricatingDisplayContainer"
-                                      HorizontalAlignment="Left"
-                                      Margin="100 0 0 0"/>
+                        <TextureRect
+                            Name="Icon"
+                            HorizontalExpand="True"
+                            SizeFlagsStretchRatio="2"
+                            Margin="100 0 0 0">
+                        </TextureRect>
                         <Label
                             Name="NameLabel"
                             RectClipContent="True"
@@ -111,15 +114,12 @@
                         </Label>
                     </PanelContainer>
                 </BoxContainer>
-                <ScrollContainer VerticalExpand="True" HScrollEnabled="False">
-                    <BoxContainer
-                        Name="QueueList"
-                        Orientation="Vertical"
-                        HorizontalExpand="True"
-                        VerticalExpand="True"
-                        RectClipContent="True">
-                    </BoxContainer>
-                </ScrollContainer>
+                <ItemList
+                    Name="QueueList"
+                    VerticalExpand="True"
+                    SizeFlagsStretchRatio="3"
+                    SelectMode="None">
+                </ItemList>
             </BoxContainer>
             <BoxContainer
             VerticalExpand="True"
@@ -132,12 +132,6 @@
                 HorizontalExpand="True">
                 <ui:MaterialStorageControl Name="MaterialsList" SizeFlagsStretchRatio="8"/>
             </BoxContainer>
-            <!-- Begin DeltaV Additions: Mining points -->
-            <BoxContainer Orientation="Horizontal" Name="MiningPointsContainer" Visible="False">
-                <Label Name="MiningPointsLabel" HorizontalExpand="True"/>
-                <Button Name="MiningPointsClaimButton" Text="{Loc 'lathe-menu-mining-points-claim-button'}"/>
-            </BoxContainer>
-            <!-- End DeltaV Additions: Mining points -->
         </BoxContainer>
         </BoxContainer>
 

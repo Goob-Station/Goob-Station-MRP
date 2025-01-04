@@ -134,7 +134,8 @@ namespace Content.Server.Vampiric
 
             var args = new DoAfterArgs(EntityManager, bloodsucker, bloodSuckerComponent.Delay, new BloodSuckDoAfterEvent(), bloodsucker, target: victim)
             {
-                BreakOnMove = false,
+                BreakOnTargetMove = true,
+                BreakOnUserMove = false,
                 DistanceThreshold = 2f,
                 NeedHand = false
             };

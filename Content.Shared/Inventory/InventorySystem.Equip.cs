@@ -10,9 +10,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
-using Content.Shared.Strip;
 using Content.Shared.Strip.Components;
-using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
@@ -32,8 +30,6 @@ public abstract partial class InventorySystem
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly SharedStrippableSystem _strippable = default!;
 
     [ValidatePrototypeId<ItemSizePrototype>]
     private const string PocketableItemSize = "Small";
@@ -173,7 +169,8 @@ public abstract partial class InventorySystem
             {
                 BlockDuplicate = true,
                 BreakOnHandChange = true,
-                BreakOnMove = true,
+                BreakOnUserMove = true,
+                BreakOnTargetMove = true,
                 CancelDuplicate = true,
                 RequireCanInteract = true,
                 NeedHand = true
@@ -228,11 +225,11 @@ public abstract partial class InventorySystem
 
     public bool CanEquip(EntityUid uid, EntityUid itemUid, string slot, [NotNullWhen(false)] out string? reason,
         SlotDefinition? slotDefinition = null, InventoryComponent? inventory = null,
-        ClothingComponent? clothing = null, ItemComponent? item = null, bool bypassAccessCheck = false) =>
-        CanEquip(uid, uid, itemUid, slot, out reason, slotDefinition, inventory, clothing, item, bypassAccessCheck);
+        ClothingComponent? clothing = null, ItemComponent? item = null) =>
+        CanEquip(uid, uid, itemUid, slot, out reason, slotDefinition, inventory, clothing, item);
 
     public bool CanEquip(EntityUid actor, EntityUid target, EntityUid itemUid, string slot, [NotNullWhen(false)] out string? reason, SlotDefinition? slotDefinition = null,
-        InventoryComponent? inventory = null, ClothingComponent? clothing = null, ItemComponent? item = null, bool bypassAccessCheck = false)
+        InventoryComponent? inventory = null, ClothingComponent? clothing = null, ItemComponent? item = null)
     {
         reason = "inventory-component-can-equip-cannot";
         if (!Resolve(target, ref inventory, false))
@@ -265,14 +262,19 @@ public abstract partial class InventorySystem
             return false;
         }
 
-        if (!bypassAccessCheck && !CanAccess(actor, target, itemUid))
+        if (!CanAccess(actor, target, itemUid))
         {
             reason = "interaction-system-user-interaction-cannot-reach";
             return false;
         }
 
-        if (_whitelistSystem.IsWhitelistFail(slotDefinition.Whitelist, itemUid) ||
-            _whitelistSystem.IsBlacklistPass(slotDefinition.Blacklist, itemUid))
+        if (slotDefinition.Whitelist != null && !slotDefinition.Whitelist.IsValid(itemUid))
+        {
+            reason = "inventory-component-can-equip-does-not-fit";
+            return false;
+        }
+
+        if (slotDefinition.Blacklist != null && slotDefinition.Blacklist.IsValid(itemUid))
         {
             reason = "inventory-component-can-equip-does-not-fit";
             return false;
@@ -416,7 +418,8 @@ public abstract partial class InventorySystem
             {
                 BlockDuplicate = true,
                 BreakOnHandChange = true,
-                BreakOnMove = true,
+                BreakOnUserMove = true,
+                BreakOnTargetMove = true,
                 CancelDuplicate = true,
                 RequireCanInteract = true,
                 NeedHand = true

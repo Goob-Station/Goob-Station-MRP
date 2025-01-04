@@ -101,7 +101,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         var argsDoAfterEvent = new DoAfterArgs(EntityManager, args.Actor, timeToDraw, ev, args.Actor)
         {
-            BreakOnMove = true,
+            BreakOnUserMove = true,
             NeedHand = true
         };
 
@@ -147,7 +147,7 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         var argsDoAfterEvent =
             new DoAfterArgs(EntityManager, args.User, runeDrawer.EraseTime, new RuneEraseDoAfterEvent(), rune)
             {
-                BreakOnMove = true,
+                BreakOnUserMove = true,
                 BreakOnDamage = true,
                 NeedHand = true
             };

@@ -1,4 +1,3 @@
-using Content.Shared.Research.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
@@ -15,7 +14,7 @@ public sealed partial class ReverseEngineeringComponent : Component
     /// Does not neccesarily line up with lathe recipes.
     /// </summary>
     [DataField("recipes")]
-    public List<ProtoId<LatheRecipePrototype>>? Recipes;
+    public List<string>? Recipes;
 
     /// <summary>
     /// Difficulty score 1-5 how hard this is to reverse engineer.

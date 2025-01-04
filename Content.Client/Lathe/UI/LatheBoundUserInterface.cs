@@ -1,8 +1,6 @@
-using Content.Shared.DeltaV.Salvage; // DeltaV
 using Content.Shared.Lathe;
 using Content.Shared.Research.Components;
 using JetBrains.Annotations;
-using Robust.Client.UserInterface;
 
 namespace Content.Client.Lathe.UI
 {
@@ -19,9 +17,9 @@ namespace Content.Client.Lathe.UI
         {
             base.Open();
 
-            _menu = this.CreateWindow<LatheMenu>();
-            _menu.SetEntity(Owner);
-            _menu.OpenCenteredRight();
+            _menu = new LatheMenu(this);
+            _menu.OnClose += Close;
+
 
             _menu.OnServerListButtonPressed += _ =>
             {
@@ -33,7 +31,7 @@ namespace Content.Client.Lathe.UI
                 SendMessage(new LatheQueueRecipeMessage(recipe, amount));
             };
 
-            _menu.OnClaimMiningPoints += () => SendMessage(new LatheClaimMiningPointsMessage()); // DeltaV
+            _menu.OpenCenteredRight();
         }
 
         protected override void UpdateState(BoundUserInterfaceState state)
@@ -51,6 +49,14 @@ namespace Content.Client.Lathe.UI
                     _menu?.SetQueueInfo(msg.CurrentlyProducing);
                     break;
             }
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            if (!disposing)
+                return;
+            _menu?.Dispose();
         }
     }
 }

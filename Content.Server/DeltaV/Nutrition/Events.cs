@@ -4,11 +4,7 @@ namespace Content.Server.Nutrition;
 /// Raised on a food being sliced.
 /// Used by deep frier to apply friedness to slices (e.g. deep fried pizza)
 /// </summary>
-/// <remarks>
-/// Not to be confused with upstream SliceFoodEvent which doesn't pass the slice entities, and is only raised once.
-/// </remarks>
-[ByRefEvent]
-public sealed class FoodSlicedEvent : EntityEventArgs
+public sealed class SliceFoodEvent : EntityEventArgs
 {
     /// <summary>
     /// Who did the slicing?
@@ -29,7 +25,7 @@ public sealed class FoodSlicedEvent : EntityEventArgs
     /// <summary>
     public EntityUid Slice;
 
-    public FoodSlicedEvent(EntityUid user, EntityUid food, EntityUid slice)
+    public SliceFoodEvent(EntityUid user, EntityUid food, EntityUid slice)
     {
         User = user;
         Food = food;

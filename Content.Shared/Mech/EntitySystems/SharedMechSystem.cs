@@ -15,7 +15,6 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee;
-using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
@@ -38,7 +37,6 @@ public abstract class SharedMechSystem : EntitySystem
     [Dependency] private readonly SharedMoverController _mover = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -218,7 +216,7 @@ public abstract class SharedMechSystem : EntitySystem
         if (component.EquipmentContainer.ContainedEntities.Count >= component.MaxEquipmentAmount)
             return;
 
-        if (_whitelistSystem.IsWhitelistFail(component.EquipmentWhitelist, toInsert))
+        if (component.EquipmentWhitelist != null && !component.EquipmentWhitelist.IsValid(toInsert))
             return;
 
         equipmentComponent.EquipmentOwner = uid;
@@ -436,7 +434,7 @@ public abstract class SharedMechSystem : EntitySystem
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, args.Dragged, component.EntryDelay, new MechEntryEvent(), uid, target: uid)
         {
-            BreakOnMove = true,
+            BreakOnUserMove = true,
         };
 
         _doAfter.TryStartDoAfter(doAfterEventArgs);
