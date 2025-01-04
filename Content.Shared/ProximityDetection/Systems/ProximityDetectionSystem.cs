@@ -1,6 +1,4 @@
-﻿using Content.Shared.Item.ItemToggle;
-﻿using Content.Shared.Item.ItemToggle.Components;
-using Content.Shared.ProximityDetection.Components;
+﻿using Content.Shared.ProximityDetection.Components;
 using Content.Shared.Tag;
 using Robust.Shared.Network;
 
@@ -11,7 +9,6 @@ namespace Content.Shared.ProximityDetection.Systems;
 public sealed class ProximityDetectionSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
-    [Dependency] private readonly ItemToggleSystem _toggle = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
     [Dependency] private readonly INetManager _net = default!;
@@ -20,10 +17,10 @@ public sealed class ProximityDetectionSystem : EntitySystem
 
     public override void Initialize()
     {
-        base.Initialize();
-
+        SubscribeLocalEvent<ProximityDetectorComponent, EntityPausedEvent>(OnPaused);
+        SubscribeLocalEvent<ProximityDetectorComponent, EntityUnpausedEvent>(OnUnpaused);
         SubscribeLocalEvent<ProximityDetectorComponent, ComponentInit>(OnCompInit);
-        SubscribeLocalEvent<ProximityDetectorComponent, ItemToggledEvent>(OnToggled);
+
     }
 
     private void OnCompInit(EntityUid uid, ProximityDetectorComponent component, ComponentInit args)
@@ -33,39 +30,57 @@ public sealed class ProximityDetectionSystem : EntitySystem
         Log.Debug("DetectorComponent only supports requireAll = false for tags. All components are required for a match!");
     }
 
+    private void OnPaused(EntityUid owner, ProximityDetectorComponent component, EntityPausedEvent args)
+    {
+        SetEnable_Internal(owner,component,false);
+    }
+
+    private void OnUnpaused(EntityUid owner, ProximityDetectorComponent detector, ref EntityUnpausedEvent args)
+    {
+        SetEnable_Internal(owner, detector,true);
+    }
+    public void SetEnable(EntityUid owner, bool enabled, ProximityDetectorComponent? detector = null)
+    {
+        if (!Resolve(owner, ref detector) || detector.Enabled == enabled)
+            return;
+        SetEnable_Internal(owner ,detector, enabled);
+    }
+
     public override void Update(float frameTime)
     {
         if (_net.IsClient)
             return;
-
         var query = EntityQueryEnumerator<ProximityDetectorComponent>();
         while (query.MoveNext(out var owner, out var detector))
         {
-            if (!_toggle.IsActivated(owner))
+            if (!detector.Enabled)
                 continue;
-
             detector.AccumulatedFrameTime += frameTime;
             if (detector.AccumulatedFrameTime < detector.UpdateRate)
                 continue;
-
             detector.AccumulatedFrameTime -= detector.UpdateRate;
             RunUpdate_Internal(owner, detector);
         }
     }
 
-    private void OnToggled(Entity<ProximityDetectorComponent> ent, ref ItemToggledEvent args)
+    public bool GetEnable(EntityUid owner, ProximityDetectorComponent? detector = null)
     {
-        if (args.Activated)
+        return Resolve(owner, ref detector, false) && detector.Enabled;
+    }
+
+    private void SetEnable_Internal(EntityUid owner,ProximityDetectorComponent detector, bool enabled)
+    {
+        detector.Enabled = enabled;
+        var noDetectEvent = new ProximityTargetUpdatedEvent(detector, detector.TargetEnt, detector.Distance);
+        RaiseLocalEvent(owner, ref noDetectEvent);
+        if (!enabled)
         {
-            RunUpdate_Internal(ent, ent.Comp);
+            detector.AccumulatedFrameTime = 0;
+            RunUpdate_Internal(owner, detector);
+            Dirty(owner, detector);
             return;
         }
-
-        var noDetectEvent = new ProximityTargetUpdatedEvent(ent.Comp, Target: null, ent.Comp.Distance);
-        RaiseLocalEvent(ent, ref noDetectEvent);
-
-        ent.Comp.AccumulatedFrameTime = 0;
-        Dirty(ent, ent.Comp);
+        RunUpdate_Internal(owner, detector);
     }
 
     public void ForceUpdate(EntityUid owner, ProximityDetectorComponent? detector = null)
@@ -75,31 +90,11 @@ public sealed class ProximityDetectionSystem : EntitySystem
         RunUpdate_Internal(owner, detector);
     }
 
-    private void ClearTarget(Entity<ProximityDetectorComponent> ent)
-    {
-        var (uid, comp) = ent;
-        if (comp.TargetEnt == null)
-            return;
-
-        comp.Distance = -1;
-        comp.TargetEnt = null;
-        var noDetectEvent = new ProximityTargetUpdatedEvent(comp, null, -1);
-        RaiseLocalEvent(uid, ref noDetectEvent);
-        var newTargetEvent = new NewProximityTargetEvent(comp, null);
-        RaiseLocalEvent(uid, ref newTargetEvent);
-        Dirty(uid, comp);
-    }
 
     private void RunUpdate_Internal(EntityUid owner,ProximityDetectorComponent detector)
     {
         if (!_net.IsServer) //only run detection checks on the server!
             return;
-
-        if (Deleted(detector.TargetEnt))
-        {
-            ClearTarget((owner, detector));
-        }
-
         var xformQuery = GetEntityQuery<TransformComponent>();
         var xform = xformQuery.GetComponent(owner);
         List<(EntityUid TargetEnt, float Distance)> detections = new();
@@ -178,7 +173,15 @@ public sealed class ProximityDetectionSystem : EntitySystem
     {
         if (detections.Count == 0)
         {
-            ClearTarget((owner, detector));
+            if (detector.TargetEnt == null)
+                return;
+            detector.Distance = -1;
+            detector.TargetEnt = null;
+            var noDetectEvent = new ProximityTargetUpdatedEvent(detector, null, -1);
+            RaiseLocalEvent(owner, ref noDetectEvent);
+            var newTargetEvent = new NewProximityTargetEvent(detector, null);
+            RaiseLocalEvent(owner, ref newTargetEvent);
+            Dirty(owner, detector);
             return;
         }
         var closestDistance = detections[0].Distance;
@@ -195,7 +198,6 @@ public sealed class ProximityDetectionSystem : EntitySystem
         var newData = newTarget || detector.Distance != closestDistance;
         detector.TargetEnt = closestEnt;
         detector.Distance = closestDistance;
-        Dirty(owner, detector);
         if (newTarget)
         {
             var newTargetEvent = new NewProximityTargetEvent(detector, closestEnt);

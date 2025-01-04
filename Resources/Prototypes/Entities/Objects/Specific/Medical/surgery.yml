@@ -8,9 +8,9 @@
   - type: Sprite
   - type: StaticPrice
     price: 20
-  - type: Tag
-    tags:
-    - SurgeryTool
+#  - type: Tag
+#    tags:
+#    - SurgeryTool
   - type: SurgeryTool
 
 # Cautery
@@ -22,10 +22,10 @@
   description: A surgical tool used to cauterize open wounds.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/cautery.rsi
+    sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     storedRotation: 90
   - type: MeleeWeapon
     damage:
@@ -33,16 +33,48 @@
         Heat: 5
     soundHit:
       path: /Audio/Effects/lightburn.ogg
-  # Shitmed Change
   - type: DamageOtherOnHit
   - type: ThrowingAngle
     angle: 45
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/cautery1.ogg
+      path: /Audio/Medical/Surgery/cautery1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/cautery2.ogg
+      path: /Audio/Medical/Surgery/cautery2.ogg
   - type: Cautery
+
+# TODO: Make a system to toggle modes so people have to think a bit more.
+
+- type: entity
+  name: searing tool
+  id: EnergyCautery
+  parent: Cautery
+  description: A cautery with an energy tip, also serves as a drill in its powered state.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/e-cautery.rsi
+    state: e-cautery-on
+  - type: Item
+    sprite: Objects/Specific/Medical/Surgery/e-cautery.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-on
+      right:
+      - state: inhand-right-on
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/cautery1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/cautery2.ogg
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 10
+        Heat: 1
+  - type: Cautery
+    speed: 1.5
+  - type: Drill
+    speed: 1.5
 
 # Drill
 
@@ -53,10 +85,10 @@
   description: A surgical drill for making holes into hard material.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
+    sprite: Objects/Specific/Medical/Surgery/drill.rsi
     state: drill
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/drill.rsi
+    sprite: Objects/Specific/Medical/Surgery/drill.rsi
     shape:
     - 0,0,1,0
     - 1,1,1,1
@@ -83,10 +115,9 @@
     angle: 90
   - type: StaticPrice
     price: 40
-  # Shitmed Change
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+      path: /Audio/Medical/Surgery/saw.ogg
   - type: Drill
 
 # Scalpel
@@ -99,18 +130,14 @@
   components:
   - type: Sharp
     butcherDelayModifier: 1.5 # Butchering with a scalpel, regardless of the type, will take 50% longer
-  - type: Tool
-    qualities:
-    - Slicing
-    #speedModifier: 0.66 # pretend the sixes go on forever :)
   - type: Utensil
     types:
       - Knife
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
     storedRotation: 90
   - type: MeleeWeapon
     wideAnimationRotation: 90
@@ -133,13 +160,43 @@
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 90
-  # Shitmed Change
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
+      path: /Audio/Medical/Surgery/scalpel1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
+      path: /Audio/Medical/Surgery/scalpel2.ogg
   - type: Scalpel
+
+- type: entity
+  name: energy scalpel
+  id: EnergyScalpel
+  parent: Scalpel
+  description: A scalpel which uses an energy blade, also serves as a saw in its powered state.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    state: e-scalpel-on
+  - type: Item
+    sprite: Objects/Specific/Medical/Surgery/e-scalpel.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-on
+      right:
+      - state: inhand-right-on
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/scalpel2.ogg
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 10
+        Heat: 1
+  - type: Scalpel
+    speed: 1.5
+  - type: BoneSaw
+    speed: 1.5
 
 - type: entity
   name: shiv
@@ -148,10 +205,10 @@
   description: A pointy piece of glass, abraded to an edge and wrapped in tape for a handle. # Could become a decent tool or weapon with right tool mods.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: Objects/Specific/Medical/Surgery/oldscalpel.rsi
     state: shiv
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: Objects/Specific/Medical/Surgery/oldscalpel.rsi
     heldPrefix: shiv
 
 - type: entity
@@ -161,16 +218,16 @@
   description: Made of more expensive materials, sharper and generally more reliable.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: Objects/Specific/Medical/Surgery/oldscalpel.rsi
     state: advanced
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: Objects/Specific/Medical/Surgery/oldscalpel.rsi
     heldPrefix: advanced
   - type: MeleeWeapon
     damage:
       types:
         Slash: 8
-  - type: Scalpel # Shitmed
+  - type: Scalpel
     speed: 1.25
 
 - type: entity
@@ -180,11 +237,10 @@
   description: A scalpel which uses a directed laser to slice instead of a blade, for more precise surgery while also cauterizing as it cuts.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
+    sprite: Objects/Specific/Medical/Surgery/oldscalpel.rsi
     state: laser
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/scalpel.rsi
-    storedRotation: 90
+    sprite: Objects/Specific/Medical/Surgery/oldscalpel.rsi
     heldPrefix: laser
   - type: MeleeWeapon
     damage:
@@ -205,12 +261,11 @@
   description: A surgical tool used to hold open incisions.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
+    sprite: Objects/Specific/Medical/Surgery/retractor.rsi
     state: retractor
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
+    sprite: Objects/Specific/Medical/Surgery/retractor.rsi
     storedRotation: 90
-  # Shitmed Change
   - type: MeleeWeapon
     wideAnimationRotation: 90
     attackRate: 1.25
@@ -234,26 +289,63 @@
   - type: EmbedPassiveDamage
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+      path: /Audio/Medical/Surgery/retractor1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg
+      path: /Audio/Medical/Surgery/retractor2.ogg
   - type: Retractor
+  - type: Tweezers
+  - type: Tending
 
+- type: entity
+  name: mechanical pinches
+  id: AdvancedRetractor
+  parent: Retractor
+  description: A retractor with mechanical pinches, also serves as a hemostat in its powered state.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/Surgery/adv-retractor.rsi
+    state: adv-retractor-on
+  - type: Item
+    sprite: Objects/Specific/Medical/Surgery/adv-retractor.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-on
+      right:
+      - state: inhand-right-on
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/Medical/Surgery/retractor1.ogg
+    endSound:
+      path: /Audio/Medical/Surgery/retractor2.ogg
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 6.5
+        Heat: 1
+  - type: ThrowingAngle
+    angle: 270
+  - type: Hemostat
+    speed: 1.5
+  - type: Retractor
+    speed: 1.5
+  - type: Tweezers
+    speed: 1.5
+  - type: Tending
+    speed: 1.5
 
 # Hemostat
 
 - type: entity
   name: hemostat
   id: Hemostat
-  parent: BaseToolSurgery # Shitmed Change
+  parent: BaseToolSurgery
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi # Shitmed Change
+    sprite: Objects/Specific/Medical/Surgery/hemostat.rsi
     state: hemostat
   - type: Item
-    heldPrefix: hemostat
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/hemostat.rsi # Shitmed Change
+    sprite: Objects/Specific/Medical/Surgery/hemostat.rsi
     storedRotation: 90
   - type: MeleeWeapon
     wideAnimationRotation: 90
@@ -275,17 +367,14 @@
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 35
-  # Shitmed Change
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+      path: /Audio/Medical/Surgery/retractor1.ogg
     endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/hemostat1.ogg
+      path: /Audio/Medical/Surgery/hemostat1.ogg
   - type: Hemostat
-  - type: Tweezers # Shitmed
-  - type: Tending # Shitmed
 
-# Bone setter - Shitmed Change
+# Bone setter
 - type: entity
   parent: BaseToolSurgery
   id: Bonesetter
@@ -293,13 +382,13 @@
   description: Used for setting bones back into place.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bonesetter.rsi
+    sprite: Objects/Specific/Medical/Surgery/bonesetter.rsi
     state: bonesetter
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bonesetter.rsi
+    sprite: Objects/Specific/Medical/Surgery/bonesetter.rsi
   - type: BoneSetter
 
-# Bone Gel - Shitmed Change
+# Bone Gel
 - type: entity
   parent: BaseToolSurgery
   id: BoneGel
@@ -307,7 +396,7 @@
   description: A container for bone gel that often needs to be refilled from a specialized machine.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
+    sprite: Objects/Specific/Medical/Surgery/bone-gel.rsi
     state: bone-gel
   - type: BoneGel
 
@@ -332,7 +421,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speedModifier: 1.0
+    speed: 1.0
   - type: MeleeWeapon
     attackRate: 1.3333
     range: 1.35
@@ -353,11 +442,9 @@
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 0
-  # Shitmed Change
   - type: BoneSaw
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+# --No melee for regular saw because have you ever seen someone use a band saw as a weapon? It's dumb.--
+# No, I'm going to saw through your bones.
 
 - type: entity
   name: choppa
@@ -388,8 +475,8 @@
   - type: Tool
     qualities:
       - Sawing
-    speedModifier: 0.5
-  - type: BoneSaw # Shitmed
+    speed: 0.5
+  - type: BoneSaw
     speed: 0.5
 
 - type: entity
@@ -399,10 +486,10 @@
   description: For heavy duty cutting.
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
+    sprite: Objects/Specific/Medical/Surgery/circular-saw.rsi
     state: circular-saw
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
+    sprite: Objects/Specific/Medical/Surgery/circular-saw.rsi
     storedRotation: 90
   - type: MeleeWeapon
     attackRate: .86
@@ -429,7 +516,7 @@
   - type: Tool
     qualities:
       - Sawing
-    speedModifier: 1.5
+    speed: 1.5
   - type: SurgeryTool
     startSound:
       path: /Audio/Medical/Surgery/saw.ogg
@@ -439,14 +526,12 @@
 - type: entity
   name: advanced circular saw
   id: SawAdvanced
-  parent: SawElectric
+  parent: Saw
   description: You think you can cut anything with it.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/Surgery/saw.rsi
     state: advanced
   - type: Item
-    sprite: Objects/Specific/Medical/Surgery/saw.rsi
     heldPrefix: advanced
     storedRotation: 90
   - type: MeleeWeapon
@@ -474,107 +559,8 @@
   - type: Tool
     qualities:
       - Sawing
-    speedModifier: 2.0
-  - type: BoneSaw # Shitmed
-    speed: 2
-
-# Shitmed Tools
-
-- type: entity
-  name: searing tool
-  id: EnergyCautery
-  parent: Cautery
-  description: A cautery with an energy tip, also serves as a drill in its powered state.
-  components:
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
-    state: e-cautery-on
-  - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-cautery.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left-on
-      right:
-      - state: inhand-right-on
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/cautery1.ogg
-    endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/cautery2.ogg
-  - type: MeleeWeapon
-    damage:
-      types:
-        Piercing: 10
-        Heat: 1
-  - type: Cautery
-    speed: 1.5
-  - type: Drill
-    speed: 1.5
-
-- type: entity
-  name: energy scalpel
-  id: EnergyScalpel
-  parent: Scalpel
-  description: A scalpel which uses an energy blade, also serves as a saw in its powered state.
-  components:
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
-    state: e-scalpel-on
-  - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/e-scalpel.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left-on
-      right:
-      - state: inhand-right-on
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
-    endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
-  - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 10
-        Heat: 1
-  - type: Scalpel
-    speed: 1.5
+    speed: 2.0
   - type: BoneSaw
-    speed: 1.5
-
-- type: entity
-  name: mechanical pinches
-  id: AdvancedRetractor
-  parent: Retractor
-  description: A retractor with mechanical pinches, also serves as a hemostat in its powered state.
-  components:
-  - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
-    state: adv-retractor-on
-  - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/adv-retractor.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left-on
-      right:
-      - state: inhand-right-on
-  - type: SurgeryTool
-    startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
-    endSound:
-      path: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg
-  - type: MeleeWeapon
-    damage:
-      types:
-        Slash: 6.5
-        Heat: 1
-  - type: Hemostat
-    speed: 1.5
-  - type: Retractor
-    speed: 1.5
-  - type: Tweezers
-    speed: 1.5
-  - type: Tending
     speed: 1.5
 
 - type: entity
@@ -583,13 +569,13 @@
   parent: BaseToolSurgery
   components:
   - type: Sprite
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+    sprite: Objects/Specific/Medical/Surgery/omnimed.rsi
     state: omnimed
   - type: Item
-    sprite: _Shitmed/Objects/Specific/Medical/Surgery/omnimed.rsi
+    sprite: Objects/Specific/Medical/Surgery/omnimed.rsi
   - type: SurgeryTool
     startSound:
-      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+      path: /Audio/Medical/Surgery/saw.ogg
   - type: Hemostat
     speed: 2
   - type: Scalpel
@@ -610,13 +596,3 @@
     speed: 2
   - type: Tending
     speed: 2
-
-- type: entity
-  parent: OmnimedTool
-  id: OmnimedToolSyndie
-  components:
-  - type: Sprite
-    state: evil
-  - type: Item
-    size: Small
-    heldPrefix: evil

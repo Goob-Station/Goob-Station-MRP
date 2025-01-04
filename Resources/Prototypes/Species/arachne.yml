@@ -15,9 +15,6 @@
 - type: markingPoints
   id: MobArachneMarkingLimits
   points:
-    Face:
-      points: 1
-      required: false
     Hair:
       points: 1
       required: false
@@ -51,7 +48,6 @@
   id: MobArachneSprites
   sprites:
     Head: MobHumanHead
-    Face: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking

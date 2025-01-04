@@ -51,7 +51,6 @@
     - JobsCommandAUncategorized
     - JobsCommandCaptain
     - JobsCommandHeadOfPersonnel
-    - JobsCommandAdminAssistant
 
 - type: loadoutCategory
   id: JobsCommandAUncategorized
@@ -61,9 +60,6 @@
 
 - type: loadoutCategory
   id: JobsCommandHeadOfPersonnel
-
-- type: loadoutCategory
-  id: JobsCommandAdminAssistant
 
 # Engineering
 - type: loadoutCategory

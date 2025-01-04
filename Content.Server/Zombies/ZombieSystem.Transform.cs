@@ -28,8 +28,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Systems;
-using Content.Shared.NPC.Components;
-using Content.Shared.NPC.Systems;
 using Content.Shared.Nutrition.AnimalHusbandry;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Popups;
@@ -226,11 +224,17 @@ namespace Content.Server.Zombies
                 _damageable.SetAllDamage(target, damageablecomp, 0);
             _mobState.ChangeMobState(target, MobState.Alive);
 
-            _faction.ClearFactions(target, dirty: false);
+            var factionComp = EnsureComp<NpcFactionMemberComponent>(target);
+            foreach (var id in new List<string>(factionComp.Factions))
+            {
+                _faction.RemoveFaction(target, id);
+            }
             _faction.AddFaction(target, "Zombie");
 
             //gives it the funny "Zombie ___" name.
-            _nameMod.RefreshNameModifiers(target);
+            var meta = MetaData(target);
+            zombiecomp.BeforeZombifiedEntityName = meta.EntityName;
+            _metaData.SetEntityName(target, Loc.GetString("zombie-name-prefix", ("target", meta.EntityName)), meta);
 
             _identity.QueueIdentityUpdate(target);
 

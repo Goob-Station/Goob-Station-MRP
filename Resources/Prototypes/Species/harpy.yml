@@ -18,7 +18,6 @@
   id: MobHarpySprites
   sprites:
     Head: MobHarpyHead
-    Face: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
@@ -40,9 +39,6 @@
 - type: markingPoints
   id: MobHarpyMarkingLimits
   points:
-    Face:
-      points: 1
-      required: false
     Hair:
       points: 1
       required: false

@@ -1,5 +1,4 @@
 using Content.Server.Store.Components;
-using Content.Shared.Store.Components;
 using Robust.Shared.Containers;
 
 namespace Content.Server.Store.Systems;
@@ -16,7 +15,7 @@ public sealed partial class StoreSystem
 
     private void OnEntityRemoved(EntityUid uid, StoreRefundComponent component, EntRemovedFromContainerMessage args)
     {
-        if (component.StoreEntity == null || _actions.TryGetActionData(uid, out _, false) || !TryComp<StoreComponent>(component.StoreEntity.Value, out var storeComp))
+        if (component.StoreEntity == null || _actions.TryGetActionData(uid, out _) || !TryComp<StoreComponent>(component.StoreEntity.Value, out var storeComp))
             return;
 
         DisableRefund(component.StoreEntity.Value, storeComp);

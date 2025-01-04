@@ -91,7 +91,7 @@ public sealed partial class RevenantSystem
     {
         var searchDoAfter = new DoAfterArgs(EntityManager, uid, revenant.SoulSearchDuration, new SoulEvent(), uid, target: target)
         {
-            BreakOnMove = true,
+            BreakOnUserMove = true,
             BreakOnDamage = true,
             DistanceThreshold = 2
         };
@@ -152,7 +152,7 @@ public sealed partial class RevenantSystem
         var doAfter = new DoAfterArgs(EntityManager, uid, revenant.HarvestDebuffs.X, new HarvestEvent(), uid, target: target)
         {
             DistanceThreshold = 2,
-            BreakOnMove = true,
+            BreakOnUserMove = true,
             BreakOnDamage = true,
             RequireCanInteract = false, // stuns itself
         };
@@ -248,7 +248,7 @@ public sealed partial class RevenantSystem
         foreach (var ent in lookup)
         {
             //break windows
-            if (tags.HasComponent(ent) && _tag.HasTag(ent, "Window"))
+            if (tags.HasComponent(ent) && _tag.HasAnyTag(ent, "Window"))
             {
                 //hardcoded damage specifiers til i die.
                 var dspec = new DamageSpecifier();

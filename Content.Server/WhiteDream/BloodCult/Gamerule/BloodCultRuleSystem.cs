@@ -36,8 +36,6 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-using Content.Shared.NPC.Systems;
-
 
 namespace Content.Server.WhiteDream.BloodCult.Gamerule;
 

@@ -3,6 +3,7 @@ using Content.Shared.Administration.Logs;
 using Content.Shared.Chat;
 using Content.Shared.Clothing;
 using Content.Shared.Database;
+using Content.Shared.Implants;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Preferences;
@@ -23,17 +24,24 @@ public sealed partial class VoiceMaskSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<VoiceMaskComponent, InventoryRelayedEvent<TransformSpeakerNameEvent>>(OnTransformSpeakerName);
+        SubscribeLocalEvent<VoiceMaskComponent, InventoryRelayedEvent<TransformSpeakerSpeechEvent>>(OnTransformSpeakerName);
+        SubscribeLocalEvent<VoiceMaskComponent, ImplantRelayEvent<TransformSpeakerSpeechEvent>>(OnTransformSpeakerNameImplant);
         SubscribeLocalEvent<VoiceMaskComponent, VoiceMaskChangeNameMessage>(OnChangeName);
         SubscribeLocalEvent<VoiceMaskComponent, VoiceMaskChangeVerbMessage>(OnChangeVerb);
         SubscribeLocalEvent<VoiceMaskComponent, ClothingGotEquippedEvent>(OnEquip);
         SubscribeLocalEvent<VoiceMaskSetNameEvent>(OpenUI);
     }
 
-    private void OnTransformSpeakerName(Entity<VoiceMaskComponent> entity, ref InventoryRelayedEvent<TransformSpeakerNameEvent> args)
+    private void OnTransformSpeakerName(Entity<VoiceMaskComponent> entity, ref InventoryRelayedEvent<TransformSpeakerSpeechEvent> args)
     {
         args.Args.VoiceName = GetCurrentVoiceName(entity);
         args.Args.SpeechVerb = entity.Comp.VoiceMaskSpeechVerb ?? args.Args.SpeechVerb;
+    }
+
+    private void OnTransformSpeakerNameImplant(Entity<VoiceMaskComponent> entity, ref ImplantRelayEvent<TransformSpeakerSpeechEvent> args)
+    {
+        args.Event.VoiceName = GetCurrentVoiceName(entity);
+        args.Event.SpeechVerb = entity.Comp.VoiceMaskSpeechVerb ?? args.Event.SpeechVerb;
     }
 
     #region User inputs from UI
@@ -75,7 +83,11 @@ public sealed partial class VoiceMaskSystem : EntitySystem
 
     private void OpenUI(VoiceMaskSetNameEvent ev)
     {
-        var maskEntity = ev.Action.Comp.Container;
+        // If this ever becomes an entity remove this!
+        if (!TryComp<InstantActionComponent>(ev.Action, out var actionComp))
+            return;
+
+        var maskEntity = actionComp.Container;
 
         if (!TryComp<VoiceMaskComponent>(maskEntity, out var voiceMaskComp))
             return;

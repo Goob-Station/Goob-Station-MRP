@@ -62,7 +62,6 @@
     price: 500
   - type: UseDelay
     delay: 1
-  - type: Execution
   - type: MeleeWeapon
     attackRate: 1.4
     damage:

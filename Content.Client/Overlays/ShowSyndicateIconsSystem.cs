@@ -19,10 +19,11 @@ public sealed class ShowSyndicateIconsSystem : EquipmentHudSystem<ShowSyndicateI
 
     private void OnGetStatusIconsEvent(EntityUid uid, NukeOperativeComponent component, ref GetStatusIconsEvent ev)
     {
-        if (!IsActive)
+        if (!IsActive || ev.InContainer)
             return;
 
-        if (_prototype.TryIndex<FactionIconPrototype>(component.SyndStatusIcon, out var iconPrototype))
+        if (_prototype.TryIndex<StatusIconPrototype>(component.SyndStatusIcon, out var iconPrototype))
             ev.StatusIcons.Add(iconPrototype);
     }
 }
+

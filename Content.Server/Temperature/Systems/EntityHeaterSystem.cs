@@ -3,7 +3,6 @@ using Content.Server.Temperature.Components;
 using Content.Shared.Examine;
 using Content.Shared.Placeable;
 using Content.Shared.Popups;
-using Content.Shared.Power;
 using Content.Shared.Temperature;
 using Content.Shared.Verbs;
 

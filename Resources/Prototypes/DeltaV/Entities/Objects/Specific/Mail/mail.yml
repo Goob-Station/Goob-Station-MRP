@@ -111,7 +111,7 @@
     - id: BookBartendersManual
       prob: 0.2
       orGroup: bookguide
-    - id: BookHowToCookForFortySpaceman
+    - id: BookChefGaming
       prob: 0.2
       orGroup: bookguide
     - id: BookLeafLoversSecret

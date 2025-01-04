@@ -3,10 +3,13 @@
   id: Scream
   name: chat-emote-name-scream
   category: Vocal
-  icon: Interface/Emotes/scream.png
+  icon: Interface/Actions/scream.png
   whitelist:
     components:
     - Vocal
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: ["chat-emote-msg-scream"]
   chatTriggers:
     - screams
@@ -22,6 +25,9 @@
   whitelist:
     components:
     - Vocal
+  blacklist:
+    components:
+    - BorgChassischatMessages
   chatMessages: ["chat-emote-msg-laugh"]
   chatTriggers:
     - laughs
@@ -36,8 +42,10 @@
   icon: Interface/Emotes/honk.png
   chatMessages: ["chat-emote-msg-honk"]
   whitelist:
-    tags:
-    - SiliconEmotes
+    requireAll: true
+    components:
+    - Vocal
+    - BorgChassischatMessages
   chatTriggers:
     - honks
 
@@ -49,6 +57,9 @@
   whitelist:
     components:
     - Vocal
+  blacklist:
+    components:
+    - BorgChassischatMessages
   chatMessages: ["chat-emote-msg-sigh"]
   chatTriggers:
     - sighs
@@ -61,6 +72,9 @@
   whitelist:
     components:
     - Vocal
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: ["chat-emote-msg-whistle"]
   chatTriggers:
     - whistles
@@ -73,6 +87,9 @@
   whitelist:
     components:
     - Vocal
+  blacklist:
+    components:
+    - BorgChassis
   chatMessages: ["chat-emote-msg-crying"]
   chatTriggers:
     - cries
@@ -201,9 +218,6 @@
   whitelist:
     components:
     - MobState
-  blacklist:
-    tags:
-    - SiliconEmotes
   chatMessages: ["chat-emote-msg-deathgasp"]
   chatTriggers:
   - deathgasp
@@ -217,10 +231,6 @@
 - type: emote
   id: SiliconDeathgasp
   name: chat-emote-name-deathgasp
-  icon: Interface/Emotes/deathgasp.png
-  whitelist:
-    tags:
-    - SiliconEmotes
   chatMessages: ["chat-emote-msg-deathgasp-silicon"]
   chatTriggers:
   - sdeathgasp
@@ -231,9 +241,10 @@
   category: Vocal
   icon: Interface/Emotes/buzz.png
   whitelist:
-    tags:
-    - SiliconEmotes
-    - HarpyEmotes
+    requireAll: true
+    components:
+    - BorgChassis
+    - Vocal
   chatMessages: ["chat-emote-msg-buzz"]
   chatTriggers:
     - buzzes
@@ -265,9 +276,10 @@
   category: Vocal
   icon: Interface/Emotes/beep.png
   whitelist:
-    tags:
-    - SiliconEmotes
-    - HarpyEmotes
+    requireAll: true
+    components:
+    - BorgChassis
+    - Vocal
   chatMessages: ["chat-emote-msg-beep"]
   chatTriggers:
     - beeps
@@ -276,10 +288,6 @@
   id: Boop
   name: chat-emote-name-boop
   category: Vocal
-  whitelist:
-    tags:
-    - SiliconEmotes
-    - HarpyEmotes
   chatMessages: [ boops ]
   chatTriggers:
     - boops
@@ -290,9 +298,10 @@
   category: Vocal
   icon: Interface/Emotes/chime.png
   whitelist:
-    tags:
-    - SiliconEmotes
-    - HarpyEmotes
+    requireAll: true
+    components:
+    - BorgChassis
+    - Vocal
   chatMessages: ["chat-emote-msg-chime"]
   chatTriggers:
     - chimes
@@ -303,9 +312,10 @@
   category: Vocal
   icon: Interface/Emotes/buzztwo.png
   whitelist:
-    tags:
-    - SiliconEmotes
-    - HarpyEmotes
+    requireAll: true
+    components:
+    - BorgChassis
+    - Vocal
   chatMessages: ["chat-emote-msg-buzzestwo"]
   chatTriggers:
     - buzzes twice
@@ -316,9 +326,10 @@
   category: Vocal
   icon: Interface/Emotes/ping.png
   whitelist:
-    tags:
-    - SiliconEmotes
-    - HarpyEmotes
+    requireAll: true
+    components:
+    - BorgChassis
+    - Vocal
   chatMessages: ["chat-emote-msg-ping"]
   chatTriggers:
     - pings
@@ -326,11 +337,6 @@
 - type: emote
   id: Whirr
   name: chat-emote-name-whirr
-  category: Vocal
-  whitelist:
-    tags:
-    - SiliconEmotes
-    - HarpyEmotes
   chatMessages: [ whirrs ]
   chatTriggers:
     - whirrs
@@ -339,13 +345,6 @@
   id: Mars
   name: chat-emote-name-mars
   category: Vocal
-  whitelist:
-    tags:
-    - ShadowkinEmotes
-    - HarpyEmotes
-  blacklist:
-    components:
-    - BorgChassis
   chatMessages: [ mars ]
   chatTriggers:
     - mars
@@ -354,13 +353,6 @@
   id: Wurble
   name: chat-emote-name-wurble
   category: Vocal
-  whitelist:
-    tags:
-    - ShadowkinEmotes
-    - HarpyEmotes
-  blacklist:
-    components:
-    - BorgChassis
   chatMessages: [ wurble ]
   chatTriggers:
     - wurble

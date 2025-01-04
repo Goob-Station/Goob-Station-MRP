@@ -22,7 +22,6 @@ using Robust.Shared.Timing;
 using System.Linq;
 using Content.Server.Jittering;
 using Content.Shared.Jittering;
-using Content.Shared.Power;
 
 namespace Content.Server.Kitchen.EntitySystems
 {

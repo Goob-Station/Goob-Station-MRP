@@ -26,18 +26,18 @@ public sealed class ThirstSystem : EntitySystem
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string ThirstIconOverhydratedId = "ThirstIconOverhydrated";
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string ThirstIconThirstyId = "ThirstIconThirsty";
 
-    [ValidatePrototypeId<SatiationIconPrototype>]
+    [ValidatePrototypeId<StatusIconPrototype>]
     private const string ThirstIconParchedId = "ThirstIconParched";
 
-    private SatiationIconPrototype? _thirstIconOverhydrated = null;
-    private SatiationIconPrototype? _thirstIconThirsty = null;
-    private SatiationIconPrototype? _thirstIconParched = null;
+    private StatusIconPrototype? _thirstIconOverhydrated = null;
+    private StatusIconPrototype? _thirstIconThirsty = null;
+    private StatusIconPrototype? _thirstIconParched = null;
 
     public override void Initialize()
     {
@@ -133,7 +133,7 @@ public sealed class ThirstSystem : EntitySystem
         }
     }
 
-    public bool TryGetStatusIconPrototype(ThirstComponent component, out SatiationIconPrototype? prototype)
+    public bool TryGetStatusIconPrototype(ThirstComponent component, out StatusIconPrototype? prototype)
     {
         switch (component.CurrentThirstThreshold)
         {

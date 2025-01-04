@@ -7,4 +7,6 @@ namespace Content.Shared.Ninja.Components;
 /// Requires a ninja with a suit for abilities to work.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-public sealed partial class EnergyKatanaComponent : Component;
+public sealed partial class EnergyKatanaComponent : Component
+{
+}

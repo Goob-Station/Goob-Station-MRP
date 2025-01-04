@@ -39,7 +39,6 @@
         ents: []
   - type: StaticPrice
     price: 500
-  - type: Execution
   - type: MeleeWeapon
     attackRate: 1.3333
     damage:

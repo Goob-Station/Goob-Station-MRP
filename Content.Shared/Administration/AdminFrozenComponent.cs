@@ -2,13 +2,8 @@
 
 namespace Content.Shared.Administration;
 
-[RegisterComponent, Access(typeof(SharedAdminFrozenSystem))]
-[NetworkedComponent, AutoGenerateComponentState]
+[RegisterComponent, Access(typeof(AdminFrozenSystem))]
+[NetworkedComponent]
 public sealed partial class AdminFrozenComponent : Component
 {
-    /// <summary>
-    /// Whether the player is also muted.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public bool Muted;
 }

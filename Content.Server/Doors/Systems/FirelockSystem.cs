@@ -11,10 +11,8 @@ using Content.Shared.Atmos.Monitor;
 using Content.Shared.Doors;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
-using Content.Shared.Power;
 using Content.Shared.Popups;
 using Content.Shared.Prying.Components;
-using Robust.Server.GameObjects;
 using Robust.Shared.Map.Components;
 
 namespace Content.Server.Doors.Systems

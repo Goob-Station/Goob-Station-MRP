@@ -7,7 +7,6 @@ using Content.Shared.Anomaly.Components;
 using Content.Shared.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
-using Content.Shared.Power;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Verbs;
 

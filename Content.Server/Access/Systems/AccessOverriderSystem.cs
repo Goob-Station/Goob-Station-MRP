@@ -57,7 +57,8 @@ public sealed class AccessOverriderSystem : SharedAccessOverriderSystem
 
         var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, component.DoAfter, new AccessOverriderDoAfterEvent(), uid, target: args.Target, used: uid)
         {
-            BreakOnMove = true,
+            BreakOnTargetMove = true,
+            BreakOnUserMove = true,
             BreakOnDamage = true,
             NeedHand = true,
         };

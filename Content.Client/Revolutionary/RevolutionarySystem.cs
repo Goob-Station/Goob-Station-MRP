@@ -1,37 +1,44 @@
+using Content.Shared.Antag;
 using Content.Shared.Revolutionary.Components;
-using Content.Shared.Revolutionary;
+using Content.Shared.Ghost;
 using Content.Shared.StatusIcon.Components;
-using Robust.Shared.Prototypes;
 
 namespace Content.Client.Revolutionary;
 
 /// <summary>
 /// Used for the client to get status icons from other revs.
 /// </summary>
-public sealed class RevolutionarySystem : SharedRevolutionarySystem
+public sealed class RevolutionarySystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RevolutionaryComponent, GetStatusIconsEvent>(GetRevIcon);
-        SubscribeLocalEvent<HeadRevolutionaryComponent, GetStatusIconsEvent>(GetHeadRevIcon);
+        SubscribeLocalEvent<RevolutionaryComponent, CanDisplayStatusIconsEvent>(OnCanShowRevIcon);
+        SubscribeLocalEvent<HeadRevolutionaryComponent, CanDisplayStatusIconsEvent>(OnCanShowRevIcon);
     }
 
-    private void GetRevIcon(Entity<RevolutionaryComponent> ent, ref GetStatusIconsEvent args)
+    /// <summary>
+    /// Determine whether a client should display the rev icon.
+    /// </summary>
+    private void OnCanShowRevIcon<T>(EntityUid uid, T comp, ref CanDisplayStatusIconsEvent args) where T : IAntagStatusIconComponent
     {
-        if (HasComp<HeadRevolutionaryComponent>(ent))
-            return;
-
-        if (_prototype.TryIndex(ent.Comp.StatusIcon, out var iconPrototype))
-            args.StatusIcons.Add(iconPrototype);
+        args.Cancelled = !CanDisplayIcon(args.User, comp.IconVisibleToGhost);
     }
 
-    private void GetHeadRevIcon(Entity<HeadRevolutionaryComponent> ent, ref GetStatusIconsEvent args)
+    /// <summary>
+    /// The criteria that determine whether a client should see Rev/Head rev icons.
+    /// </summary>
+    private bool CanDisplayIcon(EntityUid? uid, bool visibleToGhost)
     {
-        if (_prototype.TryIndex(ent.Comp.StatusIcon, out var iconPrototype))
-            args.StatusIcons.Add(iconPrototype);
+        if (HasComp<HeadRevolutionaryComponent>(uid) || HasComp<RevolutionaryComponent>(uid))
+            return true;
+
+        if (visibleToGhost && HasComp<GhostComponent>(uid))
+            return true;
+
+        return HasComp<ShowRevIconsComponent>(uid);
     }
+
 }

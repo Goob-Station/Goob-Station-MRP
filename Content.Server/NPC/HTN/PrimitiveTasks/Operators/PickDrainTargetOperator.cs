@@ -3,8 +3,6 @@ using System.Threading.Tasks;
 using Content.Server.LifeDrainer;
 using Content.Server.NPC.Pathfinding;
 using Content.Server.NPC.Systems;
-using NpcFactionSystem = Content.Shared.NPC.Systems.NpcFactionSystem;
-
 
 namespace Content.Server.NPC.HTN.PrimitiveTasks.Operators;
 

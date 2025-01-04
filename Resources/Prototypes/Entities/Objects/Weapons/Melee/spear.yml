@@ -9,7 +9,6 @@
   - type: EmbedPassiveDamage
   - type: ThrowingAngle
     angle: 225
-  - type: LandAtCursor
   - type: Tag
     tags:
     - Spear

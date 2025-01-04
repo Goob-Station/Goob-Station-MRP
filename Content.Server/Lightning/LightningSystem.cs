@@ -3,7 +3,6 @@ using Content.Server.Beam;
 using Content.Server.Beam.Components;
 using Content.Server.Lightning.Components;
 using Content.Shared.Lightning;
-using Robust.Server.GameObjects;
 using Robust.Shared.Random;
 
 namespace Content.Server.Lightning;
@@ -75,10 +74,13 @@ public sealed class LightningSystem : SharedLightningSystem
         //To Do: Remove Hardcode LightningTargetComponent (this should be a parameter of the SharedLightningComponent)
         //To Do: This is still pretty bad for perf but better than before and at least it doesn't re-allocate
         // several hashsets every time
-        var mapCoords = _transform.GetMapCoordinates(user);
-        var targets = _lookup.GetEntitiesInRange<LightningTargetComponent>(mapCoords, range).ToList();
+
+        var userCoords = _transform.GetMapCoordinates(user);
+        var targetEnts = _lookup.GetEntitiesInRange<LightningTargetComponent>(userCoords, range);
+        var targets = targetEnts.Select(x => x.Comp).ToList();
+
         _random.Shuffle(targets);
-        targets.Sort((x, y) => y.Comp.Priority.CompareTo(x.Comp.Priority));
+        targets.Sort((x, y) => y.Priority.CompareTo(x.Priority));
 
         int shotCount = 0;
         int count = -1;
@@ -91,13 +93,13 @@ public sealed class LightningSystem : SharedLightningSystem
             var curTarget = targets[count];
 
             // Chance to ignore target
-            if (!_random.Prob(curTarget.Comp.HitProbability))
+            if (!_random.Prob(curTarget.HitProbability))
                 continue;
 
             ShootLightning(user, targets[count].Owner, lightningPrototype, triggerLightningEvents);
 
-            if (arcDepth - targets[count].Comp.LightningResistance > 0)
-                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].Comp.LightningResistance, triggerLightningEvents);
+            if (arcDepth - targets[count].LightningResistance > 0)
+                ShootRandomLightnings(targets[count].Owner, range, 1, lightningPrototype, arcDepth - targets[count].LightningResistance, triggerLightningEvents);
 
             shotCount++;
         }

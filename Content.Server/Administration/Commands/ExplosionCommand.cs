@@ -8,7 +8,6 @@ using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
 using System.Linq;
 using System.Numerics;
-using Robust.Server.GameObjects;
 
 namespace Content.Server.Administration.Commands;
 
@@ -106,7 +105,7 @@ public sealed class ExplosionCommand : IConsoleCommand
             if (args.Length > 4)
                 coords = new MapCoordinates(new Vector2(x, y), xform.MapID);
             else
-                coords = entMan.System<TransformSystem>().GetMapCoordinates(shell.Player.AttachedEntity.Value, xform: xform);
+                coords = xform.MapPosition;
         }
 
         ExplosionPrototype? type;

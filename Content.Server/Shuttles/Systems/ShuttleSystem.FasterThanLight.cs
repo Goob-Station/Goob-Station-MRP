@@ -11,7 +11,6 @@ using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Maps;
 using Content.Shared.Parallax;
-using Content.Shared.SegmentedEntity;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Shuttles.Systems;
 using Content.Shared.StatusEffect;
@@ -219,22 +218,18 @@ public sealed partial class ShuttleSystem
     /// </summary>
     public bool CanFTL(EntityUid shuttleUid, [NotNullWhen(false)] out string? reason)
     {
-        // Currently in FTL already
         if (HasComp<FTLComponent>(shuttleUid))
         {
             reason = Loc.GetString("shuttle-console-in-ftl");
             return false;
         }
 
-        if (TryComp<PhysicsComponent>(shuttleUid, out var shuttlePhysics))
+        if (FTLMassLimit > 0 &&
+            TryComp(shuttleUid, out PhysicsComponent? shuttlePhysics) &&
+            shuttlePhysics.Mass > FTLMassLimit)
         {
-
-            // Too large to FTL
-            if (FTLMassLimit > 0 &&  shuttlePhysics.Mass > FTLMassLimit)
-            {
-                reason = Loc.GetString("shuttle-console-mass");
-                return false;
-            }
+            reason = Loc.GetString("shuttle-console-mass");
+            return false;
         }
 
         if (HasComp<PreventPilotComponent>(shuttleUid))
@@ -644,9 +639,7 @@ public sealed partial class ShuttleSystem
         var childEnumerator = xform.ChildEnumerator;
         while (childEnumerator.MoveNext(out var child))
         {
-            if (!_buckleQuery.TryGetComponent(child, out var buckle) || buckle.Buckled
-            || HasComp<SegmentedEntityComponent>(child)
-            || HasComp<SegmentedEntitySegmentComponent>(child))
+            if (!_buckleQuery.TryGetComponent(child, out var buckle) || buckle.Buckled)
                 continue;
 
             toKnock.Add(child);

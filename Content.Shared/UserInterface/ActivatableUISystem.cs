@@ -8,7 +8,6 @@ using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Content.Shared.Whitelist;
 using Robust.Shared.Utility;
 using Content.Shared.Whitelist;
 using Robust.Shared.Containers;
@@ -23,7 +22,6 @@ public sealed partial class ActivatableUISystem : EntitySystem
     [Dependency] private readonly SharedUserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     public override void Initialize()
     {
@@ -101,8 +99,8 @@ public sealed partial class ActivatableUISystem : EntitySystem
         if (!args.CanAccess)
             return false;
 
-        if (_whitelistSystem.IsWhitelistFail(component.RequiredItems, args.Using ?? default)
-            || _whitelistSystem.IsWhitelistFail(component.UserWhitelist, args.User))
+        if (component.RequiredItems is not null && !_entityWhitelist.IsValid(component.RequiredItems, args.Using ?? default) ||
+            component.UserWhitelist is not null && !_entityWhitelist.IsValid(component.UserWhitelist, args.User))
             return false;
 
         if (component.RequireHands)
@@ -159,8 +157,8 @@ public sealed partial class ActivatableUISystem : EntitySystem
         if (component.VerbOnly)
             return;
 
-        if (_whitelistSystem.IsWhitelistFailOrNull(component.RequiredItems, args.Used) ||
-            !_whitelistSystem.IsWhitelistFail(component.UserWhitelist, args.User))
+        if (component.RequiredItems is null || !_entityWhitelist.IsValid(component.RequiredItems, args.Used) ||
+            component.UserWhitelist is not null && !_entityWhitelist.IsValid(component.UserWhitelist, args.User))
             return;
 
         args.Handled = InteractUI(args.User, uid, component);

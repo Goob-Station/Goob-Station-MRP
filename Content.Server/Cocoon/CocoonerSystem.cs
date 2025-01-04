@@ -54,7 +54,7 @@ namespace Content.Server.Cocoon
 
         private void AddCocoonVerb(EntityUid uid, CocoonerComponent component, GetVerbsEvent<InnateVerb> args)
         {
-            if (!args.CanAccess || !args.CanInteract || !HasComp<MobStateComponent>(args.Target) || args.Target == args.User)
+            if (!args.CanAccess || !args.CanInteract || !HasComp<MobStateComponent>(args.Target))
                 return;
 
             InnateVerb verb = new()
@@ -135,7 +135,8 @@ namespace Content.Server.Cocoon
 
             var args = new DoAfterArgs(EntityManager, uid, delay, new CocoonDoAfterEvent(), uid, target: target)
             {
-                BreakOnMove = true
+                BreakOnUserMove = true,
+                BreakOnTargetMove = true,
             };
 
             _doAfter.TryStartDoAfter(args);
@@ -150,7 +151,8 @@ namespace Content.Server.Cocoon
 
             var args = new DoAfterArgs(EntityManager, uid, delay, new UnCocoonDoAfterEvent(), uid, target: target)
             {
-                BreakOnMove = true
+                BreakOnUserMove = true,
+                BreakOnTargetMove = true,
             };
 
             _doAfter.TryStartDoAfter(args);

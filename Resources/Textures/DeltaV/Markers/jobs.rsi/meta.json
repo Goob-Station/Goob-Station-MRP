@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "all unless stated made by Floofers, adminassistant made by noctyrnal (github)",
+  "copyright": "made by Floofers",
   "size": {
     "x": 32,
     "y": 32
@@ -45,9 +45,6 @@
     },
     {
       "name": "mobster"
-    },
-    {
-        "name": "adminassistant"
     }
   ]
 }

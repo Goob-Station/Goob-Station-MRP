@@ -78,10 +78,8 @@
   - type: RadarConsole
     followEntity: true
   - type: CargoOrderConsole
-  - type: BankClient
   - type: CrewMonitoringConsole
   - type: GeneralStationRecordConsole
-    canDeleteEntries: true
   - type: DeviceNetwork
     deviceNetId: Wireless
     receiveFrequencyId: CrewMonitor
@@ -94,7 +92,8 @@
   - type: Stripping
   - type: SolutionScanner
   - type: IgnoreUIRange
-  - type: ShowAntagIcons
+  - type: ShowRevIcons
+  - type: ShowZombieIcons
   - type: Inventory
     templateId: aghost
   - type: InventorySlots

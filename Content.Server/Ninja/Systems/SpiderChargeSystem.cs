@@ -7,7 +7,6 @@ using Content.Server.Roles;
 using Content.Server.Sticky.Events;
 using Content.Shared.Interaction;
 using Content.Shared.Ninja.Components;
-using Content.Shared.Ninja.Systems;
 using Robust.Shared.GameObjects;
 
 namespace Content.Server.Ninja.Systems;
@@ -15,7 +14,7 @@ namespace Content.Server.Ninja.Systems;
 /// <summary>
 /// Prevents planting a spider charge outside of its location and handles greentext.
 /// </summary>
-public sealed class SpiderChargeSystem : SharedSpiderChargeSystem
+public sealed class SpiderChargeSystem : EntitySystem
 {
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly PopupSystem _popup = default!;

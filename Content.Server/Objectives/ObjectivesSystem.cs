@@ -36,14 +36,14 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
     private void OnRoundEndText(RoundEndTextAppendEvent ev)
     {
         // go through each gamerule getting data for the roundend summary.
-        var summaries = new Dictionary<string, Dictionary<string, List<(EntityUid, string)>>>();
+        var summaries = new Dictionary<string, Dictionary<string, List<EntityUid>>>();
         var query = EntityQueryEnumerator<GameRuleComponent>();
         while (query.MoveNext(out var uid, out var gameRule))
         {
             if (!_gameTicker.IsGameRuleAdded(uid, gameRule))
                 continue;
 
-            var info = new ObjectivesTextGetInfoEvent(new List<(EntityUid, string)>(), string.Empty);
+            var info = new ObjectivesTextGetInfoEvent(new List<EntityUid>(), string.Empty);
             RaiseLocalEvent(uid, ref info);
             if (info.Minds.Count == 0)
                 continue;
@@ -51,7 +51,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             // first group the gamerules by their agents, for example 2 different dragons
             var agent = info.AgentName;
             if (!summaries.ContainsKey(agent))
-                summaries[agent] = new Dictionary<string, List<(EntityUid, string)>>();
+                summaries[agent] = new Dictionary<string, List<EntityUid>>();
 
             var prepend = new ObjectivesTextPrependEvent("");
             RaiseLocalEvent(uid, ref prepend);
@@ -79,7 +79,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
             foreach (var (_, minds) in summary)
             {
                 total += minds.Count;
-                totalInCustody += minds.Where(pair => IsInCustody(pair.Item1)).Count();
+                totalInCustody += minds.Where(m => IsInCustody(m)).Count();
             }
 
             var result = new StringBuilder();
@@ -104,16 +104,19 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
         }
     }
 
-    private void AddSummary(StringBuilder result, string agent, List<(EntityUid, string)> minds)
+    private void AddSummary(StringBuilder result, string agent, List<EntityUid> minds)
     {
         var agentSummaries = new List<(string summary, float successRate, int completedObjectives)>();
 
-        foreach (var (mindId, name) in minds)
+        foreach (var mindId in minds)
         {
-            if (!TryComp<MindComponent>(mindId, out var mind))
+            if (!TryComp(mindId, out MindComponent? mind))
                 continue;
 
-            var title = GetTitle((mindId, mind), name);
+            var title = GetTitle(mindId, mind);
+            if (title == null)
+                continue;
+
             var custody = IsInCustody(mindId, mind) ? Loc.GetString("objectives-in-custody") : string.Empty;
 
             var objectives = mind.Objectives;
@@ -235,17 +238,33 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 
     /// <summary>
     /// Get the title for a player's mind used in round end.
-    /// Pass in the original entity name which is shown alongside username.
     /// </summary>
-    public string GetTitle(Entity<MindComponent?> mind, string name)
+    public string? GetTitle(EntityUid mindId, MindComponent? mind = null)
     {
-        if (Resolve(mind, ref mind.Comp) &&
-            mind.Comp.OriginalOwnerUserId != null &&
-            _player.TryGetPlayerData(mind.Comp.OriginalOwnerUserId.Value, out var sessionData))
+        if (!Resolve(mindId, ref mind))
+            return null;
+
+        var name = mind.CharacterName;
+        var username = (string?) null;
+
+        if (mind.OriginalOwnerUserId != null &&
+            _player.TryGetPlayerData(mind.OriginalOwnerUserId.Value, out var sessionData))
         {
-            var username = sessionData.UserName;
-            return Loc.GetString("objectives-player-user-named", ("user", username), ("name", name));
+            username = sessionData.UserName;
         }
+
+
+        if (username != null)
+        {
+            if (name != null)
+                return Loc.GetString("objectives-player-user-named", ("user", username), ("name", name));
+
+            return Loc.GetString("objectives-player-user", ("user", username));
+        }
+
+        // nothing to identify the player by, just give up
+        if (name == null)
+            return null;
 
         return Loc.GetString("objectives-player-named", ("name", name));
     }
@@ -260,7 +279,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
 /// The objectives system already checks if the game rule is added so you don't need to check that in this event's handler.
 /// </remarks>
 [ByRefEvent]
-public record struct ObjectivesTextGetInfoEvent(List<(EntityUid, string)> Minds, string AgentName);
+public record struct ObjectivesTextGetInfoEvent(List<EntityUid> Minds, string AgentName);
 
 /// <summary>
 /// Raised on the game rule before text for each agent's objectives is added, letting you prepend something.

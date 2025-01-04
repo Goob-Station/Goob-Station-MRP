@@ -22,7 +22,7 @@
       NavSmash: !type:Bool
         true
   - type: Tool
-    speedModifier: 1.5
+    speed: 1.5
     qualities:
       - Prying
   - type: Prying

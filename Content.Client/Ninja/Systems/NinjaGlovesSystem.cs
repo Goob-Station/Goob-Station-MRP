@@ -2,4 +2,9 @@ using Content.Shared.Ninja.Systems;
 
 namespace Content.Client.Ninja.Systems;
 
-public sealed class NinjaGlovesSystem : SharedNinjaGlovesSystem;
+/// <summary>
+/// Does nothing special, only exists to provide a client implementation.
+/// </summary>
+public sealed class NinjaGlovesSystem : SharedNinjaGlovesSystem
+{
+}

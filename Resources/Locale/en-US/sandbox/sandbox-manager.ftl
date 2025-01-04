@@ -1,5 +1,4 @@
 sandbox-window-title = Sandbox Panel
-sandbox-window-ai-overlay-button = AI Overlay
 sandbox-window-respawn-button = Respawn
 sandbox-window-spawn-entities-button = Spawn Entities
 sandbox-window-spawn-tiles-button = Spawn Tiles

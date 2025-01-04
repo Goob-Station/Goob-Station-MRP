@@ -9,6 +9,9 @@
     - type: NpcFactionMember
       factions:
       - Syndicate
+    - type: AutoTraitor
+      giveUplink: false
+      giveObjectives: false
     - type: AutoImplant
       implants:
       - DeathAcidifierImplant

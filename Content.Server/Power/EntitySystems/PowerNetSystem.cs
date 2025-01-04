@@ -5,7 +5,6 @@ using Content.Server.Power.NodeGroups;
 using Content.Server.Power.Pow3r;
 using Content.Shared.CCVar;
 using Content.Shared.Power;
-using Content.Shared.Power.Components;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
@@ -23,7 +22,6 @@ namespace Content.Server.Power.EntitySystems
         [Dependency] private readonly PowerNetConnectorSystem _powerNetConnector = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IParallelManager _parMan = default!;
-        [Dependency] private readonly PowerReceiverSystem _powerReceiver = default!;
 
         private readonly PowerState _powerState = new();
         private readonly HashSet<PowerNet> _powerNetReconnectQueue = new();
@@ -315,27 +313,19 @@ namespace Content.Server.Power.EntitySystems
             var enumerator = AllEntityQuery<ApcPowerReceiverComponent>();
             while (enumerator.MoveNext(out var uid, out var apcReceiver))
             {
-                var powered = !apcReceiver.PowerDisabled
-                              && (!apcReceiver.NeedsPower
-                                  || MathHelper.CloseToPercent(apcReceiver.NetworkLoad.ReceivingPower,
-                                      apcReceiver.Load));
-
-                // If new value is the same as the old, then exit
-                if (!apcReceiver.Recalculate && apcReceiver.Powered == powered)
+                var powered = apcReceiver.Powered;
+                if (powered == apcReceiver.PoweredLastUpdate)
                     continue;
 
-                var metadata = metaQuery.Comp(uid);
-                if (metadata.EntityPaused)
+                if (metaQuery.GetComponent(uid).EntityPaused)
                     continue;
 
-                apcReceiver.Recalculate = false;
-                apcReceiver.Powered = powered;
-                Dirty(uid, apcReceiver, metadata);
+                apcReceiver.PoweredLastUpdate = powered;
+                var ev = new PowerChangedEvent(apcReceiver.Powered, apcReceiver.NetworkLoad.ReceivingPower);
 
-                var ev = new PowerChangedEvent(powered, apcReceiver.NetworkLoad.ReceivingPower);
                 RaiseLocalEvent(uid, ref ev);
 
-                if (appearanceQuery.TryComp(uid, out var appearance))
+                if (appearanceQuery.TryGetComponent(uid, out var appearance))
                     _appearance.SetData(uid, PowerDeviceVisuals.Powered, powered, appearance);
             }
         }

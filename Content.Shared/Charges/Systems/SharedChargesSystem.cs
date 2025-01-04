@@ -5,13 +5,9 @@ namespace Content.Shared.Charges.Systems;
 
 public abstract class SharedChargesSystem : EntitySystem
 {
-    protected EntityQuery<LimitedChargesComponent> Query;
-
     public override void Initialize()
     {
         base.Initialize();
-
-        Query = GetEntityQuery<LimitedChargesComponent>();
 
         SubscribeLocalEvent<LimitedChargesComponent, ExaminedEvent>(OnExamine);
     }
@@ -34,9 +30,9 @@ public abstract class SharedChargesSystem : EntitySystem
     /// <summary>
     /// Tries to add a number of charges. If it over or underflows it will be clamped, wasting the extra charges.
     /// </summary>
-    public virtual void AddCharges(EntityUid uid, int change, LimitedChargesComponent? comp = null)
+    public void AddCharges(EntityUid uid, int change, LimitedChargesComponent? comp = null)
     {
-        if (!Query.Resolve(uid, ref comp, false))
+        if (!Resolve(uid, ref comp, false))
             return;
 
         var old = comp.Charges;
@@ -51,7 +47,7 @@ public abstract class SharedChargesSystem : EntitySystem
     public bool IsEmpty(EntityUid uid, LimitedChargesComponent? comp = null)
     {
         // can't be empty if there are no limited charges
-        if (!Query.Resolve(uid, ref comp, false))
+        if (!Resolve(uid, ref comp, false))
             return false;
 
         return comp.Charges <= 0;
@@ -60,24 +56,10 @@ public abstract class SharedChargesSystem : EntitySystem
     /// <summary>
     /// Uses a single charge. Must check IsEmpty beforehand to prevent using with 0 charge.
     /// </summary>
-    public void UseCharge(EntityUid uid, LimitedChargesComponent? comp = null)
+    public virtual void UseCharge(EntityUid uid, LimitedChargesComponent? comp = null)
     {
-        AddCharges(uid, -1, comp);
-    }
-
-    /// <summary>
-    /// Checks IsEmpty and uses a charge if it isn't empty.
-    /// </summary>
-    public bool TryUseCharge(Entity<LimitedChargesComponent?> ent)
-    {
-        if (!Query.Resolve(ent, ref ent.Comp, false))
-            return true;
-
-        if (IsEmpty(ent, ent.Comp))
-            return false;
-
-        UseCharge(ent, ent.Comp);
-        return true;
+        if (Resolve(uid, ref comp, false))
+            AddCharges(uid, -1, comp);
     }
 
     /// <summary>
@@ -98,6 +80,7 @@ public abstract class SharedChargesSystem : EntitySystem
     /// </summary>
     public virtual void UseCharges(EntityUid uid, int chargesUsed, LimitedChargesComponent? comp = null)
     {
-        AddCharges(uid, -chargesUsed, comp);
+        if (Resolve(uid, ref comp, false))
+            AddCharges(uid, -chargesUsed, comp);
     }
 }

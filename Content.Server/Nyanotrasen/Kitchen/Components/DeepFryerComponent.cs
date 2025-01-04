@@ -1,7 +1,6 @@
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Construction.Prototypes;
-using Content.Shared.EntityEffects;
 using Content.Shared.FixedPoint;
 using Content.Shared.Nutrition;
 using Content.Shared.Nyanotrasen.Kitchen;
@@ -188,7 +187,7 @@ namespace Content.Server.Nyanotrasen.Kitchen.Components
 
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("unsafeOilVolumeEffects")]
-        public List<EntityEffect> UnsafeOilVolumeEffects = new();
+        public List<ReagentEffect> UnsafeOilVolumeEffects = new();
 
         /// <summary>
         /// What is the temperature of the vat when the deep fryer is powered?

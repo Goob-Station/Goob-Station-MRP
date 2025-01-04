@@ -25,7 +25,8 @@
   - type: ReagentTank
     tankType: Fuel
   - type: DamageOnToolInteract
-    tools: Welding
+    tools:
+    - Welding
     weldingDamage:
       types:
         Heat: 10
@@ -216,3 +217,4 @@
       fillBaseName: watertank-2-
     - type: ExaminableSolution
       solution: tank
+

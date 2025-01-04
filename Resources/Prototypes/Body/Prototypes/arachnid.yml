@@ -23,7 +23,7 @@
       - left arm
       - right leg
       - left leg
-      - head # Shitmed
+      - head
     right arm:
       part: RightArmArachnid
       connections:

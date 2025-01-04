@@ -5,6 +5,10 @@
   id: MobHarpyBase
   abstract: true
   components:
+  - type: Flight
+    isLayerAnimated: true
+    layer: "/Textures/Mobs/Customization/Harpy/harpy_wings.rsi"
+    animationKey: "Flap"
   - type: Singer
     proto: HarpySinger
   - type: Sprite
@@ -38,7 +42,6 @@
       - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
-      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
@@ -111,7 +114,6 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
-    - HarpyEmotes
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -167,7 +169,6 @@
       - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
-      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]

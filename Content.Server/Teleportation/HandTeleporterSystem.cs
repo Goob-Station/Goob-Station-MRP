@@ -58,7 +58,7 @@ public sealed class HandTeleporterSystem : EntitySystem
             var doafterArgs = new DoAfterArgs(EntityManager, args.User, component.PortalCreationDelay, new TeleporterDoAfterEvent(), uid, used: uid)
             {
                 BreakOnDamage = true,
-                BreakOnMove = true,
+                BreakOnUserMove = true,
                 MovementThreshold = 0.5f,
             };
 

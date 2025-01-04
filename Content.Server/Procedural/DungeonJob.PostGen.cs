@@ -13,7 +13,6 @@ using Robust.Shared.Collections;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -25,15 +24,13 @@ public sealed partial class DungeonJob
      * Run after the main dungeon generation
      */
 
-    private static readonly ProtoId<TagPrototype> WallTag = "Wall";
-
     private bool HasWall(MapGridComponent grid, Vector2i tile)
     {
         var anchored = _maps.GetAnchoredEntitiesEnumerator(_gridUid, _grid, tile);
 
         while (anchored.MoveNext(out var uid))
         {
-            if (_tag.HasTag(uid.Value, WallTag))
+            if (_tagQuery.TryGetComponent(uid, out var tagComp) && tagComp.Tags.Contains("Wall"))
                 return true;
         }
 

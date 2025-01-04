@@ -1,34 +1,28 @@
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
+using Content.Server.NPC.Systems;
 using Content.Server.Objectives;
 using Content.Server.PDA.Ringer;
 using Content.Server.Roles;
+using Content.Server.Traitor.Components;
 using Content.Server.Traitor.Uplink;
-using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mind;
-using Content.Shared.Mobs.Systems;
-using Content.Shared.NPC.Systems;
+using Content.Shared.Mood;
 using Content.Shared.Objectives.Components;
 using Content.Shared.PDA;
-using Content.Shared.Radio;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
-using Content.Shared.Roles.RoleCodeword;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using System.Linq;
 using System.Text;
-using Content.Shared.Mood;
-
 
 namespace Content.Server.GameTicking.Rules;
 
 public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 {
-    private static readonly Color TraitorCodewordColor = Color.FromHex("#cc3b3b");
-
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
@@ -38,7 +32,8 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
     [Dependency] private readonly SharedRoleSystem _roleSystem = default!;
     [Dependency] private readonly SharedJobSystem _jobs = default!;
     [Dependency] private readonly ObjectivesSystem _objectives = default!;
-    [Dependency] private readonly SharedRoleCodewordSystem _roleCodewordSystem = default!;
+
+    public const int MaxPicks = 20;
 
     public override void Initialize()
     {
@@ -46,6 +41,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         SubscribeLocalEvent<TraitorRuleComponent, AfterAntagEntitySelectedEvent>(AfterEntitySelected);
 
+        SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextGetInfoEvent>(OnObjectivesTextGetInfo);
         SubscribeLocalEvent<TraitorRuleComponent, ObjectivesTextPrependEvent>(OnObjectivesTextPrepend);
     }
 
@@ -73,37 +69,33 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         }
     }
 
-    public bool MakeTraitor(EntityUid traitor, TraitorRuleComponent component)
+    public bool MakeTraitor(EntityUid traitor, TraitorRuleComponent component, bool giveUplink = true, bool giveObjectives = true)
     {
         //Grab the mind if it wasnt provided
         if (!_mindSystem.TryGetMind(traitor, out var mindId, out var mind))
             return false;
 
-        var briefing = "";
-
-        if (component.GiveCodewords)
-            briefing = Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", component.Codewords)));
-
+        var briefing = Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", component.Codewords)));
         var issuer = _random.Pick(_prototypeManager.Index(component.ObjectiveIssuers).Values);
 
-        Note[]? code = null;
+        if (TryComp<AutoTraitorComponent>(traitor, out var autoTraitorComponent))
+        {
+            giveUplink = autoTraitorComponent.GiveUplink;
+            giveObjectives = autoTraitorComponent.GiveObjectives;
+        }
 
-        if (component.GiveUplink)
+        Note[]? code = null;
+        if (giveUplink)
         {
             // Calculate the amount of currency on the uplink.
             var startingBalance = component.StartingBalance;
-            if (_jobs.MindTryGetJob(mindId, out _, out var job))
-            {
-                if (startingBalance < job.AntagAdvantage) // Can't use Math functions on FixedPoint2
-                    startingBalance = 0;
-                else
-                    startingBalance = startingBalance - job.AntagAdvantage;
-            }
+            if (_jobs.MindTryGetJob(mindId, out _, out var prototype))
+                startingBalance = Math.Max(startingBalance - prototype.AntagAdvantage, 0);
 
             // creadth: we need to create uplink for the antag.
             // PDA should be in place already
             var pda = _uplink.FindUplinkTarget(traitor);
-            if (pda == null || !_uplink.AddUplink(traitor, startingBalance, giveDiscounts: true))
+            if (pda == null || !_uplink.AddUplink(traitor, startingBalance))
                 return false;
 
             // Give traitors their codewords and uplink code to keep in their character info menu
@@ -116,7 +108,6 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
 
         _antag.SendBriefing(traitor, GenerateBriefing(component.Codewords, code, issuer), null, component.GreetSoundNotification);
 
-
         component.TraitorMinds.Add(mindId);
 
         // Assign briefing
@@ -125,64 +116,50 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             Briefing = briefing
         }, mind, true);
 
-        // Send codewords to only the traitor client
-        var color = TraitorCodewordColor; // Fall back to a dark red Syndicate color if a prototype is not found
-
-        RoleCodewordComponent codewordComp = EnsureComp<RoleCodewordComponent>(mindId);
-        _roleCodewordSystem.SetRoleCodewords(codewordComp, "traitor", component.Codewords.ToList(), color);
-
-        // Don't change the faction, this was stupid.
+        // Don't Change the faction, this was stupid.
         //_npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
         //_npcFaction.AddFaction(traitor, component.SyndicateFaction);
 
         RaiseLocalEvent(traitor, new MoodEffectEvent("TraitorFocused"));
+
+        // Give traitors their objectives
+        if (giveObjectives)
+        {
+            var difficulty = 0f;
+            for (var pick = 0; pick < MaxPicks && component.MaxDifficulty > difficulty; pick++)
+            {
+                var objective = _objectives.GetRandomObjective(mindId, mind, component.ObjectiveGroup);
+                if (objective == null)
+                    continue;
+
+                _mindSystem.AddObjective(mindId, mind, objective.Value);
+                var adding = Comp<ObjectiveComponent>(objective.Value).Difficulty;
+                difficulty += adding;
+                Log.Debug($"Added objective {ToPrettyString(objective):objective} with {adding} difficulty");
+            }
+        }
+
         return true;
     }
 
-    private (Note[]?, string) RequestUplink(EntityUid traitor, FixedPoint2 startingBalance, string briefing)
+    private void OnObjectivesTextGetInfo(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextGetInfoEvent args)
     {
-        var pda = _uplink.FindUplinkTarget(traitor);
-        Note[]? code = null;
-
-        var uplinked = _uplink.AddUplink(traitor, startingBalance, pda, true);
-
-        if (pda is not null && uplinked)
-        {
-            // Codes are only generated if the uplink is a PDA
-            code = EnsureComp<RingerUplinkComponent>(pda.Value).Code;
-
-            // If giveUplink is false the uplink code part is omitted
-            briefing = string.Format("{0}\n{1}",
-                briefing,
-                Loc.GetString("traitor-role-uplink-code-short", ("code", string.Join("-", code).Replace("sharp", "#"))));
-            return (code, briefing);
-        }
-        else if (pda is null && uplinked)
-        {
-            briefing += "\n" + Loc.GetString("traitor-role-uplink-implant-short");
-        }
-
-        return (null, briefing);
+        args.Minds = _antag.GetAntagMindEntityUids(uid);
+        args.AgentName = Loc.GetString("traitor-round-end-agent-name");
     }
 
-    // TODO: AntagCodewordsComponent
     private void OnObjectivesTextPrepend(EntityUid uid, TraitorRuleComponent comp, ref ObjectivesTextPrependEvent args)
     {
         args.Text += "\n" + Loc.GetString("traitor-round-end-codewords", ("codewords", string.Join(", ", comp.Codewords)));
     }
 
-    // TODO: figure out how to handle this? add priority to briefing event?
-    private string GenerateBriefing(string[]? codewords, Note[]? uplinkCode, string? objectiveIssuer = null)
+    private string GenerateBriefing(string[] codewords, Note[]? uplinkCode, string? objectiveIssuer = null)
     {
         var sb = new StringBuilder();
         sb.AppendLine(Loc.GetString("traitor-role-greeting", ("corporation", objectiveIssuer ?? Loc.GetString("objective-issuer-unknown"))));
-        if (codewords != null)
-            sb.AppendLine(Loc.GetString("traitor-role-codewords", ("codewords", string.Join(", ", codewords))));
+        sb.AppendLine(Loc.GetString("traitor-role-codewords-short", ("codewords", string.Join(", ", codewords))));
         if (uplinkCode != null)
-            sb.AppendLine(Loc.GetString("traitor-role-uplink-code", ("code", string.Join("-", uplinkCode).Replace("sharp", "#"))));
-        else
-            sb.AppendLine(Loc.GetString("traitor-role-uplink-implant"));
-
+            sb.AppendLine(Loc.GetString("traitor-role-uplink-code-short", ("code", string.Join("-", uplinkCode).Replace("sharp", "#"))));
 
         return sb.ToString();
     }

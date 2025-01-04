@@ -1,7 +1,6 @@
 using System.Linq;
 using Content.Client.Chemistry.EntitySystems;
 using Content.Server.Chemistry.ReactionEffects;
-using Content.Server.EntityEffects.Effects;
 using Content.Server.Nutrition.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.Reaction;

@@ -176,7 +176,8 @@ public sealed partial class SupermatterSystem : EntitySystem
         {
             BreakOnDamage = true,
             BreakOnHandChange = false,
-            BreakOnMove = true,
+            BreakOnTargetMove = true,
+            BreakOnUserMove = true,
             BreakOnWeightlessMove = false,
             NeedHand = true,
             RequireCanInteract = true,

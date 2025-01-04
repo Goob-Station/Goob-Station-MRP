@@ -15,7 +15,6 @@
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
-        - Redshirt
         - WillToDie
   functions:
     - !type:TraitReplaceComponent
@@ -65,7 +64,6 @@
       inverted: true
       traits:
         - GlassJaw
-        - BrittleBoneDisease
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -686,10 +684,6 @@
       inverted: true
       species:
         - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - WillToLive
   functions:
     - !type:TraitReplaceComponent
       components:
@@ -710,10 +704,6 @@
       inverted: true
       species:
         - IPC
-    - !type:CharacterTraitRequirement
-      inverted: true
-      traits:
-        - Tenacity
   functions:
     - !type:TraitReplaceComponent
       components:

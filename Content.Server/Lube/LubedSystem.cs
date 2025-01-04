@@ -1,6 +1,5 @@
 using Content.Shared.IdentityManagement;
 using Content.Shared.Lube;
-using Content.Shared.NameModifier.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
 using Robust.Shared.Containers;
@@ -10,11 +9,11 @@ namespace Content.Server.Lube;
 
 public sealed class LubedSystem : EntitySystem
 {
+    [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly NameModifierSystem _nameMod = default!;
 
     public override void Initialize()
     {
@@ -22,12 +21,14 @@ public sealed class LubedSystem : EntitySystem
 
         SubscribeLocalEvent<LubedComponent, ComponentInit>(OnInit);
         SubscribeLocalEvent<LubedComponent, ContainerGettingInsertedAttemptEvent>(OnHandPickUp);
-        SubscribeLocalEvent<LubedComponent, RefreshNameModifiersEvent>(OnRefreshNameModifiers);
     }
 
     private void OnInit(EntityUid uid, LubedComponent component, ComponentInit args)
     {
-        _nameMod.RefreshNameModifiers(uid);
+        var meta = MetaData(uid);
+        var name = meta.EntityName;
+        component.BeforeLubedEntityName = meta.EntityName;
+        _metaData.SetEntityName(uid, Loc.GetString("lubed-name-prefix", ("target", name)));
     }
 
     private void OnHandPickUp(EntityUid uid, LubedComponent component, ContainerGettingInsertedAttemptEvent args)
@@ -35,7 +36,7 @@ public sealed class LubedSystem : EntitySystem
         if (component.SlipsLeft <= 0)
         {
             RemComp<LubedComponent>(uid);
-            _nameMod.RefreshNameModifiers(uid);
+            _metaData.SetEntityName(uid, component.BeforeLubedEntityName);
             return;
         }
         component.SlipsLeft--;
@@ -43,12 +44,7 @@ public sealed class LubedSystem : EntitySystem
         var user = args.Container.Owner;
         _transform.SetCoordinates(uid, Transform(user).Coordinates);
         _transform.AttachToGridOrMap(uid);
-        _throwing.TryThrow(uid, _random.NextVector2(), baseThrowSpeed: component.SlipStrength);
+        _throwing.TryThrow(uid, _random.NextVector2(), strength: component.SlipStrength);
         _popup.PopupEntity(Loc.GetString("lube-slip", ("target", Identity.Entity(uid, EntityManager))), user, user, PopupType.MediumCaution);
-    }
-
-    private void OnRefreshNameModifiers(Entity<LubedComponent> entity, ref RefreshNameModifiersEvent args)
-    {
-        args.AddModifier("lubed-name-prefix");
     }
 }

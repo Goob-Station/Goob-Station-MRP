@@ -35,7 +35,6 @@ public sealed class MeleeSpreadCommand : IConsoleCommand
             collection.Resolve<IInputManager>(),
             collection.Resolve<IPlayerManager>(),
             sysManager.GetEntitySystem<MeleeWeaponSystem>(),
-            sysManager.GetEntitySystem<SharedCombatModeSystem>(),
-            sysManager.GetEntitySystem<SharedTransformSystem>()));
+            sysManager.GetEntitySystem<SharedCombatModeSystem>()));
     }
 }

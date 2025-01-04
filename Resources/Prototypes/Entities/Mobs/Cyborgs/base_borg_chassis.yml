@@ -114,11 +114,6 @@
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: true
-  - type: ItemToggle
-    onUse: false # no item-borg toggling sorry
-  - type: AccessToggle
-  # TODO: refactor movement to just be based on toggle like speedboots but for the boots themselves
-  # TODO: or just have sentient speedboots be fast idk
   - type: PowerCellDraw
     drawRate: 0.6
   - type: ItemSlots
@@ -217,7 +212,6 @@
     - DoorBumpOpener
     - FootstepSound
     - CanPilot
-    - SiliconEmotes
   - type: Emoting
   - type: GuideHelp
     guides:
@@ -247,20 +241,9 @@
     deviceNetId: Wireless
     receiveFrequencyId: CyborgControl
     transmitFrequencyId: RoboticsConsole
-  - type: OnUseTimerTrigger
-    delay: 10
-    examinable: false
-    beepSound:
-      path: /Audio/Effects/Cargo/buzz_two.ogg
-      params:
-        volume: -4
-  # prevent any funnies if someone makes a cyborg item...
-  - type: AutomatedTimer
-  - type: ExplodeOnTrigger
   # explosion does most of its damage in the center and less at the edges
   - type: Explosive
     explosionType: Minibomb
-    deleteAfterExplosion: false # let damage threshold gib the borg
     totalIntensity: 30
     intensitySlope: 20
     maxIntensity: 20
@@ -310,8 +293,6 @@
   - type: MovementAlwaysTouching
   - type: Speech
     speechSounds: SyndieBorg
-    allowedEmotes:
-    - Laugh
   - type: Vocal
     sounds:
       Unsexed: UnisexSiliconSyndicate

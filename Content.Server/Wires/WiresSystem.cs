@@ -10,7 +10,6 @@ using Content.Shared.GameTicking;
 using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
-using Content.Shared.Power;
 using Content.Shared.Tools.Components;
 using Content.Shared.UserInterface;
 using Content.Shared.Wires;
@@ -703,7 +702,7 @@ public sealed class WiresSystem : SharedWiresSystem
             {
                 NeedHand = true,
                 BreakOnDamage = true,
-                BreakOnMove = true
+                BreakOnUserMove = true
             };
 
             _doAfter.TryStartDoAfter(args);

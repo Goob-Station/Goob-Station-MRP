@@ -34,9 +34,7 @@
     flavors:
       - bread
   - type: Tag
-    tags:
-    - Bread
-    - Slice
+    tags: [] #override bread
   - type: SolutionContainerManager
     solutions:
       food:
@@ -118,8 +116,6 @@
   - type: Tag
     tags:
     - Fruit
-    - Bread
-    - Slice
 
 - type: entity
   name: cornbread
@@ -278,8 +274,6 @@
   - type: Tag
     tags:
     - Meat
-    - Bread
-    - Slice
 
 - type: entity
   name: mimana bread
@@ -424,8 +418,6 @@
   - type: Tag
     tags:
     - Meat
-    - Bread
-    - Slice
 
 - type: entity
   name: spider meat bread
@@ -484,8 +476,6 @@
   - type: Tag
     tags:
     - Meat
-    - Bread
-    - Slice
 
 - type: entity
   name: tofu bread
@@ -595,8 +585,6 @@
   - type: Tag
     tags:
     - Meat
-    - Bread
-    - Slice
 
 # Other than bread/slices
 
@@ -606,6 +594,9 @@
   id: FoodBreadBaguette
   description: Bon appétit!
   components:
+  - type: Tag
+    tags:
+    - Baguette
   - type: Sprite
     state: baguette
   - type: SliceableFood
@@ -624,21 +615,6 @@
           Quantity: 1
         - ReagentId: Blackpepper
           Quantity: 1
-  - type: Clothing
-    slots: [ BELT ]
-    equippedPrefix: baguette
-    quickEquip: false
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: baguette-inhand-left
-      right:
-      - state: baguette-inhand-right
-  - type: MeleeWeapon
-    wideAnimationRotation: -120
-    damage:
-      types:
-        Blunt: 1 # bonk
 # Tastes like France.
 
 - type: entity
@@ -848,7 +824,6 @@
     tags:
     - VimPilot
     - DoorBumpOpener
-    - Bread
   - type: CanEscapeInventory
     baseResistTime: 2
   - type: Puller

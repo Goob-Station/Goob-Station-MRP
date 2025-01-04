@@ -22,7 +22,6 @@ public sealed class TargetOutlineSystem : EntitySystem
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     private bool _enabled = false;
 
@@ -138,7 +137,7 @@ public sealed class TargetOutlineSystem : EntitySystem
 
             // check the entity whitelist
             if (valid && Whitelist != null)
-                valid = _whitelistSystem.IsWhitelistPass(Whitelist, entity);
+                valid = Whitelist.IsValid(entity);
 
             // and check the cancellable event
             if (valid && ValidationEvent != null)

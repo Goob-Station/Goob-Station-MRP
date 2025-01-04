@@ -54,4 +54,14 @@ public sealed partial class EntityWhitelist
     /// </summary>
     [DataField]
     public bool RequireAll;
+
+    [Obsolete("Use WhitelistSystem")]
+    public bool IsValid(EntityUid uid, IEntityManager? man = null)
+    {
+        var sys = man?.System<EntityWhitelistSystem>() ??
+                  IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<EntityWhitelistSystem>();
+
+        return sys.IsValid(this, uid);
+
+    }
 }

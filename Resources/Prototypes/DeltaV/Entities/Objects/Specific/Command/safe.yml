@@ -21,7 +21,6 @@
             - IdCard
     - type: AccessReader
       access: [["DV-SpareSafe"]]
-    - type: SpareIDSafe
 
 - type: entity
   id: SpareIdCabinetFilled
