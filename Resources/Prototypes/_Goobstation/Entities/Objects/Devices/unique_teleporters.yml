@@ -22,8 +22,8 @@
   - type: Sprite
     state: bso
   - type: SpawnItemsOnUse
-    items: 
-    - id: UniqueLockerBlueshieldOfficerFilled
+    items:
+    - id: LockerBlueshieldOfficerFilled
 
 - type: entity
   parent: BlueshieldOfficerLockerTeleporter
@@ -46,8 +46,8 @@
   - type: Sprite
     state: ntr
   - type: SpawnItemsOnUse
-    items: 
-    - id: UniqueLockerNanorepFilled
+    items:
+    - id: LockerNanorepFilled
 
 - type: entity
   parent: NanorepLockerTeleporter

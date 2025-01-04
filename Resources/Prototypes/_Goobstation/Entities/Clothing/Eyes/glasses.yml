@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons, BaseSecurityContraband]
+  parent: [ClothingEyesBase, ShowSecurityIcons, ShowMedicalIcons]
   id: ClothingEyesGlassesMedSec
   name: medical security glasses
   description: Sunglasses with a medical and security hud

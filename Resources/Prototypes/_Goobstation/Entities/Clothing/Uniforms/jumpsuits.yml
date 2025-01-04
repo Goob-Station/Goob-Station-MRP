@@ -11,21 +11,6 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitCasualSyndicate
-  name: casual syndicate jumpsuit
-  description: Short sleeves, short temper.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
-  - type: Clothing
-<<<<<<< HEAD
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
-=======
-    sprite: Goobstation/Clothing/Uniforms/Jumpsuit/casualsyndicate.rsi
->>>>>>> f412ad2c61 (BSO Clothing Update. (#643))
-
-- type: entity
-  parent: ClothingUniformBase
   id: ClothingUniformJumpsuitBlueshieldOfficer
   name: blueshield officer jumpsuit
   description: A short-sleeved grey and blue jumpsuit, made out of a sturdy material. Blueshield standard issue.
@@ -45,14 +30,3 @@
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/blueshield_shirt.rsi
   - type: Clothing
     sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/blueshield_shirt.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformMailCarrier
-  name: mail carrier's uniform
-  description: Enemy of dogs everywhere.
-  components:
-  - type: Sprite
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/mailman.rsi
-  - type: Clothing
-    sprite: _Goobstation/Clothing/Uniforms/Jumpsuit/mailman.rsi

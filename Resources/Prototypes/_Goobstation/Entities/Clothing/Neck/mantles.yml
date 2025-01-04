@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ ClothingNeckBase, BaseCentcommContraband ]
+  parent: ClothingNeckBase
   id: ClothingNeckMantleBlueshield
   name: blueshield officer mantle
   description: A comfortable and protective mantle for qualify bodyguards.
