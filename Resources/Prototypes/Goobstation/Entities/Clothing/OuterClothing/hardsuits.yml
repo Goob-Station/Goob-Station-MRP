@@ -32,8 +32,6 @@
     walkModifier: 0.70
     sprintModifier: 0.70
   - type: HeldSpeedModifier
-  - type: StasisProtection
-  - type: StasisBlinkProvider
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitChronolegioneer
 
