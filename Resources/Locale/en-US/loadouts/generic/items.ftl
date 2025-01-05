@@ -1,4 +1,5 @@
-loadout-description-LoadoutBlackDeck = A black box containing the standard 53 playing cards. Please gamble responsibly.
+loadout-description-LoadoutItemBlackDeck = A black box containing the standard 53 playing cards. Please gamble responsibly.
+loadout-description-LoadoutItemNTDeck = A Nanotrasen-branded box containing the standard 53 playing cards. Please gamble responsibly.
 loadout-description-LoadoutItemCig = Cool guys always have one.
 loadout-description-LoadoutItemCigsGreen = A pack a day keeps the doctor well-paid!
 loadout-description-LoadoutItemCigsRed = A pack a day keeps the doctor well-paid!
