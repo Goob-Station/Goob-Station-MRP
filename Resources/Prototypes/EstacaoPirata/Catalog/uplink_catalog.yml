@@ -5,6 +5,6 @@
   description: uplink-syndicate-deck-desc
   productEntity: CardBoxSyndicate
   cost:
-    Telecrystal: 3 # goob
+    Telecrystal: 1 # goob MRP
   categories:
   - UplinkPointless
