@@ -62,3 +62,10 @@ Entries:
   id: 10
   time: '2025-01-01T18:23:05.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/17
+- author: sapphirescript
+  changes:
+    - type: Add
+      message: Enable Lamia Species
+  id: 11
+  time: '2025-01-04T22:45:33.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/21
