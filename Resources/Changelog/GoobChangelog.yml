@@ -69,3 +69,18 @@ Entries:
   id: 11
   time: '2025-01-04T22:45:33.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/21
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Add an IPC Brig Guideline for Security.
+    - type: Tweak
+      message: Changed Alert Levels to use Tables and ColorBoxes for better format.
+    - type: Tweak
+      message: Changed NTR and BSO to use a ColorBox for better formatting.
+    - type: Tweak
+      message: Changed QuarterMaster to Logistics Officer.
+    - type: Tweak
+      message: Reformatted Emergencies under Standard Procedures to shorten SOP.
+  id: 12
+  time: '2025-01-06T21:05:51.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/19
