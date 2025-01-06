@@ -62,6 +62,8 @@ namespace Content.Server.Speech
         {
             if (component.SpeechSounds == null)
                 return;
+            if (!args.Language.SpeechOverride.RequireSpeech)
+                return;
 
             var currentTime = _gameTiming.CurTime;
             var cooldown = TimeSpan.FromSeconds(component.SoundCooldownTime);
