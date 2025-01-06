@@ -74,7 +74,8 @@ namespace Content.Server.Speech
 
             var sound = GetSpeechSound((uid, component), args.Message);
             component.LastTimeSoundPlayed = currentTime;
-            _audio.PlayPvs(sound, uid);
+            if(args.Language.SpeechOverride.RequireSpeech)
+                _audio.PlayPvs(sound, uid);
         }
     }
 }
