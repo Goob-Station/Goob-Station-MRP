@@ -84,3 +84,12 @@ Entries:
   id: 12
   time: '2025-01-06T21:05:51.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/19
+- author: TwoDucksOnnaPlane
+  changes:
+    - type: Tweak
+      message: Most guns have been buffed.
+    - type: Tweak
+      message: Most uranium munitions pierce armor.
+  id: 13
+  time: '2025-01-06T21:06:18.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/28
