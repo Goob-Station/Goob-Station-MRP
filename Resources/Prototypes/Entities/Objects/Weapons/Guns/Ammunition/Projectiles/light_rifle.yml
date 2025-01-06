@@ -8,7 +8,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 24
+        Piercing: 24 # Goob Station MRP - buff damage
 
 - type: entity
   id: BulletLightRiflePractice
@@ -41,8 +41,8 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 5
-        Heat: 19
+        Blunt: 4 # Goob Station MRP - buff Blunt/Heat damage
+        Heat: 20
 
 - type: entity
   id: BulletLightRifleUranium
@@ -55,4 +55,4 @@
       types:
         Radiation: 10
         Piercing: 5
-    ignoreResistances: true
+    ignoreResistances: true # Goob Station MRP - ignore resistances
