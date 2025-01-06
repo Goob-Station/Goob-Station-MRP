@@ -4,7 +4,6 @@
   name: guide-entry-sop
   text: "/ServerInfo/Guidebook/SOP/SoP.xml"
   children:
-  - Emergencies SOP
   - Jobs SOP
   - Legal SOP
   - StandardProcedures SOP
@@ -47,6 +46,7 @@
   text: "/ServerInfo/Guidebook/SOP/StandardProcedures/StandardProceduresSOP.xml"
   children:
   - Alert Levels
+  - Emergencies SOP
   - Demoting SOP
   - Hiring SOP
   - Succession
@@ -93,10 +93,10 @@
   - Captain SOP
   - HeadOfPersonnel SOP
   - HeadOfSecurity SOP
-  - Mystagogue SOP
+  - Mystagogue SOP # Changed for Delta-V Naming Scheme - Original: Research Director
   - ChiefMedicalOfficer SOP
   - ChiefEngineer SOP
-  - Quartermaster SOP
+  - LogisticsOfficer SOP # Changed for Delta-V Naming Scheme - Original: Quartermaster
 
 - type: guideEntry
   id: Engineering SOP
@@ -116,6 +116,7 @@
   - Cataloguer SOP
   - Researcher SOP
   - Golemancer SOP
+  - Sacrifices SOP
 
 - type: guideEntry
   id: Medical SOP
@@ -327,9 +328,9 @@
   text: "/ServerInfo/Guidebook/SOP/Jobs/Command/ChiefEngineerSOP.xml"
 
 - type: guideEntry
-  id: Quartermaster SOP
-  name: guide-entry-sop-qm
-  text: "/ServerInfo/Guidebook/SOP/Jobs/Command/QuartermasterSOP.xml"
+  id: LogisticsOfficer SOP
+  name: guide-entry-sop-lo
+  text: "/ServerInfo/Guidebook/SOP/Jobs/Command/LogisticsOfficerSOP.xml"
 
 # Engineering SOP Entries
 - type: guideEntry
