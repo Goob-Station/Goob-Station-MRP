@@ -20,7 +20,7 @@
   id: RedLaser
   damage:
     types:
-      Heat: 14
+      Heat: 20 # Goob Station MRP - buff damage
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser
@@ -50,7 +50,7 @@
   id: RedMediumLaser
   damage:
     types:
-      Heat: 17
+      Heat: 24 # Goob Station MRP - buff damage
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_laser
@@ -81,7 +81,7 @@
   damage:
     types:
       Heat: 10
-      Radiation: 10
+      Radiation: 15 # Goob Station MRP - buff damage
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_xray
@@ -96,7 +96,7 @@
   id: RedHeavyLaser
   damage:
     types:
-      Heat: 28
+      Heat: 30 # Goob Station MRP - buff damage
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_beam_heavy
@@ -111,7 +111,7 @@
   id: Pulse
   damage:
     types:
-      Heat: 35
+      Heat: 45 # Goob Station MRP - buff damage
   muzzleFlash:
     sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
     state: muzzle_blue

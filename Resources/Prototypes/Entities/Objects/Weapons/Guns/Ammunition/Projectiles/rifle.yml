@@ -7,7 +7,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 24
+        Piercing: 24 # Goob Station MRP - buff damage
 
 - type: entity
   id: BulletRiflePractice
@@ -38,7 +38,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
-    damage:
+    damage: # Goob Station MRP - buff damage
       types:
         Blunt: 4
         Heat: 20
@@ -49,7 +49,7 @@
   name: bullet (0.20 rifle uranium)
   categories: [ HideSpawnMenu ]
   components:
-  - type: Projectile
+  - type: Projectile # Goob Station MRP - ignore resistances
     damage:
       types:
         Radiation: 10
