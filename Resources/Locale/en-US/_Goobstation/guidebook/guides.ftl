@@ -1,8 +1,8 @@
 # Goob SOP
 # - Main Directories
 guide-entry-sop = SOP
-guide-entry-sop-alert-levels = Alert Levels
-guide-entry-sop-emergencies = Emergencies
+guide-entry-sop-alert-levels = _Alert Levels
+guide-entry-sop-emergencies = _Emergencies
 guide-entry-sop-jobs = Jobs
 guide-entry-sop-legal = Legal
 guide-entry-sop-standards = Standard Procedures
@@ -51,10 +51,12 @@ guide-entry-sop-bso = Blueshield Officer
 guide-entry-sop-captain = Captain
 guide-entry-sop-hop = Head of Personnel
 guide-entry-sop-hos = Head of Security
+# Mystagogue changed by Delta-V (original: Research Director)
 guide-entry-sop-mg = Mystagogue
 guide-entry-sop-cmo = Chief Medical Ofc.
 guide-entry-sop-ce = Chief Engineer
-guide-entry-sop-qm = Quartermaster
+# Logistics Officer changed by Delta-V (original: Quartermaster)
+guide-entry-sop-lo = Logistics Officer
 # - Engineering
 guide-entry-sop-atmostech = Atmos Tech
 guide-entry-sop-stationengineer = Station Engineer
