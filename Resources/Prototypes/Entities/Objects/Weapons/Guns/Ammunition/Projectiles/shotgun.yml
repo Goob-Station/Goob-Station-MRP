@@ -10,7 +10,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 28
+        Piercing: 40 # Goob Station MRP - buff damage
 
 - type: entity
   id: PelletShotgunBeanbag
@@ -50,7 +50,7 @@
   - type: ProjectileSpread
     proto: PelletShotgun
     count: 6
-    spread: 15
+    spread: 10 # Goob Station MRP - tighten up the spread
 
 - type: entity
   id: PelletShotgunIncendiary
@@ -77,7 +77,7 @@
   - type: ProjectileSpread
     proto: PelletShotgunIncendiary
     count: 6
-    spread: 15
+    spread: 10 # Goob Station MRP - tighten up the spread
 
 - type: entity
   id: PelletShotgunPractice
@@ -101,7 +101,7 @@
   - type: ProjectileSpread
     proto: PelletShotgunPractice
     count: 6
-    spread: 15
+    spread: 10 # Goob Station MRP - tighten up the spread
 
 - type: entity
   id: PelletShotgunImprovised
@@ -211,11 +211,12 @@
   - type: Sprite
     sprite: Objects/Weapons/Guns/Projectiles/projectiles2.rsi
     state: depleted-uranium
-  - type: Projectile
+  - type: Projectile # Goob Station - ignore resistances
     damage:
       types:
         Radiation: 5
-        Piercing: 5
+        Piercing: 2.5
+    ignoreResistances: true
 
 - type: entity
   id: PelletShotgunUraniumSpread
