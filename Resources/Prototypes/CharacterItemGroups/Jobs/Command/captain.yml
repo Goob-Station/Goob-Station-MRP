@@ -107,8 +107,6 @@
   items:
     - type: loadout
       id: LoadoutCommandCapMaskGas
-    - type: loadout
-      id: LoadoutCommandCapMaskGasCombat
 
 - type: characterItemGroup
   id: LoadoutCaptainOuter
@@ -118,8 +116,6 @@
       id: LoadoutCommandCapOuterWinter
     - type: loadout
       id: LoadoutCaptainOuterCarapace
-    - type: loadout
-      id: LoadoutCaptainOuterTrench
 
 - type: characterItemGroup
   id: LoadoutCaptainShoes

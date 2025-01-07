@@ -116,7 +116,6 @@
   - type: Tag
     tags:
     - Trash
-    - Ash # Frontier
   - type: SolutionContainerManager
     solutions:
       food:

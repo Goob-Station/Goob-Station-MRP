@@ -135,7 +135,6 @@
       traits:
         - Sluggish
         - SnailPaced
-        - BadKnees
     - !type:CharacterSpeciesRequirement
       inverted: true
       species:
@@ -144,12 +143,10 @@
     - !type:TraitReplaceComponent
       components:
         - type: ClimbDelayModifier
-          climbDelayMultiplier: 0.5
-        - type: SlippableModifier
-          paralyzeTimeMultiplier: 0.7
-        - type: SpeedModifiedByContactModifier
-          walkModifierEffectiveness: 0.5
-          sprintModifierEffectiveness: 0.5
+          climbDelayMultiplier: 0.35
+        - type: LayingDownModifier
+          layingDownCooldownMultiplier: 0.5
+          downedSpeedMultiplierMultiplier: 1.65
 
 - type: trait
   id: LightStep

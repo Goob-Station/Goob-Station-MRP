@@ -28,10 +28,8 @@
   - type: DamageOtherOnHit
     damage:
       types:
-        Blunt: 9
+        Blunt: 8
     staminaCost: 50
-    soundHit:
-      collection: MetalThud
 
 - type: entity
   # This means that it's not anchored on spawn.

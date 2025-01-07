@@ -15,6 +15,9 @@
 - type: markingPoints
   id: MobArachneMarkingLimits
   points:
+    Face:
+      points: 1
+      required: false
     Hair:
       points: 1
       required: false
