@@ -1,6 +1,5 @@
 using Content.Shared.Administration.Logs;
 using Content.Shared.Camera;
-using Content.Shared.CombatMode.Pacification;
 using Content.Shared.Contests;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -40,7 +39,6 @@ namespace Content.Shared.Damage.Systems
             SubscribeLocalEvent<DamageOtherOnHitComponent, MapInitEvent>(OnMapInit);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrowDoHitEvent>(OnDoHit);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrownEvent>(OnThrown);
-            SubscribeLocalEvent<DamageOtherOnHitComponent, AttemptPacifiedThrowEvent>(OnAttemptPacifiedThrow);
 
             SubscribeLocalEvent<ItemToggleDamageOtherOnHitComponent, MapInitEvent>(OnItemToggleMapInit);
             SubscribeLocalEvent<DamageOtherOnHitComponent, ItemToggledEvent>(OnItemToggle);
@@ -51,19 +49,19 @@ namespace Content.Shared.Damage.Systems
         /// </summary>
         private void OnMapInit(EntityUid uid, DamageOtherOnHitComponent component, MapInitEvent args)
         {
-            if (TryComp<MeleeWeaponComponent>(uid, out var melee))
+            if (!TryComp<MeleeWeaponComponent>(uid, out var melee))
+                return;
+
+            if (component.Damage.Empty)
+                component.Damage = melee.Damage * component.MeleeDamageMultiplier;
+            if (component.SoundHit == null)
+                component.SoundHit = melee.SoundHit;
+            if (component.SoundNoDamage == null)
             {
-                if (component.Damage.Empty)
-                    component.Damage = melee.Damage * component.MeleeDamageMultiplier;
-                if (component.SoundHit == null)
-                    component.SoundHit = melee.SoundHit;
-                if (component.SoundNoDamage == null)
-                {
-                    if (melee.SoundNoDamage != null)
-                        component.SoundNoDamage = melee.SoundNoDamage;
-                    else
-                        component.SoundNoDamage = new SoundCollectionSpecifier("WeakHit");
-                }
+                if (melee.SoundNoDamage != null)
+                    component.SoundNoDamage = melee.SoundNoDamage;
+                else
+                    component.SoundNoDamage = new SoundCollectionSpecifier("WeakHit");
             }
 
             RaiseLocalEvent(uid, new DamageOtherOnHitStartupEvent((uid, component)));
@@ -181,16 +179,6 @@ namespace Content.Shared.Damage.Systems
         private void OnThrown(EntityUid uid, DamageOtherOnHitComponent component, ThrownEvent args)
         {
             component.HitQuantity = 0;
-        }
-
-        /// <summary>
-        /// Prevent Pacified entities from throwing damaging items.
-        /// </summary>
-        private void OnAttemptPacifiedThrow(EntityUid uid, DamageOtherOnHitComponent comp, ref AttemptPacifiedThrowEvent args)
-        {
-            // Allow healing projectiles, forbid any that do damage
-            if (comp.Damage.AnyPositive())
-                args.Cancel("pacified-cannot-throw");
         }
 
         /// <summary>

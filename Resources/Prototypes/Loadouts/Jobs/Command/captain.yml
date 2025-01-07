@@ -355,19 +355,6 @@
   items:
     - ClothingMaskGasCaptain
 
-- type: loadout
-  id: LoadoutCommandCapMaskGasCombat
-  category: JobsCommandCaptain
-  cost: 0
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainMask
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingMaskGasCaptainCombat
-
 # Outer
 - type: loadout
   id: LoadoutCommandCapOuterWinter
@@ -394,21 +381,6 @@
         - Captain
   items:
     - ClothingOuterArmorCaptainCarapace
-
-- type: loadout
-  id: LoadoutCaptainOuterTrench
-  category: JobsCommandCaptain
-  cost: 0
-  exclusive: true
-  canBeHeirloom: true
-  requirements:
-    - !type:CharacterItemGroupRequirement
-      group: LoadoutCaptainOuter
-    - !type:CharacterJobRequirement
-      jobs:
-        - Captain
-  items:
-    - ClothingOuterCoatCapTrench
 
 # Shoes
 - type: loadout

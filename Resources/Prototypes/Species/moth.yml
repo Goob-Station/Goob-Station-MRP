@@ -16,7 +16,6 @@
   id: MobMothSprites
   sprites:
     Head: MobMothHead
-    Face: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
     Chest: MobMothTorso
     HeadTop: MobHumanoidAnyMarking
