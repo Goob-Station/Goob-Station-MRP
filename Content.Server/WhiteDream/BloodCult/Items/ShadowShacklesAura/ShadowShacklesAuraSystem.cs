@@ -34,9 +34,10 @@ public sealed class ShadowShacklesAuraSystem : EntitySystem
 
         var target = args.HitEntities.First();
         if (uid == target
-            || !HasComp<StunnedComponent>(target)
+            || HasComp<StunnedComponent>(target)
             || HasComp<BloodCultistComponent>(target))
             return;
+
 
         if (component.Speech != null)
             _chat.TrySendInGameICMessage(args.User, component.Speech, component.ChatType, false);
