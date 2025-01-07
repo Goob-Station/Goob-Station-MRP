@@ -132,7 +132,7 @@ The [color=#db7093]Gamma Alert[/color] is rare and often only used in extreme ca
 The [color=#cc74fc]Violet Alert[/color] is set for viral outbreaks when a zombie infection or other disease occurs.
 
 <Table Columns="1">
-  <ColorBox Color= "#ffffff">
+  <ColorBox Color="#ffffff">
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
       [bold][color=#000000][head=1]White Alert[/head][/color][/bold]
     </Box>

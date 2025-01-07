@@ -102,7 +102,7 @@
 
 - type: guideEntry
   id: Dignitary SOP
-  name: guide-entry-sop-Dignitary
+  name: guide-entry-sop-dignitary
   text: "/ServerInfo/Guidebook/SOP/Jobs/Dignitary/DignitarySOP.xml"
   children:
   - BlueshieldOfficer SOP
