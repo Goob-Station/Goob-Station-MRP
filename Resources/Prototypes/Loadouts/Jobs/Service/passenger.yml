@@ -25,7 +25,7 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobPassenger
-      min: 180000
+      min: 180000 # 50 hours
   items:
     - ClothingNeckMantle
 
