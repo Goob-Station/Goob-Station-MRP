@@ -24,6 +24,7 @@
   exclusive: true
   requirements:
     - !type:CharacterPlaytimeRequirement
+      tracker: JobPassenger
       min: 180000
   items:
     - ClothingNeckMantle
