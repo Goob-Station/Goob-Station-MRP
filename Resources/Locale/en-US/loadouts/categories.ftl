@@ -81,6 +81,7 @@ loadout-category-JobsServiceLawyer = Lawyer
 loadout-category-JobsServiceMime = Mime
 loadout-category-JobsServiceMusician = Musician
 loadout-category-JobsServiceReporter = Reporter
+loadout-category-JobsServicePassenger = Passenger
 
 loadout-category-Mask = Mask
 loadout-category-Neck = Neck
