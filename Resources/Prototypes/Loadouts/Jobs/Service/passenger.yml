@@ -24,7 +24,7 @@
   exclusive: true
   requirements:
     - !type:CharacterPlaytimeRequirement
-      min: 36000
+      min: 180000
   items:
     - ClothingNeckMantle
 
