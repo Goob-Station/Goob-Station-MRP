@@ -1,0 +1,38 @@
+# Uncategorized
+# Backpacks
+
+# Belt
+
+# Ears
+
+# Equipment
+
+# Eyes
+
+# Gloves
+
+# Head
+
+# Id
+
+# Neck
+
+- type: loadout
+  id: LoadoutServiceTiderNeckMantle
+  category: JobsServicePassenger
+  cost: 0
+  exclusive: true
+  requirements:
+    - !type:CharacterPlaytimeRequirement
+      min: 36000
+  items:
+    - ClothingNeckMantle
+
+
+# Mask
+
+# Outer
+
+# Shoes
+
+# Uniforms
