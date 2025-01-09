@@ -1,0 +1,16 @@
+### IMPORTANT: All entries in here have long-worded IDs to prevent conflicts with base laws and upstream.
+## Goobstation Space Law (MRP)
+
+# Main Folder
+- type: guideEntry
+  id: SpaceLaw Initial
+  name: guide-entry-spacelaw-folder
+  text: "/ServerInfo/GuideBook/SpaceLaw/SpaceLaw_Initial.xml"
+  priority: 0 # Added to make it anchor above others
+  children:
+  - SpaceLaw CrimeList
+
+- type: guideEntry
+  id: SpaceLaw CrimeList
+  name: guide-entry-spacelaw-crimelist
+  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_CrimeList.xml"
