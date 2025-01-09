@@ -2,6 +2,13 @@
   # Space Law Crime List
   Below is the table of crimes and associated timings. This is the Crime-List and should be used as a quick reference to severity of crimes and associated times.
 
+  Charges should be issued with the following times:
+  - 0-XX: Warning (Note for future occurrences)
+  - 1-XX: 1-2 Minutes
+  - 2-XX: 2-5 Minutes
+  - 3-XX: 5-10 Minutes
+  - 4-XX: Permanent Brig (Bring to Court as Well)
+
   <ColorBox>
     <Box HorizontalAlignment="Center" VerticalAlignment="Center">
       Crimes are stackable if they aren't in the same Code Category indicated by color and brackets, highest applies. Refer to sentencing for the times that are charged based on severity level.
@@ -18,34 +25,34 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        0-XX:
+        1-XX:
         \nInfractions
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        1-XX:
+        2-XX:
         \nMinor
         \nCrimes
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        2-XX:
+        3-XX:
         \nModerate
         \nCrimes
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        3-XX:
+        4-XX:
         \nMajor
         \nCrimes
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        4-XX:
+        5-XX:
         \nCapital
         \nCrimes
       </Box>
@@ -98,20 +105,20 @@
     </ColorBox>
     <ColorBox Color="#707c84">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Theft
+        Theft/Fraud
         \nMinor (T)
       </Box>
     </ColorBox>
     <ColorBox Color="#707c84">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Theft
+        Theft/Fraud
         \nMajor (T)
       </Box>
     </ColorBox>
     <ColorBox Color="#707c84">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Grand
-        \nTheft (T)
+        Grand (T)
+        \nTheft/Fraud
       </Box>
     </ColorBox>
     <ColorBox>
@@ -343,44 +350,14 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+        Refusal of
+        \nMindshield
+        \nImplant
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
         X-10
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#ba8e23">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breaking and
-        \nEntering (T)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#ba8e23">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breaking and
-        \nEntering
-        \nSecure (T)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#ba8e23">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Breaking and
-        \nEntering High
-        \nSecure (T)
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-        <ColorBox>
-      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-11
       </Box>
     </ColorBox>
     <ColorBox>
@@ -408,78 +385,25 @@
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-12
+        X-11
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#84a070">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Animal
+      \nHarm (A)
       </Box>
     </ColorBox>
-    <ColorBox Color="#dda3b1">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Fraud (F)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#dda3b1">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Corporate
-        \nFraud (F)
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-        <ColorBox>
-      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-13
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Identity
-        \n Theft
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-        <ColorBox>
-      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-14
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#84a070">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Animal
-        \nCruelty
+        \nCruelty (A)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -491,9 +415,9 @@
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-15
+        X-12
       </Box>
     </ColorBox>
     <ColorBox Color="#db7093">
@@ -519,9 +443,9 @@
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-16
+        X-13
       </Box>
     </ColorBox>
     <ColorBox>

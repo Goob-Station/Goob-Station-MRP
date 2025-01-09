@@ -14,3 +14,10 @@
   id: SpaceLaw CrimeList
   name: guide-entry-spacelaw-crimelist
   text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_CrimeList.xml"
+  children:
+  - SpaceLaw Modifiers
+
+- type: guideEntry
+  id: SpaceLaw Modifiers
+  name: guide-entry-spacelaw-modifiers
+  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_Modifiers.xml"

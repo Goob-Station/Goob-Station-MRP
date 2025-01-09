@@ -1,0 +1,91 @@
+<Document>
+  # Crime List Modifiers
+  Below is the list of modifiers, explanations, and notes (for OOC) for clarifications.
+
+  <ColorBox>
+    <Box>
+      These modifiers can add [bold]or[/bold] reduce times. Use them with discretion.
+    </Box>
+  </ColorBox>
+
+  These modifiers include the following:
+  - M-01: Clear and Present Danger
+  - M-02: Repeat Sentencing
+  - M-03: Self-Defense
+  - M-04: Mental Instability
+  - M-05: Coordinated Behavior
+  - M-06: Resisting Arrest
+  - M-07: Escaped Prisoner
+  - M-08: Failure to Commit Crime
+
+  ## M-01: Clear and Present Danger
+  Clear and present danger can be assigned to charges where the individual was in a scenario where they commited the crime in
+  the interest of saving life, property, and/or preventing a disaster.
+
+  Such scenarios can be marked with this modifier to reduce, void, and/or expunge their charges from the records.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      This is primarily used for situations where someone may have to commit a crime with good intention.
+    </Box>
+  </ColorBox>
+
+  ## M-02: Repeat Sentencing
+  Despite the name, this can also extend to a large scope of crimes where the sentencing would "repeat" in on itself for multiple
+  stacked crimes. This modifier may be assigned to charges where the offender has done these crimes many times and thus the scope
+  of the crimes has become large enough to process the charge higher.
+
+  In English, this means that the modifier may be applied to increase the charge to the next level.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      Primarily intended for uses where there are multiple infractions but not enough to warrant a full arrest. Can also be used for repetitive actions
+      that lead to arrest where the individual continues to break the crime without stacking them high enough to be permanently brigged.
+    </Box>
+  </ColorBox>
+
+  ## M-03: Self-Defense
+  This modifier may be applied to charges where the offender of the crime was acting in self-defense against an assailant(s).
+
+  This modifier allows the sentencer to reduce, void, and/or expunge the charge from the record.
+
+  ## M-04: Mental Instability
+  Those deemed to be unstable in the mind, acting erratically, or have lost control of themselves may be applied this modifier to their charges.
+
+  This deems that an individual who is incapable of acting with a sense of normality, with sanity, may be treated medically or forcefully cryosleeped.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      English: Insanity, Mind Control, Hypnosis, et cetera. This is intended to cover IC manipulation of the mind.
+    </Box>
+  </ColorBox>
+
+  ## M-05: Coordinated Behavior
+  This is a modifer that may be applied to those that move in groups as if they were a department of their own, ignoring the departments
+  of the station and acting apart from the station.
+
+  This modifier allows for the charge to be increased in severity by one instance.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      English: You cannot act as a Passenger/Greytider and work against the station with others.
+    </Box>
+  </ColorBox>
+
+  ## M-06: Resisting Arrest
+  Anyone who is actively resisting a lawful arrest may have this modifier attached to their charges. Knowingly resisting arrest
+  is a crime in of it's own and also falls under "Failure to Comply" (3-10).
+
+  Anyone that is actively resisting arrest can be charged an extra 20% of their time (which cannot be applied to permanently brig someone).
+
+  ## M-07: Escaped Prisoner
+  Any prisoner that has escaped from the permanent brig or holding cell is bound to have this modifier added to their charges when they are caught.
+
+  A prisoner that has escaped the holding cell should have the timer reset and increased by 50%. A permanent prisoner should be held in solitary for 2-4 minutes.
+
+  ## M-08: Failure to Commit a Crime
+  Anyone that is caught in the act or has failed to commit a crime in full may have their sentence reduced with this modifier depending on the severity of the crime.
+
+  This modifier can be applied to reduce the severity by one level; however, this [bold]does not apply[/bold] to repeat offenders.
+
+</Document>
