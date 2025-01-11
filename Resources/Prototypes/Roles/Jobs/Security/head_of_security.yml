@@ -1,4 +1,4 @@
-r- type: job
+- type: job
   id: HeadOfSecurity
   name: job-name-hos
   description: job-description-hos
