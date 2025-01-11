@@ -24,6 +24,8 @@ r- type: job
        - Foreigner
        - ForeignerLight
        - Muted
+       - Blindness
+       - Pacifist
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
