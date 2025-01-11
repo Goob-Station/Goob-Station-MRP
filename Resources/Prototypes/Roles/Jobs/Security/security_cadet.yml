@@ -16,6 +16,8 @@
        - Foreigner
        - ForeignerLight
        - Muted
+       - Blindness
+       - Pacifist
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
