@@ -6,35 +6,20 @@
   ## Pick-Pocketing
   Pick-Pocketing is a simple crime that involves stripping items from individuals that don't carry much value or interest, but is still an asset
   that isn't supposed to be in the offenders' inventory.
-
-  <ColorBox>
-    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
-      Small or easily replaceable items should be charged with this, otherwise consider a higher class of theft.
-    </Box>
-  </ColorBox>
+  - Small or easily replaceable items should be charged with this, otherwise consider a higher class of theft.
 
   ## Thievery/Fraud Minor and Major
   Thievery/Fraud covers stealing items and/or impersonating people to commit fraud and obtain items that are not yours by default.
-
-  <ColorBox>
-    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
-      Minor is classified with: This includes things like insulated gloves, crew pinpointers, normal ID cards, or personal items; while
-      Major is classified with: To steal rare, extraordinarily expensive (Items of greater than 1000 credit value), or restricted equipment from
-      secure areas or people.
-    </Box>
-  </ColorBox>
+  - Minor is classified with: This includes things like insulated gloves, crew pinpointers, normal ID cards, or personal items; while
+  - Major is classified with: To steal rare, extraordinarily expensive (Items of greater than 1000 credit value), or restricted equipment from
+  secure areas or people.
 
   The items stolen must also be checked for contraband. Items stolen like armory equipment would be Major Thievery, not Grand Theft.
 
   ## Grand Theft/Fraud
   Grand Theft/Fraud is extraordinary thievery or fraud that has resulted in significant value loss from the station or peoples of the station.
-
-  <ColorBox>
-    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
-      To steal inherently dangerous items from their storage, one's person, or other such methods acquire through illicit means. This includes items that
-      are considered major/corporate contraband, such as nuclear disks and Command-specific equipment en masse. There must be multiple items stolen or
-      the items must be considered extremely severe (such as nuclear authorization disk).
-    </Box>
-  </ColorBox>
+  - To steal inherently dangerous items from their storage, one's person, or other such methods acquire through illicit means. This includes items that
+  are considered major/corporate contraband, such as nuclear disks and Command-specific equipment en masse.
+  - There must be multiple items stolen or the items must be considered extremely severe (such as nuclear authorization disk).
 
 </Document>
