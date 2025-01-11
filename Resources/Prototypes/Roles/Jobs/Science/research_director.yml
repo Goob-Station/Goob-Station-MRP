@@ -19,6 +19,14 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
+        - !type:CharacterTraitRequirement
+          inverted: true    
+          traits:
+            - Foreigner
+            - ForeignerLight
+            - Muted
+            - Blindness
+            - Pacifist
   weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
