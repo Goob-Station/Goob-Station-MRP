@@ -18,6 +18,7 @@
   - M-07: Escaped Prisoner
   - M-08: Failure to Commit Crime
   - M-09: Conspiracy
+  - M-10: Security/Command
 
   ## M-01: Clear and Present Danger
   Clear and present danger can be assigned to charges where the individual was in a scenario where they commited the crime in
@@ -84,10 +85,12 @@
   ## M-07: Escaped Prisoner
   Any prisoner that has escaped from the permanent brig or holding cell is bound to have this modifier added to their charges when they are caught.
 
-  A prisoner that has escaped the holding cell should have the timer reset and increased by 50%. A permanent prisoner should be held in solitary for 2-4 minutes.
+  A prisoner that has escaped the holding cell should have the timer reset and increased by 50%. A permanent prisoner should be held in solitary
+  for 2-4 minutes.
 
   ## M-08: Failure to Commit a Crime
-  Anyone that is caught in the act or has failed to commit a crime in full may have their sentence reduced with this modifier depending on the severity of the crime.
+  Anyone that is caught in the act or has failed to commit a crime in full may have their sentence reduced with this modifier depending on the
+  severity of the crime.
 
   This modifier can be applied to reduce the severity by one level; however, this [bold]does not apply[/bold] to repeat offenders.
 
@@ -101,7 +104,21 @@
 
   <ColorBox>
     <Box HorizontalAlignment="Center" VerticalAlignment="Center">
-      This should be applied to those that are blatantly assisting criminals, like other syndicate members, that aren't confirmed with their own charges of similar value.
+      This should be applied to those that are blatantly assisting criminals, like other syndicate members, that aren't confirmed with their
+      own charges of similar value.
+    </Box>
+  </ColorBox>
+
+  ## Security/Command
+  If the individual is a member of the Security or Command department, then they should have their sentence extended for breaking the Space Law.
+  Members of Security and Command are held to higher standards, and should thus be punished more severely for breaking high-severity crimes.
+
+  If the individual who committed the crime is a legitimately hired individual in a Command or Security position, the crime punishment
+  should be charged with an extra two (2) minutes of time.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      "[italic]You are in Security/Command, and should know the law. Simple as.[/italic]"
     </Box>
   </ColorBox>
 
