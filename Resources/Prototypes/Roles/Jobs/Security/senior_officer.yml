@@ -25,6 +25,7 @@
        - Muted
        - Blindness
        - Pacifist
+       - BrittleBoneDisease
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos
