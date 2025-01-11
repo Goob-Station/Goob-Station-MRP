@@ -32,6 +32,7 @@
        - Muted
        - Blindness
        - Pacifist
+       - BrittleBoneDisease
   weight: 20
   startingGear: CaptainGear
   icon: JobIconCaptain
