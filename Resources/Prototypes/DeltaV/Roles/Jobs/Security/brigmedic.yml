@@ -18,6 +18,7 @@
        - Muted
        - Blindness
        - Pacifist
+       - BrittleBoneDisease
   startingGear: CorpsmanGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
