@@ -24,6 +24,14 @@
       min: 54000 # 15 hours
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
       min: 54000 # 15 hours
+    - !type:CharacterTraitRequirement
+      inverted: true    
+      traits:
+       - Foreigner
+       - ForeignerLight
+       - Muted
+       - Blindness
+       - Pacifist
   weight: 20
   startingGear: CaptainGear
   icon: JobIconCaptain
