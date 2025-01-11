@@ -1,4 +1,4 @@
-- type: job
+r- type: job
   id: HeadOfSecurity
   name: job-name-hos
   description: job-description-hos
@@ -21,7 +21,8 @@
     - !type:CharacterTraitRequirement
       inverted: true    
       traits:
-       - AnomalousPositronics
+       - Foreigner
+       - ForeignerLight
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
