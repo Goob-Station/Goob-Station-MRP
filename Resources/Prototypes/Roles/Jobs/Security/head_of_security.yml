@@ -26,6 +26,7 @@
        - Muted
        - Blindness
        - Pacifist
+       - BrittleBoneDisease
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
