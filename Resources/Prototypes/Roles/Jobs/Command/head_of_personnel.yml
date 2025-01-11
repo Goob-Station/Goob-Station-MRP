@@ -60,7 +60,7 @@
   - Paramedic # DeltaV - Add Paramedic acces
   - Psychologist # DeltaV - Add Psychologist access
   - Mail # Nyanotrasen Addition for Courier
-  - Order # DeltaV - Add Order access
+  - Orders # DeltaV - Add Order access
 #  - Brig # - Delta-V removed Brig
   special:
   - !type:AddImplantSpecial
