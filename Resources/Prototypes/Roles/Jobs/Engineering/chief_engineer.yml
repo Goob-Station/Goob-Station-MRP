@@ -22,7 +22,6 @@
        - ForeignerLight
        - Muted
        - Blindness
-       - Pacifist
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
