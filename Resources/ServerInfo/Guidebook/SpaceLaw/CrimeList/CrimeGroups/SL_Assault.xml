@@ -1,0 +1,49 @@
+<Document>
+  # Assault and Manslaughter (V)
+  Assault ranges from a simple Disturbance all the way to Manslaughter, Murder, and Prime/Mass Murder.
+  The [bold][color=#dac471]primary difference[/color][/bold] is to the degree of the assault/murder, and how it happened.
+
+  ## Disturbance and Assault
+  Simple scuffles, causing problems for others, harassing, and the likes can boil down to a [bold]Disturbance[/bold] and should be warned.
+  If there is a hands-on moment and people get injured or hurt, but only minor wounds that are easily taken care of, this would be [bold]Assault[/bold].
+
+  The difference between a Disturbance and an Assault charge is whether it was hands-on or not, and whether violence happened.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      Disturbances: The catch-all for obnoxious crewmates.
+      Covers things such as public nudity, needless insults, obstructing authorities, and inciting crime or violence.
+      Generally covers things that aren't explicitly illegal.
+    </Box>
+  </ColorBox>
+
+  ## Aggravated Assault
+  The difference between Assault and Aggravated Assault is the intent to grievously harm to the point nearing (or achieving) a critical state of injury.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      To take physical action against a person with intent to grievously harm, but not to kill. Assaulting someone to the point of them critting or intending to achieve that.
+    </Box>
+  </ColorBox>
+
+  ## Manslaughter and Murder
+  The difference between Manslaughter and Murder is intent. Did the individual accidentally kill someone (such as crossfire) or did they kill them with the intent to take their life?
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      Manslaughter: To unintentionally kill someone through negligent, but not malicious, actions. Murder would be purposefully ending someone's life.
+    </Box>
+  </ColorBox>
+
+  ## Prime/Mass Murder
+  Prime/Mass Murder is an encompassing charge for two separate cases. If the suspect has killed three (3) or more individuals, then it is considered [bold]Mass Murder[/bold];
+  however, if the suspect has killed even one person and then gone through lengths of dismembering and/or have gone through steps of preventing their revival, it
+  would be [bold]Prime Murder[/bold].
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      Prime Murder: To commit the act of murder, with clear intent to kill, and clear intent or to have materially take steps to prevent the revival of the victim.
+    </Box>
+  </ColorBox>
+
+</Document>

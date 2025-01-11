@@ -3,7 +3,7 @@
   Below is the table of crimes and associated timings. This is the Crime-List and should be used as a quick reference to severity of crimes and associated times.
 
   Charges should be issued with the following times:
-  - 1-XX: Warning (Note for future occurrences)
+  - 1-XX: Warning (Note for Future Occurrences)
   - 2-XX: 1-2 Minutes
   - 3-XX: 2-5 Minutes
   - 4-XX: 5-10 Minutes
@@ -100,24 +100,24 @@
     </ColorBox>
     <ColorBox Color="#707c84">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Pick-Pocketing (T)
+        Pick-Pocketing (F)
       </Box>
     </ColorBox>
     <ColorBox Color="#707c84">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Theft/Fraud
-        \nMinor (T)
+        \nMinor (F)
       </Box>
     </ColorBox>
     <ColorBox Color="#707c84">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Theft/Fraud
-        \nMajor (T)
+        \nMajor (F)
       </Box>
     </ColorBox>
     <ColorBox Color="#707c84">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Grand (T)
+        Grand (F)
         \nTheft/Fraud
       </Box>
     </ColorBox>
@@ -175,19 +175,19 @@
     <ColorBox Color="#58181F">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Hostile
-        \nAgent (A)
+        \nAgent (H)
       </Box>
     </ColorBox>
     <ColorBox Color="#58181F">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Hostile
-        \nActivity (A)
+        \nActivity (H)
       </Box>
     </ColorBox>
     <ColorBox Color="#58181F">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Enemy of
-        \nthe Station (A)
+        \nthe Station (H)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -451,4 +451,5 @@
       </Box>
     </ColorBox>
   </Table>
+
 </Document>
