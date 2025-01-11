@@ -23,6 +23,7 @@ r- type: job
       traits:
        - Foreigner
        - ForeignerLight
+       - Muted
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
