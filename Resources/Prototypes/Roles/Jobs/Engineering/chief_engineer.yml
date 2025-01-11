@@ -15,6 +15,14 @@
       min: 54000 # goob mrp - 15 hours - i would've set this to 10 but there are too many fucking CEs that have no idea how engi works
 #    - !type:OverallPlaytimeRequirement
 #      time: 72000 # DeltaV - 20 hours
+    - !type:CharacterTraitRequirement
+      inverted: true    
+      traits:
+       - Foreigner
+       - ForeignerLight
+       - Muted
+       - Blindness
+       - Pacifist
   weight: 10
   startingGear: ChiefEngineerGear
   icon: "JobIconChiefEngineer"
