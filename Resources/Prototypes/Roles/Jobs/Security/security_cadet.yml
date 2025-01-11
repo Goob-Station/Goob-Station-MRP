@@ -18,6 +18,7 @@
        - Muted
        - Blindness
        - Pacifist
+       - BrittleBoneDisease
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
