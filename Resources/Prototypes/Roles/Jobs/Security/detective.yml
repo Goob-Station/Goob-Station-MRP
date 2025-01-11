@@ -13,6 +13,8 @@
       - Foreigner
       - ForeignerLight
       - Muted
+      - Blindness
+      - Pacifist
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
