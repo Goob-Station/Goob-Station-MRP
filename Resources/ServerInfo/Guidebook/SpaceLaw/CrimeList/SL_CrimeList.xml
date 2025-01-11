@@ -3,11 +3,11 @@
   Below is the table of crimes and associated timings. This is the Crime-List and should be used as a quick reference to severity of crimes and associated times.
 
   Charges should be issued with the following times:
-  - 0-XX: Warning (Note for future occurrences)
-  - 1-XX: 1-2 Minutes
-  - 2-XX: 2-5 Minutes
-  - 3-XX: 5-10 Minutes
-  - 4-XX: Permanent Brig (Bring to Court as Well)
+  - 1-XX: Warning (Note for future occurrences)
+  - 2-XX: 1-2 Minutes
+  - 3-XX: 2-5 Minutes
+  - 4-XX: 5-10 Minutes
+  - 5-XX: Permanent Brig (Bring to Court as Well)
 
   <ColorBox>
     <Box HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -155,39 +155,9 @@
         \nSabotage (S)
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
         X-04
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-      </Box>
-    </ColorBox>
-    <ColorBox>
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Vigilantism
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#997570">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Conspiracy (C)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#997570">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        High
-        \nConspiracy (C)
-      </Box>
-    </ColorBox>
-    <ColorBox Color="#997570">
-      <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Espionage (C)
-      </Box>
-    </ColorBox>
-        <ColorBox>
-      <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-05
       </Box>
     </ColorBox>
     <ColorBox Color="#707c9c">
@@ -220,9 +190,9 @@
         \nthe Station (A)
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-06
+        X-05
       </Box>
     </ColorBox>
     <ColorBox Color="#daa520">
@@ -255,9 +225,9 @@
         \nCorporate (P)
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-07
+        X-06
       </Box>
     </ColorBox>
     <ColorBox>
@@ -266,6 +236,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Vigilantism
       </Box>
     </ColorBox>
     <ColorBox Color="#2e195b">
@@ -286,9 +257,9 @@
         \nCommand
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-08
+        X-07
       </Box>
     </ColorBox>
     <ColorBox Color="#555555">
@@ -322,9 +293,9 @@
         \n(V/N)
       </Box>
     </ColorBox>
-        <ColorBox>
+    <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-09
+        X-08
       </Box>
     </ColorBox>
     <ColorBox>
@@ -351,13 +322,13 @@
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Refusal of
-        \nMindshield
-        \nImplant
+        \nMental
+        \nShielding
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-10
+        X-09
       </Box>
     </ColorBox>
     <ColorBox>
@@ -383,11 +354,12 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Espionage
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-11
+        X-10
       </Box>
     </ColorBox>
     <ColorBox>
@@ -408,7 +380,8 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-        Kidnapping
+        Kidnapping /
+        \nIdentity Theft
       </Box>
     </ColorBox>
     <ColorBox>
@@ -417,7 +390,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-12
+        X-11
       </Box>
     </ColorBox>
     <ColorBox Color="#db7093">
@@ -426,8 +399,10 @@
         \nPsionics (E)
       </Box>
     </ColorBox>
-    <ColorBox>
+    <ColorBox Color="#db7093">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
+      Lying About
+      \nPsionics (E)
       </Box>
     </ColorBox>
     <ColorBox>
@@ -445,7 +420,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="2">
-        X-13
+        X-12
       </Box>
     </ColorBox>
     <ColorBox>
@@ -461,7 +436,7 @@
     <ColorBox Color="#db7093">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Mindguard
-        \n Act (E)
+        \nAct (E)
       </Box>
     </ColorBox>
     <ColorBox Color="#db7093">
@@ -476,5 +451,4 @@
       </Box>
     </ColorBox>
   </Table>
-
 </Document>

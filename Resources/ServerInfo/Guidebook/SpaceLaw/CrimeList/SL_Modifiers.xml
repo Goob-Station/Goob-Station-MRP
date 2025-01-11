@@ -12,11 +12,12 @@
   - M-01: Clear and Present Danger
   - M-02: Repeat Sentencing
   - M-03: Self-Defense
-  - M-04: Mental Instability
+  - M-04: Unstable/Brainwashed Mind
   - M-05: Coordinated Behavior
   - M-06: Resisting Arrest
   - M-07: Escaped Prisoner
   - M-08: Failure to Commit Crime
+  - M-09: Conspiracy
 
   ## M-01: Clear and Present Danger
   Clear and present danger can be assigned to charges where the individual was in a scenario where they commited the crime in
@@ -49,10 +50,12 @@
 
   This modifier allows the sentencer to reduce, void, and/or expunge the charge from the record.
 
-  ## M-04: Mental Instability
-  Those deemed to be unstable in the mind, acting erratically, or have lost control of themselves may be applied this modifier to their charges.
+  ## M-04: Unstabe/Brainwashed Mind
+  Those deemed to be unstable in the mind,  acting erratically, or have lost control of themselves may be applied this modifier to their charges.
+  This includes those that have been brainwashed and confirmed to have done actions under the influence of mind-altering effects.
 
-  This deems that an individual who is incapable of acting with a sense of normality, with sanity, may be treated medically or forcefully cryosleeped.
+  This deems that an individual who is incapable of acting with a sense of normality, with sanity, may be treated medically to undo the effects.
+  Afterwards, any crimes they committed under this effect may be void and expunged.
 
   <ColorBox>
     <Box HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -87,5 +90,19 @@
   Anyone that is caught in the act or has failed to commit a crime in full may have their sentence reduced with this modifier depending on the severity of the crime.
 
   This modifier can be applied to reduce the severity by one level; however, this [bold]does not apply[/bold] to repeat offenders.
+
+  ## M-09: Conspiracy
+  Willingly assisting someone in committing a crime that is not considered Coordinated Behavior as they have different jobs.
+  This can scale depending on the time, and should generally be associated with the same charges.
+  The individual charged with this should have the same sentence with an appended 1 minute extra.
+
+  An individual who has been confirmed to be assisting a criminal without being under the influence of a mind-altering effect (refer above),
+  and is not being held hostage, may be assigned this modifier.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      This should be applied to those that are blatantly assisting criminals, like other syndicate members, that aren't confirmed with their own charges of similar value.
+    </Box>
+  </ColorBox>
 
 </Document>
