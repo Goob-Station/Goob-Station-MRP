@@ -18,9 +18,7 @@
         - !type:CharacterTraitRequirement
           traits:
             - AnomalousPositronics
-        - !type:CharacterTraitRequirement
-          inverted: true    
-          traits:
+          inverted: true
             - Pacifist
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
