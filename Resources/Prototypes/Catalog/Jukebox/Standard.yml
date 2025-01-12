@@ -39,3 +39,33 @@
   name: PigeonBeans - Sunset
   path:
     path: /Audio/Jukebox/sunset.ogg
+
+- type: jukebox
+  id: toccata
+  name: Bach - Toccata
+  path:
+    path: /Audio/Lobby/bach-toccata.ogg
+
+- type: jukebox
+  id: vivaldicredoetcarnatust
+  name: Vivaldi - Credo et Carnatust
+  path:
+    path: /Audio/Lobby/vivaldi-credo-et-carnatust.ogg
+
+- type: jukebox
+  id: vivaldispring
+  name: Vivaldi - Spring
+  path:
+    path: /Audio/Lobby/vivaldi-spring.ogg
+
+- type: jukebox
+  id: vivaldiwinter
+  name: Vivaldi - Winter
+  path:
+    path: /Audio/Lobby/vivaldi-winter.ogg
+
+- type: jukebox
+  id: mountainking
+  name: Edvard Grieg - In The Hall Of The Mountain King
+  path:
+    path: /Audio/StationEvents/hallofthemountainking.ogg
