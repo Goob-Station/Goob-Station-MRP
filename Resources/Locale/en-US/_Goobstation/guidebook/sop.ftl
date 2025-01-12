@@ -1,14 +1,15 @@
 # Goob SOP
 # - Main Directories
 guide-entry-sop = SOP
-guide-entry-sop-alert-levels = _Alert Levels
-guide-entry-sop-emergencies = _Emergencies
+guide-entry-sop-alert-levels = Alert Levels
+guide-entry-sop-emergencies = Emergencies
 guide-entry-sop-jobs = Jobs
 guide-entry-sop-legal = Legal
 guide-entry-sop-standards = Standard Procedures
 # - Sub/Nested Directories
 guide-entry-sop-cargo = Cargo
 guide-entry-sop-command = Command
+guide-entry-sop-dignitary = Dignitary
 guide-entry-sop-engineering = Engineering
 guide-entry-sop-epistemics = Epistemics
 guide-entry-sop-medical = Medical
@@ -26,6 +27,7 @@ guide-entry-sop-violetalert = Violet Alert
 guide-entry-sop-whitealert = White Alert
 # - Standard Procedures
 guide-entry-sop-demoting = Dismissal/Demoting
+guide-entry-sop-evacuation = Early Evacuation
 guide-entry-sop-hiring = Hiring/Transfer
 guide-entry-sop-succession = Chain of Command
 # - Emergencies
@@ -46,8 +48,6 @@ guide-entry-sop-searches = Searches
 guide-entry-sop-cargotech = Cargo Tech
 guide-entry-sop-salvage = Salvage Specialist
 # - Command
-guide-entry-sop-ntr = Nanotrasen Rep.
-guide-entry-sop-bso = Blueshield Officer
 guide-entry-sop-captain = Captain
 guide-entry-sop-hop = Head of Personnel
 guide-entry-sop-hos = Head of Security
@@ -57,6 +57,10 @@ guide-entry-sop-cmo = Chief Medical Ofc.
 guide-entry-sop-ce = Chief Engineer
 # Logistics Officer changed by Delta-V (original: Quartermaster)
 guide-entry-sop-lo = Logistics Officer
+# - Dignitary
+guide-entry-sop-bso = Blueshield Officer
+guide-entry-sop-ntr = Nanotrasen Rep.
+guide-entry-sop-magistrate = Magistrate
 # - Engineering
 guide-entry-sop-atmostech = Atmos Tech
 guide-entry-sop-stationengineer = Station Engineer
