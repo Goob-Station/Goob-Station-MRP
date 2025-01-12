@@ -2,7 +2,7 @@
 
 on:
   push:
-    branches: [ master, staging, trying ]
+    branches: [ main, staging, trying ]
     paths:
       - '**.cs'
       - '**.csproj'
@@ -16,7 +16,7 @@ on:
   merge_group:
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ master ]
+    branches: [ main ]
     paths:
       - '**.cs'
       - '**.csproj'
@@ -35,6 +35,8 @@ jobs:
     steps:
       - name: Checkout Master
         uses: actions/checkout@v3.6.0
+        with:
+          ref: main
 
       - name: Setup Submodule
         run: |
