@@ -1,0 +1,19 @@
+<Document>
+  # Drug Possession and Distribution (D)
+  Drug Possession and Drug Distribution are two separate crimes that cannot be stackable. If the offender is distributing drugs, they take
+  the higher severity offense, Drug Distribution.
+
+  ## Drug Possession
+  Drug Possession is specifically the carrying of chemicals, substances, and/or any other drug-like entity in large quantities.
+  - To make, hold, or abuse restricted drugs or chemicals.
+
+  ## Illegal Distribution (Drugs)
+  Illegal Distribution is the distribution of a large quantity of drugs that are considered narcotics or do not serve a purpose outside
+  of the medical bay or medicinal purposes. These can and should extend to drugs that are considered contrband as well.
+
+  For further processing, this extends to willingly giving out drugs or equipment that can produce drugs in large quantities.
+  - This does not extend to a few pills or the likes that can be used recreationally. The exception being if the "recreational" use is violent in nature or
+  harmful to crewmembers.
+  - The possession of dangerous or illegal drugs/equipment in a quantity greater than that which is reasonable for personal consumption.
+
+</Document>

@@ -1,0 +1,40 @@
+<Document>
+  # Crime Groups
+  These are the list of crime groupings and their associated tags. You should refer to this to better understand [italic]what[/italic] a crime is and how it is classified in the list.
+
+  <ColorBox>
+    <Box HorizontalAlignment="Center" VerticalAlignment="Center">
+      The crime times are listed below, and the maximum length for each categoriy is [bold]not necessarily[/bold] the time that should be used for each individual charge of that category.
+    </Box>
+  </ColorBox>
+
+  [bold][color=#dac471]Discretion[/color][/bold] should be used when assigning timing of each charge.
+  - Not all crimes require the maximum charge.
+  - Not all crimes should have the minimum charge either.
+
+  Crime charges, for reference, once more:
+  - 1-XX: Warning (Note for Future Occurrences)
+  - 2-XX: 1-2 Minutes
+  - 3-XX: 2-5 Minutes
+  - 4-XX: 5-10 Minutes
+  - 5-XX: Permanent Brig (Bring to Court as Well)
+
+  ## Warnings
+  Warnings are issued for minor crimes, and should be noted in the event of repeating offenses [italic]after the warning has been given[/italic].
+
+  The following crime groupings are shown below, and have individual grouping entries in this folder:
+  - [textlink="Animal Harm/Cruelty (A)" link="Animal SpaceLaw"]
+  - [textlink="Assault and Manslaughter (V)" link="Assault SpaceLaw"]
+  - [textlink="Contraband (P)" link="Contraband SpaceLaw"]
+  - [textlink="Disruption and Disturbance (X)" link="Disruption SpaceLaw"]
+  - [textlink="Drug Possession/Distribution (D)" link="Drugs SpaceLaw"]
+  - [textlink="Hostile Agents (H)" link="HostileAgent SpaceLaw"]
+  - [textlink="Negligence (N)" link="Negligence SpaceLaw"]
+  - [textlink="Psionics (E)" link="Psionics SpaceLaw"]
+  - [textlink="Rioting (R)" link="Rioting SpaceLaw"]
+  - [textlink="Sabotage and Vandalism (S)" link="Sabotage SpaceLaw"]
+  - [textlink="Thievery and Fraud (F)" link="Thievery SpaceLaw"]
+  - [textlink="Trespassing (T)" link="Trespassing SpaceLaw"]
+  - [textlink="Ungrouped Charges" link="Ungrouped SpaceLaw"]
+
+</Document>
