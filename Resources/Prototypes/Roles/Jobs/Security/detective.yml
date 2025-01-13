@@ -7,6 +7,14 @@
   - !type:CharacterDepartmentTimeRequirement
     department: Security
     min: 18000 # goob mrp - 50 hours
+  - !type:CharacterTraitRequirement
+    inverted: true    
+    traits:
+      - Foreigner
+      - ForeignerLight
+      - Muted
+      - Blindness
+      - Pacifist
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
