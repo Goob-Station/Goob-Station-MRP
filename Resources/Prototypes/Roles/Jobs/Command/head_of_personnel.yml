@@ -34,25 +34,11 @@
   - Janitor
   - Theatre
   - Kitchen
-#  - Chapel
   - Hydroponics
   - External
   - Cryogenics
-  # I mean they'll give themselves the rest of the access levels *anyways*.
-  # As of 15/03/23 they can't do that so here's MOST of the rest of the access levels.
-  # Head level access that isn't their own was deliberately left out, get AA from the captain instead.
-  # Delta V - fuck all of this HoP is a service role
-#  - Chemistry
-#  - Engineering
-#  - Research
-#  - Detective
-#  - Salvage
-#  - Security # NoooOoOo!! My HoPcurity!1
-#  - Brig
   - Lawyer
   - Cargo
-#  - Atmospherics
-#  - Medical
   - Boxer # DeltaV - Add Boxer access
   - Clown # DeltaV - Add Clown access
   - Library # DeltaV - Add Library access
@@ -60,6 +46,22 @@
   - Musician # DeltaV - Add Musician access
   - Reporter # DeltaV - Add Reporter access
   - Zookeeper # DeltaV - Add Zookeeper access
+  # Goobstation Additions (Re-Adding them back cause screw Delta-V Rules :3)
+  - Atmospherics
+  - Medical
+  - Chemistry
+  - Engineering
+  - Research
+  - Detective
+  - Salvage
+  - Security
+  - Chapel
+  - Corpsman
+  - Paramedic # DeltaV - Add Paramedic acces
+  - Psychologist # DeltaV - Add Psychologist access
+  - Mail # Nyanotrasen Addition for Courier
+  - Orders # DeltaV - Add Order access
+#  - Brig # - Delta-V removed Brig
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
