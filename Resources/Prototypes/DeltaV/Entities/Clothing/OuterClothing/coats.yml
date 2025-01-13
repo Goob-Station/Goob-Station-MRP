@@ -57,7 +57,7 @@
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatGreatcoat
   name: greatcoat
-  description: A drab and rugged greatcoat, padded for protection against the elements.
+  description: A drab and rugged greatcoat, padded for protection against the elements. This one seems to have ballistic plates sewn into the fabric.
   components:
   - type: Sprite
     sprite: DeltaV/Clothing/OuterClothing/Coats/greatcoat.rsi
@@ -68,10 +68,13 @@
   - type: Armor # MAKE SURE THE STATS ALIGN WITH SEC WINTER COAT!!!
     modifiers:
       coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
+        Blunt: 0.80
+        Slash: 0.80
+        Piercing: 0.50
         Heat: 0.75
+    - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
 
 - type: entity
   parent: ClothingOuterStorageBase
