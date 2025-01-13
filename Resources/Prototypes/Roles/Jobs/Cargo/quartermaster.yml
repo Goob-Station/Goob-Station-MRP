@@ -19,6 +19,13 @@
       min: 21600 #goob mrp 6 hours
     - !type:CharacterOverallTimeRequirement
       min: 72000 #goob mrp 20 hrs
+    - !type:CharacterTraitRequirement
+      inverted: true    
+      traits:
+       - Foreigner
+       - ForeignerLight
+       - Muted
+       - Blindness
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
