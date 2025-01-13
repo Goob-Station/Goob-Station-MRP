@@ -17,6 +17,14 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 216000 # 60 hrs
+    - !type:CharacterTraitRequirement
+      inverted: true    
+      traits:
+       - Foreigner
+       - ForeignerLight
+       - Muted
+       - Blindness
+       - Pacifist
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos
