@@ -1,0 +1,97 @@
+Name: GoobChangelog
+Order: -1
+Entries:
+- author: God
+  changes:
+    - type: Remove
+      message: ERP
+  id: 3
+  time: '2024-06-15T12:54:44.0000000+00:00'
+- author: Yakub
+  changes:
+    - type: Add
+      message: Added automated changelogs yay
+  id: 4
+  time: '2024-10-18T15:35:05.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/9
+- author: Piras314
+  changes:
+    - type: Add
+      message: Absolutely nothing
+  id: 5
+  time: '2024-10-18T15:55:01.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/10
+- author: starch
+  changes:
+    - type: Tweak
+      message: changed role-timers to be more fitting for the shittery
+  id: 6
+  time: '2024-10-30T23:31:29.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/12
+- author: Ducks
+  changes:
+    - type: Tweak
+      message: Rebalanced Rifle damages.
+    - type: Tweak
+      message: Uranium rounds now pierce armor, but do less damage.
+  id: 7
+  time: '2024-10-30T23:31:48.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/11
+- author: Piras314
+  changes:
+    - type: Add
+      message: Added fun :D
+    - type: Tweak
+      message: Tweaked fun
+    - type: Fix
+      message: Fixed fun!
+    - type: Remove
+      message: Removed fun :(
+  id: 8
+  time: '2024-11-17T19:21:15.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/14
+- author: Piras314
+  changes:
+    - type: Remove
+      message: Fun
+  id: 9
+  time: '2024-12-29T16:47:36.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/16
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Rules and Standard Operating Procedures have been added.
+  id: 10
+  time: '2025-01-01T18:23:05.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/17
+- author: sapphirescript
+  changes:
+    - type: Add
+      message: Enable Lamia Species
+  id: 11
+  time: '2025-01-04T22:45:33.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/21
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Add an IPC Brig Guideline for Security.
+    - type: Tweak
+      message: Changed Alert Levels to use Tables and ColorBoxes for better format.
+    - type: Tweak
+      message: Changed NTR and BSO to use a ColorBox for better formatting.
+    - type: Tweak
+      message: Changed QuarterMaster to Logistics Officer.
+    - type: Tweak
+      message: Reformatted Emergencies under Standard Procedures to shorten SOP.
+  id: 12
+  time: '2025-01-06T21:05:51.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/19
+- author: TwoDucksOnnaPlane
+  changes:
+    - type: Tweak
+      message: Most guns have been buffed.
+    - type: Tweak
+      message: Most uranium munitions pierce armor.
+  id: 13
+  time: '2025-01-06T21:06:18.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/28
