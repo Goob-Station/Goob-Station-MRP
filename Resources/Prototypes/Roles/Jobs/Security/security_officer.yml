@@ -6,6 +6,14 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Security
+    - !type:CharacterTraitRequirement
+      inverted: true    
+      traits:
+       - Foreigner
+       - ForeignerLight
+       - Muted
+       - Blindness
+       - Pacifist
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
