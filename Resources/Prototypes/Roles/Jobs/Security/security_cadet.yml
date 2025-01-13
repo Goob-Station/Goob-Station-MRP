@@ -10,6 +10,14 @@
 #      department: Security
 #      time: 54000 #15 hrs
 #      inverted: true # stop playing intern if you're good at security!
+    - !type:CharacterTraitRequirement
+      inverted: true    
+      traits:
+       - Foreigner
+       - ForeignerLight
+       - Muted
+       - Blindness
+       - Pacifist
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
