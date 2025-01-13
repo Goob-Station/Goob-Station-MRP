@@ -365,12 +365,12 @@
     Slash: 1.3
     Piercing: 1.2
     Asphyxiation: 0
-    Cold: 1.2
+    Cold: 0.8
     Heat: 1.2
     Cellular: 0.50
-    Bloodloss: 1.45
+    Bloodloss: 1.35
     Shock: 1.35
-    Radiation: 1.5
+    Radiation: 1.45
 
 - type: damageModifierSet
   id: DermalArmor
