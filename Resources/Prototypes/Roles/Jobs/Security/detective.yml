@@ -15,6 +15,7 @@
       - Muted
       - Blindness
       - Pacifist
+      - BrittleBoneDisease
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
