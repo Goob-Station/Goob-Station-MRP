@@ -1,6 +1,6 @@
 <Document>
-  # Space Law Crime List
-  Below is the table of crimes and associated timings. This is the Crime-List and should be used as a quick reference to severity of crimes and associated times.
+  # Space Law Crime Chart
+  Below is the table of crimes and associated timings. This is the Crime-Chart and should be used as a quick reference to severity of crimes and associated times.
 
   Charges should be issued with the following times:
   - 1-XX: Warning (Note for Future Occurrences)
@@ -11,11 +11,13 @@
 
   <ColorBox>
     <Box HorizontalAlignment="Center" VerticalAlignment="Center">
-      Crimes are stackable if they aren't in the same Code Category indicated by color and brackets, highest applies. Refer to sentencing for the times that are charged based on severity level.
+      Crimes are stackable if they aren't in the same Code Category indicated by color and brackets, highest applies. Refer to sentencing
+      for the times that are charged based on severity level.
     </Box>
   </ColorBox>
 
-  [italic]Any crimes [bold]not[/bold] listed with a bracket/color are considered uncategorized crimes and may be stacked with specific exceptions. These are clarified in their separate sections.[/italic]
+  [italic]Any crimes [bold]not[/bold] listed with a bracket/color are considered uncategorized crimes and may be stacked with specific exceptions.
+  These are clarified in their separate sections.[/italic]
 
   <Table Columns="6">
     <ColorBox>

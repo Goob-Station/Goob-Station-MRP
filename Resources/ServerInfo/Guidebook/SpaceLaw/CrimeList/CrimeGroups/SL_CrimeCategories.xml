@@ -1,10 +1,12 @@
 <Document>
-  # Crime Groups
-  These are the list of crime groupings and their associated tags. You should refer to this to better understand [italic]what[/italic] a crime is and how it is classified in the list.
+  # Crime Categories
+  These are the list of crime categories and their associated tags. You should refer to this to better understand [italic]what[/italic] a crime is
+  and how it is classified in the list.
 
   <ColorBox>
     <Box HorizontalAlignment="Center" VerticalAlignment="Center">
-      The crime times are listed below, and the maximum length for each categoriy is [bold]not necessarily[/bold] the time that should be used for each individual charge of that category.
+      The crime times are listed below, and the maximum length for each categoriy is [bold]not necessarily[/bold] the time that
+      should be used for each individual charge of that category.
     </Box>
   </ColorBox>
 
