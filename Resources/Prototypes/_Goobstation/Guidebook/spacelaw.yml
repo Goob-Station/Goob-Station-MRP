@@ -12,17 +12,17 @@
 
 # Subdirectories
 - type: guideEntry
-  id: SpaceLaw CrimeList
-  name: guide-entry-spacelaw-crimelist
-  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_CrimeList.xml"
+  id: SpaceLaw CrimeChart
+  name: guide-entry-spacelaw-crimechart
+  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_CrimeChart.xml"
   children:
   - SpaceLaw Modifiers
   - SpaceLaw Groupings
 
 - type: guideEntry
-  id: SpaceLaw Groupings
-  name: guide-entry-spacelaw-groupings
-  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/CrimeGroups/SL_CrimeGroups.xml"
+  id: SpaceLaw Categories
+  name: guide-entry-spacelaw-categories
+  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/CrimeGroups/SL_CrimeCategories.xml"
   children:
   - Animal SpaceLaw
   - Assault SpaceLaw
@@ -44,7 +44,7 @@
   name: guide-entry-spacelaw-modifiers
   text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_Modifiers.xml"
 
-# Groupings
+# Categories
 - type: guideEntry
   id: Animal SpaceLaw
   name: guide-entry-spacelaw-groups-animal

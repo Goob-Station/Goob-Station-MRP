@@ -2,8 +2,8 @@
 # - Main Folder
 guide-entry-spacelaw-folder = Space Law
 # - Subdirectories/Subfolders
-guide-entry-spacelaw-crimelist = Crime List
-guide-entry-spacelaw-groupings = Groupings
+guide-entry-spacelaw-crimechart = Crime Chart
+guide-entry-spacelaw-categories = Categories
 # - Standalones
 guide-entry-spacelaw-modifiers = Modifiers
 # - Groupings
