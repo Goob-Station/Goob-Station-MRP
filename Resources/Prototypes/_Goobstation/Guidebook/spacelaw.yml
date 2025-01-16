@@ -8,7 +8,7 @@
   text: "/ServerInfo/GuideBook/SpaceLaw/SpaceLaw_Initial.xml"
   priority: 0 # Added to make it anchor above others
   children:
-  - SpaceLaw CrimeList
+  - SpaceLaw CrimeChart
 
 # Subdirectories
 - type: guideEntry
@@ -17,7 +17,7 @@
   text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_CrimeChart.xml"
   children:
   - SpaceLaw Modifiers
-  - SpaceLaw Groupings
+  - SpaceLaw Categories
 
 - type: guideEntry
   id: SpaceLaw Categories
