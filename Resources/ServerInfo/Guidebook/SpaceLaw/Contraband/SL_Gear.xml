@@ -1,0 +1,31 @@
+<Document>
+  # Restricted Gear - Contraband
+  There are tiers of restricted gear, mostly ranging from Security Personnel to ERT and Central Command personnel, but some gear is allowed for
+  certain jobs, such as Bartender. These sections are sorted.
+
+  ## Uncategorized (Illegal) Gear
+  This gear is considered illegal by all means, and is only ever allowed during station alerts when defending against foreign invaders, and should
+  be turned over to Security afterwards.
+  - [color=#cb0000]\[None\][/color] Unauthorized PDA software, such as uplinks and spyware.
+  - [color=#cb0000]\[None\][/color] Ammunition or explosives not issued by NanoTrasen.
+  - [color=#cb0000]\[None\][/color] Body armor or tactical suits unauthorized for use by crew roles.
+  - [color=#cb0000]\[None\][/color] Communication equipment designed to intercept, decrypt, or bypass corporate channels.
+  - [color=#cb0000]\[None\][/color] Terrorist paraphernalia, including items with clear indicators of association with hostile organizations.
+
+  ## Categorized (Semi-Legal) Gear
+  This gear is considered illegal when handled without permits or by personnel that are not associated with these jobs and/or departments.
+  - [color=#cb0000]\[ERT/Central Command\][/color] Equipment and clothing exclusive to Emergency Response Teams (ERT) or Central Command personnel.
+  - [color=#cb0000]\[Command\][/color] Command-level clothing and equipment, including headsets with encrypted channels or access overlays.
+  - [color=#cb0000]\[Security\][/color] Security clothing, protective gear, and equipment that would be found in Security and/or the Armory.
+  - [color=#cb0000]\[Security\][/color] Less-than-lethal and non-lethal weaponry, excluding general-purpose disablers and beanbag shotguns.
+  - [color=#cb0000]\[Security\][/color] Flash technology (e.g., flashbang grenades, flash projectors), excluding handheld flashes.
+  - [color=#cb0000]\[Security\][/color] Helmets, riot shields, and ballistic shields.
+  - [color=#cb0000]\[Security\][/color] Security HUDs and restraining gear (e.g., handcuffs).
+  - [color=#cb0000]\[Security/Command\][/color] Disablers and restraining gear used by authorized personnel.
+  - [color=#cb0000]\[Security/Command\][/color] Security HUDs.
+  - [color=#cb0000]\[Security/Command/Bartender\][/color] Protective vests and chest rigs designed to mitigate damage from projectiles or blunt force.
+  - [color=#cb0000]\[Security/Bartender\][/color] Beanbag shotguns (Bartenders must follow SOP).
+  - [color=#cb0000]\[Security/Science/Command\][/color] Handheld flashes.
+  - [color=#cb0000]\[Engineering\][/color] Engineering goggles, and Rapid Construction Devices.
+
+</Document>
