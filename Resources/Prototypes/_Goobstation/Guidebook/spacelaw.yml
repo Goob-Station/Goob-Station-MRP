@@ -38,7 +38,7 @@
 - type: guideEntry
   id: SpaceLaw CrimeChart
   name: guide-entry-spacelaw-crimechart
-  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_CrimeChart.xml"
+  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SpaceLaw_CrimeChart.xml"
   priority: 0
   children:
   - SpaceLaw Modifiers
@@ -47,7 +47,7 @@
 - type: guideEntry
   id: SpaceLaw Categories
   name: guide-entry-spacelaw-categories
-  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/CrimeGroups/SL_CrimeCategories.xml"
+  text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/CrimeGroups/SpaceLaw_CrimeCategories.xml"
   children:
   - Animal SpaceLaw
   - Assault SpaceLaw
