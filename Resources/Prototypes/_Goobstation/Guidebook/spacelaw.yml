@@ -9,8 +9,9 @@
   priority: 0 # Added to make it anchor above others
   children:
   - SpaceLaw Contraband
-  - SpaceLaw Procedures
   - SpaceLaw Trials
+  - SpaceLaw Procedures
+  - SpaceLaw CourtRulings
   - SpaceLaw CrimeChart
 
 # Subdirectories
@@ -45,6 +46,16 @@
   - Implantation SpaceLaw
   - ImplantRemoval SpaceLaw
   - Searching SpaceLaw
+
+- type: guideEntry
+  id: SpaceLaw CourtRulings
+  name: guide-entry-spacelaw-courtrulings
+  text: "/ServerInfo/Guidebook/SpaceLaw/CourtRulings/SpaceLaw_CourtRulings.xml"
+  priority: 1
+  children:
+  - IPC CourtRulings
+  - Cultist CourtRulings
+  - Sacrifice CourtRulings
 
 - type: guideEntry
   id: SpaceLaw CrimeChart
@@ -137,6 +148,22 @@
   id: PrisonerRequest SpaceLaw
   name: guide-entry-spacelaw-trials-prisonerrequest
   text: "/ServerInfo/Guidebook/SpaceLaw/Trials/SL_PrisonerRequest.xml"
+
+# Court Rulings
+- type: guideEntry
+  id: IPC CourtRulings
+  name: guide-entry-spacelaw-courtrulings-ipcbattery
+  text: "/ServerInfo/Guidebook/SpaceLaw/CourtRulings/SL_IPC-Battery.xml"
+
+- type: guideEntry
+  id: Cultist CourtRulings
+  name: guide-entry-spacelaw-courtrulings-cults
+  text: "/ServerInfo/Guidebook/SpaceLaw/CourtRulings/SL_Cultists.xml"
+
+- type: guideEntry
+  id: Sacrifice CourtRulings
+  name: guide-entry-spacelaw-courtrulings-sacrifices
+  text: "/ServerInfo/Guidebook/SpaceLaw/CourtRulings/SL_Sacrifices.xml"
 
 # Categories
 - type: guideEntry
