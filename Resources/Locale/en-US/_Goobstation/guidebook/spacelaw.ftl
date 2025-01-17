@@ -4,6 +4,7 @@ guide-entry-spacelaw-folder = Space Law
 # - Subdirectories/Subfolders
 guide-entry-spacelaw-contraband = Contraband
 guide-entry-spacelaw-procedures = Procedures
+guide-entry-spacelaw-trials = Trial Procedures
 guide-entry-spacelaw-crimechart = Crime Chart
 guide-entry-spacelaw-categories = Categories
 # - Standalones
@@ -18,6 +19,10 @@ guide-entry-spacelaw-procedures-treatment = Treatment
 guide-entry-spacelaw-procedures-implantation = Implantation
 guide-entry-spacelaw-procedures-implantremoval = Implant Removal
 guide-entry-spacelaw-procedures-searching = Searching/Seizure
+# - Trials
+guide-entry-spacelaw-trials-escalationpolicy = Escalation
+guide-entry-spacelaw-trials-trialpolicy = Trial Policy
+guide-entry-spacelaw-trials-prisonerrequest = Prisoner Request
 # - Categories
 guide-entry-spacelaw-groups-animal = Animal (A)
 guide-entry-spacelaw-groups-assault = Assault (V)

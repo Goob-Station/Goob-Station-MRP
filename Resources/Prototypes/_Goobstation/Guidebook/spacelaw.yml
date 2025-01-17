@@ -10,6 +10,7 @@
   children:
   - SpaceLaw Contraband
   - SpaceLaw Procedures
+  - SpaceLaw Trials
   - SpaceLaw CrimeChart
 
 # Subdirectories
@@ -17,11 +18,21 @@
   id: SpaceLaw Contraband
   name: guide-entry-spacelaw-contraband
   text: "/ServerInfo/Guidebook/SpaceLaw/Contraband/SpaceLaw_Contraband.xml"
-  priority: 3
+  priority: 4
   children:
   - Substances SpaceLaw
   - Gear SpaceLaw
   - Weapons SpaceLaw
+
+- type: guideEntry
+  id: SpaceLaw Trials
+  name: guide-entry-spacelaw-trials
+  text: "/ServerInfo/Guidebook/SpaceLaw/Trials/SpaceLaw_Trials.xml"
+  priority: 3
+  children:
+  - EscalationPolicy SpaceLaw
+  - TrialPolicy SpaceLaw
+  - PrisonerRequest SpaceLaw
 
 - type: guideEntry
   id: SpaceLaw Procedures
@@ -110,6 +121,22 @@
   id: Searching SpaceLaw
   name: guide-entry-spacelaw-procedures-searching
   text: "/ServerInfo/Guidebook/SpaceLaw/Procedures/SL_Searching.xml"
+
+# Trials
+- type: guideEntry
+  id: EscalationPolicy SpaceLaw
+  name: guide-entry-spacelaw-trials-escalationpolicy
+  text: "/ServerInfo/Guidebook/SpaceLaw/Trials/SL_EscalationPolicy.xml"
+
+- type: guideEntry
+  id: TrialPolicy SpaceLaw
+  name: guide-entry-spacelaw-trials-trialpolicy
+  text: "/ServerInfo/Guidebook/SpaceLaw/Trials/SL_TrialPolicy.xml"
+
+- type: guideEntry
+  id: PrisonerRequest SpaceLaw
+  name: guide-entry-spacelaw-trials-prisonerrequest
+  text: "/ServerInfo/Guidebook/SpaceLaw/Trials/SL_PrisonerRequest.xml"
 
 # Categories
 - type: guideEntry
