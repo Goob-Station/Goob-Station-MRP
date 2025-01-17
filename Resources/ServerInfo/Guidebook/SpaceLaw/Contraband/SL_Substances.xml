@@ -1,0 +1,28 @@
+<Document>
+  # Restricted Substances - Contraband
+  Below are the list of substances and their marked Departments that are permitted to hold them, when necessary.
+  - [bold]Do note[/bold]: that the substances are not outright contraband in small, recreational doses unless they are poisonous.
+
+  ## Uncategorized (Illegal) Substances
+  These substances are considered illegal and should be locked up when discovered. These substances are not allowed to be produced except in station
+  defense scenarios for the sole purpose of defending against foreign invaders, and only with the permission from Command, specifically the Captain
+  or Head of Security, and alongside the Chief Medical Officer.
+  - [color=#cb0000]\[None\][/color] Substances that alter perception, induce hallucinations, or affect mental stability.
+  - [color=#cb0000]\[None\][/color] Any chemical compound classified as experimental or restricted under NanoTrasen policy.
+  - Any substances associated with cultist activity are subject to be denied as well.
+
+  ## Categorized (Semi-Legal) Substances
+  These substances are considered legal and may be given to other personnel with discretion. Substances that are
+  [bold]considered recreational may be held[/bold], in small capacities, are permitted as [italic]long as they're not being used maliciously[/italic].
+  - [color=#cb0000]\[Chemists/Epistemics\][/color] Includes any compound capable of combustion, explosion, or significant thermal output.
+  \[Excluding welding fuel stored in approved containers or welders for maintenance use.\]
+  - [color=#cb0000]\[Epistemics\][/color] Substances that directly harm or kill biological organisms.
+  \[Examples include chemical toxins used in research or biohazard testing.\]
+  - [color=#cb0000]\[Medical\][/color] Includes substances designed to impair cognitive function, induce paralysis, or suppress neural activity.
+  \[Authorized for use by medical staff only in controlled doses for therapeutic purposes.\]
+  - [color=#cb0000]\[Medical\][/color] Substances that enhance physical or mental performance, increase energy, or reduce fatigue.
+  \[Restricted to medical use or approved research by medical personnel.\]
+  - [color=#cb0000]\[Epistemics\][/color] Includes Minbreaker Toxin, chemicals used for dealing with psionics, and any chemicals that would be readily
+  available to Epistemics staff when joining shift (loadout items). \[These are required to be allowed due to Psionic Controls.\]
+
+</Document>

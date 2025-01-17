@@ -207,7 +207,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - CrimeAssistCartridge
+      # - CrimeAssistCartridge # Goobstation removing in favor of GS14 Space Law
       - SecWatchCartridge
       - NanoChatCartridge
 
@@ -525,7 +525,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - CrimeAssistCartridge
+      # - CrimeAssistCartridge # Goobstation removing in favor of GS14 Space Law
       - SecWatchCartridge
       - NanoChatCartridge
 
@@ -889,7 +889,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - NewsReaderCartridge
-    - CrimeAssistCartridge # DeltaV
+    # - CrimeAssistCartridge # DeltaV # Goobstation removing in favor of GS14 Space Law
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
     - LogProbeCartridge
     - NanoChatCartridge # DeltaV
@@ -913,7 +913,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - CrimeAssistCartridge
+      # - CrimeAssistCartridge # Goobstation removing in favor of GS14 Space Law
       - SecWatchCartridge
       - NanoChatCartridge
 
@@ -936,7 +936,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - CrimeAssistCartridge
+      # - CrimeAssistCartridge # Goobstation removing in favor of GS14 Space Law
       - SecWatchCartridge
       - NanoChatCartridge
 
@@ -958,7 +958,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - CrimeAssistCartridge
+      # - CrimeAssistCartridge # Goobstation removing in favor of GS14 Space Law
       - SecWatchCartridge
       - NanoChatCartridge
 
@@ -1178,7 +1178,7 @@
       - NotekeeperCartridge
       - NewsReaderCartridge
       - MedTekCartridge
-      - CrimeAssistCartridge
+      # - CrimeAssistCartridge # Goobstation removing in favor of GS14 Space Law
       - SecWatchCartridge
 
 - type: entity
@@ -1299,7 +1299,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - NewsReaderCartridge
-    - CrimeAssistCartridge # DeltaV
+    # - CrimeAssistCartridge # DeltaV # Goobstation removing in favor of GS14 Space Law
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
     - LogProbeCartridge
     - NanoChatCartridge # DeltaV
@@ -1330,7 +1330,7 @@
     - CrewManifestCartridge
     - NotekeeperCartridge
     - NewsReaderCartridge
-    - CrimeAssistCartridge # DeltaV
+    # - CrimeAssistCartridge # DeltaV # Goobstation removing in favor of GS14 Space Law
     - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
     - NanoChatCartridge # DeltaV
 
@@ -1429,7 +1429,7 @@
       - CrewManifestCartridge
       - NotekeeperCartridge
       - NewsReaderCartridge
-      - CrimeAssistCartridge
+      # - CrimeAssistCartridge # Goobstation removing in favor of GS14 Space Law
       - SecWatchCartridge
       - NanoChatCartridge
 

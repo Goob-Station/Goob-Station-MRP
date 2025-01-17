@@ -1,0 +1,42 @@
+<Document>
+  # Sentencing Procedures
+  There are several procedures that must be followed when sentencing any individual with charges that will land them in the temporary holding
+  cells (jail) and/or sentencing them to permanent brigging.
+
+  These procedures are dependent on different situations, and charging anybody should follow the following times per category as listed in the Crime Chart:
+  - 1-XX: Warning (Note for Future Occurrences)
+  - 2-XX: 1-2 Minutes
+  - 3-XX: 2-5 Minutes
+  - 4-XX: 5-10 Minutes
+  - 5-XX: Permanent Brig (Bring to Court as Well)
+
+  ## Sentencing Rules
+  These are rules that are necessary to follow, from a server rules perspective as well:
+  - The [color=#EB2D3A][bold]maximum[/bold][/color] sentence time is 10 minutes. Any time higher than this should be shortened to 10 minutes.
+  - If the time were to add up to 15 minutes or higher, it should be tried in court for permanent brigging, unless the prisoner accepts instant perma.
+  - If the time were to add up to 20 minutes or higher, it should be permanently brigged no matter what.
+  - If the time were to add up to 30 minutes or higher, it should be moved to an execution at Magistrate/Captain approval.
+
+  ## Guidelines
+  These procedures also follow the guidelines as listed below:
+  - The Magistrate, Head of Security, Warden, and Captain are the only personnel that should be sentencing if they exist in the Crew Manifest.
+  - From a server rules perspective, it is expected that Security Officers are held to only placing sentences under
+  [color=#EB2D3A][bold]10 minutes[/bold][/color] unless Space Law would force them to be tried and/or permanently confined (for having higher charges).
+  - Elaborating on the previous point, Security Officers maliciously placing higher times should be kept in check by those that can sentence criminals;
+  however, this does not mean that maliciously setting times high constantly will go unpunished.
+  - Use common sense and humanity when issuing punishments. Not all punishments need the max time nor the minimum time. You should not issue the max
+  punishment for a simple crime unless it has caused a severe outcome. [bold][italic]Lawyers exist for this purpose.[/italic][/bold]
+
+  ## Stacking Crimes
+  Crimes are to be considered 'stackable' in the sense that if you charge someone with two or
+  more different crimes, you should combine the times you would give them for each crime.
+  - Linked crimes, shown in matching colors and parentheses on the Crime Chart, can not be stacked and instead override each other,
+  you should pick the highest crime that matches the case of severity, and attach modifiers as needed.
+  - These categories can be found in the [textlink="Categories" link="SpaceLaw Categories"] entry.
+
+  ## Attaching Modifiers
+  It is important to attach modifiers, as applicable, to crimes. Modifiers act in the place of standards and are more flexible and can, and should be,
+  assigned with discretion.
+  - These modifiers can be found in the [textlink="Modifiers" link="SpaceLaw Modifiers"] entry.
+
+</Document>
