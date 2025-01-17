@@ -2,11 +2,23 @@
 # - Main Folder
 guide-entry-spacelaw-folder = Space Law
 # - Subdirectories/Subfolders
+guide-entry-spacelaw-contraband = Contraband
+guide-entry-spacelaw-procedures = Procedures
 guide-entry-spacelaw-crimechart = Crime Chart
 guide-entry-spacelaw-categories = Categories
 # - Standalones
 guide-entry-spacelaw-modifiers = Modifiers
-# - Groupings
+# - Contraband
+guide-entry-spacelaw-contraband-substances = Substances
+guide-entry-spacelaw-contraband-gear = Gear
+guide-entry-spacelaw-contraband-weapons = Weapons
+# - Procedures
+guide-entry-spacelaw-procedures-sentencing = Sentencing
+guide-entry-spacelaw-procedures-treatment = Treatment
+guide-entry-spacelaw-procedures-implantation = Implantation
+guide-entry-spacelaw-procedures-implantremoval = Implant Removal
+guide-entry-spacelaw-procedures-searching = Searching/Seizure
+# - Categories
 guide-entry-spacelaw-groups-animal = Animal (A)
 guide-entry-spacelaw-groups-assault = Assault (V)
 guide-entry-spacelaw-groups-contraband = Contraband (P)

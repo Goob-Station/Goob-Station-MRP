@@ -8,13 +8,38 @@
   text: "/ServerInfo/GuideBook/SpaceLaw/SpaceLaw_Initial.xml"
   priority: 0 # Added to make it anchor above others
   children:
+  - SpaceLaw Contraband
+  - SpaceLaw Procedures
   - SpaceLaw CrimeChart
 
 # Subdirectories
 - type: guideEntry
+  id: SpaceLaw Contraband
+  name: guide-entry-spacelaw-contraband
+  text: "/ServerInfo/Guidebook/SpaceLaw/Contraband/SpaceLaw_Contraband.xml"
+  priority: 3
+  children:
+  - Substances SpaceLaw
+  - Gear SpaceLaw
+  - Weapons SpaceLaw
+
+- type: guideEntry
+  id: SpaceLaw Procedures
+  name: guide-entry-spacelaw-procedures
+  text: "/ServerInfo/Guidebook/SpaceLaw/Procedures/SpaceLaw_Procedures.xml"
+  priority: 2
+  children:
+  - Sentencing SpaceLaw
+  - Treatment SpaceLaw
+  - Implantation SpaceLaw
+  - ImplantRemoval SpaceLaw
+  - Searching SpaceLaw
+
+- type: guideEntry
   id: SpaceLaw CrimeChart
   name: guide-entry-spacelaw-crimechart
   text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_CrimeChart.xml"
+  priority: 0
   children:
   - SpaceLaw Modifiers
   - SpaceLaw Categories
@@ -43,6 +68,48 @@
   id: SpaceLaw Modifiers
   name: guide-entry-spacelaw-modifiers
   text: "/ServerInfo/Guidebook/SpaceLaw/CrimeList/SL_Modifiers.xml"
+
+# Contraband
+- type: guideEntry
+  id: Substances SpaceLaw
+  name: guide-entry-spacelaw-contraband-substances
+  text: "/ServerInfo/Guidebook/SpaceLaw/Contraband/SL_Substances.xml"
+
+- type: guideEntry
+  id: Gear SpaceLaw
+  name: guide-entry-spacelaw-contraband-gear
+  text: "/ServerInfo/Guidebook/SpaceLaw/Contraband/SL_Gear.xml"
+
+- type: guideEntry
+  id: Weapons SpaceLaw
+  name: guide-entry-spacelaw-contraband-weapons
+  text: "/ServerInfo/Guidebook/SpaceLaw/Contraband/SL_Weapons.xml"
+
+# Procedures
+- type: guideEntry
+  id: Sentencing SpaceLaw
+  name: guide-entry-spacelaw-procedures-sentencing
+  text: "/ServerInfo/Guidebook/SpaceLaw/Procedures/SL_Sentencing.xml"
+
+- type: guideEntry
+  id: Treatment SpaceLaw
+  name: guide-entry-spacelaw-procedures-treatment
+  text: "/ServerInfo/Guidebook/SpaceLaw/Procedures/SL_Treatment.xml"
+
+- type: guideEntry
+  id: Implantation SpaceLaw
+  name: guide-entry-spacelaw-procedures-implantation
+  text: "/ServerInfo/Guidebook/SpaceLaw/Procedures/SL_Implantation.xml"
+
+- type: guideEntry
+  id: ImplantRemoval SpaceLaw
+  name: guide-entry-spacelaw-procedures-implantremoval
+  text: "/ServerInfo/Guidebook/SpaceLaw/Procedures/SL_ImplantRemoval.xml"
+
+- type: guideEntry
+  id: Searching SpaceLaw
+  name: guide-entry-spacelaw-procedures-searching
+  text: "/ServerInfo/Guidebook/SpaceLaw/Procedures/SL_Searching.xml"
 
 # Categories
 - type: guideEntry

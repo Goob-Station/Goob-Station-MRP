@@ -1,0 +1,35 @@
+<Document>
+  # Space Law Procedures
+  There are many Space Law procedures, such guidelines and rulings that should be followed by those that uphold it and those that enforce it.
+  These are outlined in their individual sections below and individual entries that go more in-depth.
+
+  ## Treatment of Prisoners and Sentencing
+  Sentencing is done in multiple tiers. There are several rulings around how sentencing should be handled, who should handle it, and how station
+  personnel may influence sentencing matters (such as Lawyers discussing better timings and arguing for/against their clients).
+  - The Magistrate, Head of Security, Warden, and Captain are the only personnel that should be sentencing if they exist in the Crew Manifest.
+  - From a server rules perspective, it is expected that Security Officers are held to only placing sentences under
+  [color=#EB2D3A][bold]10 minutes[/bold][/color] unless Space Law would force them to be tried and/or permanently confined (for having higher charges).
+  - Elaborating on the previous point, Security Officers maliciously placing higher times should be kept in check by those that can sentence criminals;
+  however, this does not mean that maliciously setting times high constantly will go unpunished.
+
+  Furthermore, there are rulings for how prisoners should be treated, regardless of whether they may be in permanent brigging or temporary holding (jail).
+  - Prisoners should be kept alive and given medical treatment if necessary.
+  - Prisoners should be uncuffed unless they are attempting multiple escapes and/or are being hostile to others or self.
+  - More can be found in the entry listed below.
+
+  These rulings are further elaborated upon in the following entries:
+  - [textlink="Prisoner Treatment" link="SpaceLaw PrisonerTreatment"]
+  - [textlink="Sentencing" link="SpaceLaw Sentencing"]
+
+  ## Search and Seizure, Implantation, and Implant Removal
+  Searching and Seizing property may only be done on appropriate Alert Levels as defined in the Standard Operating Procedure (SOP).
+  Further elaboration is shown in the following entry:
+  - [textlink="Search and Seizure" link="SpaceLaw Searching"]
+
+  Implantation and Implant Removal are two related procedures that have their own entries, but are not mutually exclusive of one another.
+  Implantation can be done for a variety of reasons as defined in the Space Law entry for it, along with the removal of implants for a variety
+  of reasons as well. These entries can be found below:
+  - [textlink="Implantation" link="SpaceLaw Implantation"]
+  - [textlink="Implant Removal" link="SpaceLaw ImplantRemoval"]
+
+</Document>
