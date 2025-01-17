@@ -5,7 +5,7 @@
 - type: guideEntry
   id: SpaceLaw Initial
   name: guide-entry-spacelaw-folder
-  text: "/ServerInfo/GuideBook/SpaceLaw/SpaceLaw_Initial.xml"
+  text: "/ServerInfo/Guidebook/SpaceLaw/SpaceLaw_Initial.xml"
   priority: 0 # Added to make it anchor above others
   children:
   - SpaceLaw Contraband
