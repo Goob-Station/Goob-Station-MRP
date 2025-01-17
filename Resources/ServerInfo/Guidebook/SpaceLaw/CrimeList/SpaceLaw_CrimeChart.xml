@@ -212,19 +212,19 @@
     <ColorBox Color="#bd5419">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Contra.
-        \nMinor (P)
+        \nMinor (C)
       </Box>
     </ColorBox>
     <ColorBox Color="#bd5419">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Contra.
-        \nMajor (P)
+        \nMajor (C)
       </Box>
     </ColorBox>
     <ColorBox Color="#bd5419">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Contra.
-        \nCorporate (P)
+        \nCorporate (C)
       </Box>
     </ColorBox>
     <ColorBox>

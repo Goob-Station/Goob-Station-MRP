@@ -31,7 +31,7 @@ guide-entry-spacelaw-courtrulings-sacrifices = Sacrifices
 # - Categories
 guide-entry-spacelaw-groups-animal = Animal (A)
 guide-entry-spacelaw-groups-assault = Assault (V)
-guide-entry-spacelaw-groups-contraband = Contraband (P)
+guide-entry-spacelaw-groups-contraband = Contraband (C)
 guide-entry-spacelaw-groups-disruption = Disruption (X)
 guide-entry-spacelaw-groups-drugs = Drugs (D)
 guide-entry-spacelaw-groups-hostileagent = Hostiles (H)
