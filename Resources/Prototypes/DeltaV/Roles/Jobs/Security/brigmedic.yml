@@ -4,7 +4,7 @@
   description: job-description-brigmedic
   playTimeTracker: JobBrigmedic
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 18000 # 4 hrs
     - !type:DepartmentTimeRequirement

@@ -10,13 +10,15 @@
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 21600
   special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Pacified
+  # - !type:AddComponentSpecial # Goobstation - remove PacifiedComponent from prisoners
+  #   components:
+  #     - type: Pacified
+  - !type:AddImplantSpecial # Goobstation - add tracking implant to prisoners
+    implants: [ TrackingImplant ]
 
 - type: startingGear
   id: PrisonerGear

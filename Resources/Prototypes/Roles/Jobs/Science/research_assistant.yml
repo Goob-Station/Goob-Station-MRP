@@ -11,7 +11,7 @@
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
-  canBeAntag: false # goob mrp - training role
+  canBeAntag: true # Goobstation - Reset back to True (Starch had set it to false)
   access:
   - Research
   - Maintenance
@@ -24,6 +24,7 @@
     shoes: ClothingShoesColorWhite
     id: ResearchAssistantPDA
     ears: ClothingHeadsetScience
+    pocket1: BookPsionicsGuidebook
     pocket2: BookScientistsGuidebook
   innerClothingSkirt: ClothingUniformJumpskirtColorWhite
   satchel: ClothingBackpackSatchelScienceFilled
