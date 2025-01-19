@@ -24,6 +24,10 @@
       min: 54000 # 15 hours
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
       min: 54000 # 15 hours
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
   weight: 20
   startingGear: CaptainGear
   icon: JobIconCaptain
