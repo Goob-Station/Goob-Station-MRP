@@ -1,3 +1,4 @@
+using Content.Client._RMC14.LinkAccount;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
@@ -62,6 +63,7 @@ namespace Content.Client.IoC
             collection.Register<NanoChatSystem>();
             collection.Register<MappingManager>();
             collection.Register<DebugMonitorManager>();
+            collection.Register<LinkAccountManager>(); // RMC14
         }
     }
 }
