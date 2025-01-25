@@ -8,7 +8,11 @@
   objective: roles-antag-nuclear-operative-objective
   requirements:
   - !type:CharacterOverallTimeRequirement
-    min: 54000 # goob mrp - 15 hours
+    min: 36000 # Goob MRP - 10 Hours
+  # Undo Starch's blatant deletion and leave comments for originals.
+  # - !type:CharacterDepartmentTimeRequirement # DeltaV - Security dept time requirement
+  #   department: Security
+  #   min: 36000 # DeltaV - 10 hours
 
 - type: antag
   id: NukeopsMedic
@@ -18,10 +22,10 @@
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
   - !type:CharacterOverallTimeRequirement
-    min: 54000 # goob mrp - 15 hours
+    min: 54000 # Goob MRP - 15 Hours
   - !type:CharacterDepartmentTimeRequirement
     department: Medical
-    min: 18000 # 5 hours
+    min: 36000 # Goob MRP - 10 Hours
 
 - type: antag
   id: NukeopsCommander
@@ -31,16 +35,16 @@
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
   - !type:CharacterOverallTimeRequirement
-    min: 108000 # goob mrp - 30 hours
+    min: 108000 # Goob MRP - 30 hours
   - !type:CharacterDepartmentTimeRequirement # DeltaV - Security dept time requirement
     department: Security
-    min: 10800 # goob mrp - 3 hours
+    min: 18000 # Goob MRP - 5 Hours
   - !type:CharacterDepartmentTimeRequirement # DeltaV - Command dept time requirement
     department: Command
-    min: 10800 # goob mrp - 3 hours
+    min: 18000 # Goob MRP - 5 Hours
+  # - !type:CharacterWhitelistRequirement # Undo Starch's blatant deletion instead of commenting out.
 
-    # needing whitelist to be nukie commander was fucking stupid im glad i dont play delta
-    
+
 #Lone Operative Gear
 - type: startingGear
   id: SyndicateLoneOperativeGearFull

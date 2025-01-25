@@ -15,9 +15,9 @@
 #      time: 21600 #6 hrs
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      min: 36000 # goob mrp - 10 hours
+      min: 54000 # Goob MRP - 15 Hours (Should know Surgery now.)
     - !type:CharacterOverallTimeRequirement
-      min: 36000 # goob mrp - 10 hours
+      min: 72000 # DeltaV - 20 hours
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

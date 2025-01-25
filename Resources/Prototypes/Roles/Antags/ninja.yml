@@ -6,4 +6,4 @@
   objective: roles-antag-space-ninja-objective
   requirements:
   - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-    min: 72000 # goob mrp - 20 hours - NOBODY IS PLAYING FUCKING 72 HOURS FOR NINJA :sob:
+    min: 54000 # Goob MRP - 15 hours

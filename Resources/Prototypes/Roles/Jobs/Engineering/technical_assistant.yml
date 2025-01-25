@@ -6,7 +6,7 @@
   antagAdvantage: 3 # DeltaV - Reduced TC: External Access + Engineering
   requirements:
   - !type:CharacterOverallTimeRequirement # DeltaV - to prevent griefers from taking the role.
-      min: 3600 # 1 hours
+      min: 7200 # Goob MRP - 2 Hours (Prevent Raiders and ensure gameplay.)
     # - !type:DepartmentTimeRequirement # DeltaV - Removes time limit
     #   department: Engineering
     #   time: 54000 #15 hrs

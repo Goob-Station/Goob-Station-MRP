@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      min: 7200 #2 hrs
+      min: 18000 # Goob MRP - 5 Hours
   startingGear: DoctorGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo

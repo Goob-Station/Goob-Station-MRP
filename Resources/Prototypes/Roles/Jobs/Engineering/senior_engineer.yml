@@ -12,7 +12,7 @@
       min: 21600 #6 hrs
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
-      min: 108000 # 30 hrs
+      min: 108000 # Goob MRP - 30 Hours
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce
