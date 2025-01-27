@@ -44,10 +44,11 @@
     min: 18000 # Goob MRP - 5 Hours
   # - !type:CharacterWhitelistRequirement # Undo Starch's blatant deletion instead of commenting out.
 
-
 #Lone Operative Gear
 - type: startingGear
   id: SyndicateLoneOperativeGearFull
+  subGear:
+  - SyndicatePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
