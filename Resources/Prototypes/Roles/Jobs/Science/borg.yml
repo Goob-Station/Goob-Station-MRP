@@ -4,10 +4,6 @@
   name: job-name-station-ai
   description: job-description-station-ai
   playTimeTracker: JobStationAi
-  requirements:
-  - !type:CharacterPlaytimeRequirement
-    tracker: JobBorg
-    min: 18000  # 5 hrs
   canBeAntag: false
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
