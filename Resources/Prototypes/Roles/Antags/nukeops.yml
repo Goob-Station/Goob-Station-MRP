@@ -40,10 +40,12 @@
     min: 10800 # goob mrp - 3 hours
 
     # needing whitelist to be nukie commander was fucking stupid im glad i dont play delta
-    
+
 #Lone Operative Gear
 - type: startingGear
   id: SyndicateLoneOperativeGearFull
+  subGear:
+  - SyndicatePlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     back: ClothingBackpackDuffelSyndicateOperative
