@@ -104,3 +104,12 @@ Entries:
   id: 14
   time: '2025-01-27T05:40:11.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/62
+- author: Aidenkrz
+  changes:
+    - type: Add
+      message: You can now give humans custom species names.
+    - type: Remove
+      message: Felinids.
+  id: 15
+  time: '2025-01-27T19:48:36.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/69
