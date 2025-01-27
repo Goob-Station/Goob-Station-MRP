@@ -58,7 +58,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:Container {}
+      toggleable-clothing: !type:ContainerSlot {}
 
 #Prisoner EVA
 - type: entity

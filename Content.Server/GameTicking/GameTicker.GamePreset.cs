@@ -44,7 +44,6 @@ namespace Content.Server.GameTicking
                 return true;
 
             var presetTitle = CurrentPreset != null ? Loc.GetString(CurrentPreset.ModeTitle) : string.Empty;
-            _sawmill.Info($"Round starting with preset {presetTitle}");
 
             void FailedPresetRestart()
             {
@@ -83,8 +82,6 @@ namespace Content.Server.GameTicking
 
                 if (startFailed)
                 {
-                    var mapName = _gameMapManager.GetSelectedMap()?.MapName ?? "Unknown";
-                    _sawmill.Info($"Failed starting preset {presetTitle} on map {mapName}");
                     FailedPresetRestart();
                     return false;
                 }

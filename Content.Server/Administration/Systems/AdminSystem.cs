@@ -105,11 +105,13 @@ namespace Content.Server.Administration.Systems
 
             foreach (var (id, data) in _playerList)
             {
-                if (!data.ActiveThisRound
-                    || !_playerManager.TryGetPlayerData(id, out var playerData)
-                    || !_playerManager.TryGetSessionById(id, out var session))
+                if (!data.ActiveThisRound)
                     continue;
 
+                if (!_playerManager.TryGetPlayerData(id, out var playerData))
+                    return;
+
+                _playerManager.TryGetSessionById(id, out var session);
                 _playerList[id] = GetPlayerInfo(playerData, session);
             }
 
@@ -216,7 +218,7 @@ namespace Content.Server.Administration.Systems
             RaiseNetworkEvent(ev, playerSession.Channel);
         }
 
-        private PlayerInfo GetPlayerInfo(SessionData data, ICommonSession session)
+        private PlayerInfo GetPlayerInfo(SessionData data, ICommonSession? session)
         {
             var name = data.UserName;
             var entityName = string.Empty;

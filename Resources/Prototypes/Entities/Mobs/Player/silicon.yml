@@ -22,7 +22,7 @@
   - type: IgnoreUIRange
   - type: StationAiHeld
   - type: StationAiOverlay
-  - type: ShowElectrocutionHUD
+  - type: ElectrocutionOverlay
   - type: ActionGrant
     actions:
     - ActionJumpToCore
@@ -126,18 +126,6 @@
     state: std_mod
   - type: SiliconLawProvider
     laws: Asimov
-
-- type: entity
-  id: AugustineCircuitBoard
-  parent: BaseElectronics
-  name: law board (Augustine)
-  description: An electronics board containing the Augustine lawset.
-  components:
-  - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: std_mod
-  - type: SiliconLawProvider
-    laws: Augustine
 
 - type: entity
   id: CrewsimovCircuitBoard

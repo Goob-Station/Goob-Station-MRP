@@ -29,16 +29,14 @@ namespace Content.IntegrationTests.Tests
 
         private static readonly string[] NoSpawnMaps =
         {
-            "CentCommMain",
-            "CentCommHarmony",
+            "CentComm",
             "Dart",
             "NukieOutpost"
         };
 
         private static readonly string[] Grids =
         {
-            "/Maps/CentralCommand/main.yml",
-            "/Maps/CentralCommand/harmony.yml", // Harmony CC version
+            "/Maps/centcomm.yml",
             "/Maps/Shuttles/cargo.yml",
             "/Maps/Shuttles/emergency.yml",
             "/Maps/Shuttles/infiltrator.yml",
@@ -48,8 +46,7 @@ namespace Content.IntegrationTests.Tests
         {
             "Dev",
             "TestTeg",
-            "CentCommMain",
-            "CentCommHarmony",
+            "CentComm",
             "MeteorArena",
             "NukieOutpost",
             "Core",
@@ -68,8 +65,7 @@ namespace Content.IntegrationTests.Tests
             "Gax",
             "Rad",
             "Europa",
-            "Meta",
-            "Box"
+            "Meta"
         };
 
         /// <summary>

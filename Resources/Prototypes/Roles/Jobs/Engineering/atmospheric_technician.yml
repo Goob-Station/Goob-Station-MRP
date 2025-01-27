@@ -19,8 +19,6 @@
 
 - type: startingGear
   id: AtmosphericTechnicianGear
-  subGear:
-  - AtmosphericTechnicianPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitAtmos
     back: ClothingBackpackAtmospherics
@@ -30,11 +28,3 @@
   innerClothingSkirt: ClothingUniformJumpskirtAtmos
   satchel: ClothingBackpackSatchelEngineeringFilled
   duffelbag: ClothingBackpackDuffelEngineeringFilled
-
-- type: startingGear
-  id: AtmosphericTechnicianPlasmamanGear
-  parent: BasePlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitAtmos
-    head: ClothingHeadEnvirohelmAtmos
-    gloves: ClothingHandsGlovesEnviroglovesAtmos

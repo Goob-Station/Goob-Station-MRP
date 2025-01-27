@@ -53573,14 +53573,6 @@ entities:
     - type: Transform
       pos: -31.5,29.5
       parent: 2
-- proto: ComputerPsionicsRecords
-  entities:
-  - uid: 20872
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 50.5,26.5
-      parent: 2
 - proto: ComputerRadar
   entities:
   - uid: 7211
@@ -134458,7 +134450,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -120749.305
+      secondsUntilStateChange: -120542.65
       state: Opening
   - uid: 18112
     components:

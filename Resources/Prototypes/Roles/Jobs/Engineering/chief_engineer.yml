@@ -35,16 +35,9 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-  afterLoadoutSpecial:
-  - !type:ModifyEnvirosuitSpecial
-    charges: 8
-  - !type:ModifyEnvirohelmSpecial
-    powerCell: PowerCellPotato
 
 - type: startingGear
   id: ChiefEngineerGear
-  subGear:
-  - ChiefEngineerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitChiefEngineer
     back: ClothingBackpackChiefEngineerFilled
@@ -54,11 +47,3 @@
   innerClothingSkirt: ClothingUniformJumpskirtChiefEngineer
   satchel: ClothingBackpackSatchelChiefEngineerFilled
   duffelbag: ClothingBackpackDuffelChiefEngineerFilled
-
-- type: startingGear
-  id: ChiefEngineerPlasmamanGear
-  parent: BasePlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitChiefEngineer
-    head: ClothingHeadEnvirohelmChiefEngineer
-    gloves: ClothingHandsGlovesEnviroglovesChiefEngineer

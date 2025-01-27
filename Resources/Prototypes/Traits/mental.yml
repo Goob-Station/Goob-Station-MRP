@@ -27,10 +27,6 @@
       inverted: true
       species:
         - Oni
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
@@ -70,10 +66,6 @@
       inverted: true
       species:
         - Oni
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Shadowkin
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

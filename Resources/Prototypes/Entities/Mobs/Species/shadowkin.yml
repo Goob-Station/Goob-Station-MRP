@@ -1,7 +1,11 @@
 - type: entity
   save: false
   parent:
-    - BaseMobSpeciesOrganic
+    - MobBloodstream
+    - MobAtmosStandard
+    - MobFlammable
+    - BaseMobSpecies
+    - MobRespirator
   id: MobShadowkinBase
   name: Urist McShadow
   abstract: true
@@ -11,7 +15,7 @@
         - trigger:
             !type:DamageTypeTrigger
             damageType: Blunt
-            damage: 300
+            damage: 400
           behaviors:
             - !type:GibBehavior {}
             - !type:SpawnEntitiesBehavior
@@ -223,9 +227,13 @@
     - type: Shadowkin
     - type: Psionic
       mindbreakingFeedback: shadowkin-blackeye
+      manaGain: 0.25
+      mana: 100
+      maxMana: 200
+      noMana: shadowkin-tired
     - type: InnatePsionicPowers
       powersToAdd:
-        - TelepathyPower
+        - DarkSwapPower
     - type: LanguageKnowledge
       speaks:
         - TauCetiBasic
@@ -233,8 +241,6 @@
       understands:
         - TauCetiBasic
         - Marish
-    - type: PotentiaModifier
-      potentiaMultiplier: 1.25
     - type: Tag
       tags:
       - CanPilot

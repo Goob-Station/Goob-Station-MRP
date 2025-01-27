@@ -1,6 +1,5 @@
 ﻿using Content.Shared.Damage;
 using Robust.Shared.GameStates;
-using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Armor;
@@ -8,20 +7,20 @@ namespace Content.Shared.Armor;
 /// <summary>
 /// Used for clothing that reduces damage when worn.
 /// </summary>
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // Goobstation - remove access restrictions
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedArmorSystem))]
 public sealed partial class ArmorComponent : Component
 {
     /// <summary>
     /// The damage reduction
     /// </summary>
-    [DataField(required: true), AutoNetworkedField]
+    [DataField(required: true)]
     public DamageModifierSet Modifiers = default!;
 
     /// <summary>
     /// A multiplier applied to the calculated point value
     /// to determine the monetary value of the armor
     /// </summary>
-    [DataField, AutoNetworkedField]
+    [DataField]
     public float PriceMultiplier = 1;
 }
 

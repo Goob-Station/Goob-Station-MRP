@@ -236,7 +236,6 @@
       species:
         - IPC
         - Lamia
-        - Plasmaman
   functions:
     - !type:TraitAddComponent
       components:
@@ -258,7 +257,6 @@
       species:
         - IPC
         - Lamia
-        - Plasmaman
   functions:
     - !type:TraitAddComponent
       components:

@@ -16,8 +16,6 @@
 
 - type: startingGear
   id: ERTLeaderGear
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeaderFilled
@@ -34,8 +32,6 @@
 
 - type: startingGear
   id: ERTLeaderGearEVA
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeaderFilled
@@ -53,9 +49,6 @@
 
 - type: startingGear
   id: ERTLeaderGearEVALecter
-  subGear:
-  - InhandTankGear
-  - ERTPlasmamanGearNoTank
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTLeader
     back: ClothingBackpackERTLeaderFilled
@@ -70,6 +63,8 @@
     belt: ClothingBeltSecurityFilled
     pocket1: MagazineRifle
     pocket2: MagazineRifle
+  inhand:
+    - AirTankFilled
 
 # Chaplain
 - type: job
@@ -93,8 +88,6 @@
 
 - type: startingGear
   id: ERTChaplainGear
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTChaplain
     back: ClothingBackpackERTChaplainFilled
@@ -112,8 +105,6 @@
 
 - type: startingGear
   id: ERTChaplainGearEVA
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTChaplain
     back: ClothingBackpackERTChaplainFilled
@@ -148,8 +139,6 @@
 
 - type: startingGear
   id: ERTEngineerGear
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     back: ClothingBackpackERTEngineerFilled
@@ -166,8 +155,6 @@
 
 - type: startingGear
   id: ERTEngineerGearEVA
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTEngineer
     back: ClothingBackpackERTEngineerFilled
@@ -201,8 +188,6 @@
 
 - type: startingGear
   id: ERTSecurityGear
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurityFilled
@@ -219,8 +204,6 @@
 
 - type: startingGear
   id: ERTSecurityGearEVA
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurityFilled
@@ -238,9 +221,6 @@
 
 - type: startingGear
   id: ERTSecurityGearEVALecter
-  subGear:
-  - InhandTankGear
-  - ERTPlasmamanGearNoTank
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTSecurity
     back: ClothingBackpackERTSecurityFilled
@@ -255,6 +235,8 @@
     belt: ClothingBeltSecurityFilled
     pocket1: MagazineRifle
     pocket2: MagazineRifle
+  inhand:
+    - AirTankFilled
 
 # Medical
 - type: job
@@ -274,8 +256,6 @@
 
 - type: startingGear
   id: ERTMedicalGear
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedicalFilled
@@ -291,8 +271,6 @@
 
 - type: startingGear
   id: ERTMedicalGearEVA
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTMedic
     back: ClothingBackpackERTMedicalFilled
@@ -325,8 +303,6 @@
 
 - type: startingGear
   id: ERTJanitorGear
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitorFilled
@@ -341,8 +317,6 @@
 
 - type: startingGear
   id: ERTJanitorGearEVA
-  subGear:
-  - ERTPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitERTJanitor
     back: ClothingBackpackERTJanitorFilled

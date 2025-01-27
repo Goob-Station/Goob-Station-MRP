@@ -1,4 +1,4 @@
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using Content.Server.Speech.Components;
 using Robust.Shared.Random;
 
@@ -27,8 +27,7 @@ public sealed partial class SkeletonAccentSystem : EntitySystem
         { "killed", "skeletonized"},
         { "humorous", "humerus"},
         { "to be a", "tibia"},
-        { "under", "ulna"},
-        { "narrow", "marrow"},
+        { "under", "ulna"}
     };
 
     public override void Initialize()

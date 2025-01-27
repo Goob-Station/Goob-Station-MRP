@@ -529,7 +529,6 @@
       tags:
         - Taser
         - Sidearm
-        - WeaponDisabler
     - type: Sprite
       sprite: Objects/Weapons/Guns/Battery/disabler.rsi
       layers:

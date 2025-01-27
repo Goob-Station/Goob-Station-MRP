@@ -20,8 +20,6 @@
 
 - type: startingGear
   id: BartenderGear
-  subGear:
-  - BartenderPlasmamanGear
   equipment:
     head: ClothingHeadHatTophat
     jumpsuit: ClothingUniformJumpsuitBartender
@@ -33,11 +31,3 @@
   innerClothingSkirt: ClothingUniformJumpskirtBartender
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
-
-- type: startingGear
-  id: BartenderPlasmamanGear
-  parent: BasePlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitEnviroslacks
-    head: ClothingHeadEnvirohelmColorWhite
-    gloves: ClothingHandsGlovesEnviroglovesWhite

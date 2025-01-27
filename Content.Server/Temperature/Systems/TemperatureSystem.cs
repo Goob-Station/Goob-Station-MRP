@@ -208,18 +208,11 @@ public sealed class TemperatureSystem : EntitySystem
 
         if (args.CurrentTemperature <= idealTemp)
         {
-            // If there's no risk to being cold there's no reason to show a Cold alert
-            if (!temperature.ColdDamage.AnyPositive())
-                return;
-
             type = temperature.ColdAlert;
             threshold = temperature.ColdDamageThreshold;
         }
         else
         {
-            if (!temperature.HeatDamage.AnyPositive())
-                return;
-
             type = temperature.HotAlert;
             threshold = temperature.HeatDamageThreshold;
         }
@@ -419,5 +412,19 @@ public sealed class TemperatureSystem : EntitySystem
         }
 
         return (newHeatThreshold, newColdThreshold);
+    }
+}
+
+public sealed class OnTemperatureChangeEvent : EntityEventArgs
+{
+    public float CurrentTemperature { get; }
+    public float LastTemperature { get; }
+    public float TemperatureDelta { get; }
+
+    public OnTemperatureChangeEvent(float current, float last, float delta)
+    {
+        CurrentTemperature = current;
+        LastTemperature = last;
+        TemperatureDelta = delta;
     }
 }
