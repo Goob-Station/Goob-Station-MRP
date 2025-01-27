@@ -1,5 +1,4 @@
 using Content.Shared.NPC.Components;
-using Content.Shared.NPC.Events;
 using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Prototypes;
 using System.Collections.Frozen;
@@ -107,8 +106,6 @@ public sealed partial class NpcFactionSystem : EntitySystem
         if (!ent.Comp.Factions.Add(faction))
             return;
 
-        RaiseLocalEvent(ent.Owner, new NpcFactionAddedEvent(faction));
-
         if (dirty)
             RefreshFactions((ent, ent.Comp));
     }
@@ -127,8 +124,6 @@ public sealed partial class NpcFactionSystem : EntitySystem
                 Log.Error($"Unable to find faction {faction}");
                 continue;
             }
-
-            RaiseLocalEvent(ent.Owner, new NpcFactionAddedEvent(faction));
 
             ent.Comp.Factions.Add(faction);
         }
@@ -153,8 +148,6 @@ public sealed partial class NpcFactionSystem : EntitySystem
 
         if (!ent.Comp.Factions.Remove(faction))
             return;
-
-        RaiseLocalEvent(ent.Owner, new NpcFactionRemovedEvent(faction));
 
         if (dirty)
             RefreshFactions((ent, ent.Comp));
@@ -224,12 +217,7 @@ public sealed partial class NpcFactionSystem : EntitySystem
         if (!Resolve(ent, ref ent.Comp, false) || !Resolve(other, ref other.Comp, false))
             return false;
 
-        var intersect = ent.Comp.Factions.Intersect(other.Comp.Factions); // factions which have both ent and other as members
-        foreach (var faction in intersect)
-            if (_factions[faction].IsHostileToSelf)
-                return false;
-
-        return intersect.Count() > 0 || ent.Comp.FriendlyFactions.Overlaps(other.Comp.Factions);
+        return ent.Comp.Factions.Overlaps(other.Comp.Factions) || ent.Comp.FriendlyFactions.Overlaps(other.Comp.Factions);
     }
 
     public bool IsFactionFriendly(string target, string with)
@@ -313,9 +301,8 @@ public sealed partial class NpcFactionSystem : EntitySystem
     {
         _factions = _proto.EnumeratePrototypes<NpcFactionPrototype>().ToFrozenDictionary(
             faction => faction.ID,
-            faction => new FactionData
+            faction =>  new FactionData
             {
-                IsHostileToSelf = faction.Hostile.Contains(faction.ID),
                 Friendly = faction.Friendly.ToHashSet(),
                 Hostile = faction.Hostile.ToHashSet()
             });

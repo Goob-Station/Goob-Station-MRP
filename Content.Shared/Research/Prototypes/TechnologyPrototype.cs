@@ -69,9 +69,6 @@ public sealed partial class TechnologyPrototype : IPrototype
     /// </summary>
     [DataField]
     public IReadOnlyList<GenericUnlock> GenericUnlocks = new List<GenericUnlock>();
-
-    [DataField]
-    public float SoftCapContribution = 1;
 }
 
 [DataDefinition]

@@ -269,9 +269,6 @@
   id: BypassInteractionRangeChecks
 
 - type: Tag
-  id: Cable
-
-- type: Tag
   id: CableCoil
 
 - type: Tag
@@ -418,9 +415,6 @@
   id: ClothMade
 
 - type: Tag
-  id: ClothingHeadHelmetBasic
-
-- type: Tag
   id: ClownMask
 
 - type: Tag
@@ -541,12 +535,6 @@
   id: DiscreteHealthAnalyzer #So construction recipes don't eat medical PDAs
 
 - type: Tag
-  id: Disposal
-
-- type: Tag
-  id: DNASolutionScannable
-
-- type: Tag
   id: DockArrivals
 
 - type: Tag
@@ -599,9 +587,6 @@
 
 - type: Tag
   id: EmitterBolt
-
-- type: Tag
-  id: Envirohelm
 
 - type: Tag
   id: Enzyme
@@ -1077,9 +1062,6 @@
   id: PlasmaGlassShard
 
 - type: Tag
-  id: PlasmamanSafe
-
-- type: Tag
   id: Plastic
 
 - type: Tag
@@ -1279,9 +1261,6 @@
   id: Steak
 
 - type: Tag
-  id: Stunbaton
-
-- type: Tag
   id: SubdermalImplant
 
 - type: Tag
@@ -1381,9 +1360,6 @@
   id: WeaponAntiqueLaser
 
 - type: Tag
-  id: WeaponDisabler
-
-- type: Tag
   id: WeaponPistolCHIMPUpgradeKit
 
 - type: Tag
@@ -1436,8 +1412,6 @@
 
 - type: Tag
   id: WriteIgnoreStamps
-
-# ALPHABETICAL
 
 - type: Tag
   id: FelinidEmotes

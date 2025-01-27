@@ -29,11 +29,9 @@ namespace Content.Shared.Research.Components
     public sealed class ResearchConsoleBoundInterfaceState : BoundUserInterfaceState
     {
         public int Points;
-        public float SoftCapMultiplier;
-        public ResearchConsoleBoundInterfaceState(int points, float softCapMultiplier)
+        public ResearchConsoleBoundInterfaceState(int points)
         {
             Points = points;
-            SoftCapMultiplier = softCapMultiplier;
         }
     }
 }

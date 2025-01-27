@@ -9,7 +9,6 @@ using Content.Shared.Inventory;
 using Content.Shared.PDA;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
-using Content.Shared.Station;
 using Robust.Shared.Console;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -93,9 +92,6 @@ namespace Content.Server.Administration.Commands
                 var preferencesManager = IoCManager.Resolve<IServerPreferencesManager>();
                 var prefs = preferencesManager.GetPreferences(userId);
                 profile = prefs.SelectedCharacter as HumanoidCharacterProfile;
-
-                if (profile != null)
-                    startingGear = IoCManager.Resolve<IEntityManager>().System<SharedStationSpawningSystem>().ApplySubGear(startingGear, profile);
             }
 
             var invSystem = entityManager.System<InventorySystem>();
@@ -138,7 +134,7 @@ namespace Content.Server.Administration.Commands
                 return true; //Fuck it, nuclear option for not Cluwning an IPC because that causes a crash that SOMEHOW ignores null checks.
             if (entityManager.HasComponent<EncryptionKeyHolderComponent>(target))
             {
-                var encryption = entityManager.System<InternalEncryptionKeySpawner>();
+                var encryption = new InternalEncryptionKeySpawner();
                 encryption.TryInsertEncryptionKey(target, startingGear, entityManager);
             }
             return true;

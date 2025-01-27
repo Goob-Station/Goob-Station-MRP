@@ -1,7 +1,5 @@
 - type: startingGear
   id: CourierGear
-  subGear:
-  - CourierPlasmamanGear
   equipment:
     head: ClothingHeadCourier
     jumpsuit: ClothingUniformCourier
@@ -13,11 +11,3 @@
   innerClothingSkirt: ClothingUniformSkirtCourier
   satchel: ClothingBackpackSatchelFilled
   duffelbag: ClothingBackpackDuffelFilled
-
-- type: startingGear
-  id: CourierPlasmamanGear
-  parent: BasePlasmamanGear
-  equipment:
-    jumpsuit: ClothingUniformEnvirosuitCourier
-    head: ClothingHeadEnvirohelmCourier
-    gloves: ClothingHandsGlovesEnviroglovesCargo

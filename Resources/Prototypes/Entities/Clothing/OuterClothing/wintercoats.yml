@@ -45,7 +45,7 @@
     slot: head
   - type: ContainerContainer
     containers:
-      toggleable-clothing: !type:Container {}
+      toggleable-clothing: !type:ContainerSlot {}
       storagebase: !type:Container
         ents: []
 

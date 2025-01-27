@@ -1,26 +1,13 @@
 ﻿- type: decal
-  id: Overlays
-  abstract: true
-
-- type: decal
   id: FullTileOverlayGreyscale
-  parent: Overlays
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: fulltile_overlay
 
-
-# Brick
-- type: decal
-  id: Brick
-  parent: Overlays
-  abstract: true
-
 - type: decal
   id: BrickBoxOverlay
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -29,7 +16,6 @@
 
 - type: decal
   id: BrickCornerOverlayNE
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -38,7 +24,6 @@
 
 - type: decal
   id: BrickCornerOverlayNW
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -47,7 +32,6 @@
 
 - type: decal
   id: BrickCornerOverlaySE
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -56,7 +40,6 @@
 
 - type: decal
   id: BrickCornerOverlaySW
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -65,7 +48,6 @@
 
 - type: decal
   id: BrickEndOverlayE
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -74,7 +56,6 @@
 
 - type: decal
   id: BrickEndOverlayN
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -83,7 +64,6 @@
 
 - type: decal
   id: BrickEndOverlayS
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -92,7 +72,6 @@
 
 - type: decal
   id: BrickEndOverlayW
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -101,7 +80,6 @@
 
 - type: decal
   id: BrickLineOverlayE
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -110,7 +88,6 @@
 
 - type: decal
   id: BrickLineOverlayN
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -119,7 +96,6 @@
 
 - type: decal
   id: BrickLineOverlayS
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
@@ -128,25 +104,16 @@
 
 - type: decal
   id: BrickLineOverlayW
-  parent: Brick
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: brick_line_w
 
-
-# HalfTile
-- type: decal
-  id: HalfTile
-  parent: Overlays
-  abstract: true
-
 - type: decal
   id: HalfTileOverlayGreyscale
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: HalfTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: halftile_overlay
@@ -155,7 +122,6 @@
   id: HalfTileOverlayGreyscale90
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: HalfTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: halftile_overlay_90
@@ -164,7 +130,6 @@
   id: HalfTileOverlayGreyscale180
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: HalfTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: halftile_overlay_180
@@ -173,22 +138,14 @@
   id: HalfTileOverlayGreyscale270
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: HalfTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: halftile_overlay_270
-
-# QuarterTile
-- type: decal
-  id: QuarterTile
-  parent: Overlays
-  abstract: true
 
 - type: decal
   id: QuarterTileOverlayGreyscale
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: QuarterTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: quartertile_overlay
@@ -197,7 +154,6 @@
   id: QuarterTileOverlayGreyscale90
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: QuarterTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: quartertile_overlay_90
@@ -206,7 +162,6 @@
   id: QuarterTileOverlayGreyscale180
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: QuarterTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: quartertile_overlay_180
@@ -215,22 +170,14 @@
   id: QuarterTileOverlayGreyscale270
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: QuarterTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: quartertile_overlay_270
-
-# QuarterTile
-- type: decal
-  id: ThreeQuarterTile
-  parent: Overlays
-  abstract: true
 
 - type: decal
   id: ThreeQuarterTileOverlayGreyscale
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: ThreeQuarterTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: threequartertile_overlay
@@ -239,7 +186,6 @@
   id: ThreeQuarterTileOverlayGreyscale90
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: ThreeQuarterTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: threequartertile_overlay_90
@@ -248,7 +194,6 @@
   id: ThreeQuarterTileOverlayGreyscale180
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: ThreeQuarterTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: threequartertile_overlay_180
@@ -257,31 +202,22 @@
   id: ThreeQuarterTileOverlayGreyscale270
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: ThreeQuarterTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: threequartertile_overlay_270
 
 - type: decal
   id: MonoOverlay
-  parent: Overlays
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: mono
 
-# Checker
-- type: decal
-  id: Checker
-  parent: Overlays
-  abstract: true
-
 - type: decal
   id: CheckerNESW
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Checker
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: checkerNESW
@@ -290,7 +226,6 @@
   id: CheckerNWSE
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Checker
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: checkerNWSE
@@ -299,7 +234,6 @@
   id: DiagonalOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Checker
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: diagonal
@@ -308,7 +242,6 @@
   id: DiagonalCheckerAOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Checker
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: diagonal_checker_a
@@ -317,31 +250,22 @@
   id: DiagonalCheckerBOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Checker
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: diagonal_checker_b
 
 - type: decal
   id: HerringboneOverlay
-  parent: Overlays
   tags: ["station", "overlay"]
   defaultCustomColor: true
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: herringbone
 
-# MiniTile
-- type: decal
-  id: MiniTile
-  parent: Overlays
-  abstract: true
-
 - type: decal
   id: MiniTileOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile
@@ -350,7 +274,6 @@
   id: MiniTileCheckerAOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_checker_a
@@ -359,7 +282,6 @@
   id: MiniTileCheckerBOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_checker_b
@@ -368,7 +290,6 @@
   id: MiniTileDiagonalOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_diagonal
@@ -377,7 +298,6 @@
   id: MiniTileDiagonalCheckerAOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_diagonal_a
@@ -386,7 +306,6 @@
   id: MiniTileDiagonalCheckerBOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_diagonal_b
@@ -395,7 +314,6 @@
   id: MiniTileBoxOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_box
@@ -404,7 +322,6 @@
   id: MiniTileCornerOverlayNE
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_corner_ne
@@ -413,7 +330,6 @@
   id: MiniTileCornerOverlayNW
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_corner_nw
@@ -422,7 +338,6 @@
   id: MiniTileCornerOverlaySE
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_corner_se
@@ -431,7 +346,6 @@
   id: MiniTileCornerOverlaySW
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_corner_sw
@@ -440,7 +354,6 @@
   id: MiniTileEndOverlayE
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_end_e
@@ -449,7 +362,6 @@
   id: MiniTileEndOverlayN
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_end_n
@@ -458,7 +370,6 @@
   id: MiniTileEndOverlayS
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_end_s
@@ -467,7 +378,6 @@
   id: MiniTileEndOverlayW
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_end_w
@@ -476,7 +386,6 @@
   id: MiniTileInnerOverlayNE
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_inner_ne
@@ -485,7 +394,6 @@
   id: MiniTileInnerOverlayNW
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_inner_nw
@@ -494,7 +402,6 @@
   id: MiniTileInnerOverlaySE
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_inner_se
@@ -503,7 +410,6 @@
   id: MiniTileInnerOverlaySW
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_inner_sw
@@ -512,7 +418,6 @@
   id: MiniTileLineOverlayE
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_line_e
@@ -521,7 +426,6 @@
   id: MiniTileLineOverlayN
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_line_n
@@ -530,7 +434,6 @@
   id: MiniTileLineOverlayS
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_line_s
@@ -539,22 +442,14 @@
   id: MiniTileLineOverlayW
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: MiniTile
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: minitile_line_w
-
-# Offset
-- type: decal
-  id: Offset
-  parent: Overlays
-  abstract: true
 
 - type: decal
   id: OffsetOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Offset
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: offset
@@ -563,7 +458,6 @@
   id: OffsetCheckerAOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Offset
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: offset_checker_a
@@ -572,22 +466,14 @@
   id: OffsetCheckerBOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Offset
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: offset_checker_b
-
-# Pavement
-- type: decal
-  id: Pavement
-  parent: Overlays
-  abstract: true
 
 - type: decal
   id: PavementOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Pavement
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: pavement
@@ -596,7 +482,6 @@
   id: PavementCheckerAOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Pavement
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: pavement_checker_a
@@ -605,7 +490,6 @@
   id: PavementCheckerBOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Pavement
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: pavement_checker_b
@@ -614,7 +498,6 @@
   id: PavementVerticalOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Pavement
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: pavement_vertical
@@ -623,7 +506,6 @@
   id: PavementVerticalCheckerAOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Pavement
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: pavement_vertical_checker_a
@@ -632,8 +514,6 @@
   id: PavementVerticalCheckerBOverlay
   tags: ["station", "overlay"]
   defaultCustomColor: true
-  parent: Pavement
   sprite:
     sprite: Decals/Overlays/greyscale.rsi
     state: pavement_vertical_checker_b
-

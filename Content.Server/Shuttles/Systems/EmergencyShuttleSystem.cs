@@ -69,7 +69,6 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly AnnouncerSystem _announcer = default!;
-    [Dependency] private readonly MapSystem _mapSystem = default!;
 
     private const float ShuttleSpawnBuffer = 1f;
 
@@ -431,37 +430,29 @@ public sealed partial class EmergencyShuttleSystem : EntitySystem
             return;
         }
 
-        var mapPath = _random.Pick(component.Maps).ToString();
-        AddSingleCentcomm(station, component, mapPath);
-    }
-
-    private void AddSingleCentcomm(EntityUid station, StationCentcommComponent component, string mapPath)
-    {
-        if (string.IsNullOrEmpty(mapPath))
+        if (string.IsNullOrEmpty(component.Map.ToString()))
         {
             Log.Warning("No CentComm map found, skipping setup.");
             return;
         }
 
-        var map = _mapSystem.CreateMap(out var mapId);
-        var grid = _map.LoadGrid(
-            mapId,
-            mapPath,
-            new()
-            {
-                LoadMap = false,
-            });
-
-        if (!Exists(map) || map == EntityUid.Invalid)
+        var mapId = _mapManager.CreateMap();
+        var grid = _map.LoadGrid(mapId, component.Map.ToString(), new MapLoadOptions()
         {
-            Log.Error("Failed to set up centcomm map!");
+            LoadMap = false,
+        });
+        var map = _mapManager.GetMapEntityId(mapId);
+
+        if (!Exists(map))
+        {
+            Log.Error($"Failed to set up centcomm map!");
             QueueDel(grid);
             return;
         }
 
         if (!Exists(grid))
         {
-            Log.Error("Failed to set up centcomm grid!");
+            Log.Error($"Failed to set up centcomm grid!");
             QueueDel(map);
             return;
         }

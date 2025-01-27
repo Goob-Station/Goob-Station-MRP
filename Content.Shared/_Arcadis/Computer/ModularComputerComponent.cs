@@ -17,8 +17,4 @@ public sealed partial class ModularComputerComponent : Component
 
     [DataField]
     public SoundSpecifier? DiskInsertSound = new SoundPathSpecifier("/Audio/_Arcadis/computer_startup.ogg");
-
-    [DataField]
-
-    public bool RequiresPower = true;
 }

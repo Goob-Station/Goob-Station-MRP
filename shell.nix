@@ -12,7 +12,7 @@
 
 let
   dependencies = with pkgs; [
-    dotnetCorePackages.sdk_9_0
+    dotnetCorePackages.sdk_8_0_1xx
     glfw
     SDL2
     libGL

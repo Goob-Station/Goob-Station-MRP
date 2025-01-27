@@ -27,12 +27,12 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
         SubscribeLocalEvent<ColorFlashEffectComponent, AnimationCompletedEvent>(OnEffectAnimationCompleted);
     }
 
-    public override void RaiseEffect(Color color, List<EntityUid> entities, Filter filter, float? animationLength = null)
+    public override void RaiseEffect(Color color, List<EntityUid> entities, Filter filter)
     {
         if (!_timing.IsFirstTimePredicted)
             return;
 
-        OnColorFlashEffect(new ColorFlashEffectEvent(color, GetNetEntityList(entities), animationLength));
+        OnColorFlashEffect(new ColorFlashEffectEvent(color, GetNetEntityList(entities)));
     }
 
     private void OnEffectAnimationCompleted(EntityUid uid, ColorFlashEffectComponent component, AnimationCompletedEvent args)
@@ -48,7 +48,7 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
         RemCompDeferred<ColorFlashEffectComponent>(uid);
     }
 
-    private Animation? GetDamageAnimation(EntityUid uid, Color color, SpriteComponent? sprite = null, float? animationLength = null)
+    private Animation? GetDamageAnimation(EntityUid uid, Color color, SpriteComponent? sprite = null)
     {
         if (!Resolve(uid, ref sprite, false))
             return null;
@@ -56,7 +56,7 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
         // 90% of them are going to be this so why allocate a new class.
         return new Animation
         {
-            Length = TimeSpan.FromSeconds(animationLength ?? AnimationLength),
+            Length = TimeSpan.FromSeconds(AnimationLength),
             AnimationTracks =
             {
                 new AnimationTrackComponentProperty
@@ -67,7 +67,7 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
                     KeyFrames =
                     {
                         new AnimationTrackProperty.KeyFrame(color, 0f),
-                        new AnimationTrackProperty.KeyFrame(sprite.Color, animationLength ?? AnimationLength)
+                        new AnimationTrackProperty.KeyFrame(sprite.Color, AnimationLength)
                     }
                 }
             }
@@ -112,7 +112,7 @@ public sealed class ColorFlashEffectSystem : SharedColorFlashEffectSystem
                 sprite.Color = effect.Color;
             }
 
-            var animation = GetDamageAnimation(ent, color, sprite, ev.AnimationLength);
+            var animation = GetDamageAnimation(ent, color, sprite);
 
             if (animation == null)
                 continue;

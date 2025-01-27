@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Shared.Body.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Clothing.Loadouts.Prototypes;
 using Content.Shared.Customization.Systems;
@@ -25,18 +24,12 @@ public sealed class SharedLoadoutSystem : EntitySystem
     [Dependency] private readonly CharacterRequirementsSystem _characterRequirements = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedTransformSystem _sharedTransformSystem = default!;
-    [Dependency] private readonly ILogManager _log = default!;
-
-    private ISawmill _sawmill = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        // Wait until the character has all their organs before we give them their loadout to activate internals
-        SubscribeLocalEvent<LoadoutComponent, MapInitEvent>(OnMapInit, after: [typeof(SharedBodySystem)]);
-
-        _sawmill = _log.GetSawmill("loadouts");
+        SubscribeLocalEvent<LoadoutComponent, MapInitEvent>(OnMapInit);
     }
 
     private void OnMapInit(EntityUid uid, LoadoutComponent component, MapInitEvent args)
@@ -107,14 +100,8 @@ public sealed class SharedLoadoutSystem : EntitySystem
             var i = 0; // If someone wants to add multi-item support to the editor
             foreach (var item in spawned)
             {
-                if (item == EntityUid.Invalid || !Exists(item))
-                {
-                    _sawmill.Warning($"Item {ToPrettyString(item)} failed to spawn or did not exist.");
-                    continue;
-                }
-
                 allLoadouts.Add((item, loadout, i));
-                if (i == 0 && loadout.CustomHeirloom == true) // Only the first item can be an heirloom
+                if (loadout.CustomHeirloom == true)
                     heirlooms.Add((item, loadout));
 
                 // Equip it

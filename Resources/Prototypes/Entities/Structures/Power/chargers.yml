@@ -246,7 +246,6 @@
       components:
       - BorgChassis
       - Silicon # Parkstation IPCs
-      - Inventory # Goobstation - Modsuits
   - type: Construction
     containers:
     - machine_parts

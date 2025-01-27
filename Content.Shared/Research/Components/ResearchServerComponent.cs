@@ -42,9 +42,6 @@ public sealed partial class ResearchServerComponent : Component
 
     [DataField("researchConsoleUpdateTime"), ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan ResearchConsoleUpdateTime = TimeSpan.FromSeconds(1);
-
-    [DataField, AutoNetworkedField]
-    public float CurrentSoftCapMultiplier = 1;
 }
 
 /// <summary>

@@ -169,7 +169,8 @@ public sealed partial class MarkingSet
                     toRemove.Add((category, marking.MarkingId));
                 }
 
-                if (!markingManager.IsSpeciesWhitelisted(species, prototype))
+                if (prototype.SpeciesRestrictions != null
+                    && !prototype.SpeciesRestrictions.Contains(species))
                 {
                     toRemove.Add((category, marking.MarkingId));
                 }
@@ -219,8 +220,10 @@ public sealed partial class MarkingSet
                     continue;
                 }
 
-                if (!markingManager.IsSexWhitelisted(sex, prototype))
+                if (prototype.SexRestriction != null && prototype.SexRestriction != sex)
+                {
                     toRemove.Add((category, marking.MarkingId));
+                }
             }
         }
 

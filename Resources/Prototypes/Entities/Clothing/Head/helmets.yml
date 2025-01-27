@@ -22,7 +22,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - ClothingHeadHelmetBasic
 
 #Mercenary Helmet
 - type: entity

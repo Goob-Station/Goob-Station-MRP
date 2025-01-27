@@ -77,8 +77,6 @@
   - chat-speech-verb-skeleton-1
   - chat-speech-verb-skeleton-2
   - chat-speech-verb-skeleton-3
-  - chat-speech-verb-skeleton-4
-  - chat-speech-verb-skeleton-5
 
 - type: speechVerb
   id: Slime

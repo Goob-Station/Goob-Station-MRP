@@ -1,6 +1,19 @@
 # Tier 1
 
 - type: technology
+  id: BasicRobotics
+  name: research-technology-basic-robotics
+  icon:
+    sprite: Structures/Machines/exosuit_fabricator.rsi
+    state: fab-idle
+  discipline: Experimental
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - ProximitySensor
+  - ExosuitFabricatorMachineCircuitboard
+
+- type: technology
   id: BasicAnomalousResearch
   name: research-technology-basic-anomalous-research
   icon:
@@ -13,6 +26,7 @@
   - AnomalyScanner
   - AnomalyLocator
   - AnomalyLocatorWide
+  - BorgModuleAnomaly
   - APECircuitboard
   - AnomalyVesselCircuitboard
 
@@ -27,10 +41,35 @@
   cost: 5000
   recipeUnlocks:
   - NodeScanner
+  - BorgModuleArtifact
   - AnalysisComputerCircuitboard
   - ArtifactAnalyzerMachineCircuitboard
+
+- type: technology
+  id: AlternativeResearch
+  name: research-technology-alternative-research
+  icon:
+    sprite: Structures/Machines/tech_disk_printer.rsi
+    state: display
+  discipline: Experimental
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
   - TechDiskComputerCircuitboard
-  - ReverseEngineeringMachineCircuitboard
+  - ReverseEngineeringMachineCircuitboard #DeltaV
+
+- type: technology
+  id: MagnetsTech
+  name: research-technology-magnets-tech
+  icon:
+    sprite: Clothing/Shoes/Boots/magboots-science.rsi
+    state: icon
+  discipline: Experimental
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+  - ClothingShoesBootsMagSci
+  - ClothingShoesBootsMoon
 
 - type: technology
   id: AnomalyCoreHarnessing
@@ -59,7 +98,18 @@
   - AdvancedCapacitorStockPart
   - AdvancedMatterBinStockPart
   - NanoManipulatorStockPart
-  - RPED
+
+- type: technology
+  id: AbnormalArtifactManipulation
+  name: research-technology-abnormal-artifact-manipulation
+  icon:
+    sprite: Structures/Machines/artifact_crusher.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - ArtifactCrusherMachineCircuitboard
 
 - type: technology
   id: AdvancedAnomalyResearch
@@ -74,9 +124,20 @@
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboard
-  - ArtifactCrusherMachineCircuitboard
   technologyPrerequisites:
   - BasicAnomalousResearch
+
+- type: technology
+  id: RapidPartExchange
+  name: research-technology-rped
+  icon:
+    sprite: Objects/Specific/Research/rped.rsi
+    state: icon
+  discipline: Experimental
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - RPED
 
 - type: technology
   id: DeterrenceTechnologies
@@ -90,6 +151,21 @@
   recipeUnlocks:
   - WeaponParticleDecelerator
   - HoloprojectorField
+
+- type: technology
+  id: Metempsychosis
+  name: research-technology-metempsychosis
+  icon:
+    sprite: Structures/Machines/metempsychotic.rsi
+    state: cloning_idle
+  discipline: Experimental
+  tier: 2
+  cost: 15000
+  recipeUnlocks:
+    - BiomassReclaimerMachineCircuitboard
+    - CloningConsoleComputerCircuitboard
+    - MedicalScannerMachineCircuitboard
+    - MetempsychoticMachineCircuitboard
 
 - type: technology
   id: NightVisionTech
@@ -133,7 +209,6 @@
   - SuperCapacitorStockPart
   - SuperMatterBinStockPart
   - PicoManipulatorStockPart
-  softCapContribution: 1.2
 
 - type: technology
   id: GravityManipulation
@@ -147,7 +222,6 @@
   recipeUnlocks:
     - WeaponForceGun
     - WeaponTetherGun
-  softCapContribution: 1.5
 
 - type: technology
   id: QuantumLeaping
@@ -160,4 +234,3 @@
   cost: 10000
   recipeUnlocks:
   - DeviceQuantumSpinInverter
-  softCapContribution: 1.5

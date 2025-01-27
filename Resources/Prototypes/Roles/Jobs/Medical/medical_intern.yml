@@ -1,4 +1,4 @@
-- type: job
+﻿- type: job
   id: MedicalIntern
   name: job-name-intern
   description: job-description-intern
@@ -24,8 +24,6 @@
 
 - type: startingGear
   id: MedicalInternGear
-  subGear:
-  - DoctorPlasmamanGear
   equipment:
     jumpsuit: UniformScrubsColorBlue # DeltaV - Intern starts with blue scrubs
     back: ClothingBackpackMedicalFilled

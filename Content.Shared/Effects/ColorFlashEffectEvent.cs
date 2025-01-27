@@ -15,15 +15,9 @@ public sealed class ColorFlashEffectEvent : EntityEventArgs
 
     public List<NetEntity> Entities;
 
-    /// <summary>
-    /// The length of the flash animation.
-    /// </summary>
-    public float? AnimationLength;
-
-    public ColorFlashEffectEvent(Color color, List<NetEntity> entities, float? animationLength = null)
+    public ColorFlashEffectEvent(Color color, List<NetEntity> entities)
     {
         Color = color;
         Entities = entities;
-        AnimationLength = animationLength;
     }
 }

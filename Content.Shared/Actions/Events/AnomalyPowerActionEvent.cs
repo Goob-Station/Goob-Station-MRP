@@ -76,6 +76,8 @@ public partial record struct AnomalyPowerSettings()
 {
     public string PowerName = string.Empty;
 
+    public float ManaCost;
+
     public bool CheckInsulation;
 
     /// <summary>
