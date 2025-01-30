@@ -2,6 +2,11 @@
 # Corpsman SOP
 This is the list of procedures, responsibilities, and duties of the [color=#ba292c][bold]Corpsman[/bold][/color] of this station.
 
+<<<<<<< HEAD
+=======
+[color=#ba292c][bold]Corpsman[/bold][/color]s are permitted to carry their shift-start pistols, but should follow escalation laws and leave them holstered on Green Alert.
+
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 Corpsman are held to the same guidelines and responsibilities as [textlink="Paramedic" link="DoctorIntern SOP"]; with exceptions that they are to cater to Security Personnel and Prisoners over regular station personnel.
 
 1. Corpsman are to respond to demands from [color=#ba292c][bold]Warden[/bold][/color] for Security Treatment with immediate priority.
@@ -10,7 +15,12 @@ Corpsman are held to the same guidelines and responsibilities as [textlink="Para
 
 3. Corpsman are to follow the same guidelines as [textlink="Security Officers" link="OfficerCadet SOP"] for [color=#388c34]Green Alert[/color] and [color=#1b67a5]Blue Alert[/color].
 
+<<<<<<< HEAD
 4. Corpsman are not permitted to carry lethal weapons except on [color=#ba292c]Red Alert[/color] and higher.
+=======
+4. Corpsman are not permitted to unholster lethal weapons except on [color=#ba292c]Blue Alert[/color] and higher, following escalation procedures and only for self-defense.
+<Box>If necessary, the Corpsman may use lethal weaponry on clear hostiles, but must take responsibility as a Security Officer would.</Box>
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 
 5. Corpsman are to prioritize treatment of Prisoners over regular Medical Personnel.
 

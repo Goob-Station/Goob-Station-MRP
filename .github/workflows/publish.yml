@@ -22,7 +22,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3.2.0
       with:
-        dotnet-version: 8.0.100
+        dotnet-version: 9.0.x
 
     - name: Get Engine Tag
       run: |
@@ -49,11 +49,20 @@ jobs:
 
     - name: Publish changelog (Discord)
       run: Tools/actions_changelogs_since_last_run.py
+<<<<<<< HEAD
       env:
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}
 
     - name: Publish changelog (RSS)
       run: Tools/actions_changelog_rss.py
+=======
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
       env:
-        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
+
+#    - name: Publish changelog (RSS)
+#      run: Tools/actions_changelog_rss.py
+#      env:
+#        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}

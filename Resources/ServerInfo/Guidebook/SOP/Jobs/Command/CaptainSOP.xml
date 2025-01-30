@@ -15,7 +15,11 @@ This is the list of procedures, responsibilities, and duties of the [color=#1b67
 <Box>If neither are available on the current station, refer to the [bold]Chain of Command[/bold].</Box>
 
 5. Captain may keep Captain Space IDs in their room or give it to the appropriate members in the [bold]Chain of Command[/bold].
+<<<<<<< HEAD
 <Box>The [color=#1b67a5][bold]Nanotrasen Representative[/bold][/color] and [color=#1b67a5][bold]Blueshield Officer[/bold][/color] are not permitted to carry these IDs.</Box>
+=======
+<Box>The [color=#1b67a5][bold]Nanotrasen Representative[/bold][/color], [color=#1b67a5][bold]Magistrate[/bold][/color], and [color=#1b67a5][bold]Blueshield Officer[/bold][/color] are not permitted to carry these IDs.</Box>
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 
 6. The Captain is not to leave the Station unless given specific permission by Central Command.
 
@@ -26,9 +30,15 @@ This is the list of procedures, responsibilities, and duties of the [color=#1b67
 9. The Captain, despite being in charge of the Station, is not independent from NanoTrasen. Any attempts to disregard general company policy are to be considered an instant condition for contract termination.
 
 10. Firing a Head of Staff [bold]must[/bold] be done with reasonable justification. Refer to [bold]Dismissal/Demotion Policies[/bold].
+<<<<<<< HEAD
 <Box>Firing Central Command VIPs ([color=#1b67a5][bold]Nanotrasen Representative[/bold][/color] and [color=#1b67a5][bold]Blueshield Officer[/bold][/color]) [bold]must[/bold] be done with authorization from Central Command.</Box>
 
 11. The Captain may not promote anyone to Central Command VIP Positions ([color=#1b67a5][bold]Nanotrasen Representative[/bold][/color] and [color=#1b67a5][bold]Blueshield Officer[/bold][/color]) without authorization from Central Command.
+=======
+<Box>Firing Central Command VIPs ([color=#1b67a5][bold]Nanotrasen Representative[/bold][/color], [color=#1b67a5][bold]Magistrate[/bold][/color], and [color=#1b67a5][bold]Blueshield Officer[/bold][/color]) [bold]must[/bold] be done with authorization from Central Command.</Box>
+
+11. The Captain may not promote anyone to Central Command VIP Positions ([color=#1b67a5][bold]Nanotrasen Representative[/bold][/color], [color=#1b67a5][bold]Magistrate[/bold][/color], and [color=#1b67a5][bold]Blueshield Officer[/bold][/color]) without authorization from Central Command.
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 
 12. The Captain may carry their weaponry on them at all times.
 

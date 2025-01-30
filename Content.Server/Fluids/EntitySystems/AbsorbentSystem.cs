@@ -119,6 +119,11 @@ public sealed class AbsorbentSystem : SharedAbsorbentSystem
             if (!TryRefillableInteract(user, used, target, component, useDelay, absorberSoln.Value))
                 return;
         }
+<<<<<<< HEAD
+=======
+
+        TryCleanNearbyFootprints(user, target, (used, component), absorberSoln.Value);
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
     }
 
     /// <summary>

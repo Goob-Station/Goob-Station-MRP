@@ -74,6 +74,7 @@
         color: "#008800"
         sprite: Mobs/Customization/eyes.rsi
         state: eyes
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
         color: "#e8b59b"
         sprite: Mobs/Species/Human/parts.rsi
@@ -100,12 +101,18 @@
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "belt2" ]
       - map: [ "neck" ]
       - map: [ "back" ]
+<<<<<<< HEAD
+=======
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
         state: bald
         sprite: Mobs/Customization/human_hair.rsi
@@ -242,6 +249,7 @@
         color: "#008800"
         sprite: Mobs/Customization/eyes.rsi
         state: eyes
+      - map: [ "enum.HumanoidVisualLayers.Face" ]
       - map: [ "enum.HumanoidVisualLayers.RArm" ]
         color: "#e8b59b"
         sprite: Mobs/Species/Human/parts.rsi
@@ -268,11 +276,17 @@
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
+      - map: [ "innerBelt" ]
+      - map: [ "innerNeck" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
+<<<<<<< HEAD
+=======
+      - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
         state: bald
         sprite: Mobs/Customization/human_hair.rsi

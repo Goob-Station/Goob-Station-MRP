@@ -11,7 +11,11 @@
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine
+<<<<<<< HEAD
   canBeAntag: false # goob mrp - training role
+=======
+  canBeAntag: true # Goobstation - Reset to true (Starch had it set to false)
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   access:
   - Medical
   - Maintenance

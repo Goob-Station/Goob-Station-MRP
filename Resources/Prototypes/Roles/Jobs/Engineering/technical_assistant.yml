@@ -14,7 +14,11 @@
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
+<<<<<<< HEAD
   canBeAntag: false # goob mrp - shouldn't be antag, its a training role
+=======
+  canBeAntag: true # Goobstation - Reset to True (Starch had it set to false)
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   access:
   - Maintenance
   - Engineering

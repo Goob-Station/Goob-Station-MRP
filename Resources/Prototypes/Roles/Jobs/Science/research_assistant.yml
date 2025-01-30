@@ -11,7 +11,11 @@
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science
+<<<<<<< HEAD
   canBeAntag: false # goob mrp - training role
+=======
+  canBeAntag: true # Goobstation - Reset back to True (Starch had set it to false)
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   access:
   - Research
   - Maintenance

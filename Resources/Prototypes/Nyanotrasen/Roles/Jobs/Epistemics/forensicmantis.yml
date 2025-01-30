@@ -21,8 +21,8 @@
   startingGear: ForensicMantisGear
   icon: "JobIconForensicMantis"
   supervisors: job-supervisors-rd
-  antagAdvantage: 5 # DeltaV - From 4 to 5
-  canBeAntag: true # DeltaV - Mantis is no longer a Detective
+  # antagAdvantage: 5 # [DeltaV - From 4 to 5] - Goobstation removes antag ability.
+  canBeAntag: false # Goobstation - Mantis is acting as a second-in-command and should not be an antag
   # whitelistRequired: true
   access:
   - Research
@@ -39,6 +39,7 @@
       powersToAdd:
         - MetapsionicPower
         - TelepathyPower
+        - AssayPower
 
 - type: startingGear
   id: ForensicMantisGear

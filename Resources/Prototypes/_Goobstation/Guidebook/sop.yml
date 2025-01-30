@@ -13,6 +13,10 @@
   id: Alert Levels
   name: guide-entry-sop-alert-levels
   text: "/ServerInfo/Guidebook/SOP/AlertLevels/AlertLevelsSOP.xml"
+<<<<<<< HEAD
+=======
+  priority: 0
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   children:
   - GreenAlert SOP
   - BlueAlert SOP
@@ -29,6 +33,10 @@
   id: Emergencies SOP
   name: guide-entry-sop-emergencies
   text: "/ServerInfo/Guidebook/SOP/Emergencies/Emergencies.xml"
+<<<<<<< HEAD
+=======
+  priority: 0
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   children:
   - ConfirmedRevs SOP
   - ContainmentFail SOP
@@ -48,6 +56,10 @@
   - Alert Levels
   - Emergencies SOP
   - Demoting SOP
+<<<<<<< HEAD
+=======
+  - EarlyEvacuation SOP
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   - Hiring SOP
   - Succession
 
@@ -69,6 +81,10 @@
   children:
   - Cargo SOP
   - Command SOP
+<<<<<<< HEAD
+=======
+  - Dignitary SOP
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   - Engineering SOP
   - Epistemics SOP
   - Medical SOP
@@ -88,8 +104,11 @@
   name: guide-entry-sop-command
   text: "/ServerInfo/Guidebook/SOP/Jobs/Command/CommandSOP.xml"
   children:
+<<<<<<< HEAD
   - NanotrasenRep SOP
   - BlueshieldOfficer SOP
+=======
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   - Captain SOP
   - HeadOfPersonnel SOP
   - HeadOfSecurity SOP
@@ -99,6 +118,18 @@
   - LogisticsOfficer SOP # Changed for Delta-V Naming Scheme - Original: Quartermaster
 
 - type: guideEntry
+<<<<<<< HEAD
+=======
+  id: Dignitary SOP
+  name: guide-entry-sop-dignitary
+  text: "/ServerInfo/Guidebook/SOP/Jobs/Dignitary/DignitarySOP.xml"
+  children:
+  - BlueshieldOfficer SOP
+  - NanotrasenRep SOP
+  - Magistrate SOP
+
+- type: guideEntry
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   id: Engineering SOP
   name: guide-entry-sop-engineering
   text: "/ServerInfo/Guidebook/SOP/Jobs/Engineering/EngineeringSOP.xml"
@@ -202,16 +233,34 @@
   id: Demoting SOP
   name: guide-entry-sop-demoting
   text: "/ServerInfo/Guidebook/SOP/StandardProcedures/FiringDemotion.xml"
+<<<<<<< HEAD
+=======
+  priority: 10
+
+- type: guideEntry
+  id: EarlyEvacuation SOP
+  name: guide-entry-sop-evacuation
+  text: "/ServerInfo/Guidebook/SOP/StandardProcedures/EarlyEvacuationSOP.xml"
+  priority: 10
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 
 - type: guideEntry
   id: Hiring SOP
   name: guide-entry-sop-hiring
   text: "/ServerInfo/Guidebook/SOP/StandardProcedures/HiringTransfers.xml"
+<<<<<<< HEAD
+=======
+  priority: 10
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 
 - type: guideEntry
   id: Succession
   name: guide-entry-sop-succession # Is named as "Chain of Command" in game.
   text: "/ServerInfo/Guidebook/SOP/StandardProcedures/CommandSuccession.xml"
+<<<<<<< HEAD
+=======
+  priority: 10
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 
 # Emergency SOP Entries
 - type: guideEntry
@@ -288,6 +337,7 @@
 
 # Command SOP Entries
 - type: guideEntry
+<<<<<<< HEAD
   id: NanotrasenRep SOP
   name: guide-entry-sop-ntr
   text: "/ServerInfo/Guidebook/SOP/Jobs/Command/NanotrasenRepSOP.xml"
@@ -298,6 +348,8 @@
   text: "/ServerInfo/Guidebook/SOP/Jobs/Command/BlueshieldOfficerSOP.xml"
 
 - type: guideEntry
+=======
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   id: Captain SOP
   name: guide-entry-sop-captain
   text: "/ServerInfo/Guidebook/SOP/Jobs/Command/CaptainSOP.xml"
@@ -332,6 +384,25 @@
   name: guide-entry-sop-lo
   text: "/ServerInfo/Guidebook/SOP/Jobs/Command/LogisticsOfficerSOP.xml"
 
+<<<<<<< HEAD
+=======
+# Dignitary SOP Entries
+- type: guideEntry
+  id: NanotrasenRep SOP
+  name: guide-entry-sop-ntr
+  text: "/ServerInfo/Guidebook/SOP/Jobs/Dignitary/NanotrasenRepSOP.xml"
+
+- type: guideEntry
+  id: BlueshieldOfficer SOP
+  name: guide-entry-sop-bso
+  text: "/ServerInfo/Guidebook/SOP/Jobs/Dignitary/BlueshieldOfficerSOP.xml"
+
+- type: guideEntry
+  id: Magistrate SOP
+  name: guide-entry-sop-magistrate
+  text: "/ServerInfo/Guidebook/SOP/Jobs/Dignitary/MagistrateSOP.xml"
+
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 # Engineering SOP Entries
 - type: guideEntry
   id: AtmosTech SOP

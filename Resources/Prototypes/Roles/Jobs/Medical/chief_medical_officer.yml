@@ -18,8 +18,11 @@
       min: 36000 # goob mrp - 10 hours
     - !type:CharacterOverallTimeRequirement
       min: 36000 # goob mrp - 10 hours
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

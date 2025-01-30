@@ -3,6 +3,15 @@
 The following alert levels are the publicly defined levels on this station and what they entail.
 Below are the listed pop-ups for each alert and the color associated with them.
 
+<<<<<<< HEAD
+=======
+<ColorBox>
+  <Box>
+    For the purposes of Alert Escalation: Treat higher alerts as if they are still on the previous alert level. (Yellow Alert is Blue Alert if it was Blue Alert prior.) Furthermore, treat Delta, Gamma, Epsilon, and Violet Alert as Red Alert.
+  </Box>
+</ColorBox>
+
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
 There are individual entries for each alert level and what they entail for station personnel.
 
 <Table Columns="1">
@@ -126,7 +135,11 @@ The [color=#db7093]Gamma Alert[/color] is rare and often only used in extreme ca
 The [color=#cc74fc]Violet Alert[/color] is set for viral outbreaks when a zombie infection or other disease occurs.
 
 <Table Columns="1">
+<<<<<<< HEAD
   <ColorBox Color= "#ffffff">
+=======
+  <ColorBox Color="#ffffff">
+>>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
     <Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="10">
       [bold][color=#000000][head=1]White Alert[/head][/color][/bold]
     </Box>
