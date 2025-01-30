@@ -83,7 +83,11 @@
   bodyPart: HeadSide
   markingCategory: HeadSide
   forcedColoring: true
+<<<<<<< HEAD
   speciesRestriction: [Oni, Harpy, Arachne]
+=======
+  speciesRestriction: [Oni]
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   sprites:
   - sprite: Mobs/Customization/pointy_ears.rsi
     state: pointy_ears_none

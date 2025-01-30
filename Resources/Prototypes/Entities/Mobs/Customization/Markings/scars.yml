@@ -2,7 +2,11 @@
   id: ScarEyeRight
   bodyPart: Head
   markingCategory: Head
+<<<<<<< HEAD
   speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne] # Delta V - Felinid, Oni, Harpy
+=======
+  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Harpy; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -12,7 +16,11 @@
   id: ScarEyeLeft
   bodyPart: Head
   markingCategory: Head
+<<<<<<< HEAD
   speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne] # Delta V - Felinid, Oni, Harpy
+=======
+  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Harpy; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -22,7 +30,11 @@
   id: ScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest
+<<<<<<< HEAD
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Arachne]
+=======
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Arachne, Lamia, Tajaran] # Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -33,7 +45,11 @@
   id: ScarTopSurgeryLong
   bodyPart: Chest
   markingCategory: Chest
+<<<<<<< HEAD
   speciesRestriction: [Human, Dwarf, Felinid,  Oni, Arachne]
+=======
+  speciesRestriction: [Human, Dwarf, Felinid,  Oni, Arachne, Lamia, Tajaran] # Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -44,7 +60,11 @@
   id: ScarChest
   bodyPart: Chest
   markingCategory: Chest
+<<<<<<< HEAD
   speciesRestriction: [Human, Dwarf, Felinid, Oni, Arachne]
+=======
+  speciesRestriction: [Human, Dwarf, Felinid, Oni, Arachne, Lamia, Tajaran] # Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi

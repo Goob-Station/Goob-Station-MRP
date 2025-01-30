@@ -1,8 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Name: GoobChangelog
 Order: -1
 >>>>>>> 6771ab1118b3e4bf7a702540245449e4125b0a38
+=======
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
 Entries:
 - author: God
   changes:
@@ -98,3 +101,23 @@ Entries:
   id: 13
   time: '2025-01-06T21:06:18.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/28
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added Revolutionaries back to Secret Gamemode!
+    - type: Add
+      message: Added Revolutionaries back to gamemode voting.
+    - type: Tweak
+      message: Adjusted Secret gamemode weighting schema.
+  id: 14
+  time: '2025-01-27T05:40:11.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/62
+- author: Aidenkrz
+  changes:
+    - type: Add
+      message: You can now give humans custom species names.
+    - type: Remove
+      message: Felinids.
+  id: 15
+  time: '2025-01-27T19:48:36.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/69

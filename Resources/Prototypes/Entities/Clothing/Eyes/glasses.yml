@@ -232,6 +232,25 @@
     coverage: EYES
 
 - type: entity
+  parent: [ClothingEyesBase, ShowPsionicsIcons]
+  id: ClothingEyesGlassesEpistemics
+  name: epi psionics glasses
+  description: Upgraded sunglasses that provide flash immunity and a epistemics psionics HUD.
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Glasses/epiglasses.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Glasses/epiglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
   parent: ClothingEyesGlassesCheapSunglasses
   id: ClothingEyesGlassesCheapSunglassesAviator
   name: cheap aviators
@@ -302,7 +321,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingEyesGlassesCheapSunglasses
+  parent: ClothingEyesGlassesSecurity
   id: ClothingEyesGlassesSecurityBig
   name: big security glasses
   description: Upgraded big sunglasses that provide flash immunity and a security HUD.
@@ -412,6 +431,7 @@
     sprite: Clothing/Eyes/Glasses/ninjavisor.rsi
   - type: FlashImmunity
   - type: NightVision
+    isEquipment: true
 
 - type: entity #Fake goggles, the latest in anti-valid hunting technology
   parent: ClothingEyesBase

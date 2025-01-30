@@ -164,6 +164,7 @@
       inverted: true
       species:
         - Felinid
+        - Tajaran
 
 - type: trait
   id: Singer
@@ -309,6 +310,7 @@
       inverted: true
       species:
         - Felinid
+        - Tajaran
         - Harpy
 
 - type: trait

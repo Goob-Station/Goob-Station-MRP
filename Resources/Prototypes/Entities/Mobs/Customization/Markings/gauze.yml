@@ -2,7 +2,11 @@
   id: GauzeLefteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -16,7 +20,11 @@
   id: GauzeLefteyePad
   bodyPart: Eyes
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -30,7 +38,11 @@
   id: GauzeRighteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -44,7 +56,11 @@
   id: GauzeRighteyePad
   bodyPart: Eyes
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -58,7 +74,11 @@
   id: GauzeBlindfold
   bodyPart: Eyes
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Harpy, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Harpy, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Harpy, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Harpy, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -72,7 +92,11 @@
   id: GauzeShoulder
   bodyPart: Chest
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -86,7 +110,11 @@
   id: GauzeStomach
   bodyPart: Chest
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -100,7 +128,11 @@
   id: GauzeUpperArmRight
   bodyPart: RArm
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -114,7 +146,11 @@
   id: GauzeLowerArmRight
   bodyPart: RArm, RHand
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -128,7 +164,7 @@
   id: GauzeLeftArm
   bodyPart: LArm, LHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin] # Delta V - Felinid, Oni, Vulpkanin
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
   coloring:
     default:
       type:
@@ -142,7 +178,7 @@
   id: GauzeLowerLegLeft
   bodyPart: LFoot
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin] # Delta V - Felinid, Oni, Vulpkanin
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
   coloring:
     default:
       type:
@@ -156,7 +192,7 @@
   id: GauzeUpperLegLeft
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin] # Delta V - Felinid, Oni, Vulpkanin
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
   coloring:
     default:
       type:
@@ -170,7 +206,7 @@
   id: GauzeUpperLegRight
   bodyPart: RLeg
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin] # Delta V - Felinid, Oni, Vulpkanin
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
   coloring:
     default:
       type:
@@ -184,7 +220,7 @@
   id: GauzeLowerLegRight
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin] # Delta V - Felinid, Oni, Vulpkanin
+  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
   coloring:
     default:
       type:
@@ -198,7 +234,11 @@
   id: GauzeBoxerWrapRight
   bodyPart: RHand
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -212,7 +252,11 @@
   id: GauzeBoxerWrapLeft
   bodyPart: LHand
   markingCategory: Overlay
+<<<<<<< HEAD
   speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne] # Delta V - Felinid, Oni, Vulpkanin
+=======
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Arachne, Lamia, Tajaran] # Delta V - Felinid, Oni, Vulpkanin; Einstein Engines - Tajaran
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -221,6 +265,20 @@
   sprites:
   - sprite: Mobs/Customization/gauze.rsi
     state: gauze_boxerwrap_l
+
+- type: marking
+  id: GauzeHead
+  bodyPart: Head
+  markingCategory: Overlay
+  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Arachne, Lamia] # Delta V - Felinid, Oni, Vulpkanin # EE - Arachne, Lamia
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: Mobs/Customization/gauze.rsi
+    state: gauze_head
 
 # Lizard Specific Markings
 - type: marking
@@ -298,7 +356,7 @@
   id: GauzeMothBlindfold
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -312,7 +370,7 @@
   id: GauzeMothShoulder
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -326,7 +384,7 @@
   id: GauzeMothStomach
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -340,7 +398,7 @@
   id: GauzeMothLeftEyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -354,7 +412,7 @@
   id: GauzeMothLeftEyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -368,7 +426,7 @@
   id: GauzeMothRightEyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -382,7 +440,7 @@
   id: GauzeMothRightEyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -396,7 +454,7 @@
   id: GauzeMothUpperArmRight
   bodyPart: RArm
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -410,7 +468,7 @@
   id: GauzeMothUpperArmLeft
   bodyPart: LArm
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -424,7 +482,7 @@
   id: GauzeMothUpperLegRight
   bodyPart: RLeg
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -438,7 +496,7 @@
   id: GauzeMothUpperLegLeft
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -452,7 +510,7 @@
   id: GauzeMothLowerLegRight
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:
@@ -466,7 +524,7 @@
   id: GauzeMothLowerLegLeft
   bodyPart: LFoot
   markingCategory: Overlay
-  speciesRestriction: [Moth]
+  speciesRestriction: [Moth, Chitinid] # Delta V - Chitinid
   coloring:
     default:
       type:

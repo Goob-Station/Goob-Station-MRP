@@ -2,6 +2,7 @@
   id: Human
   name: species-name-human
   roundStart: true
+  customName: true
   prototype: MobHuman
   sprites: MobHumanSprites
   defaultSkinTone: "#c0967f"

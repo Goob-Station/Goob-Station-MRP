@@ -25465,6 +25465,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: 30.5,6.5
       parent: 2
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 11188
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -28.5,-18.5
+      parent: 2
 - proto: ComputerRadar
   entities:
   - uid: 10761
@@ -57640,6 +57648,13 @@ entities:
     components:
     - type: Transform
       pos: -12.5,14.5
+      parent: 2
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 11187
+    components:
+    - type: Transform
+      pos: 46.5,-9.5
       parent: 2
 - proto: SpawnPointMailCarrier
   entities:

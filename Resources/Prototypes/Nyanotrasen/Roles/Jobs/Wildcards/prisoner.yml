@@ -10,19 +10,40 @@
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 21600
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - Shadowkin
+        - !type:CharacterTraitRequirement
+          traits:
+            - ShadowkinBlackeye
   special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Pacified
+  # - !type:AddComponentSpecial # Goobstation - remove PacifiedComponent from prisoners
+  #   components:
+  #     - type: Pacified
+  - !type:AddImplantSpecial # Goobstation - add tracking implant to prisoners
+    implants: [ TrackingImplant ]
 
 - type: startingGear
   id: PrisonerGear
+  subGear:
+  - PrisonerPlasmamanGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack
     id: PrisonerPDA
     ears: ClothingHeadsetPrison #deltaV
   innerClothingSkirt: ClothingUniformJumpsuitPrisoner
+
+- type: startingGear
+  id: PrisonerPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitPrisoner
+    head: ClothingHeadEnvirohelmPrisoner
+    gloves: ClothingHandsGlovesEnviroglovesBlack

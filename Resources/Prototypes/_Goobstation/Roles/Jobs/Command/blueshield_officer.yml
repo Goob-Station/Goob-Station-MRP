@@ -4,13 +4,13 @@
   description: "Act as a bodyguard and advisor for Command and CentCom VIPs."
   playTimeTracker: JobBlueshieldOfficer
   requirements:
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Command
       min: 54000 # 15 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 54000 # 15 hours
-    - !type:DepartmentTimeRequirement
+    - !type:CharacterDepartmentTimeRequirement
       department: Security
       min: 54000 # 15 hours
   weight: 20
@@ -29,6 +29,7 @@
   - Engineering
   - Medical
   - Research
+  - Cargo
   - Command
   - CentralCommand
   - BlueshieldOfficer
@@ -38,15 +39,22 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  afterLoadoutSpecial:
+  - !type:ModifyEnvirosuitSpecial
+    charges: 8
+  - !type:ModifyEnvirohelmSpecial
+    powerCell: PowerCellHigh
 
 - type: startingGear
   id: BlueshieldOfficerGear
+  subGear:
+  - BlueshieldPlasmamanGear
   equipment:
     back: ClothingBackpackBlueshield
     jumpsuit: ClothingUniformJumpsuitBlueshieldOfficer
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesMedSec
-    ears: ClothingHeadsetAltCommand
+    ears: ClothingHeadsetCentCom
     gloves: ClothingHandsGlovesCombat
     id: BlueshieldPDA
     pocket1: UniqueBlueshieldOfficerLockerTeleporter
@@ -56,3 +64,11 @@
     #belt: ClothingBeltSecurityFilled
     #pocket1: WeaponPistolMk58
     #pocket2: DeathAcidifierImplanter
+
+- type: startingGear
+  id: BlueshieldPlasmamanGear
+  parent: BasePlasmamanGear
+  equipment:
+    jumpsuit: ClothingUniformEnvirosuitBlueshield
+    head: ClothingHeadEnvirohelmBlueshield
+    gloves: ClothingHandsGlovesEnviroglovesBlack

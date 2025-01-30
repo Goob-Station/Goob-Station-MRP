@@ -44908,6 +44908,13 @@ entities:
     - type: Transform
       pos: -7.5,-39.5
       parent: 100
+- proto: ComputerPsionicsRecords
+  entities:
+  - uid: 20901
+    components:
+    - type: Transform
+      pos: -21.5,-6.5
+      parent: 100
 - proto: ComputerResearchAndDevelopment
   entities:
   - uid: 5793
@@ -110259,6 +110266,13 @@ entities:
     components:
     - type: Transform
       pos: 18.5,-9.5
+      parent: 100
+- proto: SpawnPointMagistrate
+  entities:
+  - uid: 20900
+    components:
+    - type: Transform
+      pos: -8.5,58.5
       parent: 100
 - proto: SpawnPointMailCarrier
   entities:

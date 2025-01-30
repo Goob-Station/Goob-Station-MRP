@@ -114,7 +114,11 @@
   id: TattooEyeRight
   bodyPart: Eyes
   markingCategory: Head
+<<<<<<< HEAD
   speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy] # Delta V - Felinid, Oni, Harpy
+=======
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Lamia, Plasmaman] # Delta V - Felinid, Oni, Harpy
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
@@ -128,7 +132,11 @@
   id: TattooEyeLeft
   bodyPart: Eyes
   markingCategory: Head
+<<<<<<< HEAD
   speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy] # Delta V - Felinid, Oni, Harpy
+=======
+  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Oni, Harpy, Lamia, Plasmaman] # Delta V - Felinid, Oni, Harpy
+>>>>>>> 4bad9289c72b28ec02f213346d9732de2a240a43
   coloring:
     default:
       type:
