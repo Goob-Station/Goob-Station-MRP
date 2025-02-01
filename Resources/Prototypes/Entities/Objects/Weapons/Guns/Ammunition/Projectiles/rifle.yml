@@ -49,9 +49,9 @@
   name: bullet (0.20 rifle uranium)
   categories: [ HideSpawnMenu ]
   components:
-  - type: Projectile # Goob Station MRP - ignore resistances
-    damage:
+  - type: Projectile
+    damage: # GS MRP - nerf damage from 15 to 10 total, and slant towards piercing
       types:
-        Radiation: 10
-        Piercing: 5
-    ignoreResistances: true
+        Radiation: 1.5
+        Piercing: 8.5
+    ignoreResistances: true # Goob Station MRP - ignore resistances
