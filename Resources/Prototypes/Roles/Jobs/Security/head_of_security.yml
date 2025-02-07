@@ -18,6 +18,15 @@
       min: 36000 # 10 hours
     - !type:CharacterOverallTimeRequirement
       min: 72000 # goob mrp - 20 hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
