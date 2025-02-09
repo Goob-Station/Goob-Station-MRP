@@ -10,6 +10,15 @@
     - !type:CharacterPlaytimeRequirement # DeltaV - JobDetective time requirement. Give them an understanding of basic forensics.
       tracker: JobDetective
       min: 14400 # DeltaV - 4 hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Muted
+        - Blindness
+        - Pacifist
+        - BrittleBoneDisease
     # - !type:CharacterWhitelistRequirement # Undo Starch's blatant deletion instead of comment
   startingGear: WardenGear
   icon: "JobIconWarden"

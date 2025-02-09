@@ -18,6 +18,11 @@
       min: 54000 # Goob MRP - 15 Hours (Should know Surgery now.)
     - !type:CharacterOverallTimeRequirement
       min: 72000 # DeltaV - 20 hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
   weight: 10
   startingGear: CMOGear
   icon: "JobIconChiefMedicalOfficer"

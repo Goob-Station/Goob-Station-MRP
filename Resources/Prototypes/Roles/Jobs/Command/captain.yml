@@ -24,6 +24,12 @@
       min: 72000 # Goob MRP - 20 Hours
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
       min: 108000 # Goob MRP - 30 Hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
+        - Pacifist
     # - !type:CharacterWhitelistRequirement # Undo Starch's blatant delete instead of commenting
   weight: 20
   startingGear: CaptainGear

@@ -5,9 +5,6 @@
   playTimeTracker: JobQuartermaster
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-  #  - !type:RoleTimeRequirement #DeltaV
-  #    role: JobCargoTechnician
-  #    time: 21600 #6 hrs
     - !type:CharacterPlaytimeRequirement
       tracker: JobSalvageSpecialist
       min: 10800 #3 hrs
@@ -19,6 +16,11 @@
       min: 36000 # Goob MRP - 10 Hours
     - !type:CharacterOverallTimeRequirement
       min: 108000 # Goob MRP - 30 Hours
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Foreigner
+        - ForeignerLight
   weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
