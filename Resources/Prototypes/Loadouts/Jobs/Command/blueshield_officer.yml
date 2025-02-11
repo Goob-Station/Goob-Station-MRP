@@ -77,7 +77,7 @@
       group: LoadoutBlueshieldOfficerPrimaries
     - !type:CharacterJobRequirement
       jobs:
-       - BlueshieldOfficer
+        - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
