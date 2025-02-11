@@ -883,10 +883,10 @@
         - type: PassiveDamage
           allowedStates:
            - Alive
-            - Critical
-              - Dead
-              damageCap: 200
-              damage:
-               groups:
-                Brute: -0.8
-                Burn: -0.8
+           - Critical
+           - Dead
+          damageCap: 200
+          damage:
+            groups:
+              Brute: -0.8
+              Burn: -0.8
