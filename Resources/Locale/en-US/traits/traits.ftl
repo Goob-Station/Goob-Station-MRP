@@ -288,6 +288,11 @@ trait-name-LightStep = Light Step
 trait-description-LightStep =
     You move with a gentle step, which makes your footsteps quieter.
 
+trait-name-Grippers = Grippers
+trait-description-Grippers =
+    I can't do this, I can't believe I am doing this. 
+    Your "Grippers" are so strong you can not be slipped, only works if you are unbounded.
+
 trait-name-Swashbuckler = Swashbuckler
 trait-description-Swashbuckler =
     You are an expert in swordsmanship, wielding swords, knives, and other blades with unrivaled finesse.
@@ -306,6 +311,10 @@ trait-description-WeaponsGeneralist =
 trait-name-PreciseStrikes = Precise Strikes
 trait-description-PreciseStrikes =
     When you attack, you aim for their weak point. Your melee damage bonus for all damage types becomes 10%.
+
+trait-name-PerfectAim = Perfect Aim
+trait-description-PerfectAim =
+    You never miss a shot. Your guns now have no spread, except for shotguns.
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
