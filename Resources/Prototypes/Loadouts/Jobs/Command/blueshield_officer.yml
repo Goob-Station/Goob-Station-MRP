@@ -79,7 +79,7 @@
       jobs:
       - BlueshieldOfficer
     - !type:CharacterAgeRequirement
-    min: 21
+      min: 21
   items:
     - WeaponLeverChester
 
