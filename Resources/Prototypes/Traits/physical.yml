@@ -868,25 +868,25 @@
   category: Physical
   points: -10
   requirements:
-  - !type:CharacterJobRequirement
-    inverted: true
-    jobs:
-      - Prisoner # Bionics should be "Confiscated" from long term prisoners.
-  - !type:CharacterSpeciesRequirement
-    species:
-      - IPC
-  - !type:CharacterItemGroupRequirement
-    group: TraitsMind
-functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
-  - !type:TraitReplaceComponent
-    components:
-      - type: PassiveDamage
-          allowedStates:
-         - Alive
-          - Critical
-            - Dead
-            damageCap: 200
-            damage:
-             groups:
-              Brute: -0.8
-              Burn: -0.8
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Prisoner # Bionics should be "Confiscated" from long term prisoners.
+    - !type:CharacterSpeciesRequirement
+      species:
+        - IPC
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMind
+  functions: # TODO: Code Platelet factories as an actual obtainable implant, and replace this with TraitAddImplant
+    - !type:TraitReplaceComponent
+      components:
+        - type: PassiveDamage
+            allowedStates:
+           - Alive
+            - Critical
+              - Dead
+              damageCap: 200
+              damage:
+               groups:
+                Brute: -0.8
+                Burn: -0.8
