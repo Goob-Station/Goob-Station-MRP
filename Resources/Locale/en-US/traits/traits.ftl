@@ -279,6 +279,11 @@ trait-description-SnailPaced =
     You walk at a snail's pace, perhaps due to a medical condition, mobility impairment, or age.
     Your movement speed is decreased by [color=yellow]32%[/color].
 
+trait-name-FleetFoot = Fleet Footed
+trait-description-Fleet =
+    You are faster than most and more agile on your feet.
+    Your movement speed is increased by [color=yellow]15%[/color].
+
 trait-name-LightStep = Light Step
 trait-description-LightStep =
     You move with a gentle step, which makes your footsteps quieter.
@@ -297,6 +302,10 @@ trait-name-WeaponsGeneralist = Weapons Generalist
 trait-description-WeaponsGeneralist =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 25%.
+
+trait-name-PreciseStrikes = Precise Strikes
+trait-description-PreciseStrikes =
+    When you attack, you aim for their weak point. Your melee damage bonus for all damage types becomes 10%.
 
 trait-name-Singer = Singer
 trait-description-Singer = You are naturally capable of singing simple melodies with your voice.
