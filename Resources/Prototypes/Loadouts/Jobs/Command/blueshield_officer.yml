@@ -73,12 +73,31 @@
   cost: 0
   canBeHeirloom: true
   requirements:
+  - !type:CharacterItemGroupRequirement
+  group: LoadoutBlueshieldOfficerPrimaries
+  - !type:CharacterJobRequirement
       jobs:
         - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
     - WeaponLeverChester
+
+    - type: loadout
+  id: LoadoutBSOEnergyShotgun
+  category: JobsCommandBlueshieldOfficer
+  cost: 0
+  canBeHeirloom: true
+  requirements:
+  - !type:CharacterItemGroupRequirement
+  group: LoadoutBlueshieldOfficerPrimaries
+  - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
+  items:
+    - WeaponEnergyShotgun
 
 # Eyes
 
