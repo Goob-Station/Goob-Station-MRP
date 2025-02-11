@@ -7,9 +7,15 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 3600 # goob mrp - 10 hours
+      min: 54000 # DeltaV - 15 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobForensicMantis
+      min: 18000 # 5 hours
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobLibrarian
+      min: 18000 # 5 hours
     - !type:CharacterOverallTimeRequirement
-      min: 3600 # goob mrp - 10 hours
+      min: 90000 # Goob MRP - 25 hours
     - !type:CharacterLogicOrRequirement
       requirements:
         - !type:CharacterSpeciesRequirement

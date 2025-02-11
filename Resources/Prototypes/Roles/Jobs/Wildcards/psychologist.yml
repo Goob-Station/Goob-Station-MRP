@@ -5,10 +5,10 @@
   playTimeTracker: JobPsychologist
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 7200 #goob mrp 2 hours
+      min: 18000 # Goob MRP - 5 Hours
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      min: 3600 #goob mrp 1 hrs
+      min: 7200 # Goob MRP - 2 Hours
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo

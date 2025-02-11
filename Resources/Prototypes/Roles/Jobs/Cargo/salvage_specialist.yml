@@ -7,7 +7,7 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 10800 #goob mrp 3 hrs
+      min: 21600 # Goob MRP - 6 Hours
   #  - !type:OverallPlaytimeRequirement #DeltaV
   #    time: 36000 #10 hrs
   icon: "JobIconShaftMiner"

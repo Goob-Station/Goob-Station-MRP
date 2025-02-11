@@ -6,30 +6,31 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Logistics # DeltaV - Logistics Department replacing Cargo
-      min: 10800 # goob mrp - 3 hours
+      min: 18000 # Goob MRP - 5 Hours
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
-      min: 10800 # goob mrp - 3 hours
+      min: 18000 # Goob MRP - 5 Hours
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      min: 10800 # goob mrp - 3 hours
+      min: 18000 # Goob MRP - 5 Hours
     - !type:CharacterDepartmentTimeRequirement
       department: Security
-      min: 10800 # goob mrp - 3 hours
+      min: 18000 # Goob MRP - 5 Hours
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Epistemics dept time requirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 10800 # goob mrp - 3 hours
+      min: 18000 # Goob MRP - 5 Hours
     - !type:CharacterDepartmentTimeRequirement
       department: Command
-      min: 54000 # 15 hours
+      min: 72000 # Goob MRP - 20 Hours
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-      min: 54000 # 15 hours
+      min: 108000 # Goob MRP - 30 Hours
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
         - Foreigner
         - ForeignerLight
         - Pacifist
+    # - !type:CharacterWhitelistRequirement # Undo Starch's blatant delete instead of commenting
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

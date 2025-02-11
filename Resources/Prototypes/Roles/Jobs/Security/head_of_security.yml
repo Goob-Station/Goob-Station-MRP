@@ -6,18 +6,18 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobWarden
-      min: 10800 #goob mrp 3 hrs
+      min: 18000 # Goob MRP - 5 Hours
   #  - !type:RoleTimeRequirement # DeltaV - No Security Officer time requirement - REIMPLEMENT WHEN MORE PEOPLE HAVE IT
   #    role: JobDetective
   #    time: 14400 #DeltaV 4 hrs
-    - !type:CharacterDepartmentTimeRequirement # goob mrp - Command dept time requirement
+    - !type:CharacterDepartmentTimeRequirement # Goob MRP - Command Dept Time Requirement
       department: Command
-      min: 7200 # 2 hours
-    - !type:CharacterDepartmentTimeRequirement # goob mrp - sec dept time requirement
+      min: 18000 # Goob MRP - 5 Hours
+    - !type:CharacterDepartmentTimeRequirement # Goob MRP - Command Dept Time Requirement
       department: Security
       min: 36000 # 10 hours
     - !type:CharacterOverallTimeRequirement
-      min: 72000 # goob mrp - 20 hours
+      min: 90000 # DeltaV - 25 hours
     - !type:CharacterTraitRequirement
       inverted: true
       traits:

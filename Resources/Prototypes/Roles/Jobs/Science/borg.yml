@@ -19,7 +19,7 @@
   playTimeTracker: JobBorg
   requirements:
     - !type:CharacterOverallTimeRequirement
-      min: 108000 #30 hrs - still making this 30 hours instead of something reasonable, silicon laws are really fucky - not for the new goober..
+      min: 108000 # Goob MRP - 30 Hours
   canBeAntag: false
   icon: JobIconBorg
   supervisors: job-supervisors-rd

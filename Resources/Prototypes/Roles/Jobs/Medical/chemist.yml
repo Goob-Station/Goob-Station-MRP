@@ -6,7 +6,7 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
-      min: 14400 # goob mrp - 4 hours
+      min: 21600 # Goob MRP - 6 Hours
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo

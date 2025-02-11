@@ -6,18 +6,18 @@
   requirements:
     - !type:CharacterPlaytimeRequirement
       tracker: JobChef
-      min: 3600 # goob mrp - 1 hour
+      min: 7200 # Goob MRP - 2 Hours
     - !type:CharacterPlaytimeRequirement
       tracker: JobBartender
-      min: 3600 # goob mrp - 1 hour
+      min: 7200 # Goob MRP - 2 Hours
     - !type:CharacterPlaytimeRequirement
       tracker: JobJanitor
-      min: 3600 # goob mrp - 1 hour
+      min: 7200 # Goob MRP - 2 Hours
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Civilian dept time requirement
       department: Civilian
-      min: 36000 # 10 hours
+      min: 36000 # Goob MRP - 10 Hours
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
-      min: 36000 # 10 hours
+      min: 72000 # Goob MRP - 20 Hours
     - !type:CharacterTraitRequirement
       inverted: true
       traits:
