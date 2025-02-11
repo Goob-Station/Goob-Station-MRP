@@ -130,3 +130,14 @@ Entries:
   id: 16
   time: '2025-02-11T04:01:31.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/63
+- author: NT Munitions Testing
+  changes:
+    - type: Tweak
+      message: >-
+        Uranium munitions have been nerfed, and are more weighted towards
+        piercing damage.
+    - type: Remove
+      message: Removed "fun".
+  id: 17
+  time: '2025-02-11T04:01:57.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/75
