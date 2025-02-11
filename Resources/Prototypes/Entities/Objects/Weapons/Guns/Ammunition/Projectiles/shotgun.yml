@@ -214,8 +214,8 @@
   - type: Projectile # Goob Station - ignore resistances
     damage:
       types:
-        Radiation: 5
-        Piercing: 2.5
+        Radiation: 2.5
+        Piercing: 5
     ignoreResistances: true
 
 - type: entity

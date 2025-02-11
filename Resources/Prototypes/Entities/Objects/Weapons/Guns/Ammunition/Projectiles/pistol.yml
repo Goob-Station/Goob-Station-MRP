@@ -52,6 +52,6 @@
   - type: Projectile # Goob Station - ignore resistances
     damage:
       types:
-        Radiation: 5
-        Piercing: 10
+        Radiation: 2.5 # maybe these shouldn't do 15 total as .35 auto - Ducks
+        Piercing: 5
     ignoreResistances: true

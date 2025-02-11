@@ -47,12 +47,12 @@
 - type: entity
   id: BulletLightRifleUranium
   parent: BaseBulletUranium
-  name: bullet (.20 rifle uranium)
+  name: bullet (.30 rifle uranium)
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
-    damage:
+    damage: # hii durkkkkk
       types:
-        Radiation: 10
-        Piercing: 5
+        Radiation: 1.5
+        Piercing: 8.5
     ignoreResistances: true # Goob Station MRP - ignore resistances
