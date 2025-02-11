@@ -133,8 +133,6 @@
       id: LoadoutSecurityPistolEnergyRevolver
     - type: loadout
       id: LoadoutBSOEnergyRevolver
-    - type: loadout
-      id: LoadoutBSORifleChester
 
 - type: characterItemGroup
   id: LoadoutSecurityEyes
