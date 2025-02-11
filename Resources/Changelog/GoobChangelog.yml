@@ -113,3 +113,20 @@ Entries:
   id: 15
   time: '2025-01-27T19:48:36.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/69
+- author: CerberusWolfie
+  changes:
+    - type: Add
+      message: Added more requirements for Mystagogue.
+    - type: Tweak
+      message: >-
+        Changed the time requirements to their originals and change some for
+        Goob MRP.
+    - type: Fix
+      message: >-
+        Fixed Mystagogue time requirements (part of the tweak) because they were
+        _**way too low**_.
+    - type: Fix
+      message: Fixed Prison Guard not having requirements?!
+  id: 16
+  time: '2025-02-11T04:01:31.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/63
