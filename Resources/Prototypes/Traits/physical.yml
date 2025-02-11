@@ -881,7 +881,7 @@
     - !type:TraitReplaceComponent
       components:
         - type: PassiveDamage
-            allowedStates:
+          allowedStates:
            - Alive
             - Critical
               - Dead
