@@ -310,7 +310,7 @@ trait-description-WeaponsGeneralist =
 
 trait-name-PreciseStrikes = Precise Strikes
 trait-description-PreciseStrikes =
-    When you attack, you aim for their weak point. Your melee damage bonus for all damage types becomes 10%.
+    When you attack, you aim for their weak point. Your melee damage bonus for all damage types becomes 15%.
 
 trait-name-PerfectAim = Perfect Aim
 trait-description-PerfectAim =
