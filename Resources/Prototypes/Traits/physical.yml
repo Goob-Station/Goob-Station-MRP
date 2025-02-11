@@ -317,6 +317,29 @@
       # effectively means 50% more overall DPS, same DPS bonus as before (1 * 1.25 * 1.2 = 1.5)
       # but the extra attack rate makes it visually apparent that it's Martial Artist.
 
+
+- type: trait
+  id: PreciseStrikes
+  category: Physical
+  points: -3
+  functions: 
+    - !type:TraitReplaceComponent
+      components:
+      - type: PresciseStrikesDamageModifier
+        modifiers:
+            coefficients:
+              Blunt: 1.15
+              Slash: 1.15
+              Piercing: 1.15
+              Heat: 1.15
+              Poison: 1.15
+              Asphyxiation: 1.15
+              Radiation: 1.15
+              Cold: 1.15
+              # More Damages added in later, when melee have those damage types
+
+
+
 - type: trait
   id: Small
   category: Physical
