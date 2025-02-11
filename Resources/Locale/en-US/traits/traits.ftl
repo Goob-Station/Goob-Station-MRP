@@ -449,11 +449,20 @@ trait-description-BionicArm =
     One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
     or a more obvious metal limb. This limb provides enhanced strength to its user, allowing one to pry open barriers with their bare hands.
 
+trait-name-BionicLeg = Bionic Leg
+trait-description-BionicLeg =
+    One or more of your limbs have been replaced with an expensive, state of the art bionic. It could be either one made of highly realistic synthflesh,
+    or a more obvious metal limb. This limb provides enhanced speed to its user, allowing one faster walking and running speed.
+
 trait-name-PlateletFactories = Platelet Factories
 trait-description-PlateletFactories =
     Your body has been augmented with a series of biotailored organs that enhance the owner's long term survivability. These organs will attempt
     to keep the user alive, even in the face of advanced trauma, all the way up until - but not including - death.
     Your natural healing is no longer capped, and will now slowly heal any damage type. This includes more exotic injuries like radiation exposure, or cancer.
+
+trait-name-NaniteAutoRepairBots = Nanite Auto-Repair Bots
+trait-description-NaniteAutoRepairBots =
+    Your chassis has been outfitted with Nanite Repair Drones. Whenever your sensors detect that you've received structural damage, the drones will activate to bring you back to operational standards.
 
 trait-name-DermalArmor = Dermal Armor
 trait-description-DermalArmor =
