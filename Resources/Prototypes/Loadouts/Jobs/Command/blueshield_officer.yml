@@ -55,13 +55,13 @@
   guideEntry: SecurityWeapons
   requirements:
     - !type:CharacterItemGroupRequirement
-      group: LoadoutSecurityWeapons
+    group: LoadoutSecurityWeapons
     - !type:CharacterDepartmentTimeRequirement
-      department: Security
-      min: 18000 # 5 hours
+    department: Security
+    min: 18000 # 5 hours
     - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
+    jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
@@ -73,13 +73,13 @@
   cost: 0
   canBeHeirloom: true
   requirements:
-  - !type:CharacterItemGroupRequirement
-  group: LoadoutBlueshieldOfficerPrimaries
-  - !type:CharacterJobRequirement
-      jobs:
-        - BlueshieldOfficer
+    - !type:CharacterItemGroupRequirement
+    group: LoadoutBlueshieldOfficerPrimaries
+    - !type:CharacterJobRequirement
+    jobs:
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
-      min: 21
+    min: 21
   items:
     - WeaponLeverChester
 
@@ -89,11 +89,11 @@
   cost: 0
   canBeHeirloom: true
   requirements:
-  - !type:CharacterItemGroupRequirement
-  group: LoadoutBlueshieldOfficerPrimaries
-  - !type:CharacterJobRequirement
+    - !type:CharacterItemGroupRequirement
+    group: LoadoutBlueshieldOfficerPrimaries
+    - !type:CharacterJobRequirement
       jobs:
-        - BlueshieldOfficer
+          - BlueshieldOfficer
     - !type:CharacterAgeRequirement
       min: 21
   items:
