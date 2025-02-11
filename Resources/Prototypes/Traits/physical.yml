@@ -321,24 +321,48 @@
 - type: trait
   id: PreciseStrikes
   category: Physical
-  points: -3
+  points: -2
+  requirements:
+  - !type:CharacterSpeciesRequirement
+    inverted: true
+    species:
+      - Oni
   functions: 
     - !type:TraitReplaceComponent
       components:
-      - type: PresciseStrikesDamageModifier
+      - type: OniDamageModifier #Placeholder Until I find the Id for melee damage
         modifiers:
             coefficients:
-              Blunt: 1.15
-              Slash: 1.15
-              Piercing: 1.15
-              Heat: 1.15
-              Poison: 1.15
-              Asphyxiation: 1.15
-              Radiation: 1.15
-              Cold: 1.15
+              Blunt: 1.1
+              Slash: 1.1
+              Piercing: 1.1
+              Heat: 1.1
+              Poison: 1.1
+              Asphyxiation: 1.1
+              Radiation: 1.1
+              Cold: 1.1
               # More Damages added in later, when melee have those damage types
 
 
+
+
+- type: trait
+  id: FleetFoot
+  category: Physical
+  points: -8
+  requirements:
+    - !type:CharacterTraitRequirement
+      inverted: true
+      traits:
+        - Sluggish
+        - SnailPaced
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: TraitSpeedModifier
+          sprintModifier: 1.15
+          walkModifier: 1.15
+          requiredTriggeredSpeedModifier: 1.15 #Will Only Slip When Sprinting, hopefully
 
 - type: trait
   id: Small
