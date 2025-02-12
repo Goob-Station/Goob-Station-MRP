@@ -330,7 +330,7 @@
   functions: 
     - !type:TraitReplaceComponent
       components:
-      - type: OniDamageModifier #Placeholder Until I find the Id for melee damage
+      - type: DamageModifier #Placeholder Until I find the Id for melee damage(I think I found it!)
         modifiers:
             coefficients:
               Blunt: 1.15
@@ -342,8 +342,6 @@
               Radiation: 1.15
               Cold: 1.15
               # More Damages added in later, when melee have those damage types
-
-
 
 
 - type: trait
@@ -362,7 +360,8 @@
         - type: TraitSpeedModifier
           sprintModifier: 1.15
           walkModifier: 1.15
-          requiredTriggeredSpeedModifier: 1.15 #Will Only Slip When Sprinting, hopefully
+          requiredTriggeredSpeedModifier: 1.15
+          #Will Only Slip When Sprinting, hopefully
 
 - type: trait
   id: Small
