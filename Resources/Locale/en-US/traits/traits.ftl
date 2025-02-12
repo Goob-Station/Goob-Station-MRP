@@ -280,7 +280,7 @@ trait-description-SnailPaced =
     Your movement speed is decreased by [color=yellow]32%[/color].
 
 trait-name-FleetFoot = Fleet Footed
-trait-description-Fleet =
+trait-description-FleetFoot=
     You are faster than most and more agile on your feet.
     Your movement speed is increased by [color=yellow]15%[/color].
 
