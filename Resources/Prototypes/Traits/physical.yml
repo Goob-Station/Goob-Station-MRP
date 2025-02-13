@@ -354,12 +354,14 @@
       traits:
         - Sluggish
         - SnailPaced
-    - !type:CharacterSpeciesRequirement
-      inverted: true
-      species:
-        - Felinid # They already have speed in their base stats, cant let them get to 1.35 base speed can we?
-        - Tajaran
-        - Diona # Doesn't make sense for the tree people to be fast, plus the added speed basically means they have base speed and no slip.
+        #Currently Disabled Species idea, so if we need to nerf it, I already have a solution to prevent speedy races going rapant 
+    #- !type:CharacterSpeciesRequirement
+      #inverted: true
+      #species:
+        #- Felinid # They already have speed in their base stats, cant let them get to 1.35 base speed can we?
+        #- Tajaran
+        #- Diona # Doesn't make sense for the tree people to be fast, plus the added speed basically means they have base speed and no slip.
+        #- Harpy # They also have a base speed increase
   functions:
     - !type:TraitAddComponent
       components:
