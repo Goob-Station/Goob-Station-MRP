@@ -141,3 +141,10 @@ Entries:
   id: 17
   time: '2025-02-11T04:01:57.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/75
+- author: Skubman
+  changes:
+    - type: Remove
+      message: The AAC tablet has been removed pending rework™.
+  id: 18
+  time: '2025-02-14T17:21:37.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/86
