@@ -148,3 +148,16 @@ Entries:
   id: 18
   time: '2025-02-14T17:21:37.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/86
+- author: EctoplasmIsGood
+  changes:
+    - type: Add
+      message: Added new BSO primary item group
+    - type: Add
+      message: Added Energy Shotgun to BSO loadout (as a primary)
+    - type: Tweak
+      message: >-
+        Removed chester from sec weapons item group, in favor of the new BSO
+        primary item group.
+  id: 19
+  time: '2025-02-14T21:37:20.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/80
