@@ -47,3 +47,12 @@
       id: LoadoutClothingBlueshieldBeretOfficer
     - type: loadout
       id: LoadoutClothingBlueshieldCowboyHat
+
+- type: characterItemGroup
+  id: LoadoutBlueshieldOfficerPrimaries
+  maxItems: 1
+  items:
+    - type: loadout
+      id: LoadoutBSORifleChester
+    - type: loadout
+      id: LoadoutBSOEnergyShotgun
