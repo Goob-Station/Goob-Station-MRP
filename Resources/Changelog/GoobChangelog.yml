@@ -168,3 +168,12 @@ Entries:
   id: 20
   time: '2025-02-14T21:51:25.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/78
+- author: Aidenkrz
+  changes:
+    - type: Tweak
+      message: >-
+        BSO's SoP is updated to allow them to use lethals while protecting
+        members of command.
+  id: 21
+  time: '2025-02-14T21:55:48.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/87
