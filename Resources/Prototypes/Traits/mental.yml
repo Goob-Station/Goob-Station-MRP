@@ -310,6 +310,43 @@
       psionicPowers:
         - DispelPower
 
+
+- type: trait
+  id: LesserHealingPower
+  category: Mental
+  points: -8
+  requirements:
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterTraitRequirement
+          traits:
+            - LatentPsychic
+        - !type:CharacterJobRequirement
+          jobs:
+            - Chaplain
+            - Librarian
+            - ForensicMantis
+    - !type:CharacterLogicOrRequirement
+      requirements:
+        - !type:CharacterSpeciesRequirement
+          inverted: true
+          species:
+            - IPC
+        - !type:CharacterTraitRequirement
+          traits:
+            - AnomalousPositronics
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - ResearchDirector
+    - !type:CharacterItemGroupRequirement
+      group: TraitsMachine
+  functions:
+    - !type:TraitAddPsionics
+      psionicPowers:
+        - HealingWordPower
+
+
 - type: trait
   id: MetapsionicPower
   category: Mental
