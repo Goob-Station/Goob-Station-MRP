@@ -312,7 +312,7 @@
 
 
 - type: trait
-  id: LesserHealingPower
+  id: HealingWordPower
   category: Mental
   points: -8
   requirements:
