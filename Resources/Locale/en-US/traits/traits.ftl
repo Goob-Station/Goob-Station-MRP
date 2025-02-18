@@ -496,8 +496,8 @@ trait-description-DispelPower =
     This power, commonly known as "Dispel", allows the user to destroy otherworldly entities with their mind,
     or to immediately end psychic effects.
 
-trait-name-LesserHealingPower = Mending Touch
-trait-description-LesserHealingPower =
+trait-name-HealingWordPower = Mending Touch
+trait-description-HealingWordPower =
     Your Mentalic abilities allows you to be able to heal creatures slightly with a power know as "Lesser Healing Word"
 
 trait-name-MetapsionicPower = Metapsion
