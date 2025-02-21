@@ -100,17 +100,6 @@
       id: LoadoutClothingUniformJumpsuitBlueshieldOfficer
 
 - type: characterItemGroup
-  id: LoadoutBlueshieldOfficerHats
-  maxItems: 1
-  items:
-    - type: loadout
-      id: LoadoutClothingBlueshieldBeretNavy
-    - type: loadout
-      id: LoadoutClothingBlueshieldBeretOfficer
-    - type: loadout
-      id: LoadoutClothingBlueshieldCowboyHat
-
-- type: characterItemGroup
   id: LoadoutBlueshieldOfficerPrimaries
   maxItems: 1
   items:
