@@ -3,7 +3,6 @@
   name: job-name-technical-assistant
   description: job-description-technical-assistant
   playTimeTracker: JobTechnicalAssistant
-  antagAdvantage: 3 # DeltaV - Reduced TC: External Access + Engineering
   requirements:
   - !type:CharacterOverallTimeRequirement # DeltaV - to prevent griefers from taking the role.
       min: 7200 # Goob MRP - 2 Hours (Prevent Raiders and ensure gameplay.)
