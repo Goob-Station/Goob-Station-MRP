@@ -37,12 +37,6 @@ public class GuideEntry
     [DataField] public bool RuleEntry;
 
     /// <summary>
-    ///     This enables the ability to remove a rule entry from the guidebook.
-    ///     When enabled in the yml guide entry, it will remove the guide entry from the guidebook.
-    /// </summary>
-    [DataField] public bool RuleEntry;
-
-    /// <summary>
     ///     Priority for sorting top-level guides when shown in a tree / table of contents.
     ///     If the guide is the child of some other guide, the order simply determined by the order of children in <see cref="Children"/>.
     /// </summary>
