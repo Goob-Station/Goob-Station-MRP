@@ -177,3 +177,10 @@ Entries:
   id: 21
   time: '2025-02-14T21:55:48.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/87
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: More Blueshield SOP tweaks
+  id: 22
+  time: '2025-02-23T21:36:40.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/91

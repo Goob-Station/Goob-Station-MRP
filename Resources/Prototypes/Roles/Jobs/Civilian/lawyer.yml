@@ -3,7 +3,6 @@
   name: job-name-lawyer
   description: job-description-lawyer
   playTimeTracker: JobLawyer
-  antagAdvantage: 2 # DeltaV - Reduced TC: Security Radio and Access
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 18000 # 5 hrs
