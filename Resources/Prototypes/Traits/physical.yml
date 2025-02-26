@@ -572,11 +572,11 @@
           damageCap: 200
           damage:
             groups:
-              Brute: -0.6
-              Burn: -0.6
-              Airloss: -0.6
-              Toxin: -0.6
-              Genetic: -0.6
+              Brute: -0.3
+              Burn: -0.3
+              Airloss: -0.3
+              Toxin: -0.3
+              Genetic: -0.3
 
 - type: trait
   id: DermalArmor
