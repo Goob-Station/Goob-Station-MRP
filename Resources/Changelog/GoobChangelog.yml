@@ -184,3 +184,10 @@ Entries:
   id: 22
   time: '2025-02-23T21:36:40.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/91
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: BSO Eshotgun has proper requirements again
+  id: 23
+  time: '2025-02-26T00:51:01.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/94
