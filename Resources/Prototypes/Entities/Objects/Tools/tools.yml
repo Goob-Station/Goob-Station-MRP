@@ -617,6 +617,7 @@
   components:
   - type: LimitedCharges
     charges: 0
+  - type: RCD
     availablePrototypes:
     - PipeFourway
     - PipeStraight
