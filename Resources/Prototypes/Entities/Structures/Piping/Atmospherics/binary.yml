@@ -375,7 +375,7 @@
   - type: PipeColorVisuals
   - type: Rotatable
   - type: GasRecycler
-  - type: PipeRestrictOverlap
+  #- type: PipeRestrictOverlap # Allow pipe stacking
   - type: NodeContainer
     nodes:
       inlet:
