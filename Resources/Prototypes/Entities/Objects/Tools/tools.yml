@@ -551,6 +551,9 @@
   components:
   - type: RCD
     isRpd: true
+  - type: Tag
+    tags:
+      - RPD
     availablePrototypes:
     - PipeFourway
     - PipeStraight
@@ -618,6 +621,9 @@
   - type: LimitedCharges
     charges: 0
   - type: RCD
+  - type: Tag
+    tags:
+      - RPD
     availablePrototypes:
     - PipeFourway
     - PipeStraight
