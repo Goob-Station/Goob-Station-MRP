@@ -549,11 +549,11 @@
   name: RPD
   description: A device used to rapidly pipe things.
   components:
-  - type: RCD
-    isRpd: true
   - type: Tag
     tags:
       - RPD
+  - type: RCD
+    isRpd: true
     availablePrototypes:
     - PipeFourway
     - PipeStraight
@@ -620,10 +620,11 @@
   components:
   - type: LimitedCharges
     charges: 0
-  - type: RCD
   - type: Tag
     tags:
       - RPD
+  - type: RCD
+    isRpd: true
     availablePrototypes:
     - PipeFourway
     - PipeStraight
