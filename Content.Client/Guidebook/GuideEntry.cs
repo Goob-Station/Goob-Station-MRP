@@ -34,10 +34,6 @@ public class GuideEntry
     /// </summary>
     [DataField("filterEnabled")] public bool FilterEnabled = default!;
 
-    /// <summary>
-    ///     This enables the ability to remove a rule entry from the guidebook.
-    ///     When enabled in the yml guide entry, it will remove the guide entry from the guidebook.
-    /// </summary>
     [DataField] public bool RuleEntry;
 
     /// <summary>
