@@ -16,6 +16,7 @@
   <GuideEntityEmbed Entity="MobShadowkinDummy" Caption="Shadowkin"/>
   <GuideEntityEmbed Entity="MobChitinid" Caption="Chitinid"/>
   <GuideEntityEmbed Entity="MobThaven" Caption="Thaven"/>
+  <GuideEntityEmbed Entity="MobResomi" Caption="Resomi"/>
   </Box>
 
   # Parkstation specific species

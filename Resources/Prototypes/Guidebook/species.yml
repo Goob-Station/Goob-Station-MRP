@@ -15,9 +15,10 @@
     - Shadowkin
     - Plasmaman
     - Chitinid
-    - Tajaran 
+    - Tajaran
     # ImpStation additions
     - Thaven
+    - Resomi # Goob
 
 - type: guideEntry
   id: Arachnid
@@ -78,3 +79,8 @@
   id: Plasmaman
   name: species-name-plasmaman
   text: "/ServerInfo/Guidebook/Mobs/Plasmaman.xml"
+
+- type: guideEntry
+  id: Resomi
+  name: species-name-resomi
+  text: "/ServerInfo/Guidebook/Mobs/Resomi.xml"
