@@ -52,6 +52,6 @@
   - type: Projectile
     damage: # GS MRP - nerf damage from 15 to 10 total, and slant towards piercing
       types:
-        Radiation: 1.5
-        Piercing: 8.5
+        Radiation: 7
+        Piercing: 12
     ignoreResistances: true # Goob Station MRP - ignore resistances
