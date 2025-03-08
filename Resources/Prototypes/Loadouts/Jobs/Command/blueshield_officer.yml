@@ -84,7 +84,7 @@
     - BlueShieldShield
 
 - type: loadout
-  id: LoadoutBSOmace
+  id: LoadoutBSOMace
   category: JobsCommandBlueshieldOfficer
   cost: 0
   canBeHeirloom: true
