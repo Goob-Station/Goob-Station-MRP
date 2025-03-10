@@ -6,7 +6,7 @@ using Content.Shared.Database;
 
 namespace Content.Server._Goobstation.Administration.FuckYou;
 
-public sealed class AntiJohnStation
+public sealed class FuckYou
 {
     [Dependency] private readonly IBanManager _banManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
