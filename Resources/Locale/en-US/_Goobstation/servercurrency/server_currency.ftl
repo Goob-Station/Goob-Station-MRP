@@ -1,5 +1,5 @@
-server-currency-name-singular = Newton
-server-currency-name-plural = Newtons
+server-currency-name-singular = Goobloons
+server-currency-name-plural = Goobloons
 
 ## Commands
 
