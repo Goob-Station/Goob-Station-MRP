@@ -14,6 +14,7 @@ using System.Text;
 using Robust.Server.Player;
 using Robust.Shared.Utility;
 using Content.Server._Goobstation.ServerCurrency;
+using Content.Shared.Roles.Jobs;
 using Robust.Shared.Player;
 
 namespace Content.Server.Objectives;
