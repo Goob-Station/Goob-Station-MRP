@@ -1,5 +1,5 @@
-server-currency-name-singular = Goob Coin
-server-currency-name-plural = Goob Coins
+server-currency-name-singular = Newton
+server-currency-name-plural = Newtons
 
 ## Commands
 
