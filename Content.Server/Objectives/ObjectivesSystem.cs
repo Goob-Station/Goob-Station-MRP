@@ -14,7 +14,6 @@ using System.Text;
 using Robust.Server.Player;
 using Robust.Shared.Utility;
 using Content.Server._Goobstation.ServerCurrency;
-using Content.Shared.Roles.Jobs;
 using Robust.Shared.Player;
 
 namespace Content.Server.Objectives;
@@ -26,10 +25,7 @@ public sealed class ObjectivesSystem : SharedObjectivesSystem
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
-    [Dependency] private readonly SharedJobSystem _job = default!;
     [Dependency] private readonly ServerCurrencyManager _currencyMan = default!;
-
-    private IEnumerable<string>? _objectives;
 
     public override void Initialize()
     {
