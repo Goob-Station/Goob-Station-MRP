@@ -6,3 +6,14 @@
   sprites:
     - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
       state: robotic
+
+- type: marking
+  id: WingsRoboticWhite
+  bodyPart: Wings
+  markingCategory: Wings
+  speciesRestriction: [IPC]
+  sprites:
+    - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+      state: robotic_white_0
+    - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
+      state: robotic_white_1
