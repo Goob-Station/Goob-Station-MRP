@@ -1,3 +1,4 @@
+using Content.Server._Goobstation.ServerCurrency;
 using Content.Server.Acz;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
@@ -49,6 +50,8 @@ namespace Content.Server.Entry
         private PlayTimeTrackingManager? _playTimeTracking;
         private IEntitySystemManager? _sysMan;
         private IServerDbManager? _dbManager;
+
+        private ServerCurrencyManager? _currencyManager; // Goobstation
 
         /// <inheritdoc />
         public override void Init()
@@ -117,6 +120,8 @@ namespace Content.Server.Entry
                 _playTimeTracking.Initialize();
                 IoCManager.Resolve<JobWhitelistManager>().Initialize();
                 IoCManager.Resolve<PlayerRateLimitManager>().Initialize();
+                _currencyManager = IoCManager.Resolve<ServerCurrencyManager>(); // Goobstation
+                _currencyManager.Initialize(); // Goobstation
             }
         }
 
@@ -171,12 +176,14 @@ namespace Content.Server.Entry
                 case ModUpdateLevel.FramePostEngine:
                     _updateManager.Update();
                     _playTimeTracking?.Update();
+                    _currencyManager?.Update(); // Goobstation
                     break;
             }
         }
 
         protected override void Dispose(bool disposing)
         {
+            _currencyManager?.Shutdown(); // Goobstation
             _playTimeTracking?.Shutdown();
             _dbManager?.Shutdown();
             IoCManager.Resolve<ServerApi>().Shutdown();

@@ -26,6 +26,8 @@ using Content.Shared.Administration.Managers;
 using Content.Shared.Chat;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Players.RateLimiting;
+using Content.Client._Goobstation.ServerCurrency; // Goob Station - Goob Coin
+
 namespace Content.Client.IoC
 {
     internal static class ClientContentIoC
@@ -62,6 +64,7 @@ namespace Content.Client.IoC
             collection.Register<NanoChatSystem>();
             collection.Register<MappingManager>();
             collection.Register<DebugMonitorManager>();
+            collection.Register<ServerCurrencySystem>(); // Goob Station - Goob Coin
         }
     }
 }

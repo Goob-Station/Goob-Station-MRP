@@ -15,6 +15,7 @@ using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using Content.Server.Antag.Components;
 using Content.Server.Traits; // Einstein Engines
+using Content.Shared.Mind;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Players;
 using Content.Shared.Roles.Jobs; // Einstein Engines - use JobComponent

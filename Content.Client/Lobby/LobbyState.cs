@@ -11,6 +11,7 @@ using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Timing;
+using Content.Client._Goobstation.ServerCurrency; // Goobstation - Goob Coin
 
 namespace Content.Client.Lobby
 {
@@ -23,6 +24,7 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
+        [Dependency] private readonly ServerCurrencySystem _serverCur = default!; // Goobstation - Goob Coin
 
         private ISawmill _sawmill = default!;
         private ClientGameTicker _gameTicker = default!;
@@ -59,6 +61,9 @@ namespace Content.Client.Lobby
             _gameTicker.InfoBlobUpdated += UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated += LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated += LobbyLateJoinStatusUpdated;
+
+            _serverCur.BalanceChange += UpdatePlayerBalance; // Goobstation - Goob Coin
+
         }
 
         protected override void Shutdown()
@@ -69,6 +74,7 @@ namespace Content.Client.Lobby
             _gameTicker.LobbyStatusUpdated -= LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated -= LobbyLateJoinStatusUpdated;
             _contentAudioSystem.LobbySoundtrackChanged -= UpdateLobbySoundtrackInfo;
+            _serverCur.BalanceChange -= UpdatePlayerBalance; // Goobstation - Goob Coin
 
             _voteManager.ClearPopupContainer();
 
@@ -170,7 +176,11 @@ namespace Content.Client.Lobby
             }
 
             if (_gameTicker.ServerInfoBlob != null)
+            {
                 Lobby!.ServerInfo.SetInfoBlob(_gameTicker.ServerInfoBlob);
+            }
+
+            UpdatePlayerBalance(); // Goobstation - Goob Coin
         }
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)
@@ -234,6 +244,11 @@ namespace Content.Client.Lobby
                 return;
 
             _consoleHost.ExecuteCommand($"toggleready {newReady}");
+        }
+
+        private void UpdatePlayerBalance() // Goobstation - Goob Coin
+        {
+            Lobby!.Balance.Text = _serverCur.Stringify(_serverCur.GetBalance());
         }
     }
 }
