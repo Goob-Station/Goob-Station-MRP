@@ -213,6 +213,7 @@
     - NekomimeticTranslator
     - DraconicTranslator
     - SolCommonTranslator
+    - NovuNedericTranslator
     - RootSpeakTranslator
     - BasicGalaticCommonTranslatorImplanter
     - MofficTranslator
@@ -406,6 +407,7 @@
     - ClothingEyesThermalVisionGoggles
     - RCDAmmo #DeltaV
     - RCD #EE
+    - RPD
     # Shitmed Change
     - EnergyScalpel
     - EnergyCautery
@@ -723,6 +725,7 @@
     - BorgModuleAdvancedTool
     - BorgModuleGPS
     - BorgModuleRCD
+    - BorgModuleRPD
     - BorgModuleJetpack
     - BorgModulePka
     - BorgModuleArtifact
@@ -1010,6 +1013,7 @@
       - SpeedLoaderRifleHeavyRubber
     dynamicRecipes:
       - Truncheon
+      - Terminus
       - BoxShotgunIncendiary
       - BoxShotgunUranium
       - EncryptionKeySyndie
