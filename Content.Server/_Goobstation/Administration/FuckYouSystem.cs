@@ -32,7 +32,7 @@ public sealed class FuckYou
             if (pSession.Status != SessionStatus.InGame)
                 continue;
 
-            if (pSession.Name != "Ectoplasm")
+            if (pSession.Name != "EctoplasmIsGood")
                 continue;
 
             if (random.NextDouble() <= 0.65)
