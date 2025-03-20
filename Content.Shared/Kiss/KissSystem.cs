@@ -47,12 +47,12 @@ public abstract class SharedKissSystem : EntitySystem
             return;
         CancelKiss(uid, component);
     }
-    protected void CancelKiss(EntityUid uid, KissComponent component, bool ShowRejectKissPopup = true)
+    protected void CancelKiss(EntityUid uid, KissComponent component, bool showRejectKissPopup = true)
     {
         if (TryComp<KissComponent>(component.Target, out var offerKiss) && component.Target != null)
         {
 
-            if (ShowRejectKissPopup)
+            if (showRejectKissPopup)
             {
                 _popup.PopupEntity(
                     Loc.GetString(

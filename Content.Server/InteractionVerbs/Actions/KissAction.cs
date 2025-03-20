@@ -3,7 +3,7 @@ using Content.Shared.Kiss;
 
 namespace Content.Server.InteractionVerbs.Actions;
 
-public partial class KissAction : InteractionAction
+public sealed partial class KissAction : InteractionAction
 {
     public override bool CanPerform(
         InteractionArgs args,

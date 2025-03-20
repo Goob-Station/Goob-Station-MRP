@@ -42,7 +42,7 @@ public sealed partial class KissComponent : Component
 
     // This is just to show the heart effects when kissed.
     [DataField]
-    public ProtoId<MoodEffectPrototype> Effect = "EffectHearts";
+    public string Effect = "EffectHearts";
 
     [DataField]
     public ProtoId<MoodEffectPrototype> MoodEffect = "BeingKissed";

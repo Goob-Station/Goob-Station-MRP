@@ -1,4 +1,3 @@
-using Content.Server.Mood;
 using Content.Server.Popups;
 using Content.Shared.Alert;
 using Content.Shared.Kiss;
@@ -79,9 +78,9 @@ public sealed class KissSystem : SharedKissSystem
 
         // Show the heart effect.
         Spawn(component.Effect, _transform.GetMapCoordinates(uid));
-        Spawn(component.Effect, _transform.GetMapCoordinates(component.Target.Value));
+        Spawn(offerKiss.Effect, _transform.GetMapCoordinates(component.Target.Value));
 
-        // Once everything is done, we reset everything back to normal. The ShowPopup value is just to hide
+        // Once everything is done, we reset everything back to normal. The showRejectKissPopup value is just to hide
         // the rejected kiss popup, so they don't overlap with the popups above.
         CancelKiss(uid, component, false);
     }
