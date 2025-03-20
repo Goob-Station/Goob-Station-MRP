@@ -62,3 +62,10 @@
   id: PlasmamanIngestPlasma
   moodChange: 14
   timeout: 60
+
+- type: moodEffect
+  id: BeingKissed
+  moodChange: 32
+  timeout: 240
+  category: PositiveInteraction
+  

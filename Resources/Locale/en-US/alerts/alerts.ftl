@@ -122,3 +122,6 @@ alerts-offer-desc = Someone offers you an item.
 
 alerts-deflecting-name = Deflecting
 alerts-deflecting-desc = You have a chance to deflect incoming projectiles. Standing still or moving slowly will increase this chance.
+
+alerts-kiss-name = Kiss
+alerts-kiss-desc = Someone is trying to kiss you. Move away to break their heart?

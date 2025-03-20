@@ -36,6 +36,24 @@
     !type:MoodAction
     effect: BeingPet
 
+- type: Interaction
+  id: Kiss
+  parent: [BaseGlobal, BaseHands]
+  priority: 1
+  delay: 0.4
+  range: { max: .5 }
+  hideByRequirement: true
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:MobStateRequirement
+      inverted: true
+    - !type:EntityWhitelistRequirement
+      whitelist:
+        components: [ HumanoidAppearance ]
+  action:
+    !type:KissAction
+
 # Petting someone (animals) - improves the mood of the user and the target
 - type: Interaction
   id: PetAnimal
@@ -57,4 +75,3 @@
       action:
         !type:MoodAction
         effect: PetAnimal
-

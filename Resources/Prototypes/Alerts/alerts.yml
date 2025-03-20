@@ -28,6 +28,7 @@
     - alertType: Pacified
     - alertType: Offer
     - alertType: Deflecting
+    - alertType: Kiss
 
 - type: entity
   id: AlertSpriteView
@@ -179,6 +180,15 @@
   icons: [ /Textures/Interface/Alerts/Buckle/buckled.png ]
   name: alerts-buckled-name
   description: alerts-buckled-desc
+
+- type: alert
+  id: Kiss
+  onClick: !type:Kiss { }
+  icons:
+  - sprite: /Textures/Interface/Alerts/kiss.rsi
+    state: kiss
+  name: alerts-kiss-name
+  description: alerts-kiss-desc
 
 - type: alert
   id: Offer

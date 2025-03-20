@@ -10,6 +10,14 @@ interaction-Hug-success-self-popup = You hug {THE($target)}.
 interaction-Hug-success-target-popup = {THE($user)} hugs you.
 interaction-Hug-success-others-popup = {THE($user)} hugs {THE($target)}.
 
+interaction-Kiss-name = Kiss
+interaction-Kiss-description = uhh... kiss your co-worker?
+interaction-Kiss-success-self-popup = You try to kiss {THE($target)}.
+interaction-Kiss-success-target-popup = { CAPITALIZE(THE($user)) } tries to kiss you.
+interaction-Kiss-success-others-popup = { CAPITALIZE(THE($user)) } tries to kiss {THE($target)}.
+
+
+
 interaction-Pet-name = Pet
 interaction-Pet-description = Pet your co-worker to ease their stress.
 interaction-Pet-success-self-popup = You pet {THE($target)} on {POSS-ADJ($target)} head.
