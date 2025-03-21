@@ -1,21 +1,23 @@
 using Content.Shared.Alert;
 using Content.Shared.Mood;
-using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
+
 
 namespace Content.Shared.Kiss;
 
-
-[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
-[Access(typeof(SharedKissSystem))]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true), Access(typeof(SharedKissSystem))]
 public sealed partial class KissComponent : Component
 {
-    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
+    [DataField]
+    [AutoNetworkedField]
     public bool CanBeKissedMode;
 
-    [DataField, AutoNetworkedField]
-    public bool CanKissMode;
+    [DataField("canBeKissed")]
+    [ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
+    public bool CanBeKissed = true;
 
     [DataField]
     public EntityUid? Target;

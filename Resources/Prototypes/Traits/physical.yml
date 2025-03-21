@@ -461,6 +461,17 @@
               Blunt: 0
 
 - type: trait
+  id: Ugly
+  category: Physical
+  points: 0
+  functions:
+    - !type:TraitReplaceComponent
+      components:
+        - type: Kiss
+          canBeKissed: false
+          kissSound: /Audio/Effects/Emotes/kiss.ogg
+
+- type: trait
   id: StrikingCalluses
   category: Physical
   points: -3
@@ -507,11 +518,11 @@
           action: ActionSericulture
           productionLength: 2
           entityProduced: MaterialWebSilk1
-          hungerCost: 1 
+          hungerCost: 1
     - !type:TraitAddTag
-      tags: 
-        - SpiderCraft 
-      
+      tags:
+        - SpiderCraft
+
 
 - type: trait
   id: BionicArm

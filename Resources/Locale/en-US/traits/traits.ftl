@@ -383,6 +383,10 @@ trait-description-NaturalWeaponRemoval =
     As a result, your unarmed attacks deal Blunt damage instead of the standard damage type for your species.
     This has no effect on damage dealt with any form of armed melee.
 
+trait-name-Ugly = Ugly
+trait-description-Ugly =
+    You are so ugly that you won't be able to kiss or be kissed by anyone.
+
 trait-name-StrikingCalluses = Striking Calluses
 trait-description-StrikingCalluses =
     An iconic enhancement commonly found in the world of cyberenhanced martial arts.
@@ -483,7 +487,7 @@ trait-description-CyberEyesSecurity =
 
 trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
 trait-description-CyberEyesMedical =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution. 
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
 
 trait-name-CyberEyesDiagnostic = Cyber-Eyes: Diagnostics Module
 trait-description-CyberEyesDiagnostic =
@@ -574,7 +578,7 @@ trait-description-SecurityEyesModule =
 
 trait-name-MedicalEyesModule = I.P.C Eye Module: Medical
 trait-description-MedicalEyesModule =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution. 
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of biological organisms, and discern the chemicals in any solution.
 
 trait-name-DiagnosticEyesModule = I.P.C Eye Module: Diagnostics
 trait-description-DiagnosticEyesModule =

@@ -20,11 +20,29 @@ public abstract class SharedKissSystem : EntitySystem
         if(!TryComp<KissComponent>(uid, out var offerKiss))
             return;
 
+        // Only when the Ugly trait is enabled
+        if (offerKiss.CanBeKissed == false)
+        {
+            _popup.PopupEntity(Loc.GetString(
+                    "kiss-ugly",
+                    ("target", Identity.Entity(args.Target, EntityManager))),
+                    uid,uid);
+            return;
+        }
+        else if (component.CanBeKissed == false)
+        {
+            _popup.PopupEntity(Loc.GetString(
+                    "kiss-ugly-target",
+                    ("user", Identity.Entity(uid, EntityManager))),
+                uid, uid);
+            return;
+        }
+
         offerKiss.Target = args.Target;
         offerKiss.CanBeKissedMode = false;
 
-        component.CanBeKissedMode = true;
         component.Target = uid;
+        component.CanBeKissedMode = true;
 
         _popup.PopupEntity(Loc.GetString(
                 "kiss-try-target",
@@ -51,29 +69,27 @@ public abstract class SharedKissSystem : EntitySystem
     {
         if (TryComp<KissComponent>(component.Target, out var offerKiss) && component.Target != null)
         {
-
             if (showRejectKissPopup)
             {
                 _popup.PopupEntity(
                     Loc.GetString(
-                        "no-kiss-try",
+                        "cancel-kiss-try",
                         ("target", Identity.Entity(component.Target.Value, EntityManager))),
                     uid,
                     uid);
                 _popup.PopupEntity(
                     Loc.GetString(
-                        "no-kiss-try-target",
+                        "cancel-kiss-try-target",
                         ("user", Identity.Entity(uid, EntityManager))),
                     component.Target.Value,
                     component.Target.Value);
                 _popup.PopupEntity(
                     Loc.GetString(
-                        "no-kiss-try-other",
+                        "cancel-kiss-try-other",
                         ("user", Identity.Entity(uid, EntityManager)),
                         ("target", Identity.Entity(component.Target.Value, EntityManager))),
                         component.Target.Value);
             }
-
             offerKiss.CanBeKissedMode = false;
             offerKiss.Target = null;
         }
@@ -82,4 +98,5 @@ public abstract class SharedKissSystem : EntitySystem
         component.Target = null;
 
     }
+
 }

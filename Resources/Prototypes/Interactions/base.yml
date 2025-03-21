@@ -40,9 +40,3 @@
     sound: {path: /Audio/Effects/thudswoosh.ogg}
   effectDelayed:
     popup: DangerousDelayed
-
-- type: Interaction
-  id: BaseKiss
-  abstract: true
-  contactInteraction: true
-  requiresCanInteract: true
