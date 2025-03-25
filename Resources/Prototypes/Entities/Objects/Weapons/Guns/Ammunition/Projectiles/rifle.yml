@@ -40,8 +40,8 @@
   - type: Projectile
     damage: # Goob Station MRP - buff damage
       types:
-        Blunt: 4
-        Heat: 20
+        Blunt: 2
+        Heat: 15
 
 - type: entity
   id: BulletRifleUranium
@@ -55,3 +55,26 @@
         Radiation: 1.5
         Piercing: 8.5
     ignoreResistances: true # Goob Station MRP - ignore resistances
+
+- type: entity
+  name: bullet (0.20 rifle shrapnel)
+  categories: [ HideSpawnMenu ]
+  parent: BaseBullet
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 6.325
+  - type: Sprite
+    scale: 0.5, 0.5
+
+- type: entity
+  id: BulletRifleShrapnelSpread
+  categories: [ HideSpawnMenu ]
+  parent: BulletRifleShrapnel
+  components:
+  - type: ProjectileSpread
+    proto: BulletRifleShrapnel
+    count: 4
+    spread: 15
+
