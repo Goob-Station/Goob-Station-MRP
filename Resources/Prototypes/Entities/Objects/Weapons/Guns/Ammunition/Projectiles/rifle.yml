@@ -52,11 +52,11 @@
   - type: Projectile
     damage: # GS MRP - nerf damage from 15 to 10 total, and slant towards piercing
       types:
-        Radiation: 1.5
-        Piercing: 8.5
-    ignoreResistances: true # Goob Station MRP - ignore resistances
+        Radiation: 7
+        Piercing: 12
 
 - type: entity
+  id: BulletRifleShrapnel
   name: bullet (0.20 rifle shrapnel)
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
