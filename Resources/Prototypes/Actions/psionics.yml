@@ -69,7 +69,7 @@
   components:
     - type: EntityTargetAction
       icon: Interface/VerbIcons/noospheric_zap.png
-      useDelay: 100
+      useDelay: 50
       range: 5
       itemIconStyle: BigAction
       blacklist:
@@ -385,3 +385,15 @@
           - PsionicInsulation
           - Mindbroken
       event: !type:AssayPowerActionEvent
+
+- type: entity
+  id: ActionAnoigo
+  name: action-name-anoigo
+  description: action-description-anoigo
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: EntityTargetAction
+    icon: { sprite: Interface/Actions/psionics.rsi, state: anoigo }
+    useDelay: 40
+    itemIconStyle: BigAction
+    event: !type:AnoigoPowerActionEvent
