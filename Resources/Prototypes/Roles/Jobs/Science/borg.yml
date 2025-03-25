@@ -4,6 +4,12 @@
   name: job-name-station-ai
   description: job-description-station-ai
   playTimeTracker: JobStationAi
+  requirements:
+    - !type:CharacterOverallTimeRequirement
+      min: 180000 # Goob MRP - 50 Hours, easy to abuse both accidentally and deliberately.
+    - !type:CharacterPlaytimeRequirement
+      tracker: JobBorg
+      min: 54000 # Goob MRP - 15 Hours, you need to know how silicon laws work.
   canBeAntag: false
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
