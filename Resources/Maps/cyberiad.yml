@@ -18006,6 +18006,231 @@ entities:
     - type: Transform
       pos: 19.5,-56.5
       parent: 2
+  - uid: 31782
+    components:
+    - type: Transform
+      pos: -1.5,-99.5
+      parent: 2
+  - uid: 31783
+    components:
+    - type: Transform
+      pos: -1.5,-100.5
+      parent: 2
+  - uid: 31784
+    components:
+    - type: Transform
+      pos: -1.5,-101.5
+      parent: 2
+  - uid: 31785
+    components:
+    - type: Transform
+      pos: -0.5,-99.5
+      parent: 2
+  - uid: 31786
+    components:
+    - type: Transform
+      pos: -0.5,-100.5
+      parent: 2
+  - uid: 31787
+    components:
+    - type: Transform
+      pos: -0.5,-101.5
+      parent: 2
+  - uid: 31788
+    components:
+    - type: Transform
+      pos: 0.5,-99.5
+      parent: 2
+  - uid: 31789
+    components:
+    - type: Transform
+      pos: 0.5,-100.5
+      parent: 2
+  - uid: 31790
+    components:
+    - type: Transform
+      pos: 0.5,-101.5
+      parent: 2
+  - uid: 31800
+    components:
+    - type: Transform
+      pos: 2.5,-99.5
+      parent: 2
+  - uid: 31801
+    components:
+    - type: Transform
+      pos: 2.5,-100.5
+      parent: 2
+  - uid: 31802
+    components:
+    - type: Transform
+      pos: 2.5,-101.5
+      parent: 2
+  - uid: 31803
+    components:
+    - type: Transform
+      pos: 3.5,-99.5
+      parent: 2
+  - uid: 31804
+    components:
+    - type: Transform
+      pos: 3.5,-100.5
+      parent: 2
+  - uid: 31805
+    components:
+    - type: Transform
+      pos: 3.5,-101.5
+      parent: 2
+  - uid: 31806
+    components:
+    - type: Transform
+      pos: 4.5,-99.5
+      parent: 2
+  - uid: 31807
+    components:
+    - type: Transform
+      pos: 4.5,-100.5
+      parent: 2
+  - uid: 31808
+    components:
+    - type: Transform
+      pos: 4.5,-101.5
+      parent: 2
+  - uid: 31809
+    components:
+    - type: Transform
+      pos: 10.5,-99.5
+      parent: 2
+  - uid: 31810
+    components:
+    - type: Transform
+      pos: 10.5,-100.5
+      parent: 2
+  - uid: 31811
+    components:
+    - type: Transform
+      pos: 10.5,-101.5
+      parent: 2
+  - uid: 31812
+    components:
+    - type: Transform
+      pos: 11.5,-99.5
+      parent: 2
+  - uid: 31813
+    components:
+    - type: Transform
+      pos: 11.5,-100.5
+      parent: 2
+  - uid: 31814
+    components:
+    - type: Transform
+      pos: 11.5,-101.5
+      parent: 2
+  - uid: 31815
+    components:
+    - type: Transform
+      pos: 12.5,-99.5
+      parent: 2
+  - uid: 31816
+    components:
+    - type: Transform
+      pos: 12.5,-100.5
+      parent: 2
+  - uid: 31817
+    components:
+    - type: Transform
+      pos: 12.5,-101.5
+      parent: 2
+  - uid: 31818
+    components:
+    - type: Transform
+      pos: 14.5,-99.5
+      parent: 2
+  - uid: 31819
+    components:
+    - type: Transform
+      pos: 14.5,-100.5
+      parent: 2
+  - uid: 31820
+    components:
+    - type: Transform
+      pos: 14.5,-101.5
+      parent: 2
+  - uid: 31821
+    components:
+    - type: Transform
+      pos: 15.5,-99.5
+      parent: 2
+  - uid: 31822
+    components:
+    - type: Transform
+      pos: 15.5,-100.5
+      parent: 2
+  - uid: 31823
+    components:
+    - type: Transform
+      pos: 15.5,-101.5
+      parent: 2
+  - uid: 31824
+    components:
+    - type: Transform
+      pos: 16.5,-99.5
+      parent: 2
+  - uid: 31825
+    components:
+    - type: Transform
+      pos: 16.5,-100.5
+      parent: 2
+  - uid: 31826
+    components:
+    - type: Transform
+      pos: 16.5,-101.5
+      parent: 2
+  - uid: 31827
+    components:
+    - type: Transform
+      pos: -17.5,-98.5
+      parent: 2
+  - uid: 31828
+    components:
+    - type: Transform
+      pos: -17.5,-99.5
+      parent: 2
+  - uid: 31829
+    components:
+    - type: Transform
+      pos: -17.5,-100.5
+      parent: 2
+  - uid: 31830
+    components:
+    - type: Transform
+      pos: -16.5,-98.5
+      parent: 2
+  - uid: 31831
+    components:
+    - type: Transform
+      pos: -16.5,-99.5
+      parent: 2
+  - uid: 31832
+    components:
+    - type: Transform
+      pos: -16.5,-100.5
+      parent: 2
+  - uid: 31833
+    components:
+    - type: Transform
+      pos: -15.5,-98.5
+      parent: 2
+  - uid: 31834
+    components:
+    - type: Transform
+      pos: -15.5,-99.5
+      parent: 2
+  - uid: 31835
+    components:
+    - type: Transform
+      pos: -15.5,-100.5
+      parent: 2
 - proto: AtmosFixCoolant
   entities:
   - uid: 945
@@ -18834,6 +19059,147 @@ entities:
     components:
     - type: Transform
       pos: 66.5,-102.5
+      parent: 2
+- proto: AtmosFixNitrogenMarker
+  entities:
+  - uid: 31764
+    components:
+    - type: Transform
+      pos: -9.5,-99.5
+      parent: 2
+  - uid: 31765
+    components:
+    - type: Transform
+      pos: -9.5,-100.5
+      parent: 2
+  - uid: 31766
+    components:
+    - type: Transform
+      pos: -9.5,-101.5
+      parent: 2
+  - uid: 31767
+    components:
+    - type: Transform
+      pos: -8.5,-99.5
+      parent: 2
+  - uid: 31768
+    components:
+    - type: Transform
+      pos: -8.5,-100.5
+      parent: 2
+  - uid: 31769
+    components:
+    - type: Transform
+      pos: -8.5,-101.5
+      parent: 2
+  - uid: 31770
+    components:
+    - type: Transform
+      pos: -7.5,-99.5
+      parent: 2
+  - uid: 31771
+    components:
+    - type: Transform
+      pos: -7.5,-100.5
+      parent: 2
+  - uid: 31772
+    components:
+    - type: Transform
+      pos: -7.5,-101.5
+      parent: 2
+- proto: AtmosFixOxygenMarker
+  entities:
+  - uid: 31773
+    components:
+    - type: Transform
+      pos: -5.5,-99.5
+      parent: 2
+  - uid: 31774
+    components:
+    - type: Transform
+      pos: -5.5,-100.5
+      parent: 2
+  - uid: 31775
+    components:
+    - type: Transform
+      pos: -5.5,-101.5
+      parent: 2
+  - uid: 31776
+    components:
+    - type: Transform
+      pos: -4.5,-99.5
+      parent: 2
+  - uid: 31777
+    components:
+    - type: Transform
+      pos: -4.5,-100.5
+      parent: 2
+  - uid: 31778
+    components:
+    - type: Transform
+      pos: -4.5,-101.5
+      parent: 2
+  - uid: 31779
+    components:
+    - type: Transform
+      pos: -3.5,-99.5
+      parent: 2
+  - uid: 31780
+    components:
+    - type: Transform
+      pos: -3.5,-100.5
+      parent: 2
+  - uid: 31781
+    components:
+    - type: Transform
+      pos: -3.5,-101.5
+      parent: 2
+- proto: AtmosFixPlasmaMarker
+  entities:
+  - uid: 31791
+    components:
+    - type: Transform
+      pos: 6.5,-99.5
+      parent: 2
+  - uid: 31792
+    components:
+    - type: Transform
+      pos: 6.5,-100.5
+      parent: 2
+  - uid: 31793
+    components:
+    - type: Transform
+      pos: 6.5,-101.5
+      parent: 2
+  - uid: 31794
+    components:
+    - type: Transform
+      pos: 7.5,-99.5
+      parent: 2
+  - uid: 31795
+    components:
+    - type: Transform
+      pos: 7.5,-100.5
+      parent: 2
+  - uid: 31796
+    components:
+    - type: Transform
+      pos: 7.5,-101.5
+      parent: 2
+  - uid: 31797
+    components:
+    - type: Transform
+      pos: 8.5,-99.5
+      parent: 2
+  - uid: 31798
+    components:
+    - type: Transform
+      pos: 8.5,-100.5
+      parent: 2
+  - uid: 31799
+    components:
+    - type: Transform
+      pos: 8.5,-101.5
       parent: 2
 - proto: AugustineCircuitBoard
   entities:
@@ -97624,7 +97990,7 @@ entities:
       pos: -34.5,-14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -198219.66
+      secondsUntilStateChange: -198394.95
       state: Closing
   - uid: 15220
     components:
