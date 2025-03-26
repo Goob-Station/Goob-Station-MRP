@@ -886,7 +886,7 @@
 - type: trait
   id: BionicLeg
   category: Physical
-  points: -8
+  points: -16
   requirements:
     - !type:CharacterJobRequirement
       inverted: true
