@@ -699,6 +699,17 @@
       types:
         Piercing: 8
         Poison: 8
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        reagents:
+        - ReagentId: ChloralHydrate
+          Quantity: 80
+  - type: MeleeChemicalInjector
+    solution: melee
+    transferAmount: 4
+  - type: Puller
+    needsHands: false
   - type: Grammar
     attributes:
       proper: true
