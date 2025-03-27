@@ -2470,6 +2470,8 @@
       groups:
         Brute: -0.07
         Burn: -0.07
+  - type: Puller
+    needsHands: false
   - type: RandomBark
     barkType: hissing
     barkMultiplier: 0.3
