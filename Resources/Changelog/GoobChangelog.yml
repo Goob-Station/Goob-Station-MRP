@@ -198,3 +198,10 @@ Entries:
   id: 24
   time: '2025-03-25T18:15:10.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/111
+- author: NoSugarPlumNovember
+  changes:
+    - type: Tweak
+      message: Bionic legs now cost 16 points
+  id: 25
+  time: '2025-03-27T01:11:08.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/115
