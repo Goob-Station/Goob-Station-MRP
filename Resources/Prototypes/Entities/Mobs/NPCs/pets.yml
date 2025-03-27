@@ -708,8 +708,12 @@
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 4
-  - type: Puller
-    needsHands: false
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: ChloralHydrate
+        Quantity: 0.25
   - type: Grammar
     attributes:
       proper: true
