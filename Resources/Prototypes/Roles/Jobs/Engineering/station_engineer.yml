@@ -6,7 +6,11 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Engineering
-      min: 14400 # Goob MRP - 4 Hours
+      min: 14400 #4 hrs
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: StationEngineerGear
   icon: "JobIconStationEngineer"
   supervisors: job-supervisors-ce

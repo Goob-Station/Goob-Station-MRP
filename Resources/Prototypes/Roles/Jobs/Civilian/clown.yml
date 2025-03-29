@@ -6,6 +6,10 @@
   requirements:
     - !type:CharacterOverallTimeRequirement # DeltaV - Playtime requirement
       min: 3600 #1 hrs
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: ClownGear
   icon: "JobIconClown"
   supervisors: job-supervisors-hop

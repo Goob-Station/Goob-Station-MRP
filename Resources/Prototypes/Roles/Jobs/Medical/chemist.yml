@@ -7,6 +7,10 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 21600 # Goob MRP - 6 Hours
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo

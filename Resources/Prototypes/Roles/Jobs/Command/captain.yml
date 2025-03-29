@@ -30,7 +30,10 @@
         - Foreigner
         - ForeignerLight
         - Pacifist
-    # - !type:CharacterWhitelistRequirement # Undo Starch's blatant delete instead of commenting
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
+
   weight: 20
   startingGear: CaptainGear
   icon: "JobIconCaptain"

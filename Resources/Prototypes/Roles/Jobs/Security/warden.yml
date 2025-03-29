@@ -19,7 +19,10 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
-    # - !type:CharacterWhitelistRequirement # Undo Starch's blatant deletion instead of comment
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
