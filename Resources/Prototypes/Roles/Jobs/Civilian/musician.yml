@@ -6,6 +6,10 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 1800 # goob mrp - 0.5 hours
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: MusicianGear
   icon: "JobIconMusician"
   supervisors: job-supervisors-hire

@@ -6,6 +6,10 @@
   requirements:
     - !type:CharacterOverallTimeRequirement
       min: 1800 # goob mrp - 0.5 hours
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: ServiceWorkerGear
   icon: "JobIconServiceWorker"
   supervisors: job-supervisors-service

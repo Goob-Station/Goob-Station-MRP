@@ -9,6 +9,10 @@
     - !type:CharacterDepartmentTimeRequirement
       department: Medical
       min: 7200 # Goob MRP - 2 Hours
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
@@ -18,6 +22,7 @@
   - Psychologist # DeltaV - Add Psychologist access
   extendedAccess:
   - Chemistry
+
 
 - type: startingGear
   id: PsychologistGear

@@ -6,7 +6,11 @@
   requirements:
     - !type:CharacterDepartmentTimeRequirement
       department: Epistemics # DeltaV - Epistemics Department replacing Science
-      min: 14400 # 4 hours - same as scientist
+      min: 14400 #4 hrs
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: ScientistGear
   icon: "JobIconScientist"
   supervisors: job-supervisors-rd
