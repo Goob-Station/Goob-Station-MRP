@@ -184,3 +184,24 @@ Entries:
   id: 22
   time: '2025-02-23T21:36:40.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/91
+- author: EctoplasmIsGood
+  changes:
+    - type: Fix
+      message: BSO Eshotgun has proper requirements again
+  id: 23
+  time: '2025-02-26T00:51:01.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/94
+- author: BramvanZijp
+  changes:
+    - type: Add
+      message: Added a 10 hour global playtime requirement to the Security Cadet role.
+  id: 24
+  time: '2025-03-25T18:15:10.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/111
+- author: NoSugarPlumNovember
+  changes:
+    - type: Tweak
+      message: Bionic legs now cost 16 points
+  id: 25
+  time: '2025-03-27T01:11:08.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/115

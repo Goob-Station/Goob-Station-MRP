@@ -91,6 +91,11 @@
   requirements:
     - !type:CharacterItemGroupRequirement
       group: LoadoutBlueshieldOfficerPrimary
+    - !type:CharacterJobRequirement
+      jobs:
+        - BlueshieldOfficer
+    - !type:CharacterAgeRequirement
+      min: 21
   items:
     - WeaponEnergyShotgun
 
