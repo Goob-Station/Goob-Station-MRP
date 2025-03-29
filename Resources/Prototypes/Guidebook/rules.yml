@@ -333,7 +333,7 @@
   id: RuleR21
   name: guide-entry-rules-r21
   ruleEntry: true
-  priorite: 21
+  priority: 21
   text: "/ServerInfo/Guidebook/ServerRules/RoleplayRules/RuleR21SSD.xml"
 
 - type: guideEntry
