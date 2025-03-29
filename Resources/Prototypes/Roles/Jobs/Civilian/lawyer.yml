@@ -9,6 +9,10 @@
     - !type:CharacterDepartmentTimeRequirement # DeltaV - Security dept time requirement
       department: Security
       min: 7200 # 2 hours
+    - !type:CharacterEmployerRequirement
+      inverted: true
+      employers:
+      - Unemployed
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-cj  # Delta V - Change supervisor to chief justice
@@ -17,11 +21,6 @@
   - Justice # DeltaV - Justice dept
   - Lawyer
   - Maintenance
-  requirements:
-    - !type:CharacterEmployerRequirement
-      inverted: true
-      employers:
-      - Unemployed
 
 - type: startingGear
   id: LawyerGear
