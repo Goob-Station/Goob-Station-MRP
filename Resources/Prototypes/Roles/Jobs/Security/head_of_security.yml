@@ -27,6 +27,9 @@
         - Blindness
         - Pacifist
         - BrittleBoneDisease
+    - !type:CharacterEmployerRequirement
+      employers:
+      - NanoTrasen
   weight: 10
   startingGear: HoSGear
   icon: "JobIconHeadOfSecurity"
