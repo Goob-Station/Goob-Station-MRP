@@ -7,9 +7,7 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyService
-      - EncryptionKeyCommand
-      - EncryptionKeyCommon
+      - EncryptionKeyStationMaster
 
 - type: entity
   parent: ClothingHeadsetAlt
@@ -19,9 +17,7 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyService
-      - EncryptionKeyCommand
-      - EncryptionKeyCommon
+      - EncryptionKeyStationMaster
   - type: Sprite
     sprite: DeltaV/Clothing/Ears/Headsets/service.rsi
   - type: Clothing
