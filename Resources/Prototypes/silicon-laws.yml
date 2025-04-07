@@ -123,26 +123,6 @@
   obeysTo: laws-owner-station
 
 # NT Default AI
-- type: siliconLaw
-  id: NTDefault1
-  order: 1
-  lawString: law-ntdefault-1
-
-- type: siliconLaw
-  id: NTDefault2
-  order: 2
-  lawString: law-ntdefault-2
-
-- type: siliconLaw
-  id: NTDefault3
-  order: 3
-  lawString: law-ntdefault-3
-
-- type: siliconLaw
-  id: NTDefault4
-  order: 4
-  lawString: law-ntdefault-4
-
 - type: siliconLawset
   id: NTDefaultAI
   laws:
