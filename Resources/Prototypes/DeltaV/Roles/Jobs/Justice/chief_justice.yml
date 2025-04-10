@@ -15,16 +15,15 @@
       min: 18000 # 5 hours
     - !type:CharacterOverallTimeRequirement
       min: 54000 # 15 hours
+    - !type:CharacterEmployerRequirement
+      employers:
+      - IdrisIncorporated
   weight: 20
   startingGear: CJGear
   icon: "JobIconChiefJustice"
   requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false
-  requirements:
-    - !type:CharacterEmployerRequirement
-      employers:
-      - IdrisIncorporated
   access:
   - Command
   - ChiefJustice
