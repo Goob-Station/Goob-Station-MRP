@@ -19,6 +19,8 @@
   - Maintenance
   - Engineering
   - External
+
+- type: startingGear
   id: TechnicalAssistantGear
   subGear:
   - StationEngineerPlasmamanGear
