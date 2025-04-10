@@ -14,9 +14,9 @@
         - Pacifist
         - BrittleBoneDisease
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - Cybersun
+      - PMCG
     - !type:CharacterOverallTimeRequirement
       min: 36000  # Goob - 10 hours
   startingGear: SecurityCadetGear

@@ -12,7 +12,7 @@
     - !type:CharacterEmployerRequirement
       inverted: true
       employers:
-      - Unemployed
+      - Interdyne
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
@@ -22,7 +22,6 @@
   - Psychologist # DeltaV - Add Psychologist access
   extendedAccess:
   - Chemistry
-
 
 - type: startingGear
   id: PsychologistGear

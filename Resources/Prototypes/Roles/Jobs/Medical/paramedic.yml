@@ -8,9 +8,8 @@
       department: Medical
       min: 18000 # Goob MRP - 5 Hours (Matches Medical Doctor)
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - Interdyne
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
   supervisors: job-supervisors-cmo

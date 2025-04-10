@@ -8,9 +8,8 @@
       department: Medical
       min: 21600 # Goob MRP - 6 Hours
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - ZengHuPharmaceuticals
   startingGear: ChemistGear
   icon: "JobIconChemist"
   supervisors: job-supervisors-cmo

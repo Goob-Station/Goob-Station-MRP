@@ -14,9 +14,10 @@
       department: Engineering
       min: 108000 # Goob MRP - 30 Hours
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - HephaestusIndustries
+      - Cybersun
+      - EinsteinEngines
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce
