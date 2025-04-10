@@ -122,6 +122,16 @@
   - Corporate4
   obeysTo: laws-owner-station
 
+# NT Default AI
+- type: siliconLawset
+  id: NTDefaultAI
+  laws:
+  - NTDefault1
+  - NTDefault2
+  - NTDefault3
+  - NTDefault4
+  obeysTo: laws-owner-crew
+
 # NT Default
 - type: siliconLaw
   id: NTDefault1
