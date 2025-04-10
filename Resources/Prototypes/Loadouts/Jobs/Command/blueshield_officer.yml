@@ -82,6 +82,7 @@
       min: 21
   items:
     - WeaponLeverChester
+    - BlueshieldAmmunitionBoxFilled
 
 - type: loadout
   id: LoadoutBSOEnergyShotgun

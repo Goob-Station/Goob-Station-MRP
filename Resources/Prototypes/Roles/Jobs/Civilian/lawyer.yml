@@ -10,9 +10,10 @@
       department: Security
       min: 7200 # 2 hours
     - !type:CharacterEmployerRequirement
-      inverted: true
+    - !type:CharacterEmployerRequirement
       employers:
-      - Unemployed
+      - IdrisIncorporated
+      - NanoTrasen
   startingGear: LawyerGear
   icon: "JobIconLawyer"
   supervisors: job-supervisors-cj  # Delta V - Change supervisor to chief justice

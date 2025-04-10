@@ -8,9 +8,9 @@
       department: Security
       min: 36000 # 10 hours
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - Cybersun
+      - PMCG
   startingGear: PrisonGuardGear
   alwaysUseSpawner: true
   canBeAntag: false
