@@ -225,3 +225,10 @@ Entries:
   id: 27
   time: '2025-04-10T23:23:29.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/127
+- author: Sarahon
+  changes:
+    - type: Tweak
+      message: BSO SOP updated.
+  id: 28
+  time: '2025-04-10T23:23:51.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/128
