@@ -13,6 +13,7 @@
       inverted: true
       employers:
       - Interdyne
+      - NanoTrasen
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
