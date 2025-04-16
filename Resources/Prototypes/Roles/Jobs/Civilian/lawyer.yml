@@ -10,7 +10,6 @@
       department: Security
       min: 7200 # 2 hours
     - !type:CharacterEmployerRequirement
-    - !type:CharacterEmployerRequirement
       employers:
       - IdrisIncorporated
       - NanoTrasen
