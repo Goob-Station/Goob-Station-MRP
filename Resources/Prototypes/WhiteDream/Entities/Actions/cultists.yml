@@ -266,7 +266,7 @@
     sprite: WhiteDream/BloodCult/actions.rsi
     state: create_soul_stone
   - type: WorldTargetAction
-    useDelay: 30
+    useDelay: 300
     range: 5
     itemIconStyle: BigAction
     checkCanAccess: false
