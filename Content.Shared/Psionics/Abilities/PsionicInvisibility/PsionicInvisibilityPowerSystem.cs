@@ -1,19 +1,19 @@
-using Content.Shared.Actions;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Actions;
+using Content.Shared.Actions.Events;
 using Content.Shared.Damage;
-using Content.Shared.Stunnable;
+using Content.Shared.Interaction.Events;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
-using Content.Shared.Psionics;
-using Content.Shared.Actions.Events;
+using Content.Shared.Stunnable;
+using Content.Shared.Throwing;
+using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
-using Content.Shared.Interaction.Events;
-using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.Throwing;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Abilities.Psionics;
+
+namespace Content.Shared.Psionics.Abilities.PsionicInvisibility;
 
 public sealed class PsionicInvisibilityPowerSystem : EntitySystem
 {
