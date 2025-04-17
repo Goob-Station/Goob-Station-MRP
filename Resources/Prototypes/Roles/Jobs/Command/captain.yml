@@ -30,6 +30,7 @@
         - Foreigner
         - ForeignerLight
         - Pacifist
+        - Muted
     - !type:CharacterEmployerRequirement
       employers:
       - NanoTrasen

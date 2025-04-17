@@ -9,8 +9,9 @@
       min: 36000 # 10 hours
     - !type:CharacterEmployerRequirement
       employers:
-      - Cybersun
+      - ZavodskoiInterstellar
       - PMCG
+      - NanoTrasen
   startingGear: PrisonGuardGear
   alwaysUseSpawner: true
   canBeAntag: false

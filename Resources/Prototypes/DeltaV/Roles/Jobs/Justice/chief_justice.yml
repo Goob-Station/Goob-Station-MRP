@@ -18,6 +18,7 @@
     - !type:CharacterEmployerRequirement
       employers:
       - IdrisIncorporated
+      - NanoTrasen
   weight: 20
   startingGear: CJGear
   icon: "JobIconChiefJustice"

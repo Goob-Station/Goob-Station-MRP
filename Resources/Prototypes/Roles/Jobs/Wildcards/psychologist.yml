@@ -10,9 +10,9 @@
       department: Medical
       min: 7200 # Goob MRP - 2 Hours
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
       - Interdyne
+      - NanoTrasen
   startingGear: PsychologistGear
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
