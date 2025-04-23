@@ -134,7 +134,7 @@
     sprite: Structures/Shuttles/gyroscope.rsi
     state: base
   discipline: Industrial
-  tier: 2
+  tier: 1
   cost: 10000
   recipeUnlocks:
   - ShuttleConsoleCircuitboard
