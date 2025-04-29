@@ -250,3 +250,14 @@ Entries:
   id: 30
   time: '2025-04-10T23:25:30.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/122
+- author: Yarinoi
+  changes:
+    - type: Add
+      message: >-
+        Added a brief warning to the "You are being revived!" pop-up reminding
+        you to follow New Life Rule/Death Amnesia.
+    - type: Tweak
+      message: FOLLOW NLR!!!!!!!!!!!!!!!!!!!!!!!!!!
+  id: 31
+  time: '2025-04-29T20:53:53.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/138
