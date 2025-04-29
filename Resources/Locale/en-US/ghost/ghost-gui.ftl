@@ -34,5 +34,5 @@ ghost-roles-window-no-roles-available-label = There are currently no available g
 ghost-roles-window-rules-footer = The button will enable after {$time} seconds (this delay is to make sure you read the rules).
 
 ghost-return-to-body-title = Return to Body
-ghost-return-to-body-text = You are being revived! Return to your body?
+ghost-return-to-body-text = You are being revived! Return to your body?<br/>WARNING: You do not remember the cause of your<br/>death, nor the events leading up to it.
 ghost-gui-return-to-round-button = Return to round
