@@ -24,6 +24,7 @@
                         <Label Text="{Loc 'queue-total'}" Align="Center" />
                         <Label Name="QueueTotal" StyleClasses="LabelHeading" Align="Center" />
                     </BoxContainer>
+                    <Label Name="PatronText" Text="{Loc 'queue-patreon'}" Align="Center" />
                 </BoxContainer>
             </BoxContainer>
         </BoxContainer>

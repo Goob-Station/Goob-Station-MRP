@@ -10,6 +10,8 @@ using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using Content.Server._RMC14.LinkAccount;
+using Content.Shared._Goobstation.CCVar;
 
 namespace Content.Server.JoinQueue;
 
@@ -41,26 +43,32 @@ public sealed class JoinQueueManager
     [Dependency] private readonly IConfigurationManager _configuration = default!;
     [Dependency] private readonly IServerNetManager _net = default!;
     [Dependency] private readonly DiscordAuthManager _discordAuth = default!;
+    [Dependency] private readonly LinkAccountManager _linkAccount = default!;
 
 
     /// <summary>
     ///     Queue of active player sessions
     /// </summary>
-    private readonly List<ICommonSession> _queue = new(); // Real Queue class can't delete disconnected users
+    private readonly List<ICommonSession> _queue = new();
+
+    /// <summary>
+    ///     Queue for Patreon supporters.
+    /// </summary>
+    private readonly List<ICommonSession> _patronQueue = new();
 
     private bool _isEnabled = false;
+    private bool _patreonIsEnabled = true;
 
-    public int PlayerInQueueCount => _queue.Count;
+    public int PlayerInQueueCount => _queue.Count + _patronQueue.Count;
     public int ActualPlayersCount => _player.PlayerCount - PlayerInQueueCount; // Now it's only real value with actual players count that in game
-
 
     public void Initialize()
     {
         _net.RegisterNetMessage<QueueUpdateMessage>();
 
         _configuration.OnValueChanged(CCVars.QueueEnabled, OnQueueCVarChanged, true);
+        _configuration.OnValueChanged(GoobCVars.PatreonSkip, OnPatronCvarChanged, true);
         _player.PlayerStatusChanged += OnPlayerStatusChanged;
-        _discordAuth.PlayerVerified += OnPlayerVerified;
     }
 
 
@@ -71,11 +79,14 @@ public sealed class JoinQueueManager
         if (!value)
         {
             foreach (var session in _queue)
-            {
                 session.Channel.Disconnect("Queue was disabled");
-            }
+            foreach (var session in _patronQueue)
+                session.Channel.Disconnect("Queue was disabled");
         }
     }
+
+    private void OnPatronCvarChanged(bool value)
+        => _patreonIsEnabled = value;
 
     private async void OnPlayerVerified(object? sender, ICommonSession session)
     {
@@ -86,7 +97,8 @@ public sealed class JoinQueueManager
         }
 
         var isPrivileged = await _connection.HasPrivilegedJoin(session.UserId);
-        var currentOnline = _player.PlayerCount - 1; // Do not count current session in general online, because we are still deciding her fate
+        var isPatron = _linkAccount.GetPatron(session)?.Tier != null;
+        var currentOnline = _player.PlayerCount - 1;
         var haveFreeSlot = currentOnline < _configuration.GetCVar(CCVars.SoftMaxPlayers);
         if (isPrivileged || haveFreeSlot)
         {
@@ -98,7 +110,11 @@ public sealed class JoinQueueManager
             return;
         }
 
-        _queue.Add(session);
+        if (isPatron && _patreonIsEnabled)
+            _patronQueue.Add(session);
+        else
+            _queue.Add(session);
+
         ProcessQueue(false, session.ConnectedTime);
     }
 
@@ -106,7 +122,7 @@ public sealed class JoinQueueManager
     {
         if (e.NewStatus == SessionStatus.Disconnected)
         {
-            var wasInQueue = _queue.Remove(e.Session);
+            var wasInQueue = _queue.Remove(e.Session) || _patronQueue.Remove(e.Session);
 
             if (!wasInQueue && e.OldStatus != SessionStatus.InGame) // Process queue only if player disconnected from InGame or from queue
                 return;
@@ -131,14 +147,24 @@ public sealed class JoinQueueManager
             players--; // Decrease currently disconnected session but that has not yet been deleted
 
         var haveFreeSlot = players < _configuration.GetCVar(CCVars.SoftMaxPlayers);
-        var queueContains = _queue.Count > 0;
-        if (haveFreeSlot && queueContains)
+        var patronQueueContains = _patronQueue.Count > 0;
+        var regularQueueContains = _queue.Count > 0;
+
+        if (haveFreeSlot && (patronQueueContains || regularQueueContains))
         {
-            var session = _queue.First();
-            _queue.Remove(session);
+            ICommonSession session;
+            if (patronQueueContains)
+            {
+                session = _patronQueue.First();
+                _patronQueue.Remove(session);
+            }
+            else
+            {
+                session = _queue.First();
+                _queue.Remove(session);
+            }
 
             SendToGame(session);
-
             QueueTimings.WithLabels("Waited").Observe((DateTime.UtcNow - connectedTime).TotalSeconds);
         }
 
@@ -146,17 +172,31 @@ public sealed class JoinQueueManager
         QueueCount.Set(_queue.Count);
     }
 
-    /// <summary>
+// <summary>
     ///     Sends messages to all players in the queue with the current state of the queue
     /// </summary>
     private void SendUpdateMessages()
     {
-        for (var i = 0; i < _queue.Count; i++)
+        var totalInQueue = _patronQueue.Count + _queue.Count;
+        var currentPosition = 1;
+
+        for (var i = 0; i < _patronQueue.Count; i++, currentPosition++)
+        {
+            _patronQueue[i].Channel.SendMessage(new QueueUpdateMessage
+            {
+                Total = totalInQueue,
+                Position = currentPosition,
+                IsPatron = true,
+            });
+        }
+
+        for (var i = 0; i < _queue.Count; i++, currentPosition++)
         {
             _queue[i].Channel.SendMessage(new QueueUpdateMessage
             {
-                Total = _queue.Count,
-                Position = i + 1,
+                Total = totalInQueue,
+                Position = currentPosition,
+                IsPatron = false,
             });
         }
     }
