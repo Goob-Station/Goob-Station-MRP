@@ -1,4 +1,5 @@
-using System.Linq;
+﻿using System.Linq;
+using Content.Client._RMC14.LinkAccount;
 using Content.Client.UserInterface.Screens;
 using Content.Shared.CCVar;
 using Content.Shared.HUD;
@@ -22,7 +23,7 @@ namespace Content.Client.Options.UI.Tabs
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-
+        [Dependency] private readonly LinkAccountManager _linkAccount = default!;
         private readonly Dictionary<string, int> _hudThemeIdToIndex = new();
 
         public MiscTab()
@@ -73,7 +74,7 @@ namespace Content.Client.Options.UI.Tabs
 
             // Channel can be null in replays so.
             // ReSharper disable once ConditionalAccessQualifierIsNonNullableAccordingToAPIContract
-            ShowOocPatronColor.Visible = _playerManager.LocalSession?.Channel?.UserData.PatronTier is { };
+            ShowOocPatronColor.Visible = _linkAccount.Tier != null;
 
             HudThemeOption.OnItemSelected += OnHudThemeChanged;
             DiscordRich.OnToggled += OnCheckBoxToggled;

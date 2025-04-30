@@ -14,4 +14,27 @@ public sealed partial class GoobCVars
         CVarDef.Create("mech.gun_outside_mech", true, CVar.SERVER | CVar.REPLICATED);
 
     #endregion
+
+    #region Queue
+
+    /// <summary>
+    ///     If enabled patrons will be sent to the front of the queue.
+    /// </summary>
+    public static readonly CVarDef<bool> PatreonSkip =
+        CVarDef.Create("queue.patreon_skip", true, CVar.SERVERONLY);
+
+    #endregion
+
+    #region RMC
+
+    public static readonly CVarDef<int> RMCPatronLobbyMessageTimeSeconds =
+        CVarDef.Create("rmc.patron_lobby_message_time_seconds", 30, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<int> RMCPatronLobbyMessageInitialDelaySeconds =
+        CVarDef.Create("rmc.patron_lobby_message_initial_delay_seconds", 5, CVar.REPLICATED | CVar.SERVER);
+
+    public static readonly CVarDef<string> RMCDiscordAccountLinkingMessageLink =
+        CVarDef.Create("rmc.discord_account_linking_message_link", "", CVar.REPLICATED | CVar.SERVER);
+
+    #endregion
 }
