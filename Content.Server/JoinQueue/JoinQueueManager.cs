@@ -69,6 +69,7 @@ public sealed class JoinQueueManager
         _configuration.OnValueChanged(CCVars.QueueEnabled, OnQueueCVarChanged, true);
         _configuration.OnValueChanged(GoobCVars.PatreonSkip, OnPatronCvarChanged, true);
         _player.PlayerStatusChanged += OnPlayerStatusChanged;
+        _discordAuth.PlayerVerified += OnPlayerVerified;
     }
 
 
