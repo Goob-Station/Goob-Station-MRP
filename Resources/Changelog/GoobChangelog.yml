@@ -261,3 +261,12 @@ Entries:
   id: 31
   time: '2025-04-29T20:53:53.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/138
+- author: Aidenkrz
+  changes:
+    - type: Add
+      message: >-
+        Patreon Support! Patreons can set their ghost color, have messages in
+        the lobby, on round end, and get priority queue!
+  id: 32
+  time: '2025-04-30T03:58:42.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/139
