@@ -1,7 +1,7 @@
 - type: job
   id: NanotrasenRepresentative
-  name: Corporate Liaison
-  description: "Represent your employer, send reports back to them on the station's situation, inform the heads of anything CentCom orders them to do."
+  name: Nanotrasen Representative
+  description: "Represent NT, send reports back to them on the station's situation, inform the heads of anything CentCom orders them to do."
   playTimeTracker: JobNanotrasenRepresentative
   requirements:
     - !type:CharacterDepartmentTimeRequirement
@@ -14,9 +14,8 @@
         - ForeignerLight
         - Muted
     - !type:CharacterEmployerRequirement
-      inverted: true
       employers:
-      - Unemployed
+      - NanoTrasen
   weight: 20
   startingGear: NanotrasenRepresentativeGear
   icon: "JobIconNanotrasenRepresentative"
