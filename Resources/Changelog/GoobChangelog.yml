@@ -270,3 +270,10 @@ Entries:
   id: 32
   time: '2025-04-30T03:58:42.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/139
+- author: EctoplasmIsGood
+  changes:
+    - type: Remove
+      message: Corporate Liason has been turned back into NTR
+  id: 33
+  time: '2025-05-03T04:25:11.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/140
