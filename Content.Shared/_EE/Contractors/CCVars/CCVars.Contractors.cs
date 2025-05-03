@@ -29,5 +29,5 @@ public sealed partial class CCVars
     ///     Master Switch for Contractors
     /// </summary>
     public static readonly CVarDef<bool> ContractorsEnabled =
-        CVarDef.Create("contractors.enabled", true, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("contractors.enabled", false, CVar.SERVER | CVar.REPLICATED);
 }
