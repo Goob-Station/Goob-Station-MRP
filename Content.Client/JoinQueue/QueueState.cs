@@ -37,7 +37,7 @@ public sealed class QueueState : State
 
     public void OnQueueUpdate(QueueUpdateMessage msg)
     {
-        _gui?.UpdateInfo(msg.Total, msg.Position);
+        _gui?.UpdateInfo(msg.Total, msg.Position, msg.IsPatron);
     }
 
     private void OnQuitPressed()

@@ -54,6 +54,10 @@
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
+                    <PanelContainer VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                    Margin="0 75" StyleClasses="AngleRect">
+                        <RichTextLabel Name="LobbyMessageLabel" Access="Public" Margin="5" />
+                    </PanelContainer>
                     <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" SeparationOverride="4">
                     <PanelContainer VerticalAlignment="Bottom" HorizontalAlignment="Left"
                                     Margin="0 75" StyleClasses="AngleRect">

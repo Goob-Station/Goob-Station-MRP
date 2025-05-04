@@ -15,6 +15,16 @@ public sealed partial class GoobCVars
 
     #endregion
 
+    #region Queue
+
+    /// <summary>
+    ///     If enabled patrons will be sent to the front of the queue.
+    /// </summary>
+    public static readonly CVarDef<bool> PatreonSkip =
+        CVarDef.Create("queue.patreon_skip", true, CVar.SERVERONLY);
+
+    #endregion
+
     #region RMC
 
     public static readonly CVarDef<int> RMCPatronLobbyMessageTimeSeconds =

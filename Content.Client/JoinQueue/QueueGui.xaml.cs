@@ -10,7 +10,6 @@ public sealed partial class QueueGui : Control
 {
     public event Action? QuitPressed;
 
-
     public QueueGui()
     {
         RobustXamlLoader.Load(this);
@@ -21,9 +20,10 @@ public sealed partial class QueueGui : Control
     }
 
 
-    public void UpdateInfo(int total, int position)
+    public void UpdateInfo(int total, int position, bool isPatron)
     {
         QueueTotal.Text = total.ToString();
         QueuePosition.Text = position.ToString();
+        PatronText.Visible = isPatron;
     }
 }
