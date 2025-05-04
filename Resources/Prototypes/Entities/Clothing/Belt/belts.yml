@@ -809,7 +809,6 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Belt/generic.rsi
-    renderLayer: innerBelt
 
 - type: entity
   parent: ClothingBeltBase
@@ -822,7 +821,6 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Belt/generic_thin.rsi
-    renderLayer: innerBelt
 
 - type: entity
   parent: ClothingBeltBase
@@ -835,7 +833,6 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Belt/generic_thick.rsi
-    renderLayer: innerBelt
 
 - type: entity
   parent: ClothingBeltBase
@@ -848,7 +845,6 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Belt/waist.rsi
-    renderLayer: innerBelt
 
 - type: entity
   parent: ClothingBeltBase
@@ -861,4 +857,3 @@
     state: icon
   - type: Clothing
     sprite: Clothing/Belt/waist_thin.rsi
-    renderLayer: innerBelt
