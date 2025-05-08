@@ -33,14 +33,13 @@
         {
             "name": "equipped-OUTERCLOTHING-harpy",
             "directions": 4
-        }
+        },
         {
-            "name": "equipped-OUTERCLOTHING-lamia",
+            "name": "equipped-OUTERCLOTHING-unshaded-lamia",
             "directions": 4
         },
         {
-            "name": "segment",
-            "directions": 1
+            "name": "segment"
         }
     ]
 }

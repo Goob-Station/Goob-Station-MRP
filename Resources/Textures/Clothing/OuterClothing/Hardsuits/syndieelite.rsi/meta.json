@@ -33,6 +33,13 @@
     {
       "name": "inhand-right",
       "directions": 4
+    },
+    {
+        "name": "equipped-OUTERCLOTHING-unshaded-lamia",
+        "directions": 4
+    },
+    {
+        "name": "segment"
     }
   ]
 }
