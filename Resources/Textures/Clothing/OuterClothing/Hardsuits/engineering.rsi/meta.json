@@ -47,8 +47,7 @@
             "directions": 4
         },
         {
-            "name": "segment",
-            "directions": 1
+            "name": "segment"
         }
     ]
 }

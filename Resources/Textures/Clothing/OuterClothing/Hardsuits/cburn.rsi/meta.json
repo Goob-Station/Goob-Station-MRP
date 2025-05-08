@@ -32,10 +32,6 @@
     },
     {
         "name": "segment"
-    },
-    {
-        "name": "segment",
-        "directions": 1
     }
   ]
 }
