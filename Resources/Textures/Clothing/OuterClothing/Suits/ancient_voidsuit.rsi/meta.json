@@ -61,7 +61,7 @@
     },
     {
         "name": "segment",
-        "directions": 4
+        "directions": 1
     }
   ]
 }
