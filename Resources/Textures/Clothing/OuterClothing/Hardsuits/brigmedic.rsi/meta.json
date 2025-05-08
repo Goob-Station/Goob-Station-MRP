@@ -1,14 +1,10 @@
 {
-  "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Made by PuroSlavKing (github) for SS14, harpy by VMSolidus",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-      "name": "icon"
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Made by PuroSlavKing (github) for SS14, harpy by VMSolidus, equipped-OUTERCLOTHING-resomi made by svarshiksatanist (Discord)",
+    "size": {
+        "x": 32,
+        "y": 32
     },
     {
       "name": "equipped-OUTERCLOTHING",
@@ -24,6 +20,10 @@
     },
     {
         "name": "equipped-OUTERCLOTHING-harpy",
+        "directions": 4
+    },
+    {
+        "name": "equipped-OUTERCLOTHING-resomi",
         "directions": 4
     },
     {

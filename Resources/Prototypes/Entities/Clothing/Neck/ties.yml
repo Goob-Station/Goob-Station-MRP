@@ -51,7 +51,6 @@
     sprite: Clothing/Neck/Ties/color.rsi
   - type: Clothing
     sprite: Clothing/Neck/Ties/color.rsi
-    renderLayer: innerNeck
   - type: Tag
     tags:
     - WhitelistChameleon

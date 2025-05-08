@@ -1,5 +1,3 @@
-using Content.Shared.Body.Part;
-using Content.Shared.Body.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
@@ -32,7 +30,6 @@ public abstract class ClothingSystem : EntitySystem
         SubscribeLocalEvent<ClothingComponent, GotUnequippedEvent>(OnGotUnequipped);
         SubscribeLocalEvent<ClothingComponent, ItemMaskToggledEvent>(OnMaskToggled);
         SubscribeLocalEvent<ClothingComponent, GettingPickedUpAttemptEvent>(OnPickedUp);
-        SubscribeLocalEvent<HumanoidAppearanceComponent, BodyPartAddedEvent>(OnPartAttachedToBody, after: [typeof(SharedBodySystem)]);
 
         SubscribeLocalEvent<ClothingComponent, ClothingEquipDoAfterEvent>(OnEquipDoAfter);
         SubscribeLocalEvent<ClothingComponent, ClothingUnequipDoAfterEvent>(OnUnequipDoAfter);
@@ -91,11 +88,11 @@ public abstract class ClothingSystem : EntitySystem
         }
     }
 
-    private void ToggleVisualLayers(EntityUid equipee, HashSet<HumanoidVisualLayers> layers, HashSet<HumanoidVisualLayers> appearanceLayers, bool force = false)
+    private void ToggleVisualLayers(EntityUid equipee, HashSet<HumanoidVisualLayers> layers, HashSet<HumanoidVisualLayers> appearanceLayers)
     {
         foreach (HumanoidVisualLayers layer in layers)
         {
-            if (!force && !appearanceLayers.Contains(layer))
+            if (!appearanceLayers.Contains(layer))
                 break;
 
             InventorySystem.InventorySlotEnumerator enumerator = _invSystem.GetSlotEnumerator(equipee);
@@ -194,20 +191,6 @@ public abstract class ClothingSystem : EntitySystem
         args.Cancel();
     }
 
-    // Yes, this is exclusive C# just so that high heels selected from loadouts still hide the feet layers
-    // after Shitmed (SharedBodySystem.PartAppearance) initializes the feet parts setting their layer visibility to true.
-    private void OnPartAttachedToBody(Entity<HumanoidAppearanceComponent> ent, ref BodyPartAddedEvent args)
-    {
-        var enumerator = _invSystem.GetSlotEnumerator(ent.Owner);
-        while (enumerator.NextItem(out var item))
-        {
-            if (!TryComp<HideLayerClothingComponent>(item, out var comp))
-                continue;
-
-            CheckEquipmentForLayerHide(item, ent.Owner);
-        }
-    }
-
     private void OnEquipDoAfter(Entity<ClothingComponent> ent, ref ClothingEquipDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Target is not { } target)
@@ -227,7 +210,7 @@ public abstract class ClothingSystem : EntitySystem
     private void CheckEquipmentForLayerHide(EntityUid equipment, EntityUid equipee)
     {
         if (TryComp(equipment, out HideLayerClothingComponent? clothesComp) && TryComp(equipee, out HumanoidAppearanceComponent? appearanceComp))
-            ToggleVisualLayers(equipee, clothesComp.Slots, appearanceComp.HideLayersOnEquip, clothesComp.Force);
+            ToggleVisualLayers(equipee, clothesComp.Slots, appearanceComp.HideLayersOnEquip);
     }
 
     #region Public API
