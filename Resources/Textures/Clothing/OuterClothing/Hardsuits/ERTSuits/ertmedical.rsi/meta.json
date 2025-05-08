@@ -31,8 +31,8 @@
         "directions": 4
     },
     {
-        "name": "equipped-OUTERCLOTHING-lamia",
-        "directions": 4
+        "name": "segment",
+        "directions": 1
     }
   ]
 }
