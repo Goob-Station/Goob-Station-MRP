@@ -1,25 +1,36 @@
 name: Publish
 
-concurrency:
-  group: publish
-
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 10 * * *'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Install dependencies
       run: sudo apt-get install -y python3-paramiko python3-lxml
 
+    - name: Check .NET Installation
+      id: check-dotnet
+      run: |
+        if dotnet --info > /dev/null 2>&1; then
+          echo "skip=true" >> $GITHUB_ENV
+        else
+          echo "skip=false" >> $GITHUB_ENV
+        fi
+
     - uses: actions/checkout@v3.6.0
       with:
         submodules: 'recursive'
     - name: Setup .NET Core
+      if: env.skip == 'false'
       uses: actions/setup-dotnet@v3.2.0
       with:
         dotnet-version: 9.0.x
@@ -50,10 +61,10 @@ jobs:
     - name: Publish changelog (Discord)
       run: Tools/actions_changelogs_since_last_run.py
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
         DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK }}
 
-#    - name: Publish changelog (RSS)
-#      run: Tools/actions_changelog_rss.py
-#      env:
-#        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
+    - name: Publish changelog (RSS)
+      run: Tools/actions_changelog_rss.py
+      env:
+        CHANGELOG_RSS_KEY: ${{ secrets.CHANGELOG_RSS_KEY }}
