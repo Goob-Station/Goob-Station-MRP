@@ -379,3 +379,10 @@ Entries:
   id: 34
   time: '2025-05-08T02:25:47.0000000+00:00'
   url: https://github.com/Goob-Station/Goob-Station-MRP/pull/143
+- author: Aidenkrz
+  changes:
+    - type: Add
+      message: Added Resomi
+  id: 35
+  time: '2025-05-08T02:27:49.0000000+00:00'
+  url: https://github.com/Goob-Station/Goob-Station-MRP/pull/142
