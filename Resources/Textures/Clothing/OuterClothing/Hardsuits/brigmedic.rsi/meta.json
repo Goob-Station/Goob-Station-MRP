@@ -6,6 +6,7 @@
         "x": 32,
         "y": 32
     },
+    "states": [
     {
       "name": "equipped-OUTERCLOTHING",
       "directions": 4
@@ -36,6 +37,9 @@
     },
     {
         "name": "segment"
+    },
+    {
+        "name": "icon"
     }
   ]
 }
