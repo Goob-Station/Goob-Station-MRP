@@ -171,6 +171,7 @@
   - RuleR19
   - RuleR20
   - RuleR21
+  - RuleR22
 
 - type: guideEntry
   id: RuleR1
@@ -335,6 +336,13 @@
   ruleEntry: true
   priority: 21
   text: "/ServerInfo/Guidebook/ServerRules/RoleplayRules/RuleR21SSD.xml"
+
+- type: guideEntry
+  id: RuleR22
+  name: guide-entry-rules-r22
+  ruleEntry: true
+  priority: 22
+  text: "/ServerInfo/Guidebook/ServerRules/RoleplayRules/RuleR22NewLifeRule.xml"
 
 - type: guideEntry
   id: SiliconRules
