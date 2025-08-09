@@ -1,3 +1,6 @@
+# Goob MRP has been archived
+## I can not recommened forking EE in its current state, I recommened forking Wizard's Den, and starting with a clean slate.
+
 <p align="center"> <img alt="Goob Station 14" width="880" height="300" src="https://github.com/Goob-Station/Goob-Station/blob/master/Resources/Textures/Logo/logo.png" /></p>
 
 This is a fork from the primary repo for Einstein Engines.
